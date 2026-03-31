@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - gallery-data:/app/src/data
+      - gallery-uploads:/app/public/uploads/gallery
+    env_file:
+      - .env.local
+    restart: unless-stopped
+
+volumes:
+  gallery-data:
+  gallery-uploads:
