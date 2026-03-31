@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --pink: #ffa5c9;
+  --pink-light: #ffd4e8;
+  --pink-dark: #e8598b;
+  --pink-glow: rgba(255, 165, 201, 0.3);
+  --black: #0a0a0a;
+  --black-soft: #1a1a1a;
+  --black-card: #141414;
+  --white: #ffffff;
+  --white-soft: #f5f0f2;
+  --gray: #888;
+  --gray-light: #aaa;
+  --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@theme inline {
+  --color-pink: var(--pink);
+  --color-pink-light: var(--pink-light);
+  --color-pink-dark: var(--pink-dark);
+  --color-pink-glow: var(--pink-glow);
+  --color-black: var(--black);
+  --color-black-soft: var(--black-soft);
+  --color-black-card: var(--black-card);
+  --color-white: var(--white);
+  --color-white-soft: var(--white-soft);
+  --color-gray: var(--gray);
+  --color-gray-light: var(--gray-light);
+  --font-sans: var(--font-quicksand);
+  --font-display: var(--font-playfair);
+  --font-accent: var(--font-caveat);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--black);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border-radius: 4px;
+}
+
+@keyframes float-particle {
+  0% { opacity: 0; transform: translateY(100vh) scale(0); }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
