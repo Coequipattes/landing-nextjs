@@ -8,8 +8,15 @@ services:
       - gallery-uploads:/app/public/uploads/gallery
     env_file:
       - .env.local
+    networks:
+      - infra-net
     restart: unless-stopped
 
 volumes:
   gallery-data:
   gallery-uploads:
+
+networks:
+  infra-net:
+    external: true
+
