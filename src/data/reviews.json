@@ -1,37 +1,156 @@
 [
   {
-    "text": "Manon est venue garder mes 5 chats pendant mon absence de plusieurs jours et je ne peux que vous la recommander. Elle est très attentionnée, très à l'écoute, très douce avec les animaux tout en étant très professionnelle. Mes chouchous pourtant plutôt craintifs pour certains, n'ont manqué de rien, et je les ai retrouvés en pleine forme. De plus Manon est une jeune femme charmante, très souriante et pleine d'entrain. Un vrai soleil.",
-    "authorName": "Waterdrops",
-    "authorInitials": "W",
-    "context": "Propriétaire de 5 chats · Mars 2026",
+    "text": "Manon est venue garder mes 5 chats pendant mon absence de plusieurs jours et je ne peux que vous la recommander. Elle est très attentionnée , très à l'écoute, très douce avec les animaux tout en étant très professionnelle. Chaque jour (et même plusieurs fois par jour) j'ai eu droit à un compte rendu de ses interventions, photos à l'appui. Mes chouchous  pourtant plutôt craintifs pour certains, n'ont manqué de rien, et je les ai retrouvés en pleine forme.\nDe plus Manon est une jeune femme charmante, très souriante et pleine d'entrain. Un vrai soleil.\nJe ferai appel à ses services dorénavant dès que nécessaire.\nVous pouvez lui faire confiance et lui confier vos loulous les yeux fermés.",
+    "authorName": "waterdrops waterdrops",
+    "authorInitials": "WW",
+    "context": "Visité en mars",
     "visible": true
   },
   {
-    "text": "Belle rencontre, une personne qui sait écouter autant le cavalier que le cheval. Une méthode douce et très claire qui nous permet de progresser tellement bien ! Elle est dans le respect du cheval avant tout et partage de belles valeurs équestres, ce qui rend son enseignement encore plus agréable et formateur.",
-    "authorName": "Camille Lajot-Sarthou",
-    "authorInitials": "CL",
-    "context": "Cavalière · Mars 2026",
+    "text": "La petsitter attitrée d Hana depuis le début ❤️\nManon est juste parfaite! Attentionnée et très communicative.Je pars en vacances rassurée et ma whippet est ravie de voir Manon arriver et s occuper d elle!\nProgramme: balades, caresses, bisous et jeux.\nMerci Manon! Je recommande ++++",
+    "authorName": "Caroline Messian Devys",
+    "authorInitials": "CM",
+    "context": "Visité en mars",
     "visible": true
   },
   {
-    "text": "Je vous recommande vivement Manon pour sa gentillesse avec les animaux et son professionnalisme. Elle est très passionnée par son métier et est très appréciée par mes deux loulous Snoopy et Uzi qui lui font une grande fête avant chaque promenade. Toujours souriante et ponctuelle.",
+    "text": "Je vous recommande vivement Manon. pour son sa gentillesse avec les animaux et son professionnalisme. Elle est très passionnée  par son métier et est très appréciée par mes deux loulous Snoopy et Uzi qui luis font une grande fête avant chaque promenade. Toujours souriant et ponctuel.",
     "authorName": "Patrick Durant",
     "authorInitials": "PD",
-    "context": "Propriétaire de Snoopy et Uzi · Février 2026",
+    "context": "Visité en février",
     "visible": true
   },
   {
-    "text": "Merci Manon pour la patience et la bienveillance dont tu fais preuve avec ma jument et moi, le fait de comprendre la raison de chacune de mes actions a révolutionné mon équitation !",
-    "authorName": "Aurore Duhamel",
-    "authorInitials": "AD",
-    "context": "Cavalière · Janvier 2026",
-    "visible": true
-  },
-  {
-    "text": "Manon est douce et patiente avec notre chat craintif. On a toujours des photos et des nouvelles lorsque nous partons en vacances ! Le dialogue est facile, elle prend le temps de nous écouter. C'est toujours un plaisir de faire appel à ses services !",
+    "text": "Manon est douce et patiente avec notre chat craintif. On a toujours des photos et des nouvelles lorsque nous partons en vacances !\n\nLe dialogue est facile, elle prend le temps de nous écouter. C'est toujours un plaisir de faire appel à ses services !\n\nJe recommande vivement !",
     "authorName": "Edwin Bouchenna",
     "authorInitials": "EB",
-    "context": "Propriétaire de chat · Février 2026",
+    "context": "Visité en février",
+    "visible": true
+  },
+  {
+    "text": "Belle rencontre, une personne qui sait écouter autant le cavalier que le cheval. Une méthode douce et très claire qui nous permet de progresser tellement bien !\nElle est dans le respect du cheval avant tout et partage de belles valeurs équestres, ce qui rend son enseignement encore plus agréable et formateur. Merci Manon, je suis très heureuse et satisfaite d'avoir fais appel à toi !",
+    "authorName": "Camille Lajot-Sarthou",
+    "authorInitials": "CL",
+    "context": "Visité en mars",
+    "visible": true
+  },
+  {
+    "text": "Merci Manon pour la patience et la bienveillance dont tu fais preuve avec ma jument et moi, le fait de comprendre la raison de chacune de mes actions à révolutionné mon équitation!!",
+    "authorName": "Aurore Duhamel",
+    "authorInitials": "AD",
+    "context": "Visité en janvier",
+    "visible": true
+  },
+  {
+    "text": "Manon a été très attentionnée, elle s'est bien occupée de notre chatte. C'est une personne très agréable et très gentille.\nJe conseille vivement.",
+    "authorName": "Myriam Massiani",
+    "authorInitials": "MM",
+    "context": "Visité en décembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Manon s'est occupée de nos deux chats pendant la période de Noël, elle est très sérieuse, aime énormément les animaux, ça se sent; pendant notre absence elle nous a donné régulièrement des nouvelles et vues les caresses demandées par notre Balzac, il se sentait en sécurité!\nNotre deuxième chatte étant extrêmement sauvage, voire un peu agressive, elle a su la laisser tranquille et tout s'est bien passé.\nIl n'est pas facile de laisser sa maison à une inconnue mais je dois dire que j'ai été tout de suite en confiance aussi!\nMerci Manon, nous ne manquerons pas de refaire appel à vos services!",
+    "authorName": "Ingrid Elie",
+    "authorInitials": "IE",
+    "context": "Visité en décembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Que du bonheur, merci à Manon d'être venue s'occuper de mon gros bébé, mon chat de 12 ans a été comblé de câlins pendant mon absence. Il était en confiance et moi également, je recommande 😻",
+    "authorName": "Helene",
+    "authorInitials": "H",
+    "context": "Visité en décembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Manon a su prendre soin de mes deux chats dont un malade avec beaucoup de tendresse. Ils étaient entre de bonnes mains, caressés et brossés tout les jours. De plus, Manon envoie des photos et des nouvelles à chaque visite, nous avons trouvé une super cat sitter et nous sommes très heureuses des services de Manon.",
+    "authorName": "Sarah Ladurée",
+    "authorInitials": "SL",
+    "context": "Visité en décembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Manon s'est très bien occupée de notre chien. Manon est très professionnelle et  bienveillante. Valentino était ravi. Manon nous a envoyé des sms régulièrement pour nous informer du déroulement de la garde.\nNous somme très satisfait ☺️",
+    "authorName": "Stéphanie GUEUNE",
+    "authorInitials": "SG",
+    "context": "Visité en décembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Manon est la personne que l'on souhaite rencontrer pour prendre soin de nos chers animaux. Je pars désormais sereine quand je sais que mes chatons seront calinés avec amour.\nLe professionnalisme et la gentillesse  sont vraiment les qualités qui émanent de Manon.\nJe recommande vivement ses services, vous confierez vos animaux les yeux fermés.",
+    "authorName": "Iris FURMANSKI",
+    "authorInitials": "IF",
+    "context": "Visité en décembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Manon est disponible, fiable et mes petits chats ont été choyés lors de ses passages.\nJe recommande vivement !",
+    "authorName": "Francoise LADUREE",
+    "authorInitials": "FL",
+    "context": "Visité en novembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Professionnelle exceptionnelle tant par son savoir faire que par son savoir être !\nUne infinie reconnaissance pour sa disponibilité, son professionnalisme et sa bienveillance !\nNina (maîtresse de Bonnie staffie âgée de 6 ans) 🙏🪷🌹",
+    "authorName": "Nina",
+    "authorInitials": "N",
+    "context": "Visité en novembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Bonjour\nNous avons confié notre chienne loxanne , une adorable cane corso .\nComme tous maîtres aimants pas sans une inquiétude  la laissant peu souvent\nTout a été parfait .un jeune fille souriante et a l écoute qui vous envoie des photos régulièrement\nNous avons récupéré une Loxanne en pleine forme\nJe recommande en toute confiance\nA bientôt manon😁",
+    "authorName": "Charline Pommaret",
+    "authorInitials": "CP",
+    "context": "Visité en novembre 2025",
+    "visible": true
+  },
+  {
+    "text": "J'ai jamais trouver une coach aussi investi avec le cavalier, j'ai appris beaucoup de choses avec manon sur la manière dont je montais et sur les chevaux en globalité, je la conseille à 2000%",
+    "authorName": "Anaëlle CHASLES",
+    "authorInitials": "AC",
+    "context": "Visité en novembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Juste top ! Je recommande à 1000%. J'ai eu la chance de l'avoir durant 6mois en cours d'équitation et mon niveau a vite grimpé : une coach calme, droite mais surtout encourageante et c'est ce qui donne envie de progresser et réussi encore plus vite.",
+    "authorName": "Juliette Diers",
+    "authorInitials": "JD",
+    "context": "Visité en novembre 2025",
+    "visible": true
+  },
+  {
+    "text": "C'est la première fois que nous faisions garder notre chat et nous avons été très satisfaits… Manon est attentive et douce, elle a un excellent relationnel avec les les animaux et est très respectueuse de leur bien être. Nous avons eu un compte rendu et des photos tous les jours. C'était un plaisir de lui confier notre Moumoute et nous n'hésiterons pas à faire appel à Manon quand nous en aurons besoin !!! Nous recommandons !! Merci encore 😻",
+    "authorName": "S. EVENO",
+    "authorInitials": "SE",
+    "context": "Visité en octobre 2025",
+    "visible": true
+  },
+  {
+    "text": "Je crois qu'on aurait pas pu rêver mieux pour notre chien. Sisko a été chouchouté pendant 4 jours et demi. Manon nous envoyé pleins de photos, ce qui nous a rassuré. On a passé le week end de notre mariage en toute tranquillité grâce à elle. (Même avec ces très fortes chaleurs notre chien était entre de bonnes mains). Elle s'est renseignée sur Sisko, ses besoins, les soins …ect. Ce qui prouve son sérieux et son envie de bien faire avec nos animaux. Je sais à qui je ferais appel si besoin, et je n'hésite pas à recommander Manon à toutes les personnes qui cherchent à faire garder leur chien.",
+    "authorName": "Louane Pillier",
+    "authorInitials": "LP",
+    "context": "Visité en juillet 2025",
+    "visible": true
+  },
+  {
+    "text": "Nous avons confié notre chat, âgé de 16 ans, à Manon. Elle a su prendre soin d'elle et de ses besoins un peu particulier à cet âge. Nous avons des nouvelles et des photos tout au long de cette semaine. Manon a bien choyé et câliné notre vieille mémère. Vous pouvez laisser vos animaux en toute confiance. Merci Manon!",
+    "authorName": "Christelle Pertuisel",
+    "authorInitials": "CP",
+    "context": "Visité en mai 2025",
+    "visible": true
+  },
+  {
+    "text": "Super expérience avec Manon pour la garde de notre chiot de 3 mois.",
+    "authorName": "Marie Flourié",
+    "authorInitials": "MF",
+    "context": "Visité en décembre 2025",
+    "visible": true
+  },
+  {
+    "text": "Une coach et une amie en or !\nManon est toujours de bon conseil et elle est au petit soin avec les chevaux !",
+    "authorName": "Manon Berte",
+    "authorInitials": "MB",
+    "context": "Visité en février 2025",
     "visible": true
   }
 ]
