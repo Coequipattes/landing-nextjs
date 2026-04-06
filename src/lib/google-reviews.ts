@@ -37,11 +37,16 @@ export async function fetchGoogleReviews(): Promise<Review[]> {
     throw new Error("Missing GOOGLE_PLACES_API_KEY or GOOGLE_PLACE_ID");
   }
 
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&language=fr&key=${apiKey}`;
-  const res = await fetch(url);
+  const url = `https://places.googleapis.com/v1/places/${placeId}?languageCode=fr`;
+  const res = await fetch(url, {
+    headers: {
+      "X-Goog-Api-Key": apiKey,
+      "X-Goog-FieldMask": "reviews",
+    },
+  });
   const data = await res.json();
 
-  if (!data.result?.reviews) {
+  if (!data.reviews) {
     return [];
   }
 
@@ -55,14 +60,18 @@ export async function fetchGoogleReviews(): Promise<Review[]> {
 
   const existingMap = new Map(existing.map((r) => [r.authorName, r]));
 
-  const reviews: Review[] = data.result.reviews.map(
-    (r: { author_name: string; text: string; relative_time_description: string }) => {
-      const prev = existingMap.get(r.author_name);
+  const reviews: Review[] = data.reviews.map(
+    (r: {
+      authorAttribution: { displayName: string };
+      text: { text: string };
+      relativePublishTimeDescription: string;
+    }) => {
+      const prev = existingMap.get(r.authorAttribution.displayName);
       return {
-        text: r.text,
-        authorName: r.author_name,
-        authorInitials: getInitials(r.author_name),
-        context: r.relative_time_description,
+        text: r.text.text,
+        authorName: r.authorAttribution.displayName,
+        authorInitials: getInitials(r.authorAttribution.displayName),
+        context: r.relativePublishTimeDescription,
         visible: prev?.visible ?? true,
       };
     },
