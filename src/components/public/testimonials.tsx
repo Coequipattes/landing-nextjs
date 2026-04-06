@@ -72,7 +72,10 @@ export function Testimonials({ reviews }: { reviews: Review[] }) {
 
       <div
         className="flex flex-col gap-4 group"
-        style={{ maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)" }}
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        }}
       >
         {/* Row 1 — left */}
         <div
