@@ -24,17 +24,31 @@ const categoryNames: Record<string, string> = {
   nac: "NAC",
 };
 
+const PAGE_SIZE = 12;
+
 export function Gallery({ images }: { images: GalleryImage[] }) {
   const [filter, setFilter] = useState("all");
+  const [limit, setLimit] = useState(PAGE_SIZE);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   const filtered =
     filter === "all" ? images : images.filter((i) => i.category === filter);
 
-  const openLightbox = useCallback((index: number) => {
-    setLightbox(index);
-    document.body.style.overflow = "hidden";
-  }, []);
+  const visible = filtered.slice(0, limit);
+  const remaining = filtered.length - limit;
+
+  const handleFilter = (key: string) => {
+    setFilter(key);
+    setLimit(PAGE_SIZE);
+  };
+
+  const openLightbox = useCallback(
+    (index: number) => {
+      setLightbox(index);
+      document.body.style.overflow = "hidden";
+    },
+    [],
+  );
 
   const closeLightbox = useCallback(() => {
     setLightbox(null);
@@ -59,7 +73,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
           <button
             key={c.key}
             type="button"
-            onClick={() => setFilter(c.key)}
+            onClick={() => handleFilter(c.key)}
             className={`px-6 py-2.5 rounded-full font-medium text-[0.9rem] border-2 transition-all duration-300 cursor-pointer ${
               filter === c.key
                 ? "bg-pink text-black border-pink"
@@ -71,19 +85,20 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map((img) => (
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+        {visible.map((img) => (
           <button
             key={img.src}
             type="button"
-            className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer group"
+            className="relative w-full mb-4 rounded-2xl overflow-hidden cursor-pointer group break-inside-avoid"
             onClick={() => openLightbox(images.indexOf(img))}
           >
             <Image
               src={img.src}
               alt={img.title}
-              fill
-              className="object-cover transition-transform duration-400 group-hover:scale-110"
+              width={600}
+              height={400}
+              className="w-full h-auto transition-transform duration-400 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -95,6 +110,18 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
           </button>
         ))}
       </div>
+
+      {remaining > 0 && (
+        <div className="flex justify-center mt-10">
+          <button
+            type="button"
+            onClick={() => setLimit((l) => l + PAGE_SIZE)}
+            className="px-8 py-3 rounded-full border border-pink/30 text-pink font-medium text-[0.9rem] hover:bg-pink/10 transition-colors duration-300 cursor-pointer"
+          >
+            Voir plus ({remaining} photo{remaining > 1 ? "s" : ""})
+          </button>
+        </div>
+      )}
 
       {/* Lightbox */}
       {lightbox !== null && (
