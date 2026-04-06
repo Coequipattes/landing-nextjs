@@ -6,6 +6,7 @@ export type Review = {
   authorName: string;
   authorInitials: string;
   context: string;
+  rating: number;
   visible: boolean;
 };
 
@@ -65,6 +66,7 @@ export async function fetchGoogleReviews(): Promise<Review[]> {
       authorAttribution: { displayName: string };
       text: { text: string };
       relativePublishTimeDescription: string;
+      rating: number;
     }) => {
       const prev = existingMap.get(r.authorAttribution.displayName);
       return {
@@ -72,6 +74,7 @@ export async function fetchGoogleReviews(): Promise<Review[]> {
         authorName: r.authorAttribution.displayName,
         authorInitials: getInitials(r.authorAttribution.displayName),
         context: r.relativePublishTimeDescription,
+        rating: r.rating,
         visible: prev?.visible ?? true,
       };
     },
