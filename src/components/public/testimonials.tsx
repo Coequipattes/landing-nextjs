@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { SectionHeader } from "./section-header";
 
 type Review = {
@@ -48,6 +51,52 @@ function GoogleBadge({ rating, count }: { rating: string; count: number }) {
   );
 }
 
+// velocity > 0 → moves left, velocity < 0 → moves right
+function MarqueeRow({ reviews, velocity }: { reviews: Review[]; velocity: number }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const xRef = useRef(0);
+  const pausedRef = useRef(false);
+  const rafRef = useRef<number>(0);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    // For rightward rows, start at -halfWidth so we loop at 0
+    if (velocity < 0) {
+      xRef.current = -(track.scrollWidth / 2);
+      track.style.transform = `translateX(${xRef.current}px)`;
+    }
+
+    const step = () => {
+      if (!pausedRef.current && trackRef.current) {
+        const halfWidth = trackRef.current.scrollWidth / 2;
+        xRef.current -= velocity;
+        if (velocity > 0 && xRef.current <= -halfWidth) xRef.current += halfWidth;
+        if (velocity < 0 && xRef.current >= 0) xRef.current -= halfWidth;
+        trackRef.current.style.transform = `translateX(${xRef.current}px)`;
+      }
+      rafRef.current = requestAnimationFrame(step);
+    };
+
+    rafRef.current = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [velocity]);
+
+  return (
+    <div
+      onMouseEnter={() => { pausedRef.current = true; }}
+      onMouseLeave={() => { pausedRef.current = false; }}
+    >
+      <div ref={trackRef} className="flex">
+        {[...reviews, ...reviews].map((review, i) => (
+          <ReviewCard key={i} review={review} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Testimonials({ reviews }: { reviews: Review[] }) {
   const visible = reviews.filter((r) => r.visible !== false);
 
@@ -55,12 +104,9 @@ export function Testimonials({ reviews }: { reviews: Review[] }) {
     ? (visible.reduce((sum, r) => sum + r.rating, 0) / visible.length).toFixed(1)
     : "5.0";
 
-  // Split into two halves, duplicate each for seamless infinite loop
   const half = Math.ceil(visible.length / 2);
-  const half1 = visible.slice(0, half);
-  const half2 = visible.slice(half);
-  const row1 = [...half1, ...half1];
-  const row2 = [...half2, ...half2];
+  const row1 = visible.slice(0, half);
+  const row2 = visible.slice(half);
 
   return (
     <section id="temoignages" className="py-16 md:py-25 overflow-hidden">
@@ -74,31 +120,14 @@ export function Testimonials({ reviews }: { reviews: Review[] }) {
       <GoogleBadge rating={avgRating} count={visible.length} />
 
       <div
-        className="flex flex-col gap-4 group"
+        className="flex flex-col gap-4"
         style={{
           maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
           WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
         }}
       >
-        {/* Row 1 — left */}
-        <div
-          className="flex group-hover:[animation-play-state:paused]"
-          style={{ animation: "marquee-left 35s linear infinite" }}
-        >
-          {row1.map((review, i) => (
-            <ReviewCard key={`r1-${i}`} review={review} />
-          ))}
-        </div>
-
-        {/* Row 2 — right */}
-        <div
-          className="flex group-hover:[animation-play-state:paused]"
-          style={{ animation: "marquee-right 45s linear infinite" }}
-        >
-          {row2.map((review, i) => (
-            <ReviewCard key={`r2-${i}`} review={review} />
-          ))}
-        </div>
+        <MarqueeRow reviews={row1} velocity={0.6} />
+        <MarqueeRow reviews={row2} velocity={-0.4} />
       </div>
     </section>
   );
