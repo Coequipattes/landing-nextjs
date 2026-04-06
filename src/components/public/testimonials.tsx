@@ -11,7 +11,7 @@ type Review = {
 
 function ReviewCard({ review }: { review: Review }) {
   return (
-    <div className="bg-black-card border border-pink/10 rounded-2xl p-5 w-72 shrink-0 hover:border-pink/30 transition-colors duration-300">
+    <div className="bg-black-card border border-pink/10 rounded-2xl p-5 w-72 shrink-0 mr-4 hover:border-pink/30 transition-colors duration-300">
       <div className="flex gap-0.5 mb-3">
         {Array.from({ length: review.rating }).map((_, i) => (
           <span key={i} className="text-pink text-sm">★</span>
@@ -55,9 +55,12 @@ export function Testimonials({ reviews }: { reviews: Review[] }) {
     ? (visible.reduce((sum, r) => sum + r.rating, 0) / visible.length).toFixed(1)
     : "5.0";
 
-  // Duplicate for seamless infinite loop
-  const row1 = [...visible, ...visible];
-  const row2 = [...visible, ...visible];
+  // Split into two halves, duplicate each for seamless infinite loop
+  const half = Math.ceil(visible.length / 2);
+  const half1 = visible.slice(0, half);
+  const half2 = visible.slice(half);
+  const row1 = [...half1, ...half1];
+  const row2 = [...half2, ...half2];
 
   return (
     <section id="temoignages" className="py-16 md:py-25 overflow-hidden">
@@ -79,7 +82,7 @@ export function Testimonials({ reviews }: { reviews: Review[] }) {
       >
         {/* Row 1 — left */}
         <div
-          className="flex gap-4 group-hover:[animation-play-state:paused]"
+          className="flex group-hover:[animation-play-state:paused]"
           style={{ animation: "marquee-left 35s linear infinite" }}
         >
           {row1.map((review, i) => (
@@ -89,7 +92,7 @@ export function Testimonials({ reviews }: { reviews: Review[] }) {
 
         {/* Row 2 — right */}
         <div
-          className="flex gap-4 group-hover:[animation-play-state:paused]"
+          className="flex group-hover:[animation-play-state:paused]"
           style={{ animation: "marquee-right 45s linear infinite" }}
         >
           {row2.map((review, i) => (
