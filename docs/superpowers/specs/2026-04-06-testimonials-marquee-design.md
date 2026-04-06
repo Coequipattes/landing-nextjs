@@ -42,7 +42,7 @@ SectionHeader (inchangé)
 
 - SVG Google "G" multicolore + note `4.9 · 22 avis Google`
 - Affiché au-dessus du marquee, centré ou aligné gauche
-- Note `4.9` hardcodée (valeur réelle actuelle) — pas de calcul dynamique depuis le JSON
+- Note calculée dynamiquement : moyenne des `rating` des avis visibles (arrondie à 1 décimale)
 - Pas de lien externe (pas d'URL Google Maps disponible actuellement)
 
 ### Filtrage
