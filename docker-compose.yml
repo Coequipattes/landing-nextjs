@@ -19,19 +19,14 @@ services:
     ports:
       - '127.0.0.1:3009:3000'
     volumes:
-      - gallery-data:/app/src/data
-      - gallery-uploads:/app/public/uploads/gallery
+      - ./src/data:/app/src/data
+      - ./public/uploads/gallery:/app/public/uploads/gallery
     env_file:
       - .env.local
     networks:
       - infra-net
     restart: unless-stopped
 
-volumes:
-  gallery-data:
-  gallery-uploads:
-
 networks:
   infra-net:
     external: true
-
