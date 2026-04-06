@@ -19,8 +19,8 @@ services:
     ports:
       - '127.0.0.1:3009:3000'
     volumes:
-      - ./src/data:/app/src/data
-      - ./public/uploads/gallery:/app/public/uploads/gallery
+      - /home/benjamin/volumes/site-coequipattes/data:/app/src/data
+      - /home/benjamin/volumes/site-coequipattes/gallery:/app/public/uploads/gallery
     env_file:
       - .env.local
     networks:
