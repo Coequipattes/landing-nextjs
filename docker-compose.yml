@@ -1,8 +1,8 @@
 services:
   web:
     build: .
-    expose:
-      - "3000"
+    ports:
+      - '127.0.0.1:3009:3000'
     volumes:
       - gallery-data:/app/src/data
       - gallery-uploads:/app/public/uploads/gallery
