@@ -17,13 +17,14 @@ export function About() {
           {/* Image placeholder */}
           <div className="relative">
             <div className="absolute -top-5 -left-5 right-5 bottom-5 border-3 border-pink rounded-2xl z-1 hidden md:block" />
-            <Image
-              src="/uploads/manon.jpg"
-              alt="Manon avec un cheval"
-              width={600}
-              height={500}
-              className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl relative z-2 shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
-            />
+            <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden z-2 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+              <Image
+                src="/uploads/manon.jpg"
+                alt="Manon avec un cheval"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
 
           <div>

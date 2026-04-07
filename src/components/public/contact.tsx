@@ -1,7 +1,84 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SectionHeader } from "./section-header";
+
+const subjectOptions = [
+  "Cours d'équitation",
+  "Pet-sitting",
+  "Tarifs et forfaits",
+  "Autre question",
+];
+
+function CustomSelect({
+  name,
+  options,
+  defaultValue,
+}: {
+  name: string;
+  options: string[];
+  defaultValue: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState(defaultValue);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <input type="hidden" name={name} value={selected} />
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="w-full bg-black-card border border-pink/10 rounded-xl px-4 py-3 text-white flex items-center justify-between focus:border-pink focus:outline-none transition-colors hover:border-pink/30"
+      >
+        <span>{selected}</span>
+        <svg
+          className={`w-4 h-4 text-gray transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <ul
+        className={`absolute z-50 w-full mt-2 bg-black-card border border-pink/20 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.5)] transition-all duration-200 origin-top ${
+          open
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-2 pointer-events-none"
+        }`}
+      >
+        {options.map((opt) => (
+          <li key={opt}>
+            <button
+              type="button"
+              onClick={() => {
+                setSelected(opt);
+                setOpen(false);
+              }}
+              className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-pink/10 hover:text-pink ${
+                selected === opt ? "text-pink bg-pink/5" : "text-white"
+              }`}
+            >
+              {opt}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function Contact() {
   const [status, setStatus] = useState<
@@ -111,15 +188,11 @@ export function Contact() {
               <label className="block text-white text-sm font-medium mb-2">
                 Sujet
               </label>
-              <select
+              <CustomSelect
                 name="subject"
-                className="w-full bg-black-card border border-pink/10 rounded-xl px-4 py-3 text-white focus:border-pink focus:outline-none transition-colors"
-              >
-                <option value="Cours d'équitation">Cours d'équitation</option>
-                <option value="Pet-sitting">Pet-sitting</option>
-                <option value="Tarifs et forfaits">Tarifs et forfaits</option>
-                <option value="Autre">Autre question</option>
-              </select>
+                options={subjectOptions}
+                defaultValue={subjectOptions[0]}
+              />
             </div>
 
             <div>

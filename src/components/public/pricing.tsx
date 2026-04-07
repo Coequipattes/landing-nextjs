@@ -157,6 +157,7 @@ function Card({ card }: { card: PriceCard }) {
 
 export function Pricing() {
   const [tab, setTab] = useState<"equitation" | "petsitting">("equitation");
+  const [extrasOpen, setExtrasOpen] = useState(false);
   const cards = tab === "equitation" ? equitationCards : petsittingCards;
 
   return (
@@ -197,35 +198,49 @@ export function Pricing() {
         {/* Equitation extras dropdown */}
         {tab === "equitation" && (
           <div className="max-w-[600px] mx-auto mt-12">
-            <details className="bg-black-card border border-pink/10 rounded-2xl group">
-              <summary className="px-6 py-5 cursor-pointer font-semibold text-[1.05rem] text-white flex items-center justify-between list-none [&::-webkit-details-marker]:hidden hover:text-pink transition-colors">
+            <div className="bg-black-card border border-pink/10 rounded-2xl overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setExtrasOpen((o) => !o)}
+                className="w-full px-6 py-5 cursor-pointer font-semibold text-[1.05rem] text-white flex items-center justify-between hover:text-pink transition-colors"
+              >
                 Autres tarifs équitation
-                <span className="text-pink text-2xl transition-transform duration-300 group-open:rotate-45">
+                <span
+                  className="text-pink text-2xl transition-transform duration-300"
+                  style={{ transform: extrasOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+                >
                   +
                 </span>
-              </summary>
-              <div className="px-6 pb-6 space-y-4 animate-[fadeIn_0.4s_var(--transition)]">
-                {equitationExtras.map((e) => (
-                  <div
-                    key={e.title}
-                    className="p-5 bg-black-soft rounded-xl hover:bg-pink/5 hover:translate-x-1 transition-all duration-300"
-                  >
-                    <h4 className="text-white text-[1.2rem] mb-2">
-                      {e.title}
-                    </h4>
-                    <div className="font-display text-2xl font-bold text-pink mb-2">
-                      {e.price}
-                      <small className="text-base text-gray font-normal">
-                        {e.unit}
-                      </small>
-                    </div>
-                    <p className="text-gray-light text-[0.95rem]">
-                      {e.description}
-                    </p>
+              </button>
+              <div
+                className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+                style={{ gridTemplateRows: extrasOpen ? "1fr" : "0fr" }}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 pb-6 space-y-4">
+                    {equitationExtras.map((e) => (
+                      <div
+                        key={e.title}
+                        className="p-5 bg-black-soft rounded-xl hover:bg-pink/5 hover:translate-x-1 transition-all duration-300"
+                      >
+                        <h4 className="text-white text-[1.2rem] mb-2">
+                          {e.title}
+                        </h4>
+                        <div className="font-display text-2xl font-bold text-pink mb-2">
+                          {e.price}
+                          <small className="text-base text-gray font-normal">
+                            {e.unit}
+                          </small>
+                        </div>
+                        <p className="text-gray-light text-[0.95rem]">
+                          {e.description}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
-            </details>
+            </div>
           </div>
         )}
 
