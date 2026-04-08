@@ -2,7 +2,7 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { serverEnv } from "./env.server";
 
-const SECRET = new TextEncoder().encode(serverEnv.authSecret);
+const getSecret = () => new TextEncoder().encode(serverEnv.authSecret);
 const COOKIE_NAME = "admin-session";
 
 export async function createSession() {
@@ -10,7 +10,7 @@ export async function createSession() {
     .setProtectedHeader({ alg: "HS256" })
     .setExpirationTime("7d")
     .setIssuedAt()
-    .sign(SECRET);
+    .sign(getSecret());
 
   const cookieStore = await cookies();
   cookieStore.set(COOKIE_NAME, token, {
@@ -27,7 +27,7 @@ export async function verifySession(): Promise<boolean> {
     const cookieStore = await cookies();
     const token = cookieStore.get(COOKIE_NAME)?.value;
     if (!token) return false;
-    await jwtVerify(token, SECRET);
+    await jwtVerify(token, getSecret());
     return true;
   } catch {
     return false;

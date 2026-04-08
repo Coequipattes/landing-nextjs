@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 import { serverEnv } from "./lib/env.server";
 
-const SECRET = new TextEncoder().encode(serverEnv.authSecret);
+const getSecret = () => new TextEncoder().encode(serverEnv.authSecret);
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -17,7 +17,7 @@ export async function proxy(request: NextRequest) {
     }
 
     try {
-      await jwtVerify(token, SECRET);
+      await jwtVerify(token, getSecret());
     } catch {
       return NextResponse.redirect(new URL("/admin/login", request.url));
     }
