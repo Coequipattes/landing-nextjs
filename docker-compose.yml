@@ -15,7 +15,11 @@ services:
         exec crond -f -l 6
 
   web:
-    build: .
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL}
+        NEXT_PUBLIC_CONTACT_EMAIL: ${NEXT_PUBLIC_CONTACT_EMAIL}
     ports:
       - '127.0.0.1:3009:3000'
     volumes:
