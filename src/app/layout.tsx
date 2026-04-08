@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Co'équi'pattes",
   },
   description:
-    "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec amour.",
+    "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://coequipattes.fr",
   ),
@@ -31,6 +31,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "Co'équi'pattes",
+    title: "Co'équi'pattes — Monitrice d'équitation & Pet-sitter à Vannes",
+    description:
+      "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://coequipattes.fr",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Co'équi'pattes — Monitrice d'équitation & Pet-sitter à Vannes",
+    description:
+      "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
   },
 };
 
