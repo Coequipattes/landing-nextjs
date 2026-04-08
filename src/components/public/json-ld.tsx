@@ -1,5 +1,4 @@
 import { env } from "@/lib/env";
-import { serverEnv } from "@/lib/env.server";
 
 export function JsonLd() {
   const siteUrl = env.siteUrl;
@@ -15,7 +14,7 @@ export function JsonLd() {
           "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
         url: siteUrl,
         telephone: "+33766744337",
-        email: serverEnv.contactEmailTo,
+        email: env.contactEmail,
         image: `${siteUrl}/opengraph-image`,
         logo: `${siteUrl}/logo_rose.jpeg`,
         priceRange: "€",

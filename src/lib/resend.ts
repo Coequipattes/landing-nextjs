@@ -22,7 +22,7 @@ export async function sendContactEmail({
   message: string;
 }) {
   return getResend().emails.send({
-    from: "Co'équi'pattes <noreply@coequipattes.fr>",
+    from: serverEnv.contactEmailFrom,
     to: serverEnv.contactEmailTo,
     replyTo: email,
     subject: `[Co'équi'pattes] ${subject} — ${name}`,

@@ -8,6 +8,7 @@ function required(name: string, value: string | undefined): string {
 
 export const serverEnv = {
   // Envoi d'emails
+  contactEmailFrom: required("CONTACT_EMAIL_FROM", process.env.CONTACT_EMAIL_FROM),
   contactEmailTo: required("CONTACT_EMAIL_TO", process.env.CONTACT_EMAIL_TO),
   resendApiKey: required("RESEND_API_KEY", process.env.RESEND_API_KEY),
 
