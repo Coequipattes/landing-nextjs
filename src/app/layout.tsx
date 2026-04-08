@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Quicksand, Caveat } from "next/font/google";
 import "./globals.css";
+import { env } from "@/lib/env";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -24,9 +25,20 @@ export const metadata: Metadata = {
   },
   description:
     "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://coequipattes.fr",
-  ),
+  metadataBase: new URL(env.siteUrl),
+  keywords: [
+    "monitrice équitation Vannes",
+    "cours équitation Vannes",
+    "pet-sitter Vannes",
+    "garde animaux Vannes",
+    "équitation Morbihan",
+    "pet-sitting Morbihan",
+    "monitrice diplômée équitation",
+    "Co'équi'pattes",
+  ],
+  alternates: {
+    canonical: env.siteUrl,
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -34,7 +46,7 @@ export const metadata: Metadata = {
     title: "Co'équi'pattes — Monitrice d'équitation & Pet-sitter à Vannes",
     description:
       "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://coequipattes.fr",
+    url: env.siteUrl,
   },
   twitter: {
     card: "summary_large_image",
