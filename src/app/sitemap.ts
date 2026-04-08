@@ -1,11 +1,10 @@
 import type { MetadataRoute } from "next";
+import { env } from "@/lib/env";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://coequipattes.fr";
-
   return [
     {
-      url: base,
+      url: env.siteUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,

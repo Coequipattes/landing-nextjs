@@ -31,12 +31,8 @@ function getInitials(name: string): string {
 }
 
 export async function fetchGoogleReviews(): Promise<Review[]> {
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-  const placeId = process.env.GOOGLE_PLACE_ID;
-
-  if (!apiKey || !placeId) {
-    throw new Error("Missing GOOGLE_PLACES_API_KEY or GOOGLE_PLACE_ID");
-  }
+  const { serverEnv } = await import("./env.server");
+  const { googlePlacesApiKey: apiKey, googlePlaceId: placeId } = serverEnv;
 
   const url = `https://places.googleapis.com/v1/places/${placeId}?languageCode=fr`;
   const res = await fetch(url, {

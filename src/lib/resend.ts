@@ -1,10 +1,11 @@
 import { Resend } from "resend";
+import { serverEnv } from "./env.server";
 
 let resend: Resend | null = null;
 
 function getResend() {
   if (!resend) {
-    resend = new Resend(process.env.RESEND_API_KEY);
+    resend = new Resend(serverEnv.resendApiKey);
   }
   return resend;
 }
@@ -20,11 +21,9 @@ export async function sendContactEmail({
   subject: string;
   message: string;
 }) {
-  const to = process.env.CONTACT_EMAIL_TO || "coequipattes@gmail.com";
-
   return getResend().emails.send({
     from: "Co'équi'pattes <noreply@coequipattes.fr>",
-    to,
+    to: serverEnv.contactEmailTo,
     replyTo: email,
     subject: `[Co'équi'pattes] ${subject} — ${name}`,
     text: `Nouveau message de ${name} (${email})\n\nSujet : ${subject}\n\n${message}`,

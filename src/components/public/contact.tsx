@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { SectionHeader } from "./section-header";
+import { env } from "@/lib/env";
 
 const subjectOptions = [
   "Cours d'équitation",
@@ -134,8 +135,8 @@ export function Contact() {
             <ContactItem
               icon="✉️"
               label="Email"
-              value="coequipattes@gmail.com"
-              href="mailto:coequipattes@gmail.com"
+              value={env.contactEmail}
+              href={`mailto:${env.contactEmail}`}
             />
             <ContactItem
               icon="📞"

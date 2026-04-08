@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { displayUrl } from "@/lib/env";
 
 export const runtime = "nodejs";
 export const size = { width: 1200, height: 630 };
@@ -21,9 +22,6 @@ async function loadFont(family: string, weight: number): Promise<ArrayBuffer> {
   if (!url) throw new Error(`Font URL not found for ${family} ${weight}`);
   return fetch(url).then((r) => r.arrayBuffer());
 }
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://coequipattes.fr";
-const displayUrl = siteUrl.replace(/^https?:\/\//, "");
 
 export default async function Image() {
   const [playfairBold, quicksandSemibold, caveatBold] = await Promise.all([

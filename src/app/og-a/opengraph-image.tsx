@@ -22,8 +22,7 @@ async function loadFont(family: string, weight: number): Promise<ArrayBuffer> {
   return fetch(url).then((r) => r.arrayBuffer());
 }
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://coequipattes.fr";
-const displayUrl = siteUrl.replace(/^https?:\/\//, "");
+import { displayUrl } from "@/lib/env";
 
 export default async function Image() {
   const [playfairBold, quicksandSemibold, caveatBold] = await Promise.all([

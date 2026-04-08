@@ -1,9 +1,8 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
+import { serverEnv } from "./env.server";
 
-const SECRET = new TextEncoder().encode(
-  process.env.AUTH_SECRET || "dev-secret-change-me",
-);
+const SECRET = new TextEncoder().encode(serverEnv.authSecret);
 const COOKIE_NAME = "admin-session";
 
 export async function createSession() {
@@ -41,7 +40,7 @@ export async function destroySession() {
 }
 
 export async function verifyPassword(password: string): Promise<boolean> {
-  const storedHash = process.env.ADMIN_PASSWORD_HASH;
+  const storedHash = serverEnv.adminPasswordHash || undefined;
   if (!storedHash) return false;
 
   const { createHash } = await import("node:crypto");

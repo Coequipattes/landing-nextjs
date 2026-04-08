@@ -5,11 +5,12 @@ import {
   fetchGoogleReviews,
   toggleReviewVisibility,
 } from "@/lib/google-reviews";
+import { serverEnv } from "@/lib/env.server";
 
 export async function GET(request: Request) {
   // Allow cron access via Bearer token OR admin session
   const authHeader = request.headers.get("authorization");
-  const cronSecret = process.env.CRON_SECRET;
+  const cronSecret = serverEnv.cronSecret;
 
   if (authHeader === `Bearer ${cronSecret}` && cronSecret) {
     // Cron access — refresh reviews

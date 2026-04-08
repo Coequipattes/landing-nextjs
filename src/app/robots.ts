@@ -1,14 +1,13 @@
 import type { MetadataRoute } from "next";
+import { env } from "@/lib/env";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://coequipattes.fr";
-
   return {
     rules: {
       userAgent: "*",
       allow: "/",
       disallow: "/admin/",
     },
-    sitemap: `${base}/sitemap.xml`,
+    sitemap: `${env.siteUrl}/sitemap.xml`,
   };
 }

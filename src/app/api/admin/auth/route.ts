@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { createSession, destroySession, verifyPassword } from "@/lib/auth";
+import { serverEnv } from "@/lib/env.server";
 
 export async function POST(request: Request) {
   const { email, password } = await request.json();
 
-  if (email !== process.env.ADMIN_EMAIL) {
+  if (email !== serverEnv.adminEmail) {
     return NextResponse.json({ error: "Identifiants invalides" }, { status: 401 });
   }
 
