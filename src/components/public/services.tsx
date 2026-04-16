@@ -78,8 +78,8 @@ const petsitting: Service[] = [
 
 function ServiceCard({ service }: { service: Service }) {
   return (
-    <div className="bg-black-card border border-pink/10 rounded-2xl p-8 md:p-10 transition-all duration-400 relative overflow-hidden group hover:-translate-y-2 hover:border-pink hover:shadow-[0_20px_50px_rgba(255,165,201,0.15)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-1 before:bg-pink before:scale-x-0 before:origin-left before:transition-transform before:duration-400 hover:before:scale-x-100">
-      <div className="w-15 h-15 bg-pink/10 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+    <div className="bg-black-card border border-pink/10 rounded-2xl p-8 md:p-10 transition-all duration-400 relative overflow-hidden group hover:-translate-y-2 hover:border-pink hover:shadow-[0_20px_50px_rgba(255,165,201,0.15)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-1 before:bg-gradient-to-r before:from-transparent before:via-pink before:to-transparent before:scale-x-0 before:origin-left before:transition-transform before:duration-400 hover:before:scale-x-100 after:content-[''] after:absolute after:inset-0 after:bg-[radial-gradient(ellipse_at_top_left,rgba(255,165,201,0.05)_0%,transparent_60%)] after:opacity-0 after:transition-opacity after:duration-400 hover:after:opacity-100">
+      <div className="w-15 h-15 bg-pink/10 border border-pink/20 rounded-2xl flex items-center justify-center mb-6 text-2xl group-hover:bg-pink/20 group-hover:scale-110 transition-all duration-300">
         {service.icon}
       </div>
       <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">

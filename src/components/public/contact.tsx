@@ -121,8 +121,10 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-25 px-6 bg-black-soft"
+      className="py-16 md:py-25 px-6 bg-black-soft relative overflow-hidden"
     >
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse,rgba(255,165,201,0.05)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(ellipse,rgba(255,165,201,0.04)_0%,transparent_70%)] pointer-events-none" />
       <div className="max-w-[1200px] mx-auto">
         <SectionHeader
           label="Réservation & Contact"
@@ -169,7 +171,7 @@ export function Contact() {
                 type="text"
                 name="name"
                 required
-                className="w-full bg-black-card border border-pink/10 rounded-xl px-4 py-3 text-white placeholder:text-gray focus:border-pink focus:outline-none transition-colors"
+                className="w-full bg-black-card border border-pink/10 rounded-xl px-4 py-3 text-white placeholder:text-gray focus:border-pink focus:outline-none focus:shadow-[0_0_0_3px_rgba(255,165,201,0.1)] transition-all"
               />
             </div>
 
@@ -181,7 +183,7 @@ export function Contact() {
                 type="email"
                 name="email"
                 required
-                className="w-full bg-black-card border border-pink/10 rounded-xl px-4 py-3 text-white placeholder:text-gray focus:border-pink focus:outline-none transition-colors"
+                className="w-full bg-black-card border border-pink/10 rounded-xl px-4 py-3 text-white placeholder:text-gray focus:border-pink focus:outline-none focus:shadow-[0_0_0_3px_rgba(255,165,201,0.1)] transition-all"
               />
             </div>
 
@@ -204,7 +206,7 @@ export function Contact() {
                 name="message"
                 required
                 rows={5}
-                className="w-full bg-black-card border border-pink/10 rounded-xl px-4 py-3 text-white placeholder:text-gray focus:border-pink focus:outline-none transition-colors resize-y"
+                className="w-full bg-black-card border border-pink/10 rounded-xl px-4 py-3 text-white placeholder:text-gray focus:border-pink focus:outline-none focus:shadow-[0_0_0_3px_rgba(255,165,201,0.1)] transition-all resize-y"
               />
             </div>
 
@@ -234,23 +236,20 @@ function ContactItem({
   href?: string;
 }) {
   return (
-    <div className="flex items-start gap-4">
-      <div className="w-12 h-12 bg-pink/10 rounded-xl flex items-center justify-center text-xl shrink-0">
+    <div className="flex items-start gap-5 p-5 rounded-2xl border border-pink/8 bg-black-card/60 hover:border-pink/25 hover:bg-black-card transition-all duration-300 group">
+      <div className="w-13 h-13 bg-pink/10 border border-pink/15 rounded-xl flex items-center justify-center text-xl shrink-0 group-hover:bg-pink/20 group-hover:scale-110 transition-all duration-300">
         {icon}
       </div>
       <div>
-        <div className="text-gray text-sm uppercase tracking-wider mb-1">
+        <div className="text-pink/60 text-[0.72rem] uppercase tracking-[3px] mb-1 font-semibold">
           {label}
         </div>
         {href ? (
-          <a
-            href={href}
-            className="text-white hover:text-pink transition-colors"
-          >
+          <a href={href} className="text-white hover:text-pink transition-colors font-medium">
             {value}
           </a>
         ) : (
-          <div className="text-white">{value}</div>
+          <div className="text-white font-medium">{value}</div>
         )}
       </div>
     </div>

@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-[100px] pb-15 px-6">
       {/* Background gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(255,165,201,0.08)_0%,transparent_50%),radial-gradient(ellipse_at_80%_20%,rgba(255,165,201,0.05)_0%,transparent_50%),var(--black)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(255,165,201,0.1)_0%,transparent_55%),radial-gradient(ellipse_at_80%_20%,rgba(255,165,201,0.07)_0%,transparent_50%),radial-gradient(ellipse_at_50%_50%,rgba(255,165,201,0.03)_0%,transparent_70%),var(--black)]" />
 
       {/* Particles */}
       <div ref={particlesRef} className="absolute inset-0 overflow-hidden" />

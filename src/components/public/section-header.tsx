@@ -9,8 +9,12 @@ export function SectionHeader({
 }) {
   return (
     <div className="text-center mb-16 md:mb-20">
-      <div className="text-[0.85rem] uppercase tracking-[3px] text-pink font-semibold mb-3">
-        {label}
+      <div className="inline-flex items-center gap-3 mb-5">
+        <span className="block w-8 h-px bg-pink/40" />
+        <div className="text-[0.8rem] uppercase tracking-[4px] text-pink font-semibold">
+          {label}
+        </div>
+        <span className="block w-8 h-px bg-pink/40" />
       </div>
       <h2 className="font-display text-2xl md:text-[3rem] font-bold text-white mb-5 leading-[1.2]">
         {title}
