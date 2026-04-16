@@ -10,6 +10,15 @@ const links = [
   { href: "#temoignages", label: "Témoignages" },
 ];
 
+function scrollToSection(href: string) {
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (!el) return;
+  const navHeight = 80;
+  const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,6 +59,7 @@ export function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
+                onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
                 className="text-white text-[0.88rem] font-medium tracking-[0.5px] uppercase relative hover:text-pink transition-colors duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-pink after:transition-[width] after:duration-300 hover:after:w-full"
               >
                 {link.label}
@@ -105,8 +115,8 @@ export function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); setTimeout(() => scrollToSection(link.href), 350); }}
                 className="text-white text-[1.2rem] font-medium uppercase tracking-[0.5px] hover:text-pink transition-colors"
-                onClick={() => setMenuOpen(false)}
               >
                 {link.label}
               </a>
