@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SectionHeader } from "./section-header";
 
 type Service = {
@@ -112,6 +112,18 @@ export function Services() {
     tab === "equitation"
       ? "Parce que la progression passe aussi par le bien-être, j'accorde autant d'importance à l'état émotionnel du cavalier et du cheval qu'à la technique."
       : "Chaque prestation est adaptable en durée : 30 min, 45 min, 1h ou plus sur demande. Je prends le temps nécessaire pour que votre compagnon se sente en sécurité et apaisé.";
+  const contentRef = useRef<HTMLDivElement>(null);
+  const maxHeightRef = useRef(0);
+  const [minHeight, setMinHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    if (!contentRef.current) return;
+    const h = contentRef.current.offsetHeight;
+    if (h > maxHeightRef.current) {
+      maxHeightRef.current = h;
+      setMinHeight(h);
+    }
+  }, [tab]);
 
   return (
     <section id="services" className="py-16 md:py-25 px-6">
@@ -138,14 +150,16 @@ export function Services() {
           ))}
         </div>
 
-        <p className="max-w-[800px] mx-auto text-center text-gray-light leading-[1.8] mb-12 italic text-pink">
-          {intro}
-        </p>
+        <div ref={contentRef} style={{ minHeight }}>
+          <p className="max-w-[800px] mx-auto text-center text-gray-light leading-[1.8] mb-12 italic text-pink">
+            {intro}
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((s) => (
-            <ServiceCard key={s.title} service={s} />
-          ))}
+          <div className={`grid grid-cols-1 gap-8 ${services.length === 2 ? "md:grid-cols-2 max-w-[800px] mx-auto" : "md:grid-cols-2 lg:grid-cols-3"}`}>
+            {services.map((s) => (
+              <ServiceCard key={s.title} service={s} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
