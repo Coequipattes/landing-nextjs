@@ -246,10 +246,16 @@ export function Pricing() {
 
         {/* Pet-sitting note */}
         {tab === "petsitting" && (
-          <div className="text-center mt-12 text-gray-light">
+          <div className="text-center mt-12 text-gray-light space-y-3">
             <p className="text-[0.9rem] leading-[1.7]">
               *Tarif haute saison : du 15/07 au 31/08 inclus, du 04/04 au 06/04
               inclus et du 24/12 au 02/01 inclus
+            </p>
+            <p className="text-[0.9rem] leading-[1.7]">
+              Une <strong className="text-white">pré-visite de rencontre</strong> est <strong className="text-white">gratuite et obligatoire</strong> avant toute prestation.
+            </p>
+            <p className="text-[0.9rem] leading-[1.7]">
+              Remise et retour de clés en dehors de la pré-visite : <strong className="text-white">5€ chacun</strong> (soit 5€ à la remise + 5€ au retour)
             </p>
           </div>
         )}
@@ -265,8 +271,8 @@ export function Pricing() {
             puis s'élèvent à 0,25€/km.
           </p>
           <p className="italic">
-            Tarif chiot sur devis · Garde à domicile sur devis selon durée et
-            besoins de l'animal
+            Tarif chiot sur devis · Hébergement et garde à domicile sur devis
+            selon durée et besoins de l'animal
           </p>
         </div>
       </div>
