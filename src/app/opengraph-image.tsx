@@ -84,8 +84,8 @@ export default async function Image() {
             />
             <span
               style={{
-                color: "#555",
-                fontSize: 11,
+                color: "#888",
+                fontSize: 14,
                 fontFamily: "Quicksand",
                 letterSpacing: "2.5px",
                 textTransform: "uppercase",
@@ -134,8 +134,8 @@ export default async function Image() {
             </div>
             <div
               style={{
-                color: "#3a3a3a",
-                fontSize: 13,
+                color: "#888888",
+                fontSize: 16,
                 fontFamily: "Quicksand",
                 marginTop: 16,
                 letterSpacing: "0.3px",
@@ -147,8 +147,8 @@ export default async function Image() {
 
           <span
             style={{
-              color: "#2e2e2e",
-              fontSize: 11,
+              color: "#666666",
+              fontSize: 14,
               fontFamily: "Quicksand",
               letterSpacing: "1.5px",
             }}
