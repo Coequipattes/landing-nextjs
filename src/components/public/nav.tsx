@@ -1,18 +1,19 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#about", label: "Qui suis-je" },
-  { href: "#services", label: "Services" },
-  { href: "#galerie", label: "Galerie" },
-  { href: "#tarifs", label: "Tarifs" },
-  { href: "#temoignages", label: "Témoignages" },
+  { hash: "about", label: "Qui suis-je" },
+  { hash: "services", label: "Services" },
+  { hash: "galerie", label: "Galerie" },
+  { hash: "tarifs", label: "Tarifs" },
+  { hash: "temoignages", label: "Témoignages" },
 ];
 
-function scrollToSection(href: string) {
-  const id = href.replace("#", "");
-  const el = document.getElementById(id);
+function scrollToSection(hash: string) {
+  const el = document.getElementById(hash);
   if (!el) return;
   const navHeight = 80;
   const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
@@ -20,6 +21,9 @@ function scrollToSection(href: string) {
 }
 
 export function Nav() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const hrefFor = (hash: string) => (isHome ? `#${hash}` : `/#${hash}`);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -31,7 +35,9 @@ export function Nav() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   return (
@@ -43,36 +49,44 @@ export function Nav() {
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
-        <a
-          href="#"
+        <Link
+          href="/"
           className="font-display text-[1.4rem] font-bold text-pink tracking-[0.5px]"
         >
           Co'équi'pattes
-        </a>
+        </Link>
 
-        <ul
-          className={`hidden md:flex gap-8 list-none ${
-            menuOpen ? "" : ""
-          }`}
-        >
+        <ul className={`hidden md:flex gap-8 list-none ${menuOpen ? "" : ""}`}>
           {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
-                className="text-white text-[0.88rem] font-medium tracking-[0.5px] uppercase relative hover:text-pink transition-colors duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-pink after:transition-[width] after:duration-300 hover:after:w-full"
-              >
-                {link.label}
-              </a>
+            <li key={link.hash}>
+              {isHome ? (
+                <a
+                  href={`#${link.hash}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.hash);
+                  }}
+                  className="text-white text-[0.88rem] font-medium tracking-[0.5px] uppercase relative hover:text-pink transition-colors duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-pink after:transition-[width] after:duration-300 hover:after:w-full"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  href={hrefFor(link.hash)}
+                  className="text-white text-[0.88rem] font-medium tracking-[0.5px] uppercase relative hover:text-pink transition-colors duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-pink after:transition-[width] after:duration-300 hover:after:w-full"
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
           <li>
-            <a
-              href="#contact"
+            <Link
+              href={hrefFor("contact")}
               className="bg-pink text-black px-6 py-2.5 rounded-full font-semibold uppercase text-[0.82rem] tracking-[1px] hover:bg-white hover:-translate-y-[1px] hover:shadow-[0_4px_15px_var(--pink-glow)] transition-all duration-300"
             >
               Réserver
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -108,28 +122,44 @@ export function Nav() {
         {/* Mobile menu */}
         <ul
           className={`md:hidden fixed top-[72px] left-0 w-full h-[calc(100vh-72px)] bg-black/98 backdrop-blur-[30px] flex flex-col items-center justify-center gap-10 list-none transition-[transform,visibility] duration-400 z-50 ${
-            menuOpen ? "translate-x-0 visible pointer-events-auto" : "-translate-x-full invisible pointer-events-none"
+            menuOpen
+              ? "translate-x-0 visible pointer-events-auto"
+              : "-translate-x-full invisible pointer-events-none"
           }`}
         >
           {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={(e) => { e.preventDefault(); setMenuOpen(false); setTimeout(() => scrollToSection(link.href), 350); }}
-                className="text-white text-[1.2rem] font-medium uppercase tracking-[0.5px] hover:text-pink transition-colors"
-              >
-                {link.label}
-              </a>
+            <li key={link.hash}>
+              {isHome ? (
+                <a
+                  href={`#${link.hash}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMenuOpen(false);
+                    setTimeout(() => scrollToSection(link.hash), 350);
+                  }}
+                  className="text-white text-[1.2rem] font-medium uppercase tracking-[0.5px] hover:text-pink transition-colors"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  href={hrefFor(link.hash)}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-white text-[1.2rem] font-medium uppercase tracking-[0.5px] hover:text-pink transition-colors"
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
           <li>
-            <a
-              href="#contact"
+            <Link
+              href={hrefFor("contact")}
               className="bg-pink text-black px-8 py-3 rounded-full font-semibold uppercase text-[0.95rem] tracking-[1px]"
               onClick={() => setMenuOpen(false)}
             >
               Réserver
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
