@@ -1,0 +1,10 @@
+export { ServiceArea } from "./service-area";
+export { ServiceBenefits } from "./service-benefits";
+export { ServiceCta } from "./service-cta";
+export { ServiceFaq } from "./service-faq";
+export { ServiceHero } from "./service-hero";
+export { ServiceIntro } from "./service-intro";
+export { ServiceJsonLd } from "./service-json-ld";
+export { ServicePricing } from "./service-pricing";
+export { ServiceRelated } from "./service-related";
+export { ServiceTestimonials } from "./service-testimonials";

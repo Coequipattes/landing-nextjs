@@ -1,0 +1,59 @@
+import type { ServicePageData } from "@/content/service-pages/types";
+import { SectionHeader } from "../section-header";
+
+type Review = {
+  author?: string;
+  rating?: number;
+  text: string;
+};
+
+export function ServiceTestimonials({
+  data,
+  reviews,
+}: {
+  data: ServicePageData;
+  reviews: Review[];
+}) {
+  const filtered = reviews
+    .filter((r) =>
+      data.testimonialKeywords.some((kw) =>
+        r.text.toLowerCase().includes(kw.toLowerCase()),
+      ),
+    )
+    .slice(0, 3);
+
+  if (filtered.length === 0) return null;
+
+  return (
+    <section className="py-16 md:py-25 px-6">
+      <div className="max-w-[1200px] mx-auto">
+        <SectionHeader label="Témoignages" title="Ils m'ont fait confiance" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {filtered.map((r) => (
+            <article
+              key={`${r.author ?? "anon"}-${r.text.slice(0, 40)}`}
+              className="bg-black-card border border-pink/10 rounded-2xl p-6 md:p-8"
+            >
+              {typeof r.rating === "number" && (
+                <p className="text-pink mb-3">
+                  <span className="sr-only">{`Note : ${r.rating} sur 5`}</span>
+                  <span aria-hidden="true">
+                    {"★".repeat(Math.round(r.rating))}
+                  </span>
+                </p>
+              )}
+              <p className="text-gray-light leading-[1.7] mb-4 italic">
+                « {r.text} »
+              </p>
+              {r.author && (
+                <p className="text-[0.9rem] text-pink font-semibold">
+                  — {r.author}
+                </p>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
