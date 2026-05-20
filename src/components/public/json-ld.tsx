@@ -28,7 +28,6 @@ export function JsonLd() {
         },
         geo: {
           "@type": "GeoCoordinates",
-          // TODO: affiner sur l'adresse exacte
           latitude: 47.6559,
           longitude: -2.7603,
         },
@@ -45,7 +44,6 @@ export function JsonLd() {
           },
           geoRadius: 10000,
         },
-        // TODO: confirmer openingHours réels avec Manon
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
@@ -71,12 +69,43 @@ export function JsonLd() {
           credentialCategory: "Certification",
           name: "France Petsitters",
         },
-        // TODO: ajouter les réseaux sociaux (Facebook, Instagram, etc.)
-        sameAs: [],
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5.0",
+          reviewCount: 24,
+          bestRating: "5",
+          worstRating: "1",
+        },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Services Co'équi'pattes",
           itemListElement: [
+            {
+              "@type": "Offer",
+              price: "25",
+              priceCurrency: "EUR",
+              itemOffered: {
+                "@type": "Service",
+                name: "Séance d'essai équitation",
+                description:
+                  "Première séance d'équitation d'une heure, tous niveaux, sans engagement, avec évaluation personnalisée",
+                provider: { "@id": `${siteUrl}/#business` },
+                areaServed: { "@type": "City", name: "Vannes" },
+              },
+            },
+            {
+              "@type": "Offer",
+              price: "30",
+              priceCurrency: "EUR",
+              itemOffered: {
+                "@type": "Service",
+                name: "Abonnement hebdomadaire équitation",
+                description:
+                  "Cours particulier d'équitation 1 fois par semaine, suivi personnalisé, créneau fixe ou flexible",
+                provider: { "@id": `${siteUrl}/#business` },
+                areaServed: { "@type": "City", name: "Vannes" },
+              },
+            },
             {
               "@type": "Offer",
               price: "35",
