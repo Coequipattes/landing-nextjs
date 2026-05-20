@@ -20,16 +20,21 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: "Co'équi'pattes — Monitrice d'équitation & Pet-sitter à Vannes",
+    default:
+      "Pet Sitter à Vannes — Garde Chien, Chat & Animaux | Co'équi'pattes",
     template: "%s | Co'équi'pattes",
   },
   description:
-    "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
+    "Garde de chien, chat et NAC à Vannes et dans le Morbihan. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
   metadataBase: new URL(env.siteUrl),
   keywords: [
     "monitrice équitation Vannes",
     "cours équitation Vannes",
     "pet-sitter Vannes",
+    "pet sitter Morbihan",
+    "garde chien Vannes",
+    "garde chat Vannes",
+    "promeneur de chien Vannes",
     "garde animaux Vannes",
     "équitation Morbihan",
     "pet-sitting Morbihan",
@@ -43,16 +48,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "Co'équi'pattes",
-    title: "Co'équi'pattes — Monitrice d'équitation & Pet-sitter à Vannes",
+    title: "Pet Sitter à Vannes — Garde Chien, Chat & Animaux | Co'équi'pattes",
     description:
-      "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
+      "Garde de chien, chat et NAC à Vannes et dans le Morbihan. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
     url: env.siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Co'équi'pattes — Monitrice d'équitation & Pet-sitter à Vannes",
+    title: "Pet Sitter à Vannes — Garde Chien, Chat & Animaux | Co'équi'pattes",
     description:
-      "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
+      "Garde de chien, chat et NAC à Vannes et dans le Morbihan. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
   },
 };
 

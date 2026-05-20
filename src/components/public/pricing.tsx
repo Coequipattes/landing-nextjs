@@ -252,7 +252,7 @@ export function Pricing() {
               inclus et du 24/12 au 02/01 inclus
             </p>
             <p className="text-[0.9rem] leading-[1.7]">
-              Une <strong className="text-white">pré-visite de rencontre</strong> est <strong className="text-white">gratuite et obligatoire</strong> avant toute prestation.
+              Une <strong className="text-white">pré-visite découverte</strong> est <strong className="text-white">gratuite et obligatoire</strong> avant toute prestation.
             </p>
             <p className="text-[0.9rem] leading-[1.7]">
               Remise et retour de clés en dehors de la pré-visite : <strong className="text-white">5€ chacun</strong> (soit 5€ à la remise + 5€ au retour)
