@@ -1,106 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import {
+  type PriceCard,
+  equitationCards,
+  equitationExtras,
+  petsittingCards,
+} from "@/content/pricing-data";
 import { SectionHeader } from "./section-header";
-
-type PriceCard = {
-  title: string;
-  price: string;
-  unit?: string;
-  description: string;
-  features: string[];
-  featured?: boolean;
-};
-
-const equitationCards: PriceCard[] = [
-  {
-    title: "Séance d'essai",
-    price: "25€",
-    description: "Découvrez mon approche lors d'une première séance",
-    features: [
-      "1 heure de cours",
-      "Tous niveaux",
-      "Évaluation personnalisée",
-      "Sans engagement",
-    ],
-  },
-  {
-    title: "Abonnement hebdo",
-    price: "30€",
-    unit: "/cours",
-    description: "Cours particulier 1 fois par semaine",
-    features: [
-      "1 cours par semaine",
-      "Suivi personnalisé",
-      "Progression régulière",
-      "Créneau fixe ou flexible",
-      "Économisez 5€/cours",
-    ],
-    featured: true,
-  },
-  {
-    title: "Cours particulier",
-    price: "35€",
-    unit: "/cours",
-    description: "Cours individuel à l'unité",
-    features: [
-      "1 heure de cours",
-      "Accompagnement personnalisé",
-      "Tous niveaux",
-      "Réservation flexible",
-    ],
-  },
-];
-
-const petsittingCards: PriceCard[] = [
-  {
-    title: "Promenade",
-    price: "12-22€",
-    description: "Balades adaptées au rythme de votre chien",
-    features: [
-      "30 min : 12€ / 16€*",
-      "45 min : 15€ / 19€*",
-      "1 heure : 18€ / 22€*",
-    ],
-  },
-  {
-    title: "Visite + promenade",
-    price: "15-18€",
-    description: "Promenade de 30 min + 15 min de soins",
-    features: [
-      "30 min de promenade",
-      "15 min de soins avant/après",
-      "Nourrissage, jeux et câlins",
-      "Prix : 15€ / 18€*",
-    ],
-    featured: true,
-  },
-  {
-    title: "Visite à domicile",
-    price: "10-20€",
-    description: "Pour chats, NAC et tous animaux",
-    features: [
-      "30 min : 10,20€ / 13,60€*",
-      "45 min : 13€ / 16€*",
-      "1 heure : 16€ / 20€*",
-    ],
-  },
-];
-
-const equitationExtras = [
-  {
-    title: "Cours collectif",
-    price: "25€",
-    unit: "/cours",
-    description: "À partir de 3 cavaliers — Ambiance conviviale",
-  },
-  {
-    title: "Travail de cheval",
-    price: "35€",
-    unit: "/séance",
-    description: "Je travaille votre cheval pendant votre absence",
-  },
-];
 
 function Card({ card }: { card: PriceCard }) {
   return (
