@@ -3,7 +3,7 @@
 Branche : `feat/seo-service-pages`
 Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 
-## Phase A — Fondations (sans contenu)
+## Phase A — Fondations (sans contenu) — COMPLÈTE, mergeable
 - [x] Créer `src/content/service-pages/types.ts` (interface `ServicePageData`)
 - [x] Créer 5 fichiers data squelettes : `src/content/service-pages/{slug}.ts`
 - [x] Extraire `equitationCards` + `petsittingCards` de `pricing.tsx` vers `src/content/pricing-data.ts`
@@ -25,11 +25,11 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 - [x] Build PASS + sitemap.xml généré contient les 5 routes
 
 ## Phase B — Page pilote `/pet-sitting-vannes` (à faire après A)
-- [ ] Page complète avec contenu placeholder
-- [ ] `next build` → route visible comme `○ /pet-sitting-vannes` (statique)
-- [ ] Test Rich Results sur l'URL en preview
-- [ ] Lighthouse SEO ≥ 95
-- [ ] Revue manuelle : 0 lien cassé, FAQ a11y, photo dédiée
+- [x] Page complète avec contenu draft (à valider Manon)
+- [x] `next build` → route `/pet-sitting-vannes` visible
+- [ ] Test Rich Results sur l'URL en preview (Phase F, après déploiement)
+- [ ] Lighthouse SEO ≥ 95 (Phase F)
+- [ ] Revue manuelle : 0 lien cassé, FAQ a11y, photo dédiée (photo Manon pending)
 
 ## Phase C — Brief contenu Manon (parallèle, BLOQUANT pour Phase D)
 - [ ] Email envoyé à Manon avec questions par page
@@ -57,11 +57,11 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 - [ ] Snapshot positions actuelles (baseline pour mesurer dans 4-8 semaines)
 
 ## TODOs JSON-LD (Vague 1, à compléter avec Manon)
-- [ ] Logo : vrai fichier (`logo_rose.png` existe, pas `logo_rose.jpeg` actuellement référencé) → fix immédiat possible
+- [x] Logo : `logo_rose.png` confirmé (fix appliqué)
+- [x] `aggregateRating` : 5.0/24 confirmé par Manon via Google Maps
 - [ ] Géoloc précise du 4 rue Tamara de Lempicka (actuellement centre Vannes 47.6559 / -2.7603)
 - [ ] `openingHoursSpecification` réels (actuellement Lun-Dim 08-20h par défaut)
 - [ ] `sameAs` : URLs Facebook, Instagram, Google Business Profile
-- [ ] `aggregateRating` : note Google moyenne + nombre d'avis (omis pour l'instant, à ajouter)
 - [ ] `serviceArea` rayon : confirmer 10 km
 - [ ] Tarif "Travail cheval" : confirmer 35€/séance
 - [ ] Tarif "Cours collectif" : confirmer 25€ unitaire vs forfait
