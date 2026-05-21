@@ -16,8 +16,7 @@ export function JsonLd() {
         telephone: "+33766744337",
         email: env.contactEmail,
         image: `${siteUrl}/opengraph-image`,
-        // TODO confirmer logo (logo_rose.jpeg vs logo_rose.png vs logo_rose_cropped.png)
-        logo: `${siteUrl}/logo_rose.jpeg`,
+        logo: `${siteUrl}/logo_rose.png`,
         priceRange: "€",
         address: {
           "@type": "PostalAddress",
