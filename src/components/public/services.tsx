@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { SectionHeader } from "./section-header";
 
@@ -159,6 +160,23 @@ export function Services() {
             {services.map((s) => (
               <ServiceCard key={s.title} service={s} />
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/equitation-vannes"
+              className={`inline-flex items-center gap-2 text-pink text-sm font-semibold underline underline-offset-4 decoration-pink/40 hover:decoration-pink transition-colors ${tab === "equitation" ? "" : "hidden"}`}
+            >
+              En savoir plus : Cours d'équitation à Vannes
+              <span aria-hidden="true">→</span>
+            </Link>
+            <Link
+              href="/pet-sitting-vannes"
+              className={`inline-flex items-center gap-2 text-pink text-sm font-semibold underline underline-offset-4 decoration-pink/40 hover:decoration-pink transition-colors ${tab === "petsitting" ? "" : "hidden"}`}
+            >
+              En savoir plus : Pet sitter à Vannes
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </div>
