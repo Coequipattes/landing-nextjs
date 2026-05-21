@@ -17,9 +17,9 @@ export const gardeChienVannes: ServicePageData = {
   },
   intro: {
     paragraphs: [
-      "[DRAFT] Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse pour votre chien. La pension, le chenil, voire la famille rapidement dépassée par les besoins quotidiens : les solutions classiques ont toutes le même défaut, elles arrachent votre compagnon à son environnement. À Vannes et alentours, je propose une approche différente : la garde à domicile, où votre chien continue sa vie normalement, avec ses odeurs, son panier, son jardin et ses horaires de balade.",
-      "[DRAFT] Concrètement, j'organise une à trois visites par jour selon l'âge et les besoins de votre chien. Chaque passage comprend la sortie, le repas, un temps de jeu ou de câlin, et la vérification de l'état général. Pour les absences longues, je peux aussi assurer le tri du courrier, l'arrosage des plantes ou l'ouverture des volets — autant de petits gestes qui maintiennent la maison vivante et dissuadent les intrusions.",
-      "[DRAFT] Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chien apprend à me connaître dans un cadre rassurant, où je note ses consignes (alimentation, traitements, vétérinaire référent) et où nous calons ensemble le rythme des visites. Je suis certifiée France Petsitters et couverte par une assurance responsabilité civile professionnelle (Abeille Assurances) pour intervenir en toute sécurité chez vous.",
+      "Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse pour votre chien. La pension, le chenil, voire la famille rapidement dépassée par les besoins quotidiens : les solutions classiques ont toutes le même défaut, elles arrachent votre compagnon à son environnement. À Vannes et alentours, je propose une approche différente : la garde à domicile, où votre chien continue sa vie normalement, avec ses odeurs, son panier, son jardin et ses horaires de balade.",
+      "Concrètement, j'organise une à trois visites par jour selon l'âge et les besoins de votre chien. Chaque passage comprend la sortie, le repas, un temps de jeu ou de câlin, et la vérification de l'état général. Pour les absences longues, je peux aussi assurer le tri du courrier, l'arrosage des plantes ou l'ouverture des volets — autant de petits gestes qui maintiennent la maison vivante et dissuadent les intrusions.",
+      "Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chien apprend à me connaître dans un cadre rassurant, où je note ses consignes (alimentation, traitements, vétérinaire référent) et où nous calons ensemble le rythme des visites. Je suis certifiée France Petsitters et couverte par une assurance responsabilité civile professionnelle (Abeille Assurances) pour intervenir en toute sécurité chez vous.",
     ],
   },
   benefits: [
@@ -107,7 +107,6 @@ export const gardeChienVannes: ServicePageData = {
     subline: "Votre chien reste dans son environnement",
   },
   related: [
-    { slug: "pet-sitting-vannes", label: "Pet-sitting à Vannes" },
     { slug: "promeneur-chien-vannes", label: "Promeneur de chien à Vannes" },
     { slug: "garde-chat-vannes", label: "Garde de chat à Vannes" },
   ],

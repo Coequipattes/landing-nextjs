@@ -19,9 +19,9 @@ export const equitationVannes: ServicePageData = {
   },
   intro: {
     paragraphs: [
-      "[DRAFT] L'équitation est ma première passion. Au-delà du sport, c'est un dialogue avec un être vivant — et c'est ce dialogue que j'enseigne. À Vannes, je propose des cours adaptés à chaque cavalier, du débutant complet qui n'a jamais touché un cheval au cavalier confirmé qui veut perfectionner une discipline. Mon approche met le bien-être du cheval au cœur de l'apprentissage : un cavalier respectueux fait un meilleur sportif.",
-      "[DRAFT] Pédagogie individualisée : chaque cavalier a son rythme, ses appréhensions, ses objectifs. Que vous souhaitiez reprendre après une longue pause, vous remettre en confiance après une chute, préparer un examen ou simplement passer un moment de qualité avec un cheval, on construit ensemble un plan progressif. Les séances peuvent se faire en particulier (attention totale, progression rapide) ou en collectif à partir de 3 cavaliers (ambiance, émulation, tarif plus doux).",
-      "[DRAFT] Au-delà des cours, je propose aussi le travail de cheval propriétaire : si vous avez votre propre monture et que vous manquez de temps pour la travailler, je peux la sortir, la détendre, la remettre dans le bon mouvement. C'est précieux pour entretenir le niveau du cheval sans qu'il prenne de mauvaises habitudes pendant vos absences. [DRAFT - diplômes et structure d'enseignement exacts à confirmer Manon].",
+      "L'équitation est ma première passion. Au-delà du sport, c'est un dialogue avec un être vivant — et c'est ce dialogue que j'enseigne. À Vannes, je propose des cours adaptés à chaque cavalier, du débutant complet qui n'a jamais touché un cheval au cavalier confirmé qui veut perfectionner une discipline. Mon approche met le bien-être du cheval au cœur de l'apprentissage : un cavalier respectueux fait un meilleur sportif.",
+      "Pédagogie individualisée : chaque cavalier a son rythme, ses appréhensions, ses objectifs. Que vous souhaitiez reprendre après une longue pause, vous remettre en confiance après une chute, préparer un examen ou simplement passer un moment de qualité avec un cheval, on construit ensemble un plan progressif. Les séances peuvent se faire en particulier (attention totale, progression rapide) ou en collectif à partir de 3 cavaliers (ambiance, émulation, tarif plus doux).",
+      "Au-delà des cours, je propose aussi le travail de cheval propriétaire : si vous avez votre propre monture et que vous manquez de temps pour la travailler, je peux la sortir, la détendre, la remettre dans le bon mouvement. C'est précieux pour entretenir le niveau du cheval sans qu'il prenne de mauvaises habitudes pendant vos absences. [DRAFT - diplômes et structure d'enseignement exacts à confirmer Manon].",
     ],
   },
   benefits: [
@@ -105,7 +105,6 @@ export const equitationVannes: ServicePageData = {
     subline: "Cours personnalisé, tous niveaux",
   },
   related: [
-    { slug: "pet-sitting-vannes", label: "Pet-sitting à Vannes" },
     { slug: "garde-chien-vannes", label: "Garde de chien à Vannes" },
     { slug: "garde-chat-vannes", label: "Garde de chat à Vannes" },
   ],

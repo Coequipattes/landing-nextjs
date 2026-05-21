@@ -17,9 +17,9 @@ export const promeneurChienVannes: ServicePageData = {
   },
   intro: {
     paragraphs: [
-      "[DRAFT] Tous les chiens ont besoin de sortir tous les jours, et pas qu'à la va-vite avant de partir au boulot. Mais entre les journées de télétravail trop denses, les déplacements pro, une mobilité qui se réduit avec l'âge ou simplement une météo dissuasive, on finit par culpabiliser de ne pas offrir assez à son chien. C'est exactement pour répondre à ces situations que j'interviens comme promeneuse de chien à Vannes.",
-      "[DRAFT] Mes balades durent 30, 45 ou 60 minutes selon la formule choisie et l'énergie de votre chien. Toujours en laisse — c'est ma règle de sécurité non négociable, quelle que soit la sociabilité du chien — et toujours adaptées à son rythme : un jeune chien de berger n'a pas les mêmes besoins qu'un labrador sénior. Je varie les itinéraires autour de Vannes pour offrir des stimulations olfactives nouvelles à chaque sortie.",
-      "[DRAFT] Pour les propriétaires qui ont besoin d'une régularité, un forfait hebdomadaire ou plurihebdomadaire est plus avantageux qu'une balade à l'unité. Tout commence par une pré-visite gratuite : je rencontre votre chien dans son cadre, j'observe son comportement à la laisse, et nous calons un créneau qui s'intègre dans votre journée. Certifiée France Petsitters et assurée responsabilité civile pro.",
+      "Tous les chiens ont besoin de sortir tous les jours, et pas qu'à la va-vite avant de partir au boulot. Mais entre les journées de télétravail trop denses, les déplacements pro, une mobilité qui se réduit avec l'âge ou simplement une météo dissuasive, on finit par culpabiliser de ne pas offrir assez à son chien. C'est exactement pour répondre à ces situations que j'interviens comme promeneuse de chien à Vannes.",
+      "Mes balades durent 30, 45 ou 60 minutes selon la formule choisie et l'énergie de votre chien. Toujours en laisse — c'est ma règle de sécurité non négociable, quelle que soit la sociabilité du chien — et toujours adaptées à son rythme : un jeune chien de berger n'a pas les mêmes besoins qu'un labrador sénior. Je varie les itinéraires autour de Vannes pour offrir des stimulations olfactives nouvelles à chaque sortie.",
+      "Pour les propriétaires qui ont besoin d'une régularité, un forfait hebdomadaire ou plurihebdomadaire est plus avantageux qu'une balade à l'unité. Tout commence par une pré-visite gratuite : je rencontre votre chien dans son cadre, j'observe son comportement à la laisse, et nous calons un créneau qui s'intègre dans votre journée. Certifiée France Petsitters et assurée responsabilité civile pro.",
     ],
   },
   benefits: [
@@ -108,7 +108,6 @@ export const promeneurChienVannes: ServicePageData = {
   },
   related: [
     { slug: "garde-chien-vannes", label: "Garde de chien à Vannes" },
-    { slug: "pet-sitting-vannes", label: "Pet-sitting à Vannes" },
     { slug: "garde-chat-vannes", label: "Garde de chat à Vannes" },
   ],
 };

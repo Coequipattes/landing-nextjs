@@ -8,7 +8,7 @@
 
 Coucou mon coeur,
 
-Petit point boulot. J'ai bien avancé sur le site : Google commence à mieux comprendre ce que tu fais et où tu le fais. Maintenant je veux créer **5 pages dédiées** (une par service) pour qu'on capte les gens qui tapent par exemple "garde chien Vannes" ou "promeneur chien Vannes" — c'est là qu'il y a le plus gros levier.
+Petit point boulot. J'ai bien avancé sur le site : Google commence à mieux comprendre ce que tu fais et où tu le fais. La home est déjà bien optimisée pour "pet sitter à Vannes" (le mot-clé global), et je viens de créer **4 pages dédiées** (une par service niche) pour qu'on capte aussi les gens qui tapent par exemple "garde chien Vannes" ou "promeneur chien Vannes" — c'est là qu'il y a le plus gros levier complémentaire.
 
 Le souci : je peux pas inventer ton métier à ta place. Si je rédige tout seul, ça sonnera générique et Google le verra. J'ai besoin de **ta voix, tes vraies anecdotes, les vraies questions de tes clients**.
 
@@ -34,14 +34,13 @@ Ces infos vont servir à dire à Google "voici officiellement qui est Co'équi'p
 
 ## 2. Photos (1 par page + 2 photos "vitrine")
 
-Il me faut **5 photos différentes** entre elles et différentes de celles déjà en ligne. Idéalement :
+Il me faut **4 photos différentes** entre elles et différentes de celles déjà en ligne. Idéalement :
 - Format JPG ou WebP
 - Au moins **1600 px de large**
 - Bonne qualité, lumière naturelle si possible
 
 | Page | Photo demandée |
 |---|---|
-| Pet-sitting | 1 photo représentative multi-espèces |
 | Garde chien | 1 photo chien (en garde, câlin, jeu) |
 | Garde chat | 1 photo chat (visite à domicile) |
 | Promenade | 1 photo de promenade dehors, en laisse |
@@ -68,28 +67,27 @@ Pour **chaque page**, j'ai besoin de deux choses :
 
 Puis quelques précisions spécifiques :
 
-### Page 1 — Pet-sitting (page principale)
-- 3 phrases : **pourquoi tu fais ce métier** (ton "why")
-- Liste des **communes** dans ton rayon 10 km — coche celles que tu fais : Vannes centre, Conleau, Séné, Theix-Noyalo, Arradon, Saint-Avé, Plescop, Ploeren, autres ?
-- 5 FAQ (idées : quels animaux acceptés, NAC oui/non, à ton domicile ou au leur, assurance, comment se passe la 1re rencontre)
+### Transverse (pour la home + les 4 pages)
+- 3 phrases : **pourquoi tu fais ce métier** (ton "why") — sert sur la home (About) et en intro générale
+- Liste des **communes** dans ton rayon 10 km — coche celles que tu fais : Vannes centre, Conleau, Séné, Theix-Noyalo, Arradon, Saint-Avé, Plescop, Ploeren, autres ? (sert sur la home + les blocs "Zone d'intervention" de chaque page)
 
-### Page 2 — Garde chien
+### Page 1 — Garde chien
 - 1 anecdote concrète de **garde longue durée**
 - Précisions : durée max acceptée, nombre de visites/jour, **comment tu gères une urgence véto**
 - 5 FAQ (idées : combien de visites/jour, chiens réactifs, remise des clés, maladie pendant l'absence, chiots oui/non)
 
-### Page 3 — Garde chat
+### Page 2 — Garde chat
 - 2-3 phrases sur **pourquoi un chat préfère rester chez lui** plutôt qu'en pension (c'est ton USP)
 - Liste des **NAC** que tu acceptes : lapins, cochons d'Inde, rongeurs, oiseaux, reptiles ? Coche.
 - 5 FAQ (idées : nombre de visites/jour, plusieurs chats, médicaments, litière, chats craintifs)
 
-### Page 4 — Promeneur chien
+### Page 3 — Promeneur chien
 - **À qui s'adresse** ce service ? (actifs, télétravailleurs, propriétaires âgés, autre)
 - 2 ou 3 **noms d'endroits** où tu balades autour de Vannes (parc, bord de mer, bois)
 - 1 témoignage spécifique d'un client en **promenades régulières** si tu en as un sous la main
 - 5 FAQ (idées : plusieurs chiens en même temps, lâcher en liberté oui/non, pluie, horaire de passage, régulier vs ponctuel)
 
-### Page 5 — Équitation
+### Page 4 — Équitation
 - Ton **parcours en 3 phrases** : diplômes, expérience, ta philosophie pédagogique
 - **Où** tu donnes les cours exactement : écurie partenaire (laquelle, où ?), domicile du cavalier, déplacement ?
 - **À qui** ça s'adresse : débutants, repris d'équitation, confirmés, enfants à partir de quel âge ?
@@ -134,8 +132,7 @@ B.
 - [ ] Cours collectif 25 € : par pers. / forfait
 - [ ] Travail cheval 35 € : par séance, durée ___
 
-### Photos (5 + 2 vitrine)
-- [ ] Pet-sitting multi-espèces
+### Photos (4 + 2 vitrine)
 - [ ] Chien
 - [ ] Chat
 - [ ] Promenade
@@ -143,11 +140,9 @@ B.
 - [ ] **Vitrine Hero** : toi + chien ou chat, format portrait 4:5, lumière naturelle
 - [ ] **Vitrine About** : toi en action (cours, balade, soin)
 
-### Pet-sitting (page ombrelle)
+### Transverse (home + toutes les pages)
 - [ ] Pourquoi ce métier (3 phrases)
 - [ ] Communes desservies (cochées)
-- [ ] 1-2 anecdotes
-- [ ] 5 FAQ + réponses
 
 ### Garde chien
 - [ ] 1 anecdote garde longue durée

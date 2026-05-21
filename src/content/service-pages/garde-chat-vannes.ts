@@ -17,9 +17,9 @@ export const gardeChatVannes: ServicePageData = {
   },
   intro: {
     paragraphs: [
-      "[DRAFT] Le chat est un animal territorial : pour lui, le pire des stress n'est pas votre absence, c'est le changement d'environnement. Pension collective, transport en voiture, odeurs inconnues — autant de facteurs qui peuvent déclencher anxiété, refus alimentaire, voire problèmes de santé. La solution la plus respectueuse de sa nature est simple : qu'il reste chez vous. C'est exactement ce que je propose à Vannes et dans le Morbihan.",
-      "[DRAFT] Mes visites s'organisent autour des vrais besoins du chat : alimentation à heures régulières, entretien complet de la litière, eau fraîche, contrôle visuel de son état, et surtout du temps de présence — jeu, câlins, brossage selon ses envies. Je laisse aussi quelques signes de vie discrets (volets ouverts, courrier rentré) pour maintenir l'illusion d'une maison habitée.",
-      "[DRAFT] Multi-chats, chat craintif, chat sous traitement, NAC qui partagent l'espace : je m'adapte à toutes les configurations. Une pré-visite gratuite permet de faire connaissance dans le calme, de noter vos consignes précises et de repérer les cachettes habituelles. Certifiée France Petsitters, assurée responsabilité civile pro (Abeille Assurances), j'interviens en toute sécurité chez vous.",
+      "Le chat est un animal territorial : pour lui, le pire des stress n'est pas votre absence, c'est le changement d'environnement. Pension collective, transport en voiture, odeurs inconnues — autant de facteurs qui peuvent déclencher anxiété, refus alimentaire, voire problèmes de santé. La solution la plus respectueuse de sa nature est simple : qu'il reste chez vous. C'est exactement ce que je propose à Vannes et dans le Morbihan.",
+      "Mes visites s'organisent autour des vrais besoins du chat : alimentation à heures régulières, entretien complet de la litière, eau fraîche, contrôle visuel de son état, et surtout du temps de présence — jeu, câlins, brossage selon ses envies. Je laisse aussi quelques signes de vie discrets (volets ouverts, courrier rentré) pour maintenir l'illusion d'une maison habitée.",
+      "Multi-chats, chat craintif, chat sous traitement, NAC qui partagent l'espace : je m'adapte à toutes les configurations. Une pré-visite gratuite permet de faire connaissance dans le calme, de noter vos consignes précises et de repérer les cachettes habituelles. Certifiée France Petsitters, assurée responsabilité civile pro (Abeille Assurances), j'interviens en toute sécurité chez vous.",
     ],
   },
   benefits: [
@@ -107,7 +107,6 @@ export const gardeChatVannes: ServicePageData = {
     subline: "Évitez le stress du chenil",
   },
   related: [
-    { slug: "pet-sitting-vannes", label: "Pet-sitting à Vannes" },
     { slug: "garde-chien-vannes", label: "Garde de chien à Vannes" },
     { slug: "promeneur-chien-vannes", label: "Promeneur de chien à Vannes" },
   ],
