@@ -49,6 +49,32 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 - [x] Home `Services` : 2 liens contextuels "En savoir plus →"
 - [x] Bloc `ServiceRelated` "Voir aussi" sur chaque page service
 
+## Phase I — Refonte Hero humain — COMPLÈTE
+Contexte : le Hero précédent était "marque vitrine" multi-services type SaaS.
+La concurrence locale (Animaute, Goliate) = marketplaces froides — notre
+différenciation = c'est UNE personne avec une vraie vocation. Décision :
+photo grande échelle de Manon en split desktop / stack mobile, H1 hybride
+"Manon, votre pet sitter & monitrice d'équitation à Vannes" (préserve SEO
+Vannes + services + introduit la personne).
+- [x] Audit `hero.tsx` actuel + identification de ce qui n'incarne pas la nouvelle vision
+- [x] Refonte `hero.tsx` : layout split 7/5 desktop, stack mobile (photo en premier)
+- [x] Photo `/uploads/manon.jpg` via `next/image` avec `preload` +
+      `fetchPriority="high"` (LCP), `sizes` responsive, `object-position` 20%
+- [x] H1 hybride humain + SEO : "Manon" XL pink + sous-titre service
+- [x] Eyebrow `font-accent` "Bonjour, moi c'est" (signature manuscrite)
+- [x] Sous-titre chaleureux mentionnant Morbihan + USP "100% du temps"
+- [x] CTAs conservés (`#services` + `#contact`) + focus-visible ring
+- [x] Trust signals discrets sous CTAs (3 bullets pink)
+- [x] `about.tsx` : refonte sans portrait dominant pour éviter la duplication
+      visuelle avec le Hero (même photo 2 fois d'affilée = visuellement
+      redondant). Remplacé par carte "lettre manuscrite" : citation Caveat XL
+      + signature « Manon » + paw watermark SVG + badges de confiance.
+      Photo About dédiée demandée dans BRIEF_MANON.md (toi en action :
+      cours, balade, soin) — quand reçue : réintroduire un visuel
+      différent du Hero.
+- [x] BRIEF_MANON.md : ajout section photo Hero/About + checklist
+- [x] Validations : tsc PASS, biome PASS, build PASS
+
 ## Phase H — Refonte home en hub vitrine — COMPLÈTE
 Contexte : la home dupliquait le contenu des 5 pages services dédiées
 (cannibalisation + duplicate content). Décision : transformer la home en
