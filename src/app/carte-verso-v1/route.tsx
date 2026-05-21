@@ -1,10 +1,9 @@
 import { ImageResponse } from "next/og";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { CARD_FORMAT, PrintGuides } from "@/lib/print-card-format";
 
 export const runtime = "nodejs";
-export const size = { width: 2008, height: 1276 };
-export const contentType = "image/png";
 
 async function loadFont(family: string, weight: number): Promise<ArrayBuffer> {
   const css = await fetch(
@@ -22,7 +21,9 @@ async function loadFont(family: string, weight: number): Promise<ArrayBuffer> {
   return fetch(url).then((r) => r.arrayBuffer());
 }
 
-export default async function Image() {
+export async function GET(request: Request) {
+  const DEBUG_GUIDES = new URL(request.url).searchParams.get("guides") === "1";
+
   const [playfairBold, quicksandSemibold] = await Promise.all([
     loadFont("Playfair Display", 700),
     loadFont("Quicksand", 600),
@@ -44,13 +45,24 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
-          alignItems: "center",
-          padding: "0 140px",
-          gap: 100,
           position: "relative",
-          overflow: "hidden",
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            left: CARD_FORMAT.bleed,
+            top: CARD_FORMAT.bleed,
+            width: CARD_FORMAT.trim.width,
+            height: CARD_FORMAT.trim.height,
+            background: "#0e0612",
+            display: "flex",
+            alignItems: "center",
+            padding: "0 140px",
+            gap: 100,
+            overflow: "hidden",
+          }}
+        >
         {/* Glow gauche */}
         <div
           style={{
@@ -82,27 +94,27 @@ export default async function Image() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 28,
-              marginBottom: 60,
+              gap: 30,
+              marginBottom: 70,
             }}
           >
             <img
               src={logoSrc}
-              width={240}
-              height={240}
+              width={296}
+              height={296}
               style={{ objectFit: "contain" }}
             />
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 6,
+                gap: 7,
               }}
             >
               <span
                 style={{
                   color: "#ffffff",
-                  fontSize: 82,
+                  fontSize: 88,
                   fontFamily: "Playfair Display",
                   fontWeight: 700,
                   lineHeight: 1,
@@ -113,7 +125,7 @@ export default async function Image() {
               <span
                 style={{
                   color: "#ffa5c9",
-                  fontSize: 44,
+                  fontSize: 48,
                   fontFamily: "Quicksand",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
@@ -131,7 +143,7 @@ export default async function Image() {
               height: 2,
               background:
                 "linear-gradient(90deg, rgba(255,165,201,0.3) 0%, transparent 100%)",
-              marginBottom: 60,
+              marginBottom: 70,
               display: "flex",
             }}
           />
@@ -141,18 +153,18 @@ export default async function Image() {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: 36,
+              gap: 40,
             }}
           >
             {[
               "Monitrice d'équitation indépendante",
               "Pet-sitter professionnelle",
             ].map((label) => (
-              <div key={label} style={{ display: "flex", alignItems: "center", gap: 24 }}>
+              <div key={label} style={{ display: "flex", alignItems: "center", gap: 26 }}>
                 <div
                   style={{
-                    width: 10,
-                    height: 10,
+                    width: 11,
+                    height: 11,
                     borderRadius: "50%",
                     background: "#ffa5c9",
                     flexShrink: 0,
@@ -162,7 +174,7 @@ export default async function Image() {
                 <span
                   style={{
                     color: "#ccc",
-                    fontSize: 60,
+                    fontSize: 64,
                     fontFamily: "Quicksand",
                     letterSpacing: "0.5px",
                   }}
@@ -178,7 +190,7 @@ export default async function Image() {
         <div
           style={{
             width: 2,
-            height: 700,
+            height: 780,
             background:
               "linear-gradient(180deg, transparent 0%, rgba(255,165,201,0.18) 30%, rgba(255,165,201,0.18) 70%, transparent 100%)",
             flexShrink: 0,
@@ -193,29 +205,29 @@ export default async function Image() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: 32,
+            gap: 36,
             flexShrink: 0,
           }}
         >
           <div
             style={{
               background: "#fdf8f2",
-              borderRadius: 24,
-              padding: 24,
+              borderRadius: 26,
+              padding: 26,
               display: "flex",
             }}
           >
             <img
               src={qrSrc}
-              width={480}
-              height={480}
+              width={520}
+              height={520}
               style={{ display: "flex" }}
             />
           </div>
           <span
             style={{
               color: "#ccc",
-              fontSize: 56,
+              fontSize: 60,
               fontFamily: "Quicksand",
               letterSpacing: "2px",
             }}
@@ -228,7 +240,7 @@ export default async function Image() {
         <div
           style={{
             position: "absolute",
-            bottom: 52,
+            bottom: 100,
             left: 0,
             right: 0,
             display: "flex",
@@ -238,7 +250,7 @@ export default async function Image() {
           <span
             style={{
               color: "#ffa5c9",
-              fontSize: 44,
+              fontSize: 48,
               fontFamily: "Quicksand",
               letterSpacing: "1.5px",
             }}
@@ -246,10 +258,12 @@ export default async function Image() {
             07 66 74 43 37  ·  co.equi.pattes@gmail.com
           </span>
         </div>
+        </div>
+        {DEBUG_GUIDES && <PrintGuides />}
       </div>
     ),
     {
-      ...size,
+      ...CARD_FORMAT.canvas,
       fonts: [
         { name: "Playfair Display", data: playfairBold, weight: 700 },
         { name: "Quicksand", data: quicksandSemibold, weight: 600 },

@@ -1,10 +1,9 @@
 import { ImageResponse } from "next/og";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { CARD_FORMAT, PrintGuides } from "@/lib/print-card-format";
 
 export const runtime = "nodejs";
-export const size = { width: 2008, height: 1276 };
-export const contentType = "image/png";
 
 async function loadFont(family: string, weight: number): Promise<ArrayBuffer> {
   const css = await fetch(
@@ -22,7 +21,9 @@ async function loadFont(family: string, weight: number): Promise<ArrayBuffer> {
   return fetch(url).then((r) => r.arrayBuffer());
 }
 
-export default async function Image() {
+export async function GET(request: Request) {
+  const DEBUG_GUIDES = new URL(request.url).searchParams.get("guides") === "1";
+
   const quicksandSemibold = await loadFont("Quicksand", 600);
 
   const logoData = readFileSync(join(process.cwd(), "public/logo_rose.png"));
@@ -36,13 +37,24 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
           position: "relative",
-          overflow: "hidden",
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            left: CARD_FORMAT.bleed,
+            top: CARD_FORMAT.bleed,
+            width: CARD_FORMAT.trim.width,
+            height: CARD_FORMAT.trim.height,
+            background: "#0e0612",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+          }}
+        >
         {/* Glow centré */}
         <div
           style={{
@@ -63,7 +75,7 @@ export default async function Image() {
             width: 1100,
             height: 1100,
             borderRadius: "50%",
-            border: "4px solid rgba(255,165,201,0.14)",
+            border: "5px solid rgba(255,165,201,0.40)",
             display: "flex",
           }}
         />
@@ -73,7 +85,7 @@ export default async function Image() {
             width: 1200,
             height: 1200,
             borderRadius: "50%",
-            border: "4px dashed rgba(255,165,201,0.06)",
+            border: "5px dashed rgba(255,165,201,0.22)",
             display: "flex",
           }}
         />
@@ -104,19 +116,19 @@ export default async function Image() {
         <div
           style={{
             position: "absolute",
-            bottom: 52,
+            bottom: 100,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: 10,
+            gap: 16,
           }}
         >
           <span
             style={{
-              color: "#aaa",
-              fontSize: 58,
+              color: "#ffffff",
+              fontSize: 78,
               fontFamily: "Quicksand",
-              letterSpacing: "5px",
+              letterSpacing: "6px",
               textTransform: "uppercase",
             }}
           >
@@ -124,19 +136,21 @@ export default async function Image() {
           </span>
           <span
             style={{
-              color: "#aaa",
-              fontSize: 50,
+              color: "#ffa5c9",
+              fontSize: 62,
               fontFamily: "Quicksand",
-              letterSpacing: "2px",
+              letterSpacing: "3px",
             }}
           >
             Manon Millot
           </span>
         </div>
+        </div>
+        {DEBUG_GUIDES && <PrintGuides />}
       </div>
     ),
     {
-      ...size,
+      ...CARD_FORMAT.canvas,
       fonts: [{ name: "Quicksand", data: quicksandSemibold, weight: 600 }],
     },
   );

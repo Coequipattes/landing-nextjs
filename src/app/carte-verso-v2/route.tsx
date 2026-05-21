@@ -1,8 +1,7 @@
 import { ImageResponse } from "next/og";
+import { CARD_FORMAT, PrintGuides } from "@/lib/print-card-format";
 
 export const runtime = "nodejs";
-export const size = { width: 2008, height: 1276 };
-export const contentType = "image/png";
 
 async function loadFont(family: string, weight: number): Promise<ArrayBuffer> {
   const css = await fetch(
@@ -20,7 +19,9 @@ async function loadFont(family: string, weight: number): Promise<ArrayBuffer> {
   return fetch(url).then((r) => r.arrayBuffer());
 }
 
-export default async function Image() {
+export async function GET(request: Request) {
+  const DEBUG_GUIDES = new URL(request.url).searchParams.get("guides") === "1";
+
   const quicksandSemibold = await loadFont("Quicksand", 600);
 
   const qrBuffer = await fetch(
@@ -36,13 +37,24 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 100,
           position: "relative",
-          overflow: "hidden",
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            left: CARD_FORMAT.bleed,
+            top: CARD_FORMAT.bleed,
+            width: CARD_FORMAT.trim.width,
+            height: CARD_FORMAT.trim.height,
+            background: "#0e0612",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 100,
+            overflow: "hidden",
+          }}
+        >
         {/* Glow centré */}
         <div
           style={{
@@ -131,10 +143,12 @@ export default async function Image() {
             </div>
           ))}
         </div>
+        </div>
+        {DEBUG_GUIDES && <PrintGuides />}
       </div>
     ),
     {
-      ...size,
+      ...CARD_FORMAT.canvas,
       fonts: [{ name: "Quicksand", data: quicksandSemibold, weight: 600 }],
     },
   );
