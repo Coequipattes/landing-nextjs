@@ -44,10 +44,10 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 - [x] `/promeneur-chien-vannes`
 - [x] `/equitation-vannes`
 
-## Phase E — Maillage interne
-- [ ] Footer : colonne "Nos services à Vannes" avec 5 liens
-- [ ] Home `Services` : 2 liens contextuels "En savoir plus →"
-- [ ] Bloc `ServiceRelated` "Voir aussi" sur chaque page service
+## Phase E — Maillage interne — COMPLÈTE
+- [x] Footer : colonne "Nos services à Vannes" avec 5 liens
+- [x] Home `Services` : 2 liens contextuels "En savoir plus →"
+- [x] Bloc `ServiceRelated` "Voir aussi" sur chaque page service
 
 ## Phase F — Mise en prod + GSC
 - [ ] Merge PR vers `main`
