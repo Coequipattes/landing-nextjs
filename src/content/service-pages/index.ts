@@ -1,12 +1,10 @@
 import { equitationVannes } from "./equitation-vannes";
 import { gardeChatVannes } from "./garde-chat-vannes";
 import { gardeChienVannes } from "./garde-chien-vannes";
-import { petSittingVannes } from "./pet-sitting-vannes";
 import { promeneurChienVannes } from "./promeneur-chien-vannes";
 import type { ServicePageData } from "./types";
 
 export const servicePages: ServicePageData[] = [
-  petSittingVannes,
   gardeChienVannes,
   gardeChatVannes,
   promeneurChienVannes,
