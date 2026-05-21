@@ -38,6 +38,9 @@ yarn-error.log*
 # runtime uploads
 public/uploads/gallery/
 
+# print exports (scripts/export-cards.mjs)
+/print/
+
 # vercel
 .vercel
 
