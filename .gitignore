@@ -41,6 +41,9 @@ public/uploads/gallery/
 # print exports (scripts/export-cards.mjs)
 /print/
 
+# graphify (graph AST tool)
+/graphify-out/
+
 # vercel
 .vercel
 
