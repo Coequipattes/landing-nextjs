@@ -18,11 +18,11 @@ export function ServicePricing({ data }: { data: ServicePageData }) {
           title="Des offres transparentes"
           subtitle={data.pricing.highlight}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {cards.map((card) => (
             <div
               key={card.slug}
-              className={`bg-black-card border-2 rounded-3xl p-8 md:p-10 text-center transition-all duration-400 relative overflow-hidden hover:-translate-y-2 hover:border-pink hover:shadow-[0_20px_50px_rgba(255,165,201,0.2)] ${
+              className={`bg-black-card border-2 rounded-3xl p-8 md:p-10 text-center transition-all duration-400 relative overflow-hidden hover:-translate-y-2 hover:border-pink hover:shadow-[0_20px_50px_rgba(255,165,201,0.2)] w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)] max-w-md ${
                 card.featured ? "border-pink scale-105" : "border-pink/10"
               }`}
             >
