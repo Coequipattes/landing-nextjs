@@ -38,11 +38,11 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 - [ ] Communes desservies confirmées
 - [ ] Anecdotes / témoignages spécifiques reçus
 
-## Phase D — Déclinaison 4 autres pages (parallélisable)
-- [ ] `/garde-chien-vannes`
-- [ ] `/garde-chat-vannes`
-- [ ] `/promeneur-chien-vannes`
-- [ ] `/equitation-vannes`
+## Phase D — Déclinaison 4 autres pages (parallélisable) — COMPLÈTE
+- [x] `/garde-chien-vannes`
+- [x] `/garde-chat-vannes`
+- [x] `/promeneur-chien-vannes`
+- [x] `/equitation-vannes`
 
 ## Phase E — Maillage interne
 - [ ] Footer : colonne "Nos services à Vannes" avec 5 liens
@@ -72,3 +72,5 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 - Duplicate content — règle : 350-500 mots uniques min, FAQ et témoignages filtrés différents, photo dédiée
 - Ancres Nav/Footer cassées sur pages service — fix Phase A5
 - Photos manquantes en prod — bloquer le merge tant que les 5 photos ne sont pas livrées
+- `/equitation-vannes` : `area.neighborhoods` réduit à `["Vannes", "Morbihan sud"]` faute d'info sur la structure d'accueil (écurie partenaire ? domicile cavalier ?) — à préciser avec Manon avant publication, sinon le bloc `ServiceArea` paraît creux comparé aux 4 autres pages
+- 5 pages partagent le même `hero.image` (`/uploads/manon.jpg`) en attendant les photos dédiées — risque de signal de duplication faible côté Google + cohérence visuelle pauvre, à débloquer en Phase F
