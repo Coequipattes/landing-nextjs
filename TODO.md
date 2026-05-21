@@ -74,6 +74,17 @@ Vannes + services + introduit la personne).
       différent du Hero.
 - [x] BRIEF_MANON.md : ajout section photo Hero/About + checklist
 - [x] Validations : tsc PASS, biome PASS, build PASS
+- [x] Itération copy Phase I (2026-05-20) :
+      - Hero intro raccourci à la 1re phrase + `<strong>` sur
+        "la même attention que s'ils étaient les miens"
+      - Citation manuscrite About remplacée par "Plus de dix ans à côté
+        des chevaux, et une vie à observer les animaux. Ce n'est pas un
+        métier que j'ai choisi par hasard."
+      - Suppression complète du statement "pas d'animal personnel /
+        100% de mon temps" (3 occurrences supprimées : Hero, citation
+        About, paragraphe About body)
+      - Audit "Manon" home : 7 occurrences first-party (hors testimonials)
+        listées pour validation (cf. rapport agent)
 
 ## Phase H — Refonte home en hub vitrine — COMPLÈTE
 Contexte : la home dupliquait le contenu des 5 pages services dédiées
