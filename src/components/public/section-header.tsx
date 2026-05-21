@@ -1,10 +1,12 @@
+import type { ReactNode } from "react";
+
 export function SectionHeader({
   label,
   title,
   subtitle,
 }: {
   label: string;
-  title: string;
+  title: ReactNode;
   subtitle?: string;
 }) {
   return (
