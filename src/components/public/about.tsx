@@ -31,9 +31,9 @@ export function About() {
             />
 
             <p className="font-accent text-pink text-3xl md:text-4xl leading-[1.15] mb-6">
-              « Je n&apos;ai pas d&apos;animal personnel — c&apos;est un choix.
-              Comme ça, mon attention va entièrement à ceux dont on me confie la
-              garde. »
+              « Plus de dix ans à côté des chevaux, et une vie à observer les
+              animaux. Ce n&apos;est pas un métier que j&apos;ai choisi par
+              hasard. »
             </p>
 
             <div className="flex items-center gap-3">
