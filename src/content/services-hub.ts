@@ -12,25 +12,12 @@ export type ServiceHubCard = {
   teaser: string; // 1-2 lignes accroche unique au hub
   priceFrom: string; // "à partir de X€" pour transparence
   iconId: IconId;
-  tone: "ombrelle" | "chien" | "chat" | "balade" | "cheval";
-  emphasis?: boolean; // mise en avant visuelle (carte large)
+  tone: "chien" | "chat" | "balade" | "cheval";
 };
 
 export type IconId = "paw-heart" | "dog" | "cat" | "leash" | "horse";
 
 export const servicesHub: ServiceHubCard[] = [
-  {
-    slug: "pet-sitting-vannes",
-    href: "/pet-sitting-vannes",
-    title: "Pet sitter à Vannes",
-    kicker: "L'offre complète",
-    teaser:
-      "Visites à domicile, promenades et soins pour chiens, chats et NAC. Votre compagnon reste chez lui.",
-    priceFrom: "dès 10,20€",
-    iconId: "paw-heart",
-    tone: "ombrelle",
-    emphasis: true,
-  },
   {
     slug: "garde-chien-vannes",
     href: "/garde-chien-vannes",

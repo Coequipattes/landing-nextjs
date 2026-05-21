@@ -118,9 +118,7 @@ function HubCard({ card }: CardProps) {
   return (
     <Link
       href={card.href}
-      className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-pink/15 bg-black-card p-7 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-pink/60 hover:shadow-[0_18px_45px_rgba(255,165,201,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
-        card.emphasis ? "md:p-10" : ""
-      }`}
+      className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-pink/15 bg-black-card p-7 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-pink/60 hover:shadow-[0_18px_45px_rgba(255,165,201,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-black"
     >
       {/* Glow décoratif coin haut-gauche */}
       <div
@@ -143,19 +141,11 @@ function HubCard({ card }: CardProps) {
           </span>
         </div>
 
-        <h3
-          className={`font-display font-semibold leading-tight text-white ${
-            card.emphasis ? "text-2xl md:text-[1.9rem]" : "text-xl md:text-2xl"
-          } mb-3`}
-        >
+        <h3 className="font-display font-semibold leading-tight text-white text-xl md:text-2xl mb-3">
           {card.title}
         </h3>
 
-        <p
-          className={`text-gray-light leading-relaxed ${
-            card.emphasis ? "md:text-[1.05rem]" : "text-[0.95rem]"
-          }`}
-        >
+        <p className="text-gray-light leading-relaxed text-[0.95rem]">
           {card.teaser}
         </p>
       </div>
@@ -174,9 +164,6 @@ function HubCard({ card }: CardProps) {
 }
 
 export function ServicesHub() {
-  // L'ordre des cartes vient déjà du data : ombrelle d'abord, équitation en dernier.
-  const [umbrella, ...others] = servicesHub;
-
   return (
     <section
       id="services"
@@ -194,28 +181,20 @@ export function ServicesHub() {
           label="Nos services"
           title={
             <>
-              <span className="block">5 façons</span>
-              <span className="text-pink">
-                de prendre soin de ce qui compte
-              </span>
+              <span className="block">Comment je peux</span>
+              <span className="text-pink">vous aider</span>
             </>
           }
-          subtitle="Pet-sitting, garde à domicile, balades, équitation — un seul interlocuteur, une approche douce, des prestations sur-mesure à Vannes et dans le Morbihan."
+          subtitle="Garde à domicile, balades, équitation — un seul interlocuteur, une approche douce, des prestations sur-mesure à Vannes et dans le Morbihan."
         />
 
-        {/* Layout asymétrique :
-            - mobile : 1 colonne, l'ombrelle en premier
-            - lg+ : carte ombrelle pleine hauteur à gauche, grille 2×2 à droite. */}
-        <div className="grid grid-cols-1 gap-5 md:gap-6 lg:grid-cols-5 lg:items-stretch">
-          <div className="lg:col-span-2 lg:h-full">
-            <HubCard card={umbrella} />
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 md:gap-6 sm:grid-cols-2 lg:col-span-3">
-            {others.map((card) => (
-              <HubCard key={card.slug} card={card} />
-            ))}
-          </div>
+        {/* Grille 2×2 régulière : 4 services peer, aucun n'a vocation
+            ombrelle après le retrait de la page Pet-sitting (consolidée
+            sur la home). Mobile 1 col, ≥sm 2 cols. */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6">
+          {servicesHub.map((card) => (
+            <HubCard key={card.slug} card={card} />
+          ))}
         </div>
       </div>
     </section>

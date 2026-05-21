@@ -11,7 +11,6 @@ const footerLinks = [
 ];
 
 const serviceLinks = [
-  { slug: "pet-sitting-vannes", label: "Pet sitter à Vannes" },
   { slug: "garde-chien-vannes", label: "Garde de chien à Vannes" },
   { slug: "garde-chat-vannes", label: "Garde de chat à Vannes" },
   { slug: "promeneur-chien-vannes", label: "Promeneur de chien à Vannes" },
