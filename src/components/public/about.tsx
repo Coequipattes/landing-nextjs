@@ -22,19 +22,13 @@ export function About() {
             aria-label="Mot de Manon"
             className="md:col-span-2 relative rounded-2xl border border-pink/20 bg-gradient-to-br from-pink/[0.06] to-transparent p-8 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.4)] overflow-hidden"
           >
-            {/* Subtle paw watermark (SVG, no emoji) */}
-            <svg
+            {/* Subtle pink glow halo — remplace le paw watermark dont les
+                toes débordaient en demi-cercles trop visibles sur le bord
+                de la carte. */}
+            <div
               aria-hidden="true"
-              viewBox="0 0 64 64"
-              className="absolute -top-4 -right-4 w-32 h-32 text-pink/10"
-              fill="currentColor"
-            >
-              <circle cx="20" cy="18" r="6" />
-              <circle cx="44" cy="18" r="6" />
-              <circle cx="10" cy="34" r="6" />
-              <circle cx="54" cy="34" r="6" />
-              <path d="M32 26c-9 0-16 7-16 14 0 6 5 10 16 10s16-4 16-10c0-7-7-14-16-14Z" />
-            </svg>
+              className="pointer-events-none absolute -top-16 -right-16 w-48 h-48 rounded-full bg-pink/5 blur-3xl"
+            />
 
             <p className="font-accent text-pink text-3xl md:text-4xl leading-[1.15] mb-6">
               « Je n&apos;ai pas d&apos;animal personnel — c&apos;est un choix.
