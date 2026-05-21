@@ -1,7 +1,7 @@
 # Phase 2 SEO — Pages services locales
 
 Branche : `feat/seo-service-pages`
-Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
+Décision archi : 4 pages statiques individuelles dans `src/app/(public)/` + home optimisée "pet sitter à Vannes" (consolidation Phase J).
 
 ## Phase A — Fondations (sans contenu) — COMPLÈTE, mergeable
 - [x] Créer `src/content/service-pages/types.ts` (interface `ServicePageData`)
@@ -19,17 +19,15 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
   - [x] `service-cta.tsx`
   - [x] `service-related.tsx`
   - [x] `service-json-ld.tsx`
-- [x] Mettre à jour `src/app/sitemap.ts` (ajouter les 5 routes, priority 0.8, changeFrequency monthly)
+- [x] Mettre à jour `src/app/sitemap.ts` (ajouter les routes services, priority 0.8, changeFrequency monthly)
 - [x] Vérifier `src/app/robots.ts` n'exclut pas les nouvelles routes
 - [x] **Fix critique Nav/Footer ancres** : `usePathname` + `next/link` pour que `#about`/`#services` redirige vers `/#about` quand on n'est pas sur la home
-- [x] Build PASS + sitemap.xml généré contient les 5 routes
+- [x] Build PASS + sitemap.xml généré contient les routes services
 
-## Phase B — Page pilote `/pet-sitting-vannes` (à faire après A)
+## Phase B — Page pilote `/pet-sitting-vannes` (à faire après A) — RETIRÉE Phase J
 - [x] Page complète avec contenu draft (à valider Manon)
 - [x] `next build` → route `/pet-sitting-vannes` visible
-- [ ] Test Rich Results sur l'URL en preview (Phase F, après déploiement)
-- [ ] Lighthouse SEO ≥ 95 (Phase F)
-- [ ] Revue manuelle : 0 lien cassé, FAQ a11y, photo dédiée (photo Manon pending)
+- [x] Décision Phase J : page supprimée (cannibalisait la home déjà optimisée "pet sitter à Vannes")
 
 ## Phase C — Brief contenu Manon (parallèle, BLOQUANT pour Phase D)
 - [ ] Email envoyé à Manon avec questions par page
@@ -45,10 +43,10 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 - [x] `/equitation-vannes`
 - [x] Photos dédiées chien (`/manon_chiens.webp`) et chat (`/manon_chat.webp`) livrées + `imageAlt` descriptif par page (a11y)
 
-## Phase E — Maillage interne — COMPLÈTE
-- [x] Footer : colonne "Nos services à Vannes" avec 5 liens
+## Phase E — Maillage interne — COMPLÈTE (mise à jour Phase J : 4 liens)
+- [x] Footer : colonne "Nos services à Vannes" avec 4 liens
 - [x] Home `Services` : 2 liens contextuels "En savoir plus →"
-- [x] Bloc `ServiceRelated` "Voir aussi" sur chaque page service
+- [x] Bloc `ServiceRelated` "Voir aussi" sur chaque page service (2 liens après Phase J)
 
 ## Phase I — Refonte Hero humain — COMPLÈTE
 Contexte : le Hero précédent était "marque vitrine" multi-services type SaaS.
@@ -87,6 +85,27 @@ Vannes + services + introduit la personne).
       - Audit "Manon" home : 7 occurrences first-party (hors testimonials)
         listées pour validation (cf. rapport agent)
 
+## Phase J — Consolidation : suppression `/pet-sitting-vannes` — COMPLÈTE
+Contexte : audit a confirmé que la page `/pet-sitting-vannes` cannibalisait
+la home déjà optimisée pour la requête "pet sitter à Vannes" (title, H1,
+metadata, hero). Contenu redondant à 90%, tarif 0,25€/km abandonné par
+choix de Manon. Décision : supprimer la page, consolider sur la home.
+- [x] `git rm` `src/app/(public)/pet-sitting-vannes/page.tsx`
+- [x] `git rm` `src/content/service-pages/pet-sitting-vannes.ts`
+- [x] `src/content/service-pages/index.ts` : retrait import + entrée du tableau
+- [x] Sitemap : auto-MAJ via le tableau (passe à 4 routes services)
+- [x] `services-hub.ts` : retrait de la carte ombrelle "Pet sitter à Vannes"
+- [x] `services-hub.tsx` : refonte layout 5 cartes asymétrique → grille 2×2
+      régulière (4 services peer, plus de vocation ombrelle). Titre :
+      "Comment je peux vous aider" (1ère personne, aligné Phase I humain).
+- [x] Footer : 5 → 4 liens "Nos services à Vannes"
+- [x] `related[]` des 4 pages restantes : retrait `pet-sitting-vannes`
+      (les listes tombent à 2 entrées, pas de remplacement artificiel)
+- [x] Audit home "pet sitter à Vannes" : PASS (metadata + hero intacts)
+- [x] BRIEF_MANON.md : section dédiée pet-sitting fusionnée avec home
+- [x] Validations : tsc PASS, build PASS, curl /pet-sitting-vannes → 404,
+      curl 4 autres pages services → 200
+
 ## Phase H — Refonte home en hub vitrine — COMPLÈTE
 Contexte : la home dupliquait le contenu des 5 pages services dédiées
 (cannibalisation + duplicate content). Décision : transformer la home en
@@ -114,9 +133,9 @@ hub brand + 5 cartes catchy qui drivent vers les pages détail.
 
 ## Phase F — Mise en prod + GSC
 - [ ] Merge PR vers `main`
-- [ ] Deploy validé sur les 5 URLs
-- [ ] GSC : `request indexing` sur les 5 URLs
-- [ ] GSC : sitemap.xml soumis et 5 URLs détectées
+- [ ] Deploy validé sur les URLs (home + 4 pages services)
+- [ ] GSC : `request indexing` sur les URLs (home + 4 services)
+- [ ] GSC : sitemap.xml soumis et URLs détectées
 - [ ] Snapshot positions actuelles (baseline pour mesurer dans 4-8 semaines)
 
 ## TODOs JSON-LD (Vague 1, à compléter avec Manon)
@@ -134,6 +153,6 @@ hub brand + 5 cartes catchy qui drivent vers les pages détail.
 - Cannibalisation `pet-sitting-vannes` ↔ `garde-chien-vannes` — mitigation : hiérarchie ombrelle/niche, maillage interne
 - Duplicate content — règle : 350-500 mots uniques min, FAQ et témoignages filtrés différents, photo dédiée
 - Ancres Nav/Footer cassées sur pages service — fix Phase A5
-- Photos manquantes en prod — bloquer le merge tant que les 5 photos ne sont pas livrées
-- `/equitation-vannes` : `area.neighborhoods` réduit à `["Vannes", "Morbihan sud"]` faute d'info sur la structure d'accueil (écurie partenaire ? domicile cavalier ?) — à préciser avec Manon avant publication, sinon le bloc `ServiceArea` paraît creux comparé aux 4 autres pages
-- 5 pages partagent le même `hero.image` (`/uploads/manon.jpg`) en attendant les photos dédiées — risque de signal de duplication faible côté Google + cohérence visuelle pauvre, à débloquer en Phase F
+- Photos manquantes en prod — bloquer le merge tant que les photos services ne sont pas livrées (4 pages désormais)
+- `/equitation-vannes` : `area.neighborhoods` réduit à `["Vannes", "Morbihan sud"]` faute d'info sur la structure d'accueil (écurie partenaire ? domicile cavalier ?) — à préciser avec Manon avant publication, sinon le bloc `ServiceArea` paraît creux comparé aux autres pages
+- 4 pages partagent le même `hero.image` (`/uploads/manon.jpg`) en attendant les photos dédiées — risque de signal de duplication faible côté Google + cohérence visuelle pauvre, à débloquer en Phase F
