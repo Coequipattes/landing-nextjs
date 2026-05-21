@@ -66,12 +66,11 @@ export function Hero() {
 
             <p className="text-base md:text-lg text-gray-light leading-relaxed max-w-[560px] mx-auto lg:mx-0 mb-8 md:mb-10">
               Diplômée, passionnée et installée dans le Morbihan, je prends soin
-              de vos compagnons avec la même attention que s&apos;ils étaient
-              les miens.{" "}
-              <span className="text-white-soft">
-                N&apos;ayant pas d&apos;animal personnel, je leur consacre 100%
-                de mon temps.
-              </span>
+              de vos compagnons avec{" "}
+              <strong className="text-white-soft font-semibold">
+                la même attention que s&apos;ils étaient les miens
+              </strong>
+              .
             </p>
 
             <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
