@@ -15,6 +15,7 @@ export const equitationVannes: ServicePageData = {
       "Cours particuliers ou collectifs, travail du cheval propriétaire — une pédagogie individualisée et respectueuse du couple cheval-cavalier.",
     // DRAFT - photo dédiée équitation à fournir par Manon (/uploads/equitation-vannes.jpg).
     image: "/uploads/manon.jpg",
+    imageAlt: "Manon, monitrice d'équitation diplômée, avec un cheval",
   },
   intro: {
     paragraphs: [

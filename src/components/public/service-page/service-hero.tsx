@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ServicePageData } from "@/content/service-pages/types";
 
 export function ServiceHero({ data }: { data: ServicePageData }) {
-  const { h1, baseline, image } = data.hero;
+  const { h1, baseline, image, imageAlt } = data.hero;
   const isPlaceholder = image.startsWith("TODO");
 
   return (
@@ -39,7 +39,7 @@ export function ServiceHero({ data }: { data: ServicePageData }) {
           ) : (
             <Image
               src={image}
-              alt={h1}
+              alt={imageAlt}
               fill
               priority
               className="object-cover"

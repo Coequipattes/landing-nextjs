@@ -12,9 +12,8 @@ export const gardeChienVannes: ServicePageData = {
     h1: "Garde de chien à Vannes",
     baseline:
       "Une alternative au chenil pour vos vacances et déplacements : votre chien reste chez lui, avec ses repères et un suivi quotidien personnalisé.",
-    // DRAFT - photo dédiée chien à fournir par Manon (/uploads/garde-chien-vannes.jpg).
-    // Fallback temporaire : photo générique Manon.
-    image: "/uploads/manon.jpg",
+    image: "/manon_chiens.webp",
+    imageAlt: "Manon, pet sitter à Vannes, avec un chien",
   },
   intro: {
     paragraphs: [

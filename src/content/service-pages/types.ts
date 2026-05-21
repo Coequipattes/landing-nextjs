@@ -2,7 +2,7 @@ export type ServicePageData = {
   slug: string;
   metaTitle: string;
   metaDescription: string;
-  hero: { h1: string; baseline: string; image: string };
+  hero: { h1: string; baseline: string; image: string; imageAlt: string };
   intro: { paragraphs: string[] };
   benefits: { title: string; description: string }[];
   pricing: { highlight: string; cardSlugs: string[] };

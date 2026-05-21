@@ -43,6 +43,7 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 - [x] `/garde-chat-vannes`
 - [x] `/promeneur-chien-vannes`
 - [x] `/equitation-vannes`
+- [x] Photos dédiées chien (`/manon_chiens.webp`) et chat (`/manon_chat.webp`) livrées + `imageAlt` descriptif par page (a11y)
 
 ## Phase E — Maillage interne — COMPLÈTE
 - [x] Footer : colonne "Nos services à Vannes" avec 5 liens

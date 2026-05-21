@@ -15,6 +15,7 @@ export const petSittingVannes: ServicePageData = {
     // DRAFT - image dédiée à fournir par Manon (/uploads/pet-sitting-vannes.jpg).
     // Fallback gracieux géré par ServiceHero si le fichier n'existe pas encore.
     image: "/uploads/manon.jpg",
+    imageAlt: "Manon, fondatrice de Co'équi'pattes, avec un cheval",
   },
   intro: {
     paragraphs: [

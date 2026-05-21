@@ -12,8 +12,8 @@ export const promeneurChienVannes: ServicePageData = {
     h1: "Promeneur de chien à Vannes",
     baseline:
       "Des balades régulières adaptées à votre chien, quand vous n'avez pas le temps ou plus l'énergie de sortir — pour qu'il garde sa dépense quotidienne.",
-    // DRAFT - photo dédiée promenade à fournir par Manon (/uploads/promeneur-chien-vannes.jpg).
-    image: "/uploads/manon.jpg",
+    image: "/manon_chiens.webp",
+    imageAlt: "Manon, promeneuse de chien, lors d'une balade à Vannes",
   },
   intro: {
     paragraphs: [

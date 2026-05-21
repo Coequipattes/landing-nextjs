@@ -12,8 +12,8 @@ export const gardeChatVannes: ServicePageData = {
     h1: "Garde de chat à Vannes",
     baseline:
       "Visites à domicile pour votre chat pendant vos absences — pas de chenil, pas de cage de transport : il reste sur son territoire.",
-    // DRAFT - photo dédiée chat à fournir par Manon (/uploads/garde-chat-vannes.jpg).
-    image: "/uploads/manon.jpg",
+    image: "/manon_chat.webp",
+    imageAlt: "Manon, pet sitter à Vannes, prenant soin d'un chat",
   },
   intro: {
     paragraphs: [
