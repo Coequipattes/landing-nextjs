@@ -11,7 +11,7 @@ export function About() {
       <div className="max-w-[1200px] mx-auto relative">
         <SectionHeader
           label="Qui suis-je"
-          title="Manon, votre alliée équestre et animalière"
+          title="Votre alliée équestre et animalière"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 items-stretch">
