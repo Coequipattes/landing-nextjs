@@ -49,6 +49,31 @@ Décision archi : 5 pages statiques individuelles dans `src/app/(public)/`.
 - [x] Home `Services` : 2 liens contextuels "En savoir plus →"
 - [x] Bloc `ServiceRelated` "Voir aussi" sur chaque page service
 
+## Phase H — Refonte home en hub vitrine — COMPLÈTE
+Contexte : la home dupliquait le contenu des 5 pages services dédiées
+(cannibalisation + duplicate content). Décision : transformer la home en
+hub brand + 5 cartes catchy qui drivent vers les pages détail.
+- [x] Audit composants home (Hero/About/Services/Pricing/Gallery/Testimonials/Contact)
+- [x] Retirer `Services` (doublon des pages services) et `Pricing` (doublon)
+      de la home — ne pas les supprimer du repo (réutilisés par pages dédiées)
+- [x] Créer `src/content/services-hub.ts` (5 cartes avec teaser propre au hub,
+      mot-clé SEO en titre, prix d'entrée)
+- [x] Créer `src/components/public/services-hub.tsx` :
+  - [x] Layout asymétrique : carte ombrelle "Pet sitter à Vannes" pleine
+        hauteur à gauche, grille 2×2 à droite (desktop) ; stack vertical mobile
+  - [x] Icônes SVG inline (paw-heart, dog, cat, leash, horse) — pas d'emoji
+  - [x] Hover : élévation + glow pink + flèche translate
+  - [x] CTA "Découvrir" via `next/link` (5 liens vers pages services)
+- [x] Hero : remplacer CTA "Réserver un cours" (trop équitation) par
+      "Voir mes services" (#services) + "Prendre contact" (#contact)
+- [x] Nav + Footer : retirer le lien "Tarifs" (ancre `#tarifs` n'existe
+      plus sur la home, les tarifs vivent désormais dans les pages services)
+- [x] `SectionHeader` : `title` accepte ReactNode (titre 2 lignes pink/blanc)
+- [x] SEO préservé : `metadata` + `JsonLd` intacts, 5 keywords présents
+      dans le body, tous les CTAs `next/link` pour le crawl
+- [x] Validations : tsc PASS, biome PASS, build PASS, curl home (5 liens
+      services ×2 = ServicesHub + Footer), curl 5 pages services 200
+
 ## Phase F — Mise en prod + GSC
 - [ ] Merge PR vers `main`
 - [ ] Deploy validé sur les 5 URLs
