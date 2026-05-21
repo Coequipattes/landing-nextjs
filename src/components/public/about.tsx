@@ -74,14 +74,12 @@ export function About() {
             </p>
             <p className="text-[1.05rem] text-gray-light leading-[1.8]">
               En parallèle, je prends soin de vos animaux de compagnie lors de
-              vos absences. Que ce soit pour des visites à domicile, des
-              promenades ou une présence rassurante,{" "}
+              vos absences. Visites à domicile, promenades ou présence
+              rassurante :{" "}
               <strong className="text-pink">
-                n&apos;ayant pas d&apos;animal personnel, je peux consacrer 100%
-                de mon attention à vos compagnons
+                un service sur-mesure, entièrement dédié à leurs besoins
               </strong>{" "}
-              afin d&apos;offrir un service sur-mesure et entièrement dédié à
-              leurs besoins.
+              et calé sur vos habitudes.
             </p>
           </div>
         </div>
