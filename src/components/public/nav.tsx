@@ -8,7 +8,6 @@ const links = [
   { hash: "about", label: "Qui suis-je" },
   { hash: "services", label: "Services" },
   { hash: "galerie", label: "Galerie" },
-  { hash: "tarifs", label: "Tarifs" },
   { hash: "temoignages", label: "Témoignages" },
 ];
 

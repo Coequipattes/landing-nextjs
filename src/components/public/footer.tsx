@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const footerLinks = [
   { hash: "about", label: "Qui suis-je" },
   { hash: "services", label: "Services" },
-  { hash: "tarifs", label: "Tarifs" },
   { hash: "temoignages", label: "Témoignages" },
   { hash: "contact", label: "Contact" },
 ];
