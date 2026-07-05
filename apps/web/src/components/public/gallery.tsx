@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Image from "next/image";
+import { ToggleChip } from "@coequipattes/ui/components/toggle-chip";
 
 type GalleryImage = {
   src: string;
@@ -70,18 +71,13 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
     <>
       <div className="flex justify-center gap-3 mb-12 flex-wrap">
         {categories.map((c) => (
-          <button
+          <ToggleChip
             key={c.key}
-            type="button"
+            active={filter === c.key}
             onClick={() => handleFilter(c.key)}
-            className={`px-6 py-2.5 rounded-full font-medium text-[0.9rem] border-2 transition-all duration-300 cursor-pointer ${
-              filter === c.key
-                ? "bg-pink text-black border-pink"
-                : "bg-black-card text-white border-pink/20 hover:bg-pink hover:text-black hover:border-pink"
-            }`}
           >
             {c.label}
-          </button>
+          </ToggleChip>
         ))}
       </div>
 
@@ -140,7 +136,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
           >
             <button
               type="button"
-              className="absolute -top-12 right-0 w-10 h-10 bg-pink rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:rotate-90 transition-all duration-300 text-black font-bold"
+              className="absolute -top-12 right-0 w-10 h-10 bg-pink rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors duration-200 text-black font-bold"
               onClick={closeLightbox}
             >
               ✕
@@ -148,7 +144,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
             <button
               type="button"
-              className="absolute top-1/2 -translate-y-1/2 -left-[70px] w-[50px] h-[50px] bg-pink/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-pink transition-all duration-300 backdrop-blur-[10px] text-white"
+              className="absolute top-1/2 -translate-y-1/2 -left-[70px] w-[50px] h-[50px] bg-pink/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-pink transition-colors duration-200 backdrop-blur-[10px] text-white"
               onClick={() => navigate(-1)}
             >
               ‹
@@ -164,7 +160,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
             <button
               type="button"
-              className="absolute top-1/2 -translate-y-1/2 -right-[70px] w-[50px] h-[50px] bg-pink/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-pink transition-all duration-300 backdrop-blur-[10px] text-white"
+              className="absolute top-1/2 -translate-y-1/2 -right-[70px] w-[50px] h-[50px] bg-pink/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-pink transition-colors duration-200 backdrop-blur-[10px] text-white"
               onClick={() => navigate(1)}
             >
               ›

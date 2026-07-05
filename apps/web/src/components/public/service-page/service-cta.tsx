@@ -1,3 +1,4 @@
+import { Button } from "@coequipattes/ui/components/button";
 import type { ServicePageData } from "@/content/service-pages/types";
 
 export function ServiceCta({ data }: { data: ServicePageData }) {
@@ -12,18 +13,12 @@ export function ServiceCta({ data }: { data: ServicePageData }) {
           {data.cta.subline}
         </p>
         <div className="inline-flex gap-4 flex-wrap justify-center">
-          <a
-            href="#contact"
-            className="px-9 py-3.5 rounded-full font-semibold text-[0.95rem] uppercase tracking-[1px] bg-pink text-black hover:bg-white hover:-translate-y-[2px] hover:shadow-[0_8px_25px_var(--pink-glow)] transition-all duration-300"
-          >
-            Me contacter
-          </a>
-          <a
-            href="tel:+33766744337"
-            className="px-9 py-3.5 rounded-full font-semibold text-[0.95rem] uppercase tracking-[1px] bg-transparent text-white border-2 border-pink hover:bg-pink hover:text-black hover:-translate-y-[2px] transition-all duration-300"
-          >
-            Appeler
-          </a>
+          <Button asChild size="lg">
+            <a href="#contact">Me contacter</a>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <a href="tel:+33766744337">Appeler</a>
+          </Button>
         </div>
       </div>
     </section>

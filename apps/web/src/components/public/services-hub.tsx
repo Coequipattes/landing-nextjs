@@ -8,6 +8,7 @@ import {
   type ServiceHubCard,
   servicesHub,
 } from "@/content/services-hub";
+import { ToggleChip } from "@coequipattes/ui/components/toggle-chip";
 import { SectionHeader } from "./section-header";
 
 const CATEGORIES: { id: ServiceCategory; label: string; iconId: IconId }[] = [
@@ -211,21 +212,16 @@ export function ServicesHub() {
           {CATEGORIES.map((cat) => {
             const isActive = active === cat.id;
             return (
-              <button
+              <ToggleChip
                 key={cat.id}
-                type="button"
                 role="tab"
                 aria-selected={isActive}
+                active={isActive}
                 onClick={() => setActive(cat.id)}
-                className={`inline-flex cursor-pointer items-center gap-2 rounded-full px-6 py-3 text-[0.85rem] font-semibold uppercase tracking-[1.5px] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
-                  isActive
-                    ? "bg-pink text-black shadow-[0_8px_25px_var(--pink-glow)]"
-                    : "border-2 border-pink/30 bg-transparent text-white hover:-translate-y-[1px] hover:border-pink"
-                }`}
               >
                 <ServiceIcon id={cat.iconId} className="w-4 h-4 stroke-current" />
                 {cat.label}
-              </button>
+              </ToggleChip>
             );
           })}
         </div>

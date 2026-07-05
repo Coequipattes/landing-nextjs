@@ -1,3 +1,4 @@
+import { Button } from "@coequipattes/ui/components/button";
 import { getPriceCardBySlug } from "@/content/pricing-data";
 import type { ServicePageData } from "@/content/service-pages/types";
 import { SectionHeader } from "../section-header";
@@ -62,12 +63,9 @@ export function ServicePricing({ data }: { data: ServicePageData }) {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#contact"
-                className="block w-full py-3.5 rounded-full font-semibold text-[0.95rem] uppercase tracking-[1px] bg-pink text-black hover:bg-white hover:-translate-y-[2px] hover:shadow-[0_8px_25px_var(--pink-glow)] transition-all duration-300 text-center"
-              >
-                Réserver
-              </a>
+              <Button asChild className="w-full">
+                <a href="#contact">Réserver</a>
+              </Button>
             </div>
           ))}
         </div>
