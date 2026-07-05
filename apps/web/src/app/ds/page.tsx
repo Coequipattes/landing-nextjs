@@ -20,6 +20,10 @@ import {
 } from "@coequipattes/ui/components/card";
 import { Badge } from "@coequipattes/ui/components/badge";
 import { Accordion } from "@coequipattes/ui/components/accordion";
+import { ServiceCard } from "@coequipattes/ui/components/service-card";
+import { PriceCard } from "@coequipattes/ui/components/price-card";
+import { ReviewCard } from "@coequipattes/ui/components/review-card";
+import { InfoCard } from "@coequipattes/ui/components/info-card";
 
 export const metadata: Metadata = {
   title: "Design System",
@@ -42,6 +46,39 @@ function Arrow({ className }: { className?: string }) {
     </svg>
   );
 }
+
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  "aria-hidden": true,
+};
+
+const Heart = () => (
+  <svg {...iconProps}>
+    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+  </svg>
+);
+const Mail = () => (
+  <svg {...iconProps}>
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="m3 7 9 6 9-6" />
+  </svg>
+);
+const Phone = () => (
+  <svg {...iconProps}>
+    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z" />
+  </svg>
+);
+const Pin = () => (
+  <svg {...iconProps}>
+    <path d="M12 21s-6-5.7-6-10a6 6 0 0 1 12 0c0 4.3-6 10-6 10z" />
+    <circle cx="12" cy="11" r="2" />
+  </svg>
+);
 
 function Row({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -162,6 +199,80 @@ export default function DesignSystemPage() {
               },
             ]}
           />
+        </Row>
+
+        <Row title="ServiceCard">
+          <div className="grid w-full gap-6 sm:grid-cols-2">
+            <ServiceCard
+              icon={<Heart />}
+              title="Balades"
+              teaser="Sorties 30 à 60 min, en laisse, adaptées à l'énergie de votre chien."
+              price="dès 12€"
+              href="#"
+            />
+            <ServiceCard
+              icon={<Heart />}
+              title="Visites à domicile"
+              teaser="Repas, jeux, câlins et présence — votre animal reste chez lui."
+              price="dès 10,20€"
+              href="#"
+            />
+          </div>
+        </Row>
+
+        <Row title="PriceCard (+ ruban Populaire)">
+          <div className="grid w-full gap-6 sm:grid-cols-2">
+            <PriceCard
+              title="Promenade"
+              price="12-22€"
+              subtitle="Balades adaptées au rythme de votre chien"
+              features={["30 min : 12€ / 16€*", "45 min : 15€ / 19€*", "1 heure : 18€ / 22€*"]}
+              href="#"
+            />
+            <PriceCard
+              popular
+              title="Visite + promenade"
+              price="15-18€"
+              subtitle="Promenade 30 min + 15 min de soins"
+              features={["30 min de promenade", "15 min de soins avant/après", "Nourrissage, jeux et câlins"]}
+              href="#"
+            />
+          </div>
+        </Row>
+
+        <Row title="ReviewCard">
+          <div className="grid w-full gap-6 sm:grid-cols-2">
+            <ReviewCard
+              quote="Merci Manon pour la patience et la bienveillance dont tu fais preuve avec ma jument et moi."
+              author="Aurore Duhamel"
+              meta="Visité en janvier"
+              initials="AD"
+            />
+            <ReviewCard
+              quote="Service au top, mon chat était parfaitement serein à notre retour."
+              author="Julien P."
+              meta="Visité en mars"
+              initials="JP"
+            />
+          </div>
+        </Row>
+
+        <Row title="InfoCard (contact)">
+          <div className="grid w-full gap-4 sm:grid-cols-2">
+            <InfoCard
+              icon={<Mail />}
+              label="Email"
+              value="co.equi.pattes@gmail.com"
+              href="mailto:co.equi.pattes@gmail.com"
+            />
+            <InfoCard
+              icon={<Phone />}
+              label="Téléphone"
+              value="07 66 74 43 37"
+              href="tel:+33766744337"
+            />
+            <InfoCard icon={<Pin />} label="Localisation" value="Vannes (56)" />
+          </div>
         </Row>
       </div>
     </main>
