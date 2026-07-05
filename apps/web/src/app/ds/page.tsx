@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@coequipattes/ui/components/button";
+import { MediaFrame } from "@coequipattes/ui/components/media-frame";
 import { ToggleChip } from "@coequipattes/ui/components/toggle-chip";
 import { Input } from "@coequipattes/ui/components/input";
 import { Textarea } from "@coequipattes/ui/components/textarea";
@@ -315,6 +317,27 @@ export default function DesignSystemPage() {
             />
             <InfoCard icon={<Pin />} label="Localisation" value="Vannes (56)" />
           </div>
+        </Row>
+
+        <Row title="MediaFrame — image cadrée (l'app y met son next/image)">
+          <MediaFrame ratio="4/5" className="w-48">
+            <Image
+              src="/manon_chiens.webp"
+              alt="Manon en balade"
+              fill
+              className="object-cover"
+              sizes="192px"
+            />
+          </MediaFrame>
+          <MediaFrame className="h-40 w-64">
+            <Image
+              src="/garde_chien.webp"
+              alt="Garde de chien"
+              fill
+              className="object-cover"
+              sizes="256px"
+            />
+          </MediaFrame>
         </Row>
       </div>
     </main>
