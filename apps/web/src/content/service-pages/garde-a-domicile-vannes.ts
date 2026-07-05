@@ -29,7 +29,7 @@ export const gardeADomicileVannes: ServicePageData = {
     {
       title: "À demeure chez vous",
       description:
-        "Je m'installe chez vous et j'y dors pour toute la durée. Je m'absente seulement le temps de mes autres promenades et visites.",
+        "Je m'installe chez vous et j'y dors pour toute la durée. Je ne m'absente que le temps de mes autres prestations (promenades, visites) auprès d'autres animaux.",
     },
     {
       title: "Zéro changement d'environnement",

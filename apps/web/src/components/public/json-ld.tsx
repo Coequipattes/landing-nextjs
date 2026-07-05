@@ -183,23 +183,6 @@ export function JsonLd() {
                 areaServed: { "@type": "City", name: "Vannes" },
               },
             },
-            {
-              "@type": "Offer",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                minPrice: "15",
-                maxPrice: "18",
-                priceCurrency: "EUR",
-              },
-              itemOffered: {
-                "@type": "Service",
-                name: "Visite + promenade",
-                description:
-                  "Promenade de 30 min plus 15 min de soins (nourrissage, jeux et câlins)",
-                provider: { "@id": `${siteUrl}/#business` },
-                areaServed: { "@type": "City", name: "Vannes" },
-              },
-            },
           ],
         },
       },

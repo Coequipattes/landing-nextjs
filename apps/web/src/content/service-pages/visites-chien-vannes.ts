@@ -19,7 +19,7 @@ export const visitesChienVannes: ServicePageData = {
     paragraphs: [
       "Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse. C'est la raison pour laquelle je me déplace chez vous pour des visites de 30 min à 1 h, une ou plusieurs fois par jour : votre animal reste dans son environnement, avec ses odeurs, son panier, son jardin et ses horaires habituels.",
       "Le nombre de visites se décide avec vous, selon l'âge et les besoins de votre chien — jusqu'à 5 passages par jour. Chaque passage comprend la sortie, le repas, un temps de jeu ou de câlin, et la vérification de l'état général. Pour les absences longues, je peux aussi m'occuper du courrier, arroser les plantes ou ouvrir les volets — autant de petits gestes qui maintiennent la maison vivante et dissuadent les intrusions.",
-      "Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chien et moi-même faisons connaissance dans un cadre rassurant, où je note les consignes (alimentation, traitements, habitudes...) et où je cale avec vous le rythme des visites.",
+      "Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chien et moi-même faisons connaissance dans un cadre rassurant, où je note les consignes (alimentation, traitements, habitudes...) et où nous calons ensemble le rythme des visites.",
     ],
   },
   benefits: [
@@ -51,8 +51,8 @@ export const visitesChienVannes: ServicePageData = {
   ],
   pricing: {
     highlight:
-      "Trois formules pour s'adapter à la durée d'absence et à l'autonomie de votre chien.",
-    cardSlugs: ["promenade", "visite-domicile", "visite-promenade"],
+      "Une formule à domicile, à la durée modulable selon l'autonomie de votre chien.",
+    cardSlugs: ["visite-domicile-30", "visite-domicile-45", "visite-domicile-60"],
   },
   area: {
     city: "Vannes",
@@ -102,7 +102,7 @@ export const visitesChienVannes: ServicePageData = {
     subline: "Votre chien reste dans son environnement",
   },
   related: [
-    { slug: "promeneur-chien-vannes", label: "Promeneur de chien à Vannes" },
+    { slug: "promenade-chien-vannes", label: "Promenades de chien à Vannes" },
     { slug: "visites-chat-vannes", label: "Visites à domicile pour chat" },
   ],
 };

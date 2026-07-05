@@ -3,7 +3,7 @@ import Link from "next/link";
 const serviceLinks = [
   { slug: "visites-chien-vannes", label: "Visites à domicile (chien)" },
   { slug: "visites-chat-vannes", label: "Visites à domicile (chat)" },
-  { slug: "promeneur-chien-vannes", label: "Promeneur de chien" },
+  { slug: "promenade-chien-vannes", label: "Promenades de chien" },
   { slug: "equitation-vannes", label: "Cours d'équitation" },
 ];
 

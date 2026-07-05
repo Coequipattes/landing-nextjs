@@ -2,14 +2,14 @@ import type { ServicePageData } from "./types";
 
 // DRAFT - à valider Manon : l'ensemble du contenu éditorial ci-dessous
 // (intro, bénéfices, FAQ, CTA) doit être relu avant publication.
-export const promeneurChienVannes: ServicePageData = {
-  slug: "promeneur-chien-vannes",
+export const promenadeChienVannes: ServicePageData = {
+  slug: "promenade-chien-vannes",
   metaTitle:
-    "Promeneur de chien à Vannes — Balades quotidiennes | Co'équi'pattes",
+    "Promenades de chien à Vannes — Balades quotidiennes | Co'équi'pattes",
   metaDescription:
-    "Promeneur de chien à Vannes : balades 30 à 60 min adaptées au rythme de votre chien. Pour actifs et propriétaires âgés, ponctuel ou régulier.",
+    "Promenades de chien à Vannes : balades 30 à 60 min adaptées au rythme de votre chien. Pour actifs et propriétaires âgés, ponctuel ou régulier.",
   hero: {
-    h1: "Promeneur de chien à Vannes",
+    h1: "Promenades de chien à Vannes",
     baseline:
       "Des balades régulières adaptées à votre chien, quand vous n'avez pas le temps ou plus l'énergie de sortir — pour qu'il garde sa dépense quotidienne.",
     image: "/manon_chiens.webp",
@@ -19,7 +19,7 @@ export const promeneurChienVannes: ServicePageData = {
     paragraphs: [
       "Tous les chiens ont besoin de sortir tous les jours, et pas qu'à la va-vite avant de partir au boulot. Mais entre les journées de télétravail trop denses, les déplacements pro, une mobilité qui se réduit avec l'âge ou simplement une météo dissuasive, on finit par culpabiliser de ne pas offrir assez à son chien. C'est exactement pour répondre à ces situations que j'interviens comme promeneuse de chien à Vannes.",
       "Mes balades durent 30, 45 ou 60 minutes selon la formule choisie et l'énergie de votre chien, et sont toujours adaptées à son rythme : un jeune chien de berger n'a pas les mêmes besoins qu'un labrador sénior. Les balades de 45 min et 1 h peuvent se dérouler en dehors des quartiers résidentiels, dans des lieux plus adaptés aux chiens ; pour ceux qui aiment l'eau, des moments de baignade peuvent aussi y être intégrés.",
-      "Je m'adapte à vos besoins, que vous ayez besoin d'une balade ponctuelle ou de sorties régulières. Le tarif est généralement à l'unité ; un tarif dégressif n'intervient que pour un volume important, par exemple une sortie chaque jour. Tout commence par une pré-visite gratuite : je rencontre votre chien dans son cadre et je cale avec vous un créneau qui s'intègre dans votre journée.",
+      "Je m'adapte à vos besoins, que vous ayez besoin d'une balade ponctuelle ou de sorties régulières. Le tarif est généralement à l'unité ; un tarif dégressif intervient en cas de volume important, par exemple une sortie chaque jour. Tout commence par une pré-visite gratuite : je rencontre votre chien dans son cadre et je cale avec vous un créneau qui s'intègre dans votre journée.",
     ],
   },
   benefits: [
@@ -57,7 +57,7 @@ export const promeneurChienVannes: ServicePageData = {
   pricing: {
     highlight:
       "À l'unité ou en sorties régulières — je m'adapte à votre rythme.",
-    cardSlugs: ["promenade", "visite-promenade"],
+    cardSlugs: ["promenade-30", "promenade-45", "promenade-60"],
   },
   area: {
     city: "Vannes",
@@ -97,7 +97,7 @@ export const promeneurChienVannes: ServicePageData = {
   ],
   testimonialKeywords: ["promenade", "balade", "promener", "marche"],
   serviceSchema: {
-    name: "Promeneur de chien à Vannes",
+    name: "Promenades de chien à Vannes",
     serviceType: "Dog walking",
     description:
       "Promenades de chien à Vannes et alentours : balades 30 à 60 min adaptées au rythme de votre chien, ponctuelles ou régulières, pré-visite gratuite.",

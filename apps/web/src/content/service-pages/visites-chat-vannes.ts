@@ -19,7 +19,7 @@ export const visitesChatVannes: ServicePageData = {
     paragraphs: [
       "Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse. C'est la raison pour laquelle je me déplace chez vous pour des visites de 30 min à 1 h, une ou plusieurs fois par jour : votre animal reste dans son environnement, avec ses odeurs, son panier, son jardin et ses horaires habituels.",
       "Mes visites s'organisent autour des vrais besoins du chat : alimentation à heures régulières, entretien complet de la litière, eau fraîche, contrôle visuel de son état, et surtout du temps de présence — jeu, câlins, brossage selon ses envies. Je laisse aussi quelques signes de vie discrets (volets ouverts, courrier rentré) pour maintenir l'illusion d'une maison habitée.",
-      "Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chat et moi-même faisons connaissance dans un cadre rassurant, où je note les consignes (alimentation, traitements, habitudes...) et où je cale avec vous le rythme des visites.",
+      "Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chat et moi-même faisons connaissance dans un cadre rassurant, où je note les consignes (alimentation, traitements, habitudes...) et où nous calons ensemble le rythme des visites.",
     ],
   },
   benefits: [
@@ -62,7 +62,7 @@ export const visitesChatVannes: ServicePageData = {
   pricing: {
     highlight:
       "Une formule unique adaptée au chat : visite à domicile, durée modulable selon vos besoins.",
-    cardSlugs: ["visite-domicile"],
+    cardSlugs: ["visite-domicile-30", "visite-domicile-45", "visite-domicile-60"],
   },
   area: {
     city: "Vannes",
@@ -113,6 +113,6 @@ export const visitesChatVannes: ServicePageData = {
   },
   related: [
     { slug: "visites-chien-vannes", label: "Visites à domicile pour chien" },
-    { slug: "promeneur-chien-vannes", label: "Promeneur de chien à Vannes" },
+    { slug: "promenade-chien-vannes", label: "Promenades de chien à Vannes" },
   ],
 };

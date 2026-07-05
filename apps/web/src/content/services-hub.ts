@@ -39,7 +39,7 @@ export const servicesHub: ServiceHubCard[] = [
     title: "Balades",
     teaser:
       "Sorties 30 à 60 min, en laisse, adaptées à l'énergie de votre chien.",
-    href: "/promeneur-chien-vannes",
+    href: "/promenade-chien-vannes",
     iconId: "leash",
     price: "dès 12€",
   },
@@ -67,7 +67,7 @@ export const servicesHub: ServiceHubCard[] = [
     title: "Hébergement courte durée",
     teaser:
       "Courte durée (quelques heures à 2 jours) : votre chien vit chez moi comme s'il était le mien, sans être mêlé à d'autres animaux. 2 chiens possibles s'ils ont le même maître.",
-    href: "#contact",
+    href: "/hebergement-chien-vannes",
     iconId: "home",
     price: "dès 30€/24h",
   },
@@ -97,7 +97,7 @@ export const servicesHub: ServiceHubCard[] = [
     title: "Hébergement sans limite de durée",
     teaser:
       "Sans limite de durée : j'accueille votre chat chez moi, un seul à la fois, sans cage. Il vit avec moi comme s'il était le mien.",
-    href: "#contact",
+    href: "/hebergement-chat-vannes",
     iconId: "home",
     price: "dès 18€/24h",
   },

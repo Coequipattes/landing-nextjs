@@ -60,41 +60,78 @@ export const equitationCards: PriceCard[] = [
 
 export const petsittingCards: PriceCard[] = [
   {
-    slug: "promenade",
-    title: "Promenade",
-    price: "12-22€",
+    slug: "promenade-30",
+    title: "Promenade 30 min",
+    price: "12€",
     description: "Balades adaptées au rythme de votre chien",
-    features: [
-      "30 min : 12€ / 16€*",
-      "45 min : 15€ / 19€*",
-      "1 heure : 18€ / 22€*",
-    ],
+    features: ["15€ en haute saison*"],
   },
   {
-    slug: "visite-promenade",
-    title: "Visite + promenade",
-    price: "15-18€",
-    description: "Promenade de 30 min + 15 min de soins",
-    features: [
-      "30 min de promenade",
-      "15 min de soins avant/après",
-      "Nourrissage, jeux et câlins",
-      "Prix : 15€ / 18€*",
-    ],
+    slug: "promenade-45",
+    title: "Promenade 45 min",
+    price: "15€",
+    description: "Balades adaptées au rythme de votre chien",
+    features: ["18€ en haute saison*"],
     featured: true,
   },
   {
-    slug: "visite-domicile",
-    title: "Visite à domicile",
-    price: "10-20€",
+    slug: "promenade-60",
+    title: "Promenade 1 h",
+    price: "18€",
+    description: "Balades adaptées au rythme de votre chien",
+    features: ["21€ en haute saison*"],
+  },
+  {
+    slug: "visite-domicile-30",
+    title: "Visite 30 min",
+    price: "10,20€",
     description: "Pour chats, NAC et tous animaux",
-    features: [
-      "30 min : 10,20€ / 13,60€*",
-      "45 min : 13€ / 16€*",
-      "1 heure : 16€ / 20€*",
-    ],
+    features: ["13,60€ en haute saison*"],
+  },
+  {
+    slug: "visite-domicile-45",
+    title: "Visite 45 min",
+    price: "13€",
+    description: "Pour chats, NAC et tous animaux",
+    features: ["16€ en haute saison*"],
+    featured: true,
+  },
+  {
+    slug: "visite-domicile-60",
+    title: "Visite 1 h",
+    price: "16€",
+    description: "Pour chats, NAC et tous animaux",
+    features: ["20€ en haute saison*"],
   },
 ];
+
+export const hebergementChienCard: PriceCard = {
+  slug: "hebergement-chien",
+  title: "Hébergement de chien",
+  price: "30€",
+  unit: "/24h",
+  description: "Pension privative chez moi, un seul chien à la fois",
+  features: [
+    "Séjours courts : de quelques heures à 2 jours",
+    "Un seul chien (ou 2 du même foyer) à la fois",
+    "Accès à tout le logement, jamais en cage",
+    "Vous fournissez nourriture, panier et jouets",
+  ],
+};
+
+export const hebergementChatCard: PriceCard = {
+  slug: "hebergement-chat",
+  title: "Hébergement de chat",
+  price: "18€",
+  unit: "/24h",
+  description: "Pension privative chez moi, un seul chat à la fois",
+  features: [
+    "Sans limite de durée : de quelques jours à une longue absence",
+    "Un seul chat à la fois, jamais mêlé à d'autres foyers",
+    "Accès à tout le logement, jamais en cage",
+    "Vous fournissez litière, bac, gamelles, nourriture et jouets",
+  ],
+};
 
 export const gardeADomicileCard: PriceCard = {
   slug: "garde-domicile",
@@ -103,7 +140,7 @@ export const gardeADomicileCard: PriceCard = {
   description: "Je m'installe chez vous, à demeure",
   features: [
     "Présence à demeure, je dors sur place",
-    "D'un week-end à plusieurs semaines",
+    "À partir de 3 nuits (2 animaux ou moins), sans minimum dès 3 animaux",
     "Repas, sorties, soins simples",
     "Maison occupée et surveillée",
   ],
@@ -125,7 +162,13 @@ export const equitationExtras: PriceExtra[] = [
 ];
 
 export function getPriceCardBySlug(slug: string): PriceCard | undefined {
-  return [...equitationCards, ...petsittingCards, gardeADomicileCard].find(
+  return [
+    ...equitationCards,
+    ...petsittingCards,
+    hebergementChienCard,
+    hebergementChatCard,
+    gardeADomicileCard,
+  ].find(
     (c) => c.slug === slug,
   );
 }
