@@ -9,8 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Primary CTA: pink pill, darkens to white on hover — colour only, no lift.
-        primary: "bg-primary text-primary-foreground hover:bg-white",
+        // Primary CTA: rose pill, deepens on hover — colour only, no lift.
+        primary: "bg-primary text-primary-foreground hover:bg-primary/90",
         // Outline pill: pink border, fills pink on hover.
         outline:
           "border-2 border-primary text-foreground hover:bg-primary hover:text-primary-foreground",

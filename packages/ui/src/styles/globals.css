@@ -7,48 +7,68 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* -------------------------------------------------------------------------
-   Co'équi'pattes — brand tokens, single source of truth (web + médias).
-   Dark-first identity : rose sur noir. Hex exact (aucune conversion lossy).
-   ------------------------------------------------------------------------- */
+/* =============================================================================
+   PALETTE — Co'équi'pattes, "clair chaleureux" (voir packages/ui/BRAND.md).
+   Pour tester une autre palette : ne changer QUE ce bloc, tout le reste suit.
+   ============================================================================= */
 :root {
   --radius: 0.75rem;
 
-  /* Brand palette */
-  --pink: #ffa5c9;
-  --pink-light: #ffd4e8;
-  --pink-dark: #e8598b;
-  --pink-glow: rgba(255, 165, 201, 0.3);
+  /* Raw palette */
+  --cream: #fbf6f1; /* fond */
+  --surface: #ffffff; /* cartes */
+  --surface-2: #f5ece3; /* fonds doux alternés */
+  --brown: #3a2e26; /* texte principal (chaud, pas noir froid) */
+  --taupe: #8c7a6b; /* texte secondaire */
+  --rose: #e05b8a; /* action (rose profond, lisible sur crème) */
+  --rose-strong: #c9426f; /* rose action au hover */
+  --blush: #ffe1ec; /* fonds doux roses */
+  --caramel: #d89b7a; /* accent chaud (parcimonie) */
+  --line: #efe3d8; /* bordures douces */
+
+  --ease-brand: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* -----------------------------------------------------------------------
+     shadcn semantic tokens → palette. C'est la couche que les composants
+     doivent consommer (bg-background, text-foreground, bg-card, bg-primary…).
+     ----------------------------------------------------------------------- */
+  --background: var(--cream);
+  --foreground: var(--brown);
+  --card: var(--surface);
+  --card-foreground: var(--brown);
+  --popover: var(--surface);
+  --popover-foreground: var(--brown);
+  --primary: var(--rose);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface-2);
+  --secondary-foreground: var(--brown);
+  --muted: var(--surface-2);
+  --muted-foreground: var(--taupe);
+  --accent: var(--blush);
+  --accent-foreground: var(--rose-strong);
+  --destructive: #e5484d;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--rose);
+
+  /* -----------------------------------------------------------------------
+     Legacy brand utilities (bg-pink, text-gray-light, bg-black-card…).
+     Encore utilisées par les sections non migrées ; remappées sur la palette
+     claire quand elles ont un sens, sinon laissées sombres (ex: overlay
+     lightbox galerie qui doit rester sur fond noir). À migrer vers les
+     tokens sémantiques ci-dessus, section par section.
+     ----------------------------------------------------------------------- */
+  --pink: var(--rose);
+  --pink-light: var(--blush);
+  --pink-dark: var(--rose-strong);
+  --pink-glow: rgba(224, 91, 138, 0.22);
   --black: #0a0a0a;
   --black-soft: #1a1a1a;
   --black-card: #141414;
   --white: #ffffff;
-  --white-soft: #f5f0f2;
-  --gray: #888888;
-  --gray-light: #aaaaaa;
-
-  /* Motion (budget sobre) */
-  --ease-brand: cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* shadcn semantic tokens mapped onto the brand (dark-first) */
-  --background: var(--black);
-  --foreground: var(--white);
-  --card: var(--black-card);
-  --card-foreground: var(--white);
-  --popover: var(--black-card);
-  --popover-foreground: var(--white);
-  --primary: var(--pink);
-  --primary-foreground: var(--black);
-  --secondary: var(--black-soft);
-  --secondary-foreground: var(--white);
-  --muted: var(--black-soft);
-  --muted-foreground: var(--gray-light);
-  --accent: var(--black-soft);
-  --accent-foreground: var(--pink);
-  --destructive: #e5484d;
-  --border: rgba(255, 165, 201, 0.15);
-  --input: rgba(255, 165, 201, 0.15);
-  --ring: var(--pink);
+  --white-soft: var(--cream);
+  --gray: var(--taupe);
+  --gray-light: var(--taupe);
 }
 
 @theme inline {
@@ -56,19 +76,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
-  /* Brand color utilities (keep bg-pink, bg-black-card, text-gray-light…) */
-  --color-pink: var(--pink);
-  --color-pink-light: var(--pink-light);
-  --color-pink-dark: var(--pink-dark);
-  --color-pink-glow: var(--pink-glow);
-  --color-black: var(--black);
-  --color-black-soft: var(--black-soft);
-  --color-black-card: var(--black-card);
-  --color-white: var(--white);
-  --color-white-soft: var(--white-soft);
-  --color-gray: var(--gray);
-  --color-gray-light: var(--gray-light);
 
   /* shadcn semantic color utilities */
   --color-background: var(--background);
@@ -89,6 +96,28 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* Warm accents available as utilities (bg-blush, text-caramel, bg-cream…) */
+  --color-cream: var(--cream);
+  --color-surface: var(--surface);
+  --color-brown: var(--brown);
+  --color-taupe: var(--taupe);
+  --color-rose: var(--rose);
+  --color-blush: var(--blush);
+  --color-caramel: var(--caramel);
+
+  /* Legacy brand utilities (transition — à retirer une fois migré) */
+  --color-pink: var(--pink);
+  --color-pink-light: var(--pink-light);
+  --color-pink-dark: var(--pink-dark);
+  --color-pink-glow: var(--pink-glow);
+  --color-black: var(--black);
+  --color-black-soft: var(--black-soft);
+  --color-black-card: var(--black-card);
+  --color-white: var(--white);
+  --color-white-soft: var(--white-soft);
+  --color-gray: var(--gray);
+  --color-gray-light: var(--gray-light);
 
   /* Typography (CSS vars provided by next/font in the app) */
   --font-sans: var(--font-quicksand);
