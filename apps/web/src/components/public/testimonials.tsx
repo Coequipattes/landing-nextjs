@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { ReviewCard } from "@coequipattes/ui/components/review-card";
 import { SectionHeader } from "./section-header";
 
 type Review = {
@@ -12,30 +13,6 @@ type Review = {
   visible?: boolean;
 };
 
-function ReviewCard({ review }: { review: Review }) {
-  return (
-    <div className="bg-black-card border border-pink/10 rounded-2xl p-5 w-72 shrink-0 mr-4 hover:border-pink/30 transition-colors duration-300">
-      <div className="flex gap-0.5 mb-3">
-        {Array.from({ length: review.rating }).map((_, i) => (
-          <span key={i} className="text-pink text-sm">★</span>
-        ))}
-      </div>
-      <p className="text-gray-light text-[0.875rem] leading-[1.7] mb-4 line-clamp-3">
-        {review.text}
-      </p>
-      <div className="flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-pink/20 flex items-center justify-center text-pink font-bold text-xs shrink-0">
-          {review.authorInitials}
-        </div>
-        <div>
-          <p className="text-white text-sm font-semibold leading-tight">{review.authorName}</p>
-          <p className="text-gray text-xs">{review.context}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function GoogleBadge({ rating, count }: { rating: string; count: number }) {
   return (
     <div className="flex items-center justify-center gap-2 mb-10">
@@ -45,8 +22,8 @@ function GoogleBadge({ rating, count }: { rating: string; count: number }) {
         <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
         <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
       </svg>
-      <span className="text-pink font-semibold text-sm">★ {rating}</span>
-      <span className="text-gray text-sm">· {count} avis Google</span>
+      <span className="text-primary font-semibold text-sm">★ {rating}</span>
+      <span className="text-muted-foreground text-sm">· {count} avis Google</span>
     </div>
   );
 }
@@ -90,7 +67,16 @@ function MarqueeRow({ reviews, velocity }: { reviews: Review[]; velocity: number
     >
       <div ref={trackRef} className="flex">
         {[...reviews, ...reviews].map((review, i) => (
-          <ReviewCard key={i} review={review} />
+          <ReviewCard
+            key={i}
+            rating={review.rating}
+            quote={review.text}
+            author={review.authorName}
+            meta={review.context}
+            initials={review.authorInitials}
+            clamp={3}
+            className="mr-4 w-72 shrink-0"
+          />
         ))}
       </div>
     </div>
@@ -111,7 +97,7 @@ export function Testimonials({ reviews }: { reviews: Review[] }) {
   return (
     <section
       id="temoignages"
-      className="py-16 md:py-25 overflow-hidden bg-black-soft"
+      className="py-16 md:py-25 overflow-hidden bg-background"
     >
       <div className="max-w-[1200px] mx-auto px-6">
         <SectionHeader
