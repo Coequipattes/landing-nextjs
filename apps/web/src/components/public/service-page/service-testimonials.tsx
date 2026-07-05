@@ -1,3 +1,4 @@
+import { ReviewCard } from "@coequipattes/ui/components/review-card";
 import type { ServicePageData } from "@/content/service-pages/types";
 import { SectionHeader } from "../section-header";
 
@@ -34,33 +35,14 @@ export function ServiceTestimonials({
         <SectionHeader label="Témoignages" title="Ils m'ont fait confiance" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {filtered.map((r) => (
-            <article
+            <ReviewCard
               key={`${r.authorName}-${r.text.slice(0, 40)}`}
-              className="bg-black-card border border-pink/10 rounded-2xl p-6 md:p-8"
-            >
-              <p className="text-pink mb-3">
-                <span className="sr-only">{`Note : ${r.rating} sur 5`}</span>
-                <span aria-hidden="true">
-                  {"★".repeat(Math.round(r.rating))}
-                </span>
-              </p>
-              <p className="text-gray-light leading-[1.7] mb-4 italic">
-                « {r.text} »
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-pink/20 flex items-center justify-center text-pink font-bold text-xs shrink-0">
-                  {r.authorInitials}
-                </div>
-                <div>
-                  <p className="text-white text-sm font-semibold leading-tight">
-                    {r.authorName}
-                  </p>
-                  {r.context && (
-                    <p className="text-gray text-xs">{r.context}</p>
-                  )}
-                </div>
-              </div>
-            </article>
+              rating={r.rating}
+              quote={r.text}
+              author={r.authorName}
+              meta={r.context}
+              initials={r.authorInitials}
+            />
           ))}
         </div>
       </div>

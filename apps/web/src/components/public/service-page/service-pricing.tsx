@@ -1,4 +1,4 @@
-import { Button } from "@coequipattes/ui/components/button";
+import { PriceCard } from "@coequipattes/ui/components/price-card";
 import { getPriceCardBySlug } from "@/content/pricing-data";
 import type { ServicePageData } from "@/content/service-pages/types";
 import { SectionHeader } from "../section-header";
@@ -15,7 +15,7 @@ export function ServicePricing({ data }: { data: ServicePageData }) {
   return (
     <section
       id="tarifs"
-      className="py-16 md:py-25 px-6 bg-gradient-to-b from-black to-black-soft"
+      className="py-16 md:py-25 px-6 bg-secondary"
     >
       <div className="max-w-[1200px] mx-auto">
         <SectionHeader
@@ -25,52 +25,29 @@ export function ServicePricing({ data }: { data: ServicePageData }) {
         />
         <div className="flex flex-wrap justify-center gap-8">
           {cards.map((card) => (
-            <div
+            <PriceCard
               key={card.slug}
-              className={`bg-black-card border-2 rounded-3xl p-8 md:p-10 text-center transition-all duration-400 relative overflow-hidden hover:-translate-y-2 hover:border-pink hover:shadow-[0_20px_50px_rgba(255,165,201,0.2)] w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)] max-w-md ${
-                card.featured ? "border-pink scale-105" : "border-pink/10"
-              }`}
-            >
-              {card.featured && (
-                <div className="absolute top-5 -right-9 bg-pink text-black px-10 py-1 text-[0.75rem] font-bold tracking-[1px] rotate-45">
-                  POPULAIRE
-                </div>
-              )}
-              <h3 className="text-xl md:text-[1.8rem] text-white mb-4">
-                {card.title}
-              </h3>
-              <div className="font-display text-3xl md:text-[3rem] font-bold text-pink my-5">
-                {card.price}
-                {card.unit && (
-                  <small className="text-[1.2rem] text-gray font-normal">
-                    {card.unit}
-                  </small>
-                )}
-              </div>
-              <p className="text-gray-light mb-8 leading-relaxed">
-                {card.description}
-              </p>
-              <ul className="text-left mb-8 space-y-0">
-                {card.features.map((f) => (
-                  <li
-                    key={f}
-                    className="py-3 text-gray-light flex items-center gap-3 border-b border-pink/5 last:border-b-0"
-                  >
-                    <span className="text-pink font-bold text-[1.2rem] shrink-0">
-                      ✓
-                    </span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Button asChild className="w-full">
-                <a href="#contact">Réserver</a>
-              </Button>
-            </div>
+              title={card.title}
+              price={
+                <>
+                  {card.price}
+                  {card.unit && (
+                    <small className="text-[1.2rem] font-normal text-muted-foreground">
+                      {card.unit}
+                    </small>
+                  )}
+                </>
+              }
+              subtitle={card.description}
+              features={card.features}
+              href="#contact"
+              popular={card.featured}
+              className="w-full max-w-md sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
+            />
           ))}
         </div>
         {hasSeasonalPricing && (
-          <p className="mt-8 text-center text-sm text-gray-light/80">
+          <p className="mt-8 text-center text-sm text-muted-foreground">
             * Tarif haute saison : du 1er juillet au 31 août et du 24 décembre
             au 2 janvier.
           </p>
