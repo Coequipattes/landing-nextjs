@@ -53,3 +53,6 @@ public/uploads/gallery/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code session artifacts (auto-linked skills, local settings)
+.claude/

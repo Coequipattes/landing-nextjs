@@ -57,7 +57,7 @@ export function Hero() {
               <h2 className="font-display text-xl md:text-2xl text-primary mb-4 md:mb-5">
                 Une approche douce, humaine et passionnée
               </h2>
-              <p className="text-base md:text-[1.05rem] text-muted-foreground leading-[1.8] mb-4">
+              <p className="text-base md:text-[1.05rem] text-foreground/90 leading-[1.8] mb-4">
                 Côté équitation, j&apos;accompagne cavaliers et cavalières de
                 tous niveaux dans une approche respectueuse du cheval, basée sur
                 l&apos;écoute, la progression en douceur et le plaisir de
@@ -65,7 +65,7 @@ export function Hero() {
                 relation harmonieuse avec votre monture, dans la confiance et la
                 compréhension.
               </p>
-              <p className="text-base md:text-[1.05rem] text-muted-foreground leading-[1.8]">
+              <p className="text-base md:text-[1.05rem] text-foreground/90 leading-[1.8]">
                 En parallèle, je prends soin de vos animaux de compagnie lors de
                 vos absences. Que ce soit pour des visites à domicile, des
                 promenades ou une présence rassurante,{" "}

@@ -22,6 +22,35 @@ const subjectOptions = [
   "Autre question",
 ];
 
+// Icônes contact — stroke SVG (héritent text-primary du medallion), pas d'emoji.
+const svgProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  strokeWidth: 1.6,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  className: "stroke-current",
+  "aria-hidden": true,
+};
+
+const MailIcon = () => (
+  <svg {...svgProps}>
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="m3.5 7 8.5 6 8.5-6" />
+  </svg>
+);
+const PhoneIcon = () => (
+  <svg {...svgProps}>
+    <path d="M6 3h3l1.5 5-2 1.2a12 12 0 0 0 5.3 5.3l1.2-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3Z" />
+  </svg>
+);
+const PinIcon = () => (
+  <svg {...svgProps}>
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+    <circle cx="12" cy="10" r="2.6" />
+  </svg>
+);
+
 export function Contact() {
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
@@ -76,18 +105,22 @@ export function Contact() {
           {/* Contact info */}
           <div className="space-y-8">
             <InfoCard
-              icon="✉️"
+              icon={<MailIcon />}
               label="Email"
               value={env.contactEmail}
               href={`mailto:${env.contactEmail}`}
             />
             <InfoCard
-              icon="📞"
+              icon={<PhoneIcon />}
               label="Téléphone"
               value="07 66 74 43 37"
               href="tel:0766744337"
             />
-            <InfoCard icon="📍" label="Localisation" value="Vannes (56)" />
+            <InfoCard
+              icon={<PinIcon />}
+              label="Localisation"
+              value="Vannes (56)"
+            />
           </div>
 
           {/* Form */}
@@ -108,14 +141,24 @@ export function Contact() {
               <label className="block text-foreground text-sm font-medium mb-2">
                 Nom complet <span className="text-primary">*</span>
               </label>
-              <Input type="text" name="name" required />
+              <Input
+                type="text"
+                name="name"
+                required
+                placeholder="Votre nom et prénom"
+              />
             </div>
 
             <div>
               <label className="block text-foreground text-sm font-medium mb-2">
                 Email <span className="text-primary">*</span>
               </label>
-              <Input type="email" name="email" required />
+              <Input
+                type="email"
+                name="email"
+                required
+                placeholder="vous@exemple.com"
+              />
             </div>
 
             <div>
@@ -140,7 +183,12 @@ export function Contact() {
               <label className="block text-foreground text-sm font-medium mb-2">
                 Message <span className="text-primary">*</span>
               </label>
-              <Textarea name="message" required rows={5} />
+              <Textarea
+                name="message"
+                required
+                rows={5}
+                placeholder="Parlez-moi de votre animal, de vos dates, de vos besoins…"
+              />
             </div>
 
             <Button

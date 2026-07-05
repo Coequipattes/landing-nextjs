@@ -9,7 +9,7 @@ const serviceLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-16 text-center">
+    <footer className="border-t border-border bg-secondary py-16 text-center">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="font-display text-2xl font-bold text-primary mb-3">
           Co'équi'pattes

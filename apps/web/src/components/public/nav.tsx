@@ -56,7 +56,7 @@ export function Nav() {
           Co'équi'pattes
         </Link>
 
-        <ul className={`hidden md:flex gap-8 list-none ${menuOpen ? "" : ""}`}>
+        <ul className="hidden md:flex items-center gap-8 list-none">
           {links.map((link) => (
             <li key={link.hash}>
               {isHome ? (

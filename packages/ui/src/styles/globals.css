@@ -19,7 +19,7 @@
   --surface: #ffffff; /* cartes */
   --surface-2: #f5ece3; /* fonds doux alternés */
   --brown: #3a2e26; /* texte principal (chaud, pas noir froid) */
-  --taupe: #8c7a6b; /* texte secondaire */
+  --taupe: #6b5a49; /* texte secondaire (assez foncé pour AA sur crème) */
   --rose: #e05b8a; /* action (rose profond, lisible sur crème) */
   --rose-strong: #c9426f; /* rose action au hover */
   --blush: #ffe1ec; /* fonds doux roses */
