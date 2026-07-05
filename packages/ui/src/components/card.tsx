@@ -10,7 +10,7 @@ const cardVariants = cva(
       interactive: {
         // Clickable cards: quiet hover — border warms, shadow lifts a touch.
         // No translate, no glow (that was the slop we removed).
-        true: "transition-[color,box-shadow,border-color] duration-200 hover:border-primary/45 hover:shadow-[0_1px_2px_rgba(58,46,38,0.05),0_14px_32px_-16px_rgba(224,91,138,0.28)]",
+        true: "cursor-pointer transition-[color,box-shadow,border-color] duration-200 hover:border-primary/45 hover:shadow-[0_1px_2px_rgba(58,46,38,0.05),0_14px_32px_-16px_rgba(224,91,138,0.28)]",
         false: "",
       },
     },

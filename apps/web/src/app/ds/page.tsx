@@ -24,6 +24,23 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
+function Arrow({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
 function Row({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="border-t border-border py-10">
@@ -58,6 +75,17 @@ export default function DesignSystemPage() {
           <Button size="default">Default</Button>
           <Button size="lg">Large</Button>
           <Button disabled>Désactivé</Button>
+        </Row>
+
+        <Row title="Button — avec icône (svg enfant, auto-dimensionné)">
+          <Button>
+            Découvrir
+            <Arrow />
+          </Button>
+          <Button variant="outline">
+            <Arrow className="rotate-180" />
+            Retour
+          </Button>
         </Row>
 
         <Row title="ToggleChip">
