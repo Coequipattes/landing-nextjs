@@ -329,12 +329,11 @@ export default function DesignSystemPage() {
               sizes="192px"
             />
           </MediaFrame>
-          <MediaFrame className="h-40 w-64">
+          <MediaFrame focus="50% 25%" className="h-40 w-64">
             <Image
               src="/garde_chien.webp"
               alt="Garde de chien"
               fill
-              className="object-cover"
               sizes="256px"
             />
           </MediaFrame>
