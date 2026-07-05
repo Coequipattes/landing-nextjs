@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import {
   type IconId,
@@ -8,6 +7,7 @@ import {
   type ServiceHubCard,
   servicesHub,
 } from "@/content/services-hub";
+import { ServiceCard } from "@coequipattes/ui/components/service-card";
 import { ToggleChip } from "@coequipattes/ui/components/toggle-chip";
 import { SectionHeader } from "./section-header";
 
@@ -21,7 +21,7 @@ const CATEGORIES: { id: ServiceCategory; label: string; iconId: IconId }[] = [
 // La couleur/taille est pilotée par `className` (stroke-pink dans les cartes,
 // stroke-current dans les pills pour suivre le texte).
 function ServiceIcon({ id, className }: { id: IconId; className?: string }) {
-  const cls = className ?? "w-6 h-6 stroke-pink";
+  const cls = className ?? "w-6 h-6 stroke-primary";
   const common = {
     viewBox: "0 0 24 24",
     fill: "none",
@@ -107,23 +107,6 @@ function ServiceIcon({ id, className }: { id: IconId; className?: string }) {
   }
 }
 
-function Arrow() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="w-3.5 h-3.5 stroke-current transition-transform duration-300 group-hover/cta:translate-x-1"
-      aria-hidden="true"
-    >
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
-  );
-}
-
 function HubCard({ card, hidden }: { card: ServiceHubCard; hidden: boolean }) {
   const priced = Boolean(card.price);
   const hasPage = card.href.startsWith("/");
@@ -131,41 +114,17 @@ function HubCard({ card, hidden }: { card: ServiceHubCard; hidden: boolean }) {
   // le contact) ; pas de prix -> "Demander le tarif".
   const cta = hasPage ? "Découvrir" : priced ? "Réserver" : "Demander le tarif";
   return (
-    <div
-      className={`group flex h-full w-full flex-col justify-between gap-5 rounded-2xl border border-pink/15 bg-black-card p-6 transition-colors duration-300 hover:border-pink/35 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] ${
+    <ServiceCard
+      icon={<ServiceIcon id={card.iconId} className="stroke-current" />}
+      title={card.title}
+      teaser={card.teaser}
+      price={card.price}
+      href={card.href}
+      cta={cta}
+      className={`w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] ${
         hidden ? "hidden" : ""
       }`}
-    >
-      <div className="flex items-start gap-4">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-pink/25 bg-pink/10 transition-colors duration-300 group-hover:bg-pink/15">
-          <ServiceIcon id={card.iconId} className="w-5 h-5 stroke-pink" />
-        </div>
-        <div className="min-w-0">
-          <h3 className="font-display font-semibold leading-tight text-white text-lg mb-1.5 min-h-[2.5em]">
-            {card.title}
-          </h3>
-          <p className="text-gray-light leading-relaxed text-[0.9rem] min-h-[3.25em]">
-            {card.teaser}
-          </p>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between gap-3">
-        {priced && (
-          <span className="font-display text-lg font-bold text-pink">
-            {card.price}
-          </span>
-        )}
-        <Link
-          href={card.href}
-          aria-label={`${cta} : ${card.title}`}
-          className="group/cta ml-auto inline-flex items-center gap-1.5 rounded-full text-[0.8rem] font-semibold uppercase tracking-[1px] text-pink transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-        >
-          {cta}
-          <Arrow />
-        </Link>
-      </div>
-    </div>
+    />
   );
 }
 
@@ -181,12 +140,12 @@ export function ServicesHub() {
   return (
     <section
       id="services"
-      className="relative bg-black-soft px-6 py-16 md:py-24"
+      className="relative bg-background px-6 py-16 md:py-24"
     >
       {/* Halo de fond très léger pour donner de la profondeur */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-12 mx-auto h-[480px] max-w-[1100px] bg-[radial-gradient(ellipse_at_center,rgba(255,165,201,0.05)_0%,transparent_60%)]"
+        className="pointer-events-none absolute inset-x-0 top-12 mx-auto h-[480px] max-w-[1100px] bg-[radial-gradient(ellipse_at_center,var(--blush)_0%,transparent_60%)] opacity-50"
       />
 
       <div className="relative mx-auto max-w-[1200px]">
@@ -195,7 +154,7 @@ export function ServicesHub() {
           title={
             <>
               <span className="block">Comment je peux</span>
-              <span className="text-pink">vous aider</span>
+              <span className="text-primary">vous aider</span>
             </>
           }
           subtitle="Chien, chat ou cheval — choisissez votre univers, je m'occupe du reste avec la même attention, à Vannes et alentours."
@@ -242,8 +201,8 @@ export function ServicesHub() {
         </div>
 
         {surDevisInActive && (
-          <p className="mx-auto mt-8 max-w-[640px] text-center text-[0.85rem] leading-relaxed text-gray-light/80 animate-[fadeIn_0.4s_var(--transition)]">
-            <span className="font-semibold text-pink">Demander le tarif ?</span>{" "}
+          <p className="mx-auto mt-8 max-w-[640px] text-center text-[0.85rem] leading-relaxed text-muted-foreground animate-[fadeIn_0.4s_var(--transition)]">
+            <span className="font-semibold text-primary">Demander le tarif ?</span>{" "}
             Pour ces prestations, le prix dépend des besoins de l&apos;animal,
             du lieu et de la durée. Contactez-moi pour une estimation
             personnalisée.
