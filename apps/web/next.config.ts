@@ -4,6 +4,7 @@ import path from "node:path";
 const nextConfig: NextConfig = {
   output: "standalone",
   outputFileTracingRoot: path.join(import.meta.dirname, "../../"),
+  transpilePackages: ["@coequipattes/ui"],
   reactCompiler: true,
   allowedDevOrigins: ["192.168.1.32", "192.168.1.48"],
   async redirects() {
