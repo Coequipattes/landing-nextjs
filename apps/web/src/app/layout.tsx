@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Quicksand, Caveat } from "next/font/google";
+import { Fraunces, Hanken_Grotesk, Caveat } from "next/font/google";
 import "./globals.css";
 import { env } from "@/lib/env";
 
-const quicksand = Quicksand({
-  variable: "--font-quicksand",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
 });
 
@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${quicksand.variable} ${playfair.variable} ${caveat.variable}`}
+      className={`${hanken.variable} ${fraunces.variable} ${caveat.variable}`}
     >
       <body>{children}</body>
     </html>

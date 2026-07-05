@@ -10,9 +10,9 @@
 
 ## Marque & design → voir `packages/ui/BRAND.md` (north-star)
 - **Mood** : chaleureux, rassurant, doux, personnel/artisanal, soigné. But : **« rassurer, pas impressionner »**.
-- **Direction visuelle : clair chaleureux** (fond crème, texte brun, rose profond = action, blush = fonds doux). Virage depuis l'ancien dark-first néon.
+- **Direction visuelle : clair chaleureux** (fond crème, texte brun, rose profond = action, blush = fonds doux). Virage depuis l'ancien dark-first néon. **Rose = accent signature unique** (pas de terracotta/caramel — c'est le cliché AI à éviter).
 - **Budget motion sobre** : hover = couleur/opacité douce 150-200 ms. **Zéro** saut (`-translate-y`), scale, rotation, glow néon.
-- Typo : Playfair (display) / Quicksand (sans) / Caveat (accent manuscrit).
+- Typo : **Fraunces** (display) / **Hanken Grotesk** (sans) / **Caveat** (accent manuscrit). Pas Playfair (serif-défaut).
 - Migrer les couleurs en dur (`bg-black-card`, `text-white`, `bg-black`) vers les tokens sémantiques (`bg-card`, `text-foreground`, `bg-background`) pour que les sections suivent le thème.
 
 ## Déploiement

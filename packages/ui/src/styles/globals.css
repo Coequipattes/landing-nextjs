@@ -23,7 +23,6 @@
   --rose: #e05b8a; /* action (rose profond, lisible sur crème) */
   --rose-strong: #c9426f; /* rose action au hover */
   --blush: #ffe1ec; /* fonds doux roses */
-  --caramel: #d89b7a; /* accent chaud (parcimonie) */
   --line: #efe3d8; /* bordures douces */
 
   --ease-brand: cubic-bezier(0.4, 0, 0.2, 1);
@@ -104,7 +103,6 @@
   --color-taupe: var(--taupe);
   --color-rose: var(--rose);
   --color-blush: var(--blush);
-  --color-caramel: var(--caramel);
 
   /* Legacy brand utilities (transition — à retirer une fois migré) */
   --color-pink: var(--pink);
@@ -120,8 +118,8 @@
   --color-gray-light: var(--gray-light);
 
   /* Typography (CSS vars provided by next/font in the app) */
-  --font-sans: var(--font-quicksand);
-  --font-display: var(--font-playfair);
+  --font-sans: var(--font-hanken);
+  --font-display: var(--font-fraunces);
   --font-accent: var(--font-caveat);
 }
 
