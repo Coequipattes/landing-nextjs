@@ -19,12 +19,7 @@ import {
   CardTitle,
 } from "@coequipattes/ui/components/card";
 import { Badge } from "@coequipattes/ui/components/badge";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@coequipattes/ui/components/accordion";
+import { Accordion } from "@coequipattes/ui/components/accordion";
 
 export const metadata: Metadata = {
   title: "Design System",
@@ -149,26 +144,24 @@ export default function DesignSystemPage() {
           <Badge tone="solid">Populaire</Badge>
         </Row>
 
-        <Row title="Accordion — FAQ">
-          <Accordion type="single" collapsible className="w-full max-w-xl">
-            <AccordionItem value="1">
-              <AccordionTrigger>
-                Combien de visites par jour proposez-vous ?
-              </AccordionTrigger>
-              <AccordionContent>
-                Jusqu'à 5 passages par jour, selon l'âge et les besoins de votre
-                animal.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="2">
-              <AccordionTrigger>
-                Comment se passe la gestion des clés ?
-              </AccordionTrigger>
-              <AccordionContent>
-                Remise lors de la pré-visite, restitution à votre retour.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        <Row title="Accordion — FAQ (animé, +→×)">
+          <Accordion
+            className="w-full max-w-xl"
+            items={[
+              {
+                q: "Combien de visites par jour proposez-vous ?",
+                a: "Jusqu'à 5 passages par jour, selon l'âge et les besoins de votre animal.",
+              },
+              {
+                q: "Comment se passe la gestion des clés ?",
+                a: "Remise lors de la pré-visite, restitution à votre retour. Un déplacement pour la remise/restitution est facturé 5 €.",
+              },
+              {
+                q: "Acceptez-vous les chiens réactifs ou anxieux ?",
+                a: "Les chiens anxieux, sans souci. Pour les réactifs, on en parle lors de la pré-visite.",
+              },
+            ]}
+          />
         </Row>
       </div>
     </main>
