@@ -43,7 +43,7 @@ function ServiceCard({
           {cta}
           <span
             aria-hidden="true"
-            className="transition-transform duration-200 group-hover:translate-x-0.5"
+            className="transition-transform duration-200 group-hover:translate-x-1"
           >
             →
           </span>
