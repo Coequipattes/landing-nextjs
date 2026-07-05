@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { Button } from "@coequipattes/ui/components/button";
 import { ToggleChip } from "@coequipattes/ui/components/toggle-chip";
+import { Input } from "@coequipattes/ui/components/input";
+import { Textarea } from "@coequipattes/ui/components/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@coequipattes/ui/components/select";
 
 export const metadata: Metadata = {
   title: "Design System",
@@ -47,6 +56,23 @@ export default function DesignSystemPage() {
           <ToggleChip active>Chien</ToggleChip>
           <ToggleChip>Chat</ToggleChip>
           <ToggleChip>Cheval</ToggleChip>
+        </Row>
+
+        <Row title="Champs de formulaire">
+          <div className="flex w-full max-w-sm flex-col gap-4">
+            <Input placeholder="Votre prénom" />
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Choisir un service" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="equitation">Cours d'équitation</SelectItem>
+                <SelectItem value="petsitting">Pet-sitting</SelectItem>
+                <SelectItem value="tarifs">Tarifs et forfaits</SelectItem>
+              </SelectContent>
+            </Select>
+            <Textarea placeholder="Votre message" />
+          </div>
         </Row>
       </div>
     </main>
