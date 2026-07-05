@@ -9,17 +9,17 @@ const serviceLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-pink/10 py-16 text-center">
+    <footer className="border-t border-border py-16 text-center">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="font-display text-2xl font-bold text-pink mb-3">
+        <div className="font-display text-2xl font-bold text-primary mb-3">
           Co'équi'pattes
         </div>
-        <p className="text-gray-light text-sm mb-10">
+        <p className="text-muted-foreground text-sm mb-10">
           Monitrice d'équitation & Pet-sitter — Vannes (56)
         </p>
 
         <div className="mb-10">
-          <div className="text-[0.75rem] uppercase tracking-[3px] text-pink font-semibold mb-4">
+          <div className="text-[0.75rem] uppercase tracking-[3px] text-primary font-semibold mb-4">
             Mes services
           </div>
           <ul className="flex justify-center gap-x-6 gap-y-2 flex-wrap">
@@ -27,7 +27,7 @@ export function Footer() {
               <li key={s.slug}>
                 <Link
                   href={`/${s.slug}`}
-                  className="text-gray-light text-sm hover:text-pink transition-colors"
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors"
                 >
                   {s.label}
                 </Link>
@@ -37,21 +37,21 @@ export function Footer() {
         </div>
 
         <div className="mb-10">
-          <div className="text-[0.75rem] uppercase tracking-[3px] text-pink font-semibold mb-4">
+          <div className="text-[0.75rem] uppercase tracking-[3px] text-primary font-semibold mb-4">
             Zones d&apos;intervention
           </div>
-          <p className="text-gray-light text-sm max-w-[640px] mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-sm max-w-[640px] mx-auto leading-relaxed">
             Vannes et alentours : Séné, Saint-Avé, Arradon, Ploeren,
             Theix-Noyalo, Plescop — et communes voisines dans un rayon de 10 km.
           </p>
         </div>
 
-        <div className="text-gray text-xs space-y-2">
+        <div className="text-muted-foreground text-xs space-y-2">
           <p>
             &copy; {new Date().getFullYear()} Co'équi'pattes — Manon Millot —
             Tous droits réservés
           </p>
-          <p className="text-gray/70">
+          <p className="text-muted-foreground/70">
             Entreprise individuelle — SIREN 90417432300025 — 4 rue Tamara de
             Lempicka, 56000 Vannes
             <br />
