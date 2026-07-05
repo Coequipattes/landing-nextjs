@@ -33,7 +33,7 @@ export function ServiceTestimonials({
     <section className="py-16 md:py-25 px-6">
       <div className="max-w-[1200px] mx-auto">
         <SectionHeader label="Témoignages" title="Ils m'ont fait confiance" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {filtered.map((r) => (
             <ReviewCard
               key={`${r.authorName}-${r.text.slice(0, 40)}`}
@@ -42,6 +42,7 @@ export function ServiceTestimonials({
               author={r.authorName}
               meta={r.context}
               initials={r.authorInitials}
+              className="w-full max-w-md sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
             />
           ))}
         </div>
