@@ -1,7 +1,18 @@
 # Migration des pages sur le design system
 
-> État au terme de la session « design system ». Branche : `feat/design-system`.
+> ✅ **TERMINÉE** (session migration, branche `feat/design-system`). Tout le site
+> public est passé en « clair chaleureux » sur tokens sémantiques + composants DS.
+> Home (Nav, Hero, Services, Gallery, Testimonials, Contact, Footer) + les 5 pages
+> service + SectionHeader migrés. Tokens legacy morts retirés de `globals.css`
+> (seuls `--black`/`--white` subsistent pour la chrome média de la galerie).
 > Contexte marque/design : `CLAUDE.md` + `packages/ui/BRAND.md`.
+>
+> **Écarts assumés vs plan initial** :
+> - `service-faq.tsx` **conservé** (pas supprimé) : réécrit en wrapper mince autour
+>   du DS `Accordion` (les 5 pages le rendent directement + il porte `section`+header).
+> - Gallery : overlay dégradé sur photos + backdrop lightbox gardés **sombres**
+>   (chrome média immersive intentionnelle, pas du slop).
+> - Hero : halo/glow néon **supprimés** (BRAND « zéro glow »), pas recolorés.
 
 ## Où on en est
 - Monorepo `apps/web` + `packages/ui` (@coequipattes/ui) en place, build vert.
