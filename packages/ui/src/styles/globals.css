@@ -51,23 +51,12 @@
   --ring: var(--rose);
 
   /* -----------------------------------------------------------------------
-     Legacy brand utilities (bg-pink, text-gray-light, bg-black-card…).
-     Encore utilisées par les sections non migrées ; remappées sur la palette
-     claire quand elles ont un sens, sinon laissées sombres (ex: overlay
-     lightbox galerie qui doit rester sur fond noir). À migrer vers les
-     tokens sémantiques ci-dessus, section par section.
+     Chrome média sombre — la galerie garde volontairement un overlay/lightbox
+     sur fond noir (bg-black, from-black, text-white). Seuls ces deux tokens
+     subsistent ; tout le reste du site consomme les tokens sémantiques.
      ----------------------------------------------------------------------- */
-  --pink: var(--rose);
-  --pink-light: var(--blush);
-  --pink-dark: var(--rose-strong);
-  --pink-glow: rgba(224, 91, 138, 0.22);
   --black: #0a0a0a;
-  --black-soft: #1a1a1a;
-  --black-card: #141414;
   --white: #ffffff;
-  --white-soft: var(--cream);
-  --gray: var(--taupe);
-  --gray-light: var(--taupe);
 }
 
 @theme inline {
@@ -104,18 +93,9 @@
   --color-rose: var(--rose);
   --color-blush: var(--blush);
 
-  /* Legacy brand utilities (transition — à retirer une fois migré) */
-  --color-pink: var(--pink);
-  --color-pink-light: var(--pink-light);
-  --color-pink-dark: var(--pink-dark);
-  --color-pink-glow: var(--pink-glow);
+  /* Dark media chrome — gallery overlay/lightbox only (bg-black, text-white) */
   --color-black: var(--black);
-  --color-black-soft: var(--black-soft);
-  --color-black-card: var(--black-card);
   --color-white: var(--white);
-  --color-white-soft: var(--white-soft);
-  --color-gray: var(--gray);
-  --color-gray-light: var(--gray-light);
 
   /* Typography (CSS vars provided by next/font in the app) */
   --font-sans: var(--font-hanken);
