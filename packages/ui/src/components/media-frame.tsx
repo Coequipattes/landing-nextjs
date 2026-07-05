@@ -9,11 +9,16 @@ import { cn } from "../lib/utils";
  */
 function MediaFrame({
   ratio,
+  framed = false,
   className,
   style,
   children,
   ...props
-}: React.ComponentProps<"div"> & { ratio?: string | number }) {
+}: React.ComponentProps<"div"> & {
+  ratio?: string | number;
+  /** Adds an inset rose "passe-partout" border over the image. */
+  framed?: boolean;
+}) {
   return (
     <div
       data-slot="media-frame"
@@ -25,6 +30,12 @@ function MediaFrame({
       {...props}
     >
       {children}
+      {framed && (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-2.5 rounded-xl border border-primary/40"
+        />
+      )}
     </div>
   );
 }

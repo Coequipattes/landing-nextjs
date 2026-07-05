@@ -338,6 +338,15 @@ export default function DesignSystemPage() {
               sizes="256px"
             />
           </MediaFrame>
+          <MediaFrame ratio="4/5" framed className="w-48">
+            <Image
+              src="/manon_chat.webp"
+              alt="Manon avec un chat"
+              fill
+              className="object-cover"
+              sizes="192px"
+            />
+          </MediaFrame>
         </Row>
       </div>
     </main>
