@@ -99,7 +99,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h4 className="text-white text-[1.1rem] mb-1">{img.title}</h4>
-              <p className="text-pink text-[0.85rem]">
+              <p className="text-primary text-[0.85rem]">
                 {categoryNames[img.category]}
               </p>
             </div>
@@ -112,7 +112,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
           <button
             type="button"
             onClick={() => setLimit((l) => l + PAGE_SIZE)}
-            className="px-8 py-3 rounded-full border border-pink/30 text-pink font-medium text-[0.9rem] hover:bg-pink/10 transition-colors duration-300 cursor-pointer"
+            className="px-8 py-3 rounded-full border border-primary/30 text-primary font-medium text-[0.9rem] hover:bg-primary/10 transition-colors duration-300 cursor-pointer"
           >
             Voir plus ({remaining} photo{remaining > 1 ? "s" : ""})
           </button>
@@ -136,7 +136,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
           >
             <button
               type="button"
-              className="absolute -top-12 right-0 w-10 h-10 bg-pink rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors duration-200 text-black font-bold"
+              className="absolute -top-12 right-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center cursor-pointer hover:bg-primary/80 transition-colors duration-200 text-primary-foreground font-bold"
               onClick={closeLightbox}
             >
               ✕
@@ -144,7 +144,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
             <button
               type="button"
-              className="absolute top-1/2 -translate-y-1/2 -left-[70px] w-[50px] h-[50px] bg-pink/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-pink transition-colors duration-200 backdrop-blur-[10px] text-white"
+              className="absolute top-1/2 -translate-y-1/2 -left-[70px] w-[50px] h-[50px] bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
               onClick={() => navigate(-1)}
             >
               ‹
@@ -160,7 +160,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
             <button
               type="button"
-              className="absolute top-1/2 -translate-y-1/2 -right-[70px] w-[50px] h-[50px] bg-pink/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-pink transition-colors duration-200 backdrop-blur-[10px] text-white"
+              className="absolute top-1/2 -translate-y-1/2 -right-[70px] w-[50px] h-[50px] bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
               onClick={() => navigate(1)}
             >
               ›
@@ -170,7 +170,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
               <h4 className="text-white text-[1.2rem] mb-1">
                 {images[lightbox].title}
               </h4>
-              <p className="text-pink text-[0.95rem]">
+              <p className="text-primary text-[0.95rem]">
                 {categoryNames[images[lightbox].category]}
               </p>
             </div>
