@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@coequipattes/ui/components/button";
 import { SectionHeader } from "./section-header";
 import { env } from "@/lib/env";
 
@@ -210,13 +211,13 @@ export function Contact() {
               />
             </div>
 
-            <button
+            <Button
               type="submit"
               disabled={status === "sending"}
-              className="w-full py-3.5 rounded-full font-semibold text-[0.95rem] uppercase tracking-[1px] bg-pink text-black hover:bg-white hover:-translate-y-[2px] hover:shadow-[0_8px_25px_var(--pink-glow)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full"
             >
               {status === "sending" ? "Envoi en cours..." : "Envoyer le message"}
-            </button>
+            </Button>
           </form>
         </div>
       </div>

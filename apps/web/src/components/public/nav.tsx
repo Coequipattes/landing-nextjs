@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Button } from "@coequipattes/ui/components/button";
 
 const links = [
   { hash: "about", label: "Qui suis-je" },
@@ -80,12 +81,9 @@ export function Nav() {
             </li>
           ))}
           <li>
-            <Link
-              href={hrefFor("contact")}
-              className="bg-pink text-black px-6 py-2.5 rounded-full font-semibold uppercase text-[0.82rem] tracking-[1px] hover:bg-white hover:-translate-y-[1px] hover:shadow-[0_4px_15px_var(--pink-glow)] transition-all duration-300"
-            >
-              Réserver
-            </Link>
+            <Button asChild size="sm">
+              <Link href={hrefFor("contact")}>Réserver</Link>
+            </Button>
           </li>
         </ul>
 
@@ -152,13 +150,11 @@ export function Nav() {
             </li>
           ))}
           <li>
-            <Link
-              href={hrefFor("contact")}
-              className="bg-pink text-black px-8 py-3 rounded-full font-semibold uppercase text-[0.95rem] tracking-[1px]"
-              onClick={() => setMenuOpen(false)}
-            >
-              Réserver
-            </Link>
+            <Button asChild size="lg">
+              <Link href={hrefFor("contact")} onClick={() => setMenuOpen(false)}>
+                Réserver
+              </Link>
+            </Button>
           </li>
         </ul>
       </div>

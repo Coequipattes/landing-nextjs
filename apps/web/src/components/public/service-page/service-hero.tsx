@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@coequipattes/ui/components/button";
 import type { ServicePageData } from "@/content/service-pages/types";
 
 export function ServiceHero({ data }: { data: ServicePageData }) {
@@ -17,18 +18,12 @@ export function ServiceHero({ data }: { data: ServicePageData }) {
             {baseline}
           </p>
           <div className="inline-flex gap-4 flex-wrap">
-            <a
-              href="#contact"
-              className="px-9 py-3.5 rounded-full font-semibold text-[0.95rem] uppercase tracking-[1px] bg-pink text-black hover:bg-white hover:-translate-y-[2px] hover:shadow-[0_8px_25px_var(--pink-glow)] transition-all duration-300"
-            >
-              Me contacter
-            </a>
-            <a
-              href="#tarifs"
-              className="px-9 py-3.5 rounded-full font-semibold text-[0.95rem] uppercase tracking-[1px] bg-transparent text-white border-2 border-pink hover:bg-pink hover:text-black hover:-translate-y-[2px] transition-all duration-300"
-            >
-              Voir les tarifs
-            </a>
+            <Button asChild size="lg">
+              <a href="#contact">Me contacter</a>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <a href="#tarifs">Voir les tarifs</a>
+            </Button>
           </div>
         </div>
         <div className="relative h-[320px] md:h-[440px] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)]">

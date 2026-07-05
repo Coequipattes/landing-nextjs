@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@coequipattes/ui/components/button";
 
 export function Hero() {
   return (
@@ -93,18 +94,12 @@ export function Hero() {
             </div>
 
             <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
-              <a
-                href="#services"
-                className="px-8 md:px-9 py-3.5 rounded-full font-semibold text-[0.95rem] uppercase tracking-[1px] bg-pink text-black hover:bg-white hover:-translate-y-[2px] hover:shadow-[0_8px_25px_var(--pink-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-all duration-300"
-              >
-                Voir mes services
-              </a>
-              <a
-                href="#contact"
-                className="px-8 md:px-9 py-3.5 rounded-full font-semibold text-[0.95rem] uppercase tracking-[1px] bg-transparent text-white border-2 border-pink hover:bg-pink hover:text-black hover:-translate-y-[2px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-all duration-300"
-              >
-                Prendre contact
-              </a>
+              <Button asChild size="lg">
+                <a href="#services">Voir mes services</a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href="#contact">Prendre contact</a>
+              </Button>
             </div>
 
             {/* Trust signals — subtle line under CTAs */}
