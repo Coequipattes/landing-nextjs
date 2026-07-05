@@ -109,7 +109,10 @@ export function Testimonials({ reviews }: { reviews: Review[] }) {
   const row2 = visible.slice(half);
 
   return (
-    <section id="temoignages" className="py-16 md:py-25 overflow-hidden">
+    <section
+      id="temoignages"
+      className="py-16 md:py-25 overflow-hidden bg-black-soft"
+    >
       <div className="max-w-[1200px] mx-auto px-6">
         <SectionHeader
           label="Témoignages"

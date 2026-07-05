@@ -6,6 +6,10 @@ export function ServicePricing({ data }: { data: ServicePageData }) {
   const cards = data.pricing.cardSlugs
     .map((slug) => getPriceCardBySlug(slug))
     .filter((c): c is NonNullable<typeof c> => Boolean(c));
+  // Note "haute saison" affichée seulement si un tarif marqué d'un * existe.
+  const hasSeasonalPricing = cards.some(
+    (c) => c.price.includes("*") || c.features.some((f) => f.includes("*")),
+  );
 
   return (
     <section
@@ -67,6 +71,12 @@ export function ServicePricing({ data }: { data: ServicePageData }) {
             </div>
           ))}
         </div>
+        {hasSeasonalPricing && (
+          <p className="mt-8 text-center text-sm text-gray-light/80">
+            * Tarif haute saison : du 1er juillet au 31 août et du 24 décembre
+            au 2 janvier.
+          </p>
+        )}
       </div>
     </section>
   );

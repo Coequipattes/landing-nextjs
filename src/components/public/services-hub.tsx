@@ -1,23 +1,39 @@
+"use client";
+
 import Link from "next/link";
-import { type IconId, servicesHub } from "@/content/services-hub";
+import { useState } from "react";
+import {
+  type IconId,
+  type ServiceCategory,
+  type ServiceHubCard,
+  servicesHub,
+} from "@/content/services-hub";
 import { SectionHeader } from "./section-header";
 
+const CATEGORIES: { id: ServiceCategory; label: string; iconId: IconId }[] = [
+  { id: "chien", label: "Chien", iconId: "dog" },
+  { id: "chat", label: "Chat", iconId: "cat" },
+  { id: "cheval", label: "Cheval", iconId: "horse" },
+];
+
 // Icônes SVG inline (stroke-based, cohérence pink, pas d'emoji).
+// La couleur/taille est pilotée par `className` (stroke-pink dans les cartes,
+// stroke-current dans les pills pour suivre le texte).
 function ServiceIcon({ id, className }: { id: IconId; className?: string }) {
-  const base = "w-7 h-7 stroke-pink";
-  const cls = `${base} ${className ?? ""}`.trim();
+  const cls = className ?? "w-6 h-6 stroke-pink";
+  const common = {
+    viewBox: "0 0 24 24",
+    fill: "none",
+    strokeWidth: "1.6",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    className: cls,
+    "aria-hidden": true,
+  };
   switch (id) {
     case "paw-heart":
       return (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className={cls}
-          aria-hidden="true"
-        >
+        <svg {...common}>
           <path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z" />
           <circle cx="6" cy="5" r="1.4" />
           <circle cx="10" cy="3.4" r="1.4" />
@@ -27,30 +43,14 @@ function ServiceIcon({ id, className }: { id: IconId; className?: string }) {
       );
     case "dog":
       return (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className={cls}
-          aria-hidden="true"
-        >
+        <svg {...common}>
           <path d="M10 5 7 3v4l-2 1v5l2 2v5h3v-3h4v3h3v-5l2-2v-4l-2-1V3l-3 2" />
           <path d="M11 12h.01M13 12h.01" />
         </svg>
       );
     case "cat":
       return (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className={cls}
-          aria-hidden="true"
-        >
+        <svg {...common}>
           <path d="M5 4v5a7 7 0 0 0 14 0V4l-3 3h-1.5M19 4l-3 3M8 9h.01M16 9h.01M9 13c.7 1 2 1.5 3 1.5s2.3-.5 3-1.5" />
           <path d="M12 14.5v3" />
           <path d="M7 21c1-1.5 3-2.5 5-2.5s4 1 5 2.5" />
@@ -58,15 +58,7 @@ function ServiceIcon({ id, className }: { id: IconId; className?: string }) {
       );
     case "leash":
       return (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className={cls}
-          aria-hidden="true"
-        >
+        <svg {...common}>
           <circle cx="6" cy="5" r="2" />
           <path d="M8 5h2a3 3 0 0 1 3 3v4" />
           <path d="M13 12c-1 3 1 5 3 5h2a2 2 0 0 1 2 2v2" />
@@ -75,19 +67,40 @@ function ServiceIcon({ id, className }: { id: IconId; className?: string }) {
       );
     case "horse":
       return (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className={cls}
-          aria-hidden="true"
-        >
+        <svg {...common}>
           <path d="M4 21v-4c0-3 2-6 5-6h2l2-3h2l1 2 3 1v3l-2 1v6" />
           <path d="M9 21v-3" />
           <path d="M17 8.5h.01" />
           <path d="M14 6l1-3" />
+        </svg>
+      );
+    case "home":
+      return (
+        <svg {...common}>
+          <path d="M4 11.5 12 5l8 6.5" />
+          <path d="M6 10.5V19h12v-8.5" />
+          <path d="M10 19v-4.5h4V19" />
+        </svg>
+      );
+    case "book":
+      return (
+        <svg {...common}>
+          <path d="M12 6.5C10.3 5.4 7.7 5 5 5v12c2.7 0 5.3.4 7 1.5 1.7-1.1 4.3-1.5 7-1.5V5c-2.7 0-5.3.4-7 1.5Z" />
+          <path d="M12 6.5v12" />
+        </svg>
+      );
+    case "heart":
+      return (
+        <svg {...common}>
+          <path d="M12 20s-7-4.4-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.6 12 20 12 20Z" />
+        </svg>
+      );
+    case "trophy":
+      return (
+        <svg {...common}>
+          <path d="M8 4h8v4.5a4 4 0 0 1-8 0Z" />
+          <path d="M8 5.5H5V7a3 3 0 0 0 3 3M16 5.5h3V7a3 3 0 0 1-3 3" />
+          <path d="M12 12.5V16M9.5 20h5M10.5 20l.4-4h2.2l.4 4" />
         </svg>
       );
   }
@@ -101,7 +114,7 @@ function Arrow() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-4 h-4 stroke-current transition-transform duration-300 group-hover:translate-x-1"
+      className="w-3.5 h-3.5 stroke-current transition-transform duration-300 group-hover/cta:translate-x-1"
       aria-hidden="true"
     >
       <path d="M5 12h14" />
@@ -110,65 +123,64 @@ function Arrow() {
   );
 }
 
-type CardProps = {
-  card: (typeof servicesHub)[number];
-};
-
-function HubCard({ card }: CardProps) {
+function HubCard({ card, hidden }: { card: ServiceHubCard; hidden: boolean }) {
+  const priced = Boolean(card.price);
+  const hasPage = card.href.startsWith("/");
+  // Page dédiée -> "Découvrir" ; prix mais pas de page -> "Réserver" (vers
+  // le contact) ; pas de prix -> "Demander le tarif".
+  const cta = hasPage ? "Découvrir" : priced ? "Réserver" : "Demander le tarif";
   return (
-    <Link
-      href={card.href}
-      className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-pink/15 bg-black-card p-7 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-pink/60 hover:shadow-[0_18px_45px_rgba(255,165,201,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+    <div
+      className={`group flex h-full w-full flex-col justify-between gap-5 rounded-2xl border border-pink/15 bg-black-card p-6 transition-colors duration-300 hover:border-pink/35 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] ${
+        hidden ? "hidden" : ""
+      }`}
     >
-      {/* Glow décoratif coin haut-gauche */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-12 -left-12 h-40 w-40 rounded-full bg-pink/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-      />
-      {/* Top bar pink animée */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-transparent via-pink to-transparent transition-transform duration-500 group-hover:scale-x-100"
-      />
-
-      <div className="relative">
-        <div className="mb-6 flex items-center justify-between">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-pink/25 bg-pink/10 transition-all duration-300 group-hover:scale-110 group-hover:bg-pink/20">
-            <ServiceIcon id={card.iconId} />
-          </div>
-          <span className="text-[0.7rem] font-semibold uppercase tracking-[1.5px] text-pink/80">
-            {card.kicker}
-          </span>
+      <div className="flex items-start gap-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-pink/25 bg-pink/10 transition-colors duration-300 group-hover:bg-pink/15">
+          <ServiceIcon id={card.iconId} className="w-5 h-5 stroke-pink" />
         </div>
-
-        <h3 className="font-display font-semibold leading-tight text-white text-xl md:text-2xl mb-3">
-          {card.title}
-        </h3>
-
-        <p className="text-gray-light leading-relaxed text-[0.95rem]">
-          {card.teaser}
-        </p>
+        <div className="min-w-0">
+          <h3 className="font-display font-semibold leading-tight text-white text-lg mb-1.5 min-h-[2.5em]">
+            {card.title}
+          </h3>
+          <p className="text-gray-light leading-relaxed text-[0.9rem] min-h-[3.25em]">
+            {card.teaser}
+          </p>
+        </div>
       </div>
 
-      <div className="relative mt-7 flex items-center justify-between gap-4">
-        <span className="font-display text-xl font-bold text-pink">
-          {card.priceFrom}
-        </span>
-        <span className="inline-flex items-center gap-2 text-[0.85rem] font-semibold uppercase tracking-[1px] text-pink transition-colors group-hover:text-white">
-          Découvrir
+      <div className="flex items-center justify-between gap-3">
+        {priced && (
+          <span className="font-display text-lg font-bold text-pink">
+            {card.price}
+          </span>
+        )}
+        <Link
+          href={card.href}
+          aria-label={`${cta} : ${card.title}`}
+          className="group/cta ml-auto inline-flex items-center gap-1.5 rounded-full text-[0.8rem] font-semibold uppercase tracking-[1px] text-pink transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        >
+          {cta}
           <Arrow />
-        </span>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
 
 export function ServicesHub() {
+  const [active, setActive] = useState<ServiceCategory>("chien");
+  // Note "sur devis" : visible seulement si la catégorie active contient une
+  // prestation sans tarif fixe (pas de prix + pas de page dédiée).
+  const surDevisInActive = servicesHub.some(
+    (card) =>
+      card.category === active && !card.price && !card.href.startsWith("/"),
+  );
+
   return (
     <section
       id="services"
-      className="relative px-6 py-16 md:py-24"
-      aria-labelledby="services-hub-title"
+      className="relative bg-black-soft px-6 py-16 md:py-24"
     >
       {/* Halo de fond très léger pour donner de la profondeur */}
       <div
@@ -178,24 +190,69 @@ export function ServicesHub() {
 
       <div className="relative mx-auto max-w-[1200px]">
         <SectionHeader
-          label="Nos services"
+          label="Mes services"
           title={
             <>
               <span className="block">Comment je peux</span>
               <span className="text-pink">vous aider</span>
             </>
           }
-          subtitle="Garde à domicile, balades, équitation — un seul interlocuteur, une approche douce, des prestations sur-mesure à Vannes et dans le Morbihan."
+          subtitle="Chien, chat ou cheval — choisissez votre univers, je m'occupe du reste avec la même attention, à Vannes et alentours."
         />
 
-        {/* Grille 2×2 régulière : 4 services peer, aucun n'a vocation
-            ombrelle après le retrait de la page Pet-sitting (consolidée
-            sur la home). Mobile 1 col, ≥sm 2 cols. */}
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6">
+        {/* Filtre par animal — un visiteur ne voit que l'univers qui le
+            concerne. Les cartes des trois univers restent dans le DOM
+            (masquées via `hidden`) pour garder les liens internes crawlables. */}
+        <div
+          role="tablist"
+          aria-label="Filtrer les services par animal"
+          className="mb-10 flex flex-wrap justify-center gap-3 md:mb-12"
+        >
+          {CATEGORIES.map((cat) => {
+            const isActive = active === cat.id;
+            return (
+              <button
+                key={cat.id}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActive(cat.id)}
+                className={`inline-flex cursor-pointer items-center gap-2 rounded-full px-6 py-3 text-[0.85rem] font-semibold uppercase tracking-[1.5px] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
+                  isActive
+                    ? "bg-pink text-black shadow-[0_8px_25px_var(--pink-glow)]"
+                    : "border-2 border-pink/30 bg-transparent text-white hover:-translate-y-[1px] hover:border-pink"
+                }`}
+              >
+                <ServiceIcon id={cat.iconId} className="w-4 h-4 stroke-current" />
+                {cat.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* key={active} : remonte la grille pour rejouer le fade à chaque
+            bascule, sans retirer les cartes masquées du rendu. */}
+        <div
+          key={active}
+          className="flex flex-wrap content-start justify-center gap-6 lg:min-h-[27rem] animate-[fadeIn_0.4s_var(--transition)]"
+        >
           {servicesHub.map((card) => (
-            <HubCard key={card.slug} card={card} />
+            <HubCard
+              key={card.slug}
+              card={card}
+              hidden={card.category !== active}
+            />
           ))}
         </div>
+
+        {surDevisInActive && (
+          <p className="mx-auto mt-8 max-w-[640px] text-center text-[0.85rem] leading-relaxed text-gray-light/80 animate-[fadeIn_0.4s_var(--transition)]">
+            <span className="font-semibold text-pink">Demander le tarif ?</span>{" "}
+            Pour ces prestations, le prix dépend des besoins de l&apos;animal,
+            du lieu et de la durée. Contactez-moi pour une estimation
+            personnalisée.
+          </p>
+        )}
       </div>
     </section>
   );

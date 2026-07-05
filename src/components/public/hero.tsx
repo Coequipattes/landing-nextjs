@@ -2,14 +2,17 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-[90px] pb-12 md:pt-[110px] md:pb-20 px-6">
+    <section
+      id="about"
+      className="relative min-h-screen flex items-center overflow-hidden pt-[110px] pb-16 md:pt-[128px] md:pb-20 px-6"
+    >
       {/* Background ambient gradients — préserve l'identité existante */}
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(255,165,201,0.10)_0%,transparent_55%),radial-gradient(ellipse_at_85%_15%,rgba(255,165,201,0.08)_0%,transparent_50%),radial-gradient(ellipse_at_50%_50%,rgba(255,165,201,0.03)_0%,transparent_70%),var(--black)]"
       />
 
-      <div className="relative z-10 max-w-[1200px] mx-auto">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Visual — first on mobile (above text), right on desktop */}
           <div className="order-1 lg:order-2 lg:col-span-5 animate-[fadeInUp_0.9s_var(--transition)]">
@@ -64,14 +67,30 @@ export function Hero() {
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-gray-light leading-relaxed max-w-[560px] mx-auto lg:mx-0 mb-8 md:mb-10">
-              Diplômée, passionnée et installée dans le Morbihan, je prends soin
-              de vos compagnons avec{" "}
-              <strong className="text-white-soft font-semibold">
-                la même attention que s&apos;ils étaient les miens
-              </strong>
-              .
-            </p>
+            <div className="max-w-[600px] mx-auto lg:mx-0 mb-8 md:mb-10">
+              <h2 className="font-display text-xl md:text-2xl text-pink mb-4 md:mb-5">
+                Une approche douce, humaine et passionnée
+              </h2>
+              <p className="text-base md:text-[1.05rem] text-gray-light leading-[1.8] mb-4">
+                Côté équitation, j&apos;accompagne cavaliers et cavalières de
+                tous niveaux dans une approche respectueuse du cheval, basée sur
+                l&apos;écoute, la progression en douceur et le plaisir de
+                partager. Mon objectif est de vous aider à développer une
+                relation harmonieuse avec votre monture, dans la confiance et la
+                compréhension.
+              </p>
+              <p className="text-base md:text-[1.05rem] text-gray-light leading-[1.8]">
+                En parallèle, je prends soin de vos animaux de compagnie lors de
+                vos absences. Que ce soit pour des visites à domicile, des
+                promenades ou une présence rassurante,{" "}
+                <strong className="text-pink font-semibold">
+                  n&apos;ayant pas d&apos;animal personnel, je peux consacrer
+                  100&nbsp;% de mon attention à vos compagnons
+                </strong>{" "}
+                afin d&apos;offrir un service sur-mesure et entièrement dédié à
+                leurs besoins.
+              </p>
+            </div>
 
             <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
               <a
@@ -95,21 +114,7 @@ export function Hero() {
                   aria-hidden="true"
                   className="inline-block w-1.5 h-1.5 rounded-full bg-pink"
                 />
-                Certifiée France Petsitters
-              </li>
-              <li className="flex items-center gap-2">
-                <span
-                  aria-hidden="true"
-                  className="inline-block w-1.5 h-1.5 rounded-full bg-pink"
-                />
-                Vannes &amp; 10 km alentours
-              </li>
-              <li className="flex items-center gap-2">
-                <span
-                  aria-hidden="true"
-                  className="inline-block w-1.5 h-1.5 rounded-full bg-pink"
-                />
-                Assurée pro
+                Vannes et alentours
               </li>
             </ul>
           </div>

@@ -1,4 +1,3 @@
-import { About } from "@/components/public/about";
 import { Contact } from "@/components/public/contact";
 import { Gallery } from "@/components/public/gallery";
 import { Hero } from "@/components/public/hero";
@@ -17,9 +16,8 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <About />
       <ServicesHub />
-      <section id="galerie" className="py-16 md:py-25 px-6 bg-black-soft">
+      <section id="galerie" className="py-16 md:py-25 px-6">
         <div className="max-w-[1200px] mx-auto">
           <SectionHeader label="Galerie" title="" subtitle="" />
           <Gallery images={galleryData} />

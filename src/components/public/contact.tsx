@@ -121,7 +121,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-25 px-6 bg-black-soft relative overflow-hidden"
+      className="py-16 md:py-25 px-6 relative overflow-hidden"
     >
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse,rgba(255,165,201,0.05)_0%,transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(ellipse,rgba(255,165,201,0.04)_0%,transparent_70%)] pointer-events-none" />
