@@ -30,10 +30,10 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--black);
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--pink);
+  background: var(--primary);
   border-radius: 4px;
 }
 
