@@ -26,7 +26,7 @@ function PriceCard({
   return (
     <Card
       className={cn(
-        "relative items-center overflow-hidden text-center",
+        "relative items-center gap-5 overflow-hidden p-8 text-center md:p-10",
         popular &&
           "border-primary shadow-[0_1px_2px_rgba(58,46,38,0.05),0_20px_44px_-22px_rgba(224,91,138,0.4)]",
         className,
@@ -38,7 +38,7 @@ function PriceCard({
         </span>
       )}
       <h3 className="font-display text-xl text-foreground">{title}</h3>
-      <p className="font-display text-4xl font-semibold text-primary">{price}</p>
+      <p className="font-display text-5xl font-semibold text-primary">{price}</p>
       {subtitle && <p className="text-sm text-muted-foreground">{subtitle}</p>}
       <ul className="my-2 w-full">
         {features.map((f, i) => (

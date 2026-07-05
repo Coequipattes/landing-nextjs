@@ -221,12 +221,19 @@ export default function DesignSystemPage() {
         </Row>
 
         <Row title="PriceCard (+ ruban Populaire)">
-          <div className="grid w-full gap-6 sm:grid-cols-2">
+          <div className="grid w-full items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <PriceCard
               title="Promenade"
               price="12-22€"
               subtitle="Balades adaptées au rythme de votre chien"
               features={["30 min : 12€ / 16€*", "45 min : 15€ / 19€*", "1 heure : 18€ / 22€*"]}
+              href="#"
+            />
+            <PriceCard
+              title="Visite à domicile"
+              price="10-20€"
+              subtitle="Pour chats, NAC et tous animaux"
+              features={["30 min : 10,20€ / 13,60€*", "45 min : 13€ / 16€*", "1 heure : 16€ / 20€*"]}
               href="#"
             />
             <PriceCard
