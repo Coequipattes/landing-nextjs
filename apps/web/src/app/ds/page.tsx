@@ -10,6 +10,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@coequipattes/ui/components/select";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@coequipattes/ui/components/card";
 
 export const metadata: Metadata = {
   title: "Design System",
@@ -73,6 +81,29 @@ export default function DesignSystemPage() {
             </Select>
             <Textarea placeholder="Votre message" />
           </div>
+        </Row>
+
+        <Row title="Card">
+          <Card className="w-64">
+            <CardHeader>
+              <CardTitle>Visites à domicile</CardTitle>
+              <CardDescription>
+                Votre animal reste chez lui, dans ses repères.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              Repas, jeux, câlins et un suivi photo à chaque passage.
+            </CardContent>
+            <CardFooter>
+              <Button size="sm">Réserver</Button>
+            </CardFooter>
+          </Card>
+          <Card interactive className="w-64">
+            <CardTitle>Carte cliquable</CardTitle>
+            <CardDescription>
+              Survole-moi : la bordure s'éclaire, sans saut ni glow.
+            </CardDescription>
+          </Card>
         </Row>
       </div>
     </main>
