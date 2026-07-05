@@ -41,6 +41,9 @@ public/uploads/gallery/
 # print exports (scripts/export-cards.mjs)
 /print/
 
+# social post exports (/post-parrainage etc.)
+/social/
+
 # graphify (graph AST tool)
 /graphify-out/
 
