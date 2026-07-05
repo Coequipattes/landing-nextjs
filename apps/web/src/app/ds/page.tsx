@@ -247,19 +247,54 @@ export default function DesignSystemPage() {
           </div>
         </Row>
 
-        <Row title="ReviewCard">
-          <div className="grid w-full gap-6 sm:grid-cols-2">
+        <Row title="ReviewCard — avis complet (hauteur = contenu)">
+          <div className="grid w-full items-start gap-6 sm:grid-cols-3">
             <ReviewCard
-              quote="Merci Manon pour la patience et la bienveillance dont tu fais preuve avec ma jument et moi."
-              author="Aurore Duhamel"
-              meta="Visité en janvier"
-              initials="AD"
+              quote="Manon est venue garder mes 5 chats pendant mon absence de plusieurs jours et je ne peux que vous la recommander. Très attentionnée, très à l'écoute, très douce tout en étant professionnelle. Chaque jour, un compte rendu avec photos. Je les ai retrouvés en pleine forme."
+              author="Waterdrops"
+              meta="Visité en mars"
+              initials="WW"
             />
             <ReviewCard
-              quote="Service au top, mon chat était parfaitement serein à notre retour."
-              author="Julien P."
+              quote="La petsitter attitrée d'Hana depuis le début. Attentionnée et très communicative, je pars en vacances rassurée. Merci Manon !"
+              author="Caroline Messian Devys"
               meta="Visité en mars"
-              initials="JP"
+              initials="CM"
+            />
+            <ReviewCard
+              quote="Je vous recommande vivement Manon pour sa gentillesse et son professionnalisme."
+              author="Patrick Durant"
+              meta="Visité en février"
+              initials="PD"
+            />
+          </div>
+        </Row>
+
+        <Row title="ReviewCard — clamp={5} (home, hauteur uniforme)">
+          <div className="grid w-full gap-6 sm:grid-cols-3">
+            <ReviewCard
+              clamp={5}
+              className="h-full"
+              quote="Manon est venue garder mes 5 chats pendant mon absence de plusieurs jours et je ne peux que vous la recommander. Très attentionnée, très à l'écoute, très douce tout en étant professionnelle. Chaque jour, un compte rendu avec photos. Je les ai retrouvés en pleine forme."
+              author="Waterdrops"
+              meta="Visité en mars"
+              initials="WW"
+            />
+            <ReviewCard
+              clamp={5}
+              className="h-full"
+              quote="La petsitter attitrée d'Hana depuis le début. Attentionnée et très communicative, je pars en vacances rassurée. Merci Manon !"
+              author="Caroline Messian Devys"
+              meta="Visité en mars"
+              initials="CM"
+            />
+            <ReviewCard
+              clamp={5}
+              className="h-full"
+              quote="Je vous recommande vivement Manon pour sa gentillesse et son professionnalisme."
+              author="Patrick Durant"
+              meta="Visité en février"
+              initials="PD"
             />
           </div>
         </Row>

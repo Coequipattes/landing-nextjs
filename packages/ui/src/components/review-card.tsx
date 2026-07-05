@@ -28,6 +28,7 @@ function ReviewCard({
   author,
   meta,
   initials,
+  clamp,
   className,
 }: {
   rating?: number;
@@ -35,12 +36,29 @@ function ReviewCard({
   author: React.ReactNode;
   meta?: React.ReactNode;
   initials: React.ReactNode;
+  /** Truncate the quote to N lines (home grid). Omit for the full review. */
+  clamp?: number;
   className?: string;
 }) {
   return (
-    <Card className={cn("h-full", className)}>
+    <Card className={className}>
       <StarRating value={rating} />
-      <p className="flex-1 leading-relaxed text-muted-foreground">
+      <p
+        className={cn(
+          "leading-relaxed text-muted-foreground",
+          !clamp && "flex-1",
+        )}
+        style={
+          clamp
+            ? {
+                display: "-webkit-box",
+                WebkitLineClamp: clamp,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+              }
+            : undefined
+        }
+      >
         « {quote} »
       </p>
       <div className="flex items-center gap-3">
