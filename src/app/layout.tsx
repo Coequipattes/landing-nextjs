@@ -25,19 +25,19 @@ export const metadata: Metadata = {
     template: "%s | Co'équi'pattes",
   },
   description:
-    "Garde de chien, chat et NAC à Vannes et dans le Morbihan. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
+    "Garde de chien, chat et NAC à Vannes et alentours. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
   metadataBase: new URL(env.siteUrl),
   keywords: [
     "monitrice équitation Vannes",
     "cours équitation Vannes",
     "pet-sitter Vannes",
-    "pet sitter Morbihan",
+    "pet sitter Séné",
     "garde chien Vannes",
     "garde chat Vannes",
     "promeneur de chien Vannes",
     "garde animaux Vannes",
-    "équitation Morbihan",
-    "pet-sitting Morbihan",
+    "équitation Arradon",
+    "pet-sitting Theix",
     "monitrice diplômée équitation",
     "Co'équi'pattes",
   ],
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
     siteName: "Co'équi'pattes",
     title: "Pet Sitter à Vannes — Garde Chien, Chat & Animaux | Co'équi'pattes",
     description:
-      "Garde de chien, chat et NAC à Vannes et dans le Morbihan. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
+      "Garde de chien, chat et NAC à Vannes et alentours. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
     url: env.siteUrl,
   },
   twitter: {
     card: "summary_large_image",
     title: "Pet Sitter à Vannes — Garde Chien, Chat & Animaux | Co'équi'pattes",
     description:
-      "Garde de chien, chat et NAC à Vannes et dans le Morbihan. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
+      "Garde de chien, chat et NAC à Vannes et alentours. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
   },
 };
 

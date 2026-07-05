@@ -7,7 +7,7 @@ export const promeneurChienVannes: ServicePageData = {
   metaTitle:
     "Promeneur de chien à Vannes — Balades quotidiennes | Co'équi'pattes",
   metaDescription:
-    "Promeneur de chien à Vannes : balades 30 à 60 min, en laisse, adaptées au rythme de votre chien. Pour actifs et propriétaires âgés.",
+    "Promeneur de chien à Vannes : balades 30 à 60 min adaptées au rythme de votre chien. Pour actifs et propriétaires âgés, ponctuel ou régulier.",
   hero: {
     h1: "Promeneur de chien à Vannes",
     baseline:
@@ -18,8 +18,8 @@ export const promeneurChienVannes: ServicePageData = {
   intro: {
     paragraphs: [
       "Tous les chiens ont besoin de sortir tous les jours, et pas qu'à la va-vite avant de partir au boulot. Mais entre les journées de télétravail trop denses, les déplacements pro, une mobilité qui se réduit avec l'âge ou simplement une météo dissuasive, on finit par culpabiliser de ne pas offrir assez à son chien. C'est exactement pour répondre à ces situations que j'interviens comme promeneuse de chien à Vannes.",
-      "Mes balades durent 30, 45 ou 60 minutes selon la formule choisie et l'énergie de votre chien. Toujours en laisse — c'est ma règle de sécurité non négociable, quelle que soit la sociabilité du chien — et toujours adaptées à son rythme : un jeune chien de berger n'a pas les mêmes besoins qu'un labrador sénior. Je varie les itinéraires autour de Vannes pour offrir des stimulations olfactives nouvelles à chaque sortie.",
-      "Pour les propriétaires qui ont besoin d'une régularité, un forfait hebdomadaire ou plurihebdomadaire est plus avantageux qu'une balade à l'unité. Tout commence par une pré-visite gratuite : je rencontre votre chien dans son cadre, j'observe son comportement à la laisse, et nous calons un créneau qui s'intègre dans votre journée. Certifiée France Petsitters et assurée responsabilité civile pro.",
+      "Mes balades durent 30, 45 ou 60 minutes selon la formule choisie et l'énergie de votre chien, et sont toujours adaptées à son rythme : un jeune chien de berger n'a pas les mêmes besoins qu'un labrador sénior. Les balades de 45 min et 1 h peuvent se dérouler en dehors des quartiers résidentiels, dans des lieux plus adaptés aux chiens ; pour ceux qui aiment l'eau, des moments de baignade peuvent aussi y être intégrés.",
+      "Je m'adapte à vos besoins, que vous ayez besoin d'une balade ponctuelle ou de sorties régulières. Le tarif est généralement à l'unité ; un tarif dégressif n'intervient que pour un volume important, par exemple une sortie chaque jour. Tout commence par une pré-visite gratuite : je rencontre votre chien dans son cadre et je cale avec vous un créneau qui s'intègre dans votre journée.",
     ],
   },
   benefits: [
@@ -29,9 +29,9 @@ export const promeneurChienVannes: ServicePageData = {
         "Choisissez la durée selon l'énergie de votre chien et votre budget — pas de formule rigide imposée.",
     },
     {
-      title: "En laisse, sécurité avant tout",
+      title: "Sortie sécurisée et attentive",
       description:
-        "Pas de lâcher en liberté, même pour les chiens sociables : c'est la garantie d'une promenade sans imprévu.",
+        "Promenade encadrée, calée sur le tempérament de votre chien. Lâcher en liberté uniquement avec votre accord et dans une zone adaptée.",
     },
     {
       title: "Rythme adapté à votre chien",
@@ -39,9 +39,9 @@ export const promeneurChienVannes: ServicePageData = {
         "Cadence, distance, pauses olfactives : tout est calé sur l'âge, la condition physique et le tempérament de votre compagnon.",
     },
     {
-      title: "Lieux variés autour de Vannes",
+      title: "Au départ de chez vous",
       description:
-        "Je change régulièrement d'itinéraire pour offrir de la nouveauté et stimuler l'odorat. [DRAFT - lieux favoris à confirmer Manon : bois, bord de mer, parcs]",
+        "Je viens chercher votre chien à domicile. Les sorties courtes se font autour de chez vous ; pour les balades de 45 min et 1 h, je peux l'emmener dans des lieux plus adaptés aux chiens, avec baignade possible pour ceux qui aiment l'eau.",
     },
     {
       title: "Idéal pour actifs et télétravailleurs",
@@ -49,14 +49,14 @@ export const promeneurChienVannes: ServicePageData = {
         "Une coupure de milieu de journée pour votre chien, sans que vous ayez à interrompre votre journée pro.",
     },
     {
-      title: "Forfait régulier avantageux",
+      title: "Régulier ou ponctuel",
       description:
-        "Pour une promenade plusieurs fois par semaine, un forfait s'applique pour réduire le coût unitaire. [DRAFT - tarif forfait à confirmer Manon]",
+        "Je m'adapte à vos besoins, au quotidien comme à l'occasion. Un tarif dégressif n'intervient que pour un gros volume, par exemple une sortie chaque jour.",
     },
   ],
   pricing: {
     highlight:
-      "Une balade à l'unité ou un forfait régulier — formule au choix selon votre rythme.",
+      "À l'unité ou en sorties régulières — je m'adapte à votre rythme.",
     cardSlugs: ["promenade", "visite-promenade"],
   },
   area: {
@@ -76,23 +76,23 @@ export const promeneurChienVannes: ServicePageData = {
   faq: [
     {
       q: "Vous promenez plusieurs chiens en même temps ?",
-      a: "[DRAFT - politique à confirmer Manon] Par défaut, je privilégie la promenade individuelle pour une attention pleine à votre chien et une sécurité maximale. Les promenades groupées peuvent être envisagées au cas par cas si les chiens se connaissent et sont compatibles.",
+      a: "Non, sauf si les chiens appartiennent à la même personne, ou si des propriétaires différents sont d'accord pour que leurs chiens soient promenés ensemble.",
     },
     {
       q: "Vous lâchez les chiens en liberté ?",
-      a: "Non, jamais. La balade se fait toujours en laisse, quelle que soit la sociabilité du chien. C'est ma règle de sécurité non négociable : un imprévu (vélo, autre chien réactif, gibier) peut transformer une seconde d'inattention en accident. [DRAFT]",
+      a: "Oui, mais uniquement avec l'accord du propriétaire, et toujours dans une zone adaptée et sécurisée.",
     },
     {
       q: "Et s'il pleut ?",
-      a: "On y va quand même — le chien s'en moque souvent plus que nous. J'ai l'équipement adapté de mon côté (cape, chaussures), et au retour je sèche votre chien avec une serviette laissée à disposition. Seuls les orages avec risque de foudre justifient un report. [DRAFT]",
+      a: "La promenade est maintenue : de mon côté, la pluie n'est jamais un problème. Si votre chien n'aime pas la pluie, la sortie peut se limiter à ses besoins, suivie d'une séance de jeux et de câlins en intérieur.",
     },
     {
       q: "À quelle heure passez-vous ?",
-      a: "Horaires flexibles : matin, milieu de journée ou fin d'après-midi. On cale ensemble un créneau régulier lors de la pré-visite, en fonction de votre planning et des habitudes de votre chien. [DRAFT]",
+      a: "Quand vous le souhaitez : je m'adapte aux besoins de vos chiens.",
     },
     {
       q: "Promenade régulière ou ponctuelle ?",
-      a: "Les deux sont possibles. La promenade à l'unité dépanne pour un imprévu, le forfait hebdomadaire ou plurihebdomadaire est plus avantageux pour une routine installée. [DRAFT - détails tarifs forfait à confirmer Manon]",
+      a: "Les deux : que vous ayez des besoins au quotidien ou de temps en temps, je m'adapte à votre rythme.",
     },
   ],
   testimonialKeywords: ["promenade", "balade", "promener", "marche"],
@@ -100,14 +100,14 @@ export const promeneurChienVannes: ServicePageData = {
     name: "Promeneur de chien à Vannes",
     serviceType: "Dog walking",
     description:
-      "Promenades de chien à Vannes et dans le Morbihan : balades 30 à 60 min en laisse, formule à l'unité ou forfait régulier, pré-visite gratuite.",
+      "Promenades de chien à Vannes et alentours : balades 30 à 60 min adaptées au rythme de votre chien, ponctuelles ou régulières, pré-visite gratuite.",
   },
   cta: {
     headline: "Votre chien sort tous les jours",
     subline: "Même quand vous êtes débordé",
   },
   related: [
-    { slug: "garde-chien-vannes", label: "Garde de chien à Vannes" },
-    { slug: "garde-chat-vannes", label: "Garde de chat à Vannes" },
+    { slug: "visites-chien-vannes", label: "Visites à domicile pour chien" },
+    { slug: "visites-chat-vannes", label: "Visites à domicile pour chat" },
   ],
 };

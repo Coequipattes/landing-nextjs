@@ -96,6 +96,19 @@ export const petsittingCards: PriceCard[] = [
   },
 ];
 
+export const gardeADomicileCard: PriceCard = {
+  slug: "garde-domicile",
+  title: "Garde à domicile",
+  price: "Sur devis",
+  description: "Je m'installe chez vous, à demeure",
+  features: [
+    "Présence à demeure, je dors sur place",
+    "D'un week-end à plusieurs semaines",
+    "Repas, sorties, soins simples",
+    "Maison occupée et surveillée",
+  ],
+};
+
 export const equitationExtras: PriceExtra[] = [
   {
     title: "Cours collectif",
@@ -112,5 +125,7 @@ export const equitationExtras: PriceExtra[] = [
 ];
 
 export function getPriceCardBySlug(slug: string): PriceCard | undefined {
-  return [...equitationCards, ...petsittingCards].find((c) => c.slug === slug);
+  return [...equitationCards, ...petsittingCards, gardeADomicileCard].find(
+    (c) => c.slug === slug,
+  );
 }

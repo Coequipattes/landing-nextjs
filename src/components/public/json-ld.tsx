@@ -32,7 +32,12 @@ export function JsonLd() {
         },
         areaServed: [
           { "@type": "City", name: "Vannes" },
-          { "@type": "AdministrativeArea", name: "Morbihan" },
+          { "@type": "City", name: "Séné" },
+          { "@type": "City", name: "Arradon" },
+          { "@type": "City", name: "Saint-Avé" },
+          { "@type": "City", name: "Theix-Noyalo" },
+          { "@type": "City", name: "Ploeren" },
+          { "@type": "City", name: "Plescop" },
         ],
         serviceArea: {
           "@type": "GeoCircle",
@@ -215,7 +220,7 @@ export function JsonLd() {
         about: { "@id": `${siteUrl}/#business` },
         inLanguage: "fr-FR",
         description:
-          "Garde de chien, chat et NAC à Vannes et dans le Morbihan. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
+          "Garde de chien, chat et NAC à Vannes et alentours. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
       },
     ],
   };

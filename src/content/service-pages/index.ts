@@ -1,14 +1,16 @@
 import { equitationVannes } from "./equitation-vannes";
-import { gardeChatVannes } from "./garde-chat-vannes";
-import { gardeChienVannes } from "./garde-chien-vannes";
+import { gardeADomicileVannes } from "./garde-a-domicile-vannes";
+import { visitesChatVannes } from "./visites-chat-vannes";
+import { visitesChienVannes } from "./visites-chien-vannes";
 import { promeneurChienVannes } from "./promeneur-chien-vannes";
 import type { ServicePageData } from "./types";
 
 export const servicePages: ServicePageData[] = [
-  gardeChienVannes,
-  gardeChatVannes,
+  visitesChienVannes,
+  visitesChatVannes,
   promeneurChienVannes,
   equitationVannes,
+  gardeADomicileVannes,
 ];
 
 export function getServicePage(slug: string): ServicePageData | undefined {

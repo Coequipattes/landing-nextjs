@@ -48,7 +48,7 @@ export const equitationVannes: ServicePageData = {
     {
       title: "Tous niveaux : débutant à confirmé",
       description:
-        "Première montée, reprise après une pause, préparation d'examen ou perfectionnement technique : on s'adapte.",
+        "Première montée, reprise après une pause, préparation d'examen ou perfectionnement technique : je m'adapte.",
     },
     {
       title: "Respect du couple cheval-cavalier",
@@ -67,7 +67,7 @@ export const equitationVannes: ServicePageData = {
       // DRAFT - localisation exacte à confirmer Manon (écurie partenaire ?
       // déplacement chez le cavalier propriétaire ? structure dédiée ?)
       "Vannes",
-      "Morbihan sud",
+      "Alentours de Vannes",
     ],
     radiusKm: 15,
   },
@@ -105,7 +105,7 @@ export const equitationVannes: ServicePageData = {
     subline: "Cours personnalisé, tous niveaux",
   },
   related: [
-    { slug: "garde-chien-vannes", label: "Garde de chien à Vannes" },
-    { slug: "garde-chat-vannes", label: "Garde de chat à Vannes" },
+    { slug: "visites-chien-vannes", label: "Visites à domicile pour chien" },
+    { slug: "visites-chat-vannes", label: "Visites à domicile pour chat" },
   ],
 };
