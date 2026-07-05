@@ -1,36 +1,6 @@
-@import "tailwindcss";
+@import "@coequipattes/ui/globals.css";
 
-:root {
-  --pink: #ffa5c9;
-  --pink-light: #ffd4e8;
-  --pink-dark: #e8598b;
-  --pink-glow: rgba(255, 165, 201, 0.3);
-  --black: #0a0a0a;
-  --black-soft: #1a1a1a;
-  --black-card: #141414;
-  --white: #ffffff;
-  --white-soft: #f5f0f2;
-  --gray: #888;
-  --gray-light: #aaa;
-  --transition: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@theme inline {
-  --color-pink: var(--pink);
-  --color-pink-light: var(--pink-light);
-  --color-pink-dark: var(--pink-dark);
-  --color-pink-glow: var(--pink-glow);
-  --color-black: var(--black);
-  --color-black-soft: var(--black-soft);
-  --color-black-card: var(--black-card);
-  --color-white: var(--white);
-  --color-white-soft: var(--white-soft);
-  --color-gray: var(--gray);
-  --color-gray-light: var(--gray-light);
-  --font-sans: var(--font-quicksand);
-  --font-display: var(--font-playfair);
-  --font-accent: var(--font-caveat);
-}
+/* App-specific chrome (tokens live in @coequipattes/ui). */
 
 html {
   scroll-behavior: smooth;
@@ -50,12 +20,11 @@ html::before {
 
 body {
   font-family: var(--font-sans);
-  background: var(--black);
-  color: var(--white);
+  background: var(--background);
+  color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
 }
-
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -66,6 +35,14 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--pink);
   border-radius: 4px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @keyframes float-particle {
@@ -93,14 +70,6 @@ body {
 @keyframes zoomIn {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 @keyframes marquee-left {
