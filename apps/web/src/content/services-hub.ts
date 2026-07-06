@@ -64,10 +64,10 @@ export const servicesHub: ServiceHubCard[] = [
   {
     slug: "chien-hebergement",
     category: "chien",
-    title: "Hébergement courte durée",
+    title: "Pension privative",
     teaser:
       "Courte durée (quelques heures à 2 jours) : votre chien vit chez moi comme s'il était le mien, sans être mêlé à d'autres animaux. 2 chiens possibles s'ils ont le même maître.",
-    href: "/hebergement-chien-vannes",
+    href: "/pension-chien-vannes",
     iconId: "home",
     price: "dès 30€/24h",
   },
@@ -94,10 +94,10 @@ export const servicesHub: ServiceHubCard[] = [
   {
     slug: "chat-hebergement",
     category: "chat",
-    title: "Hébergement sans limite de durée",
+    title: "Pension privative",
     teaser:
       "Sans limite de durée : j'accueille votre chat chez moi, un seul à la fois, sans cage. Il vit avec moi comme s'il était le mien.",
-    href: "/hebergement-chat-vannes",
+    href: "/pension-chat-vannes",
     iconId: "home",
     price: "dès 18€/24h",
   },

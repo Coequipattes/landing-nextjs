@@ -1,13 +1,13 @@
 import type { ServicePageData } from "./types";
 
 export const hebergementChienVannes: ServicePageData = {
-  slug: "hebergement-chien-vannes",
+  slug: "pension-chien-vannes",
   metaTitle:
-    "Hébergement de chien à Vannes — pension privative | Co'équi'pattes",
+    "Pension privative pour chien à Vannes | Co'équi'pattes",
   metaDescription:
     "Hébergement de chien à Vannes : pension privative chez moi, un seul chien à la fois, jamais en cage. Séjours courts, dès 30€/24h. Rencontre préalable.",
   hero: {
-    h1: "Hébergement de chien à Vannes",
+    h1: "Pension privative pour chien à Vannes",
     baseline:
       "Une pension privative où votre chien est le seul accueilli — jamais mélangé à des animaux qu'il ne connaît pas, pour des séjours courts en toute sérénité.",
     // DRAFT - photo dédiée hébergement à fournir par Manon.
@@ -98,7 +98,7 @@ export const hebergementChienVannes: ServicePageData = {
   ],
   testimonialKeywords: ["hébergement", "pension", "garde", "chien"],
   serviceSchema: {
-    name: "Hébergement de chien à Vannes",
+    name: "Pension privative pour chien à Vannes",
     serviceType: "Dog boarding",
     description:
       "Hébergement de chien à Vannes : pension privative à domicile, un seul chien à la fois, jamais en cage, pour des séjours de courte durée.",

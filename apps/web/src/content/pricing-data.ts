@@ -107,7 +107,7 @@ export const petsittingCards: PriceCard[] = [
 
 export const hebergementChienCard: PriceCard = {
   slug: "hebergement-chien",
-  title: "Hébergement de chien",
+  title: "Pension privative — chien",
   price: "30€",
   unit: "/24h",
   description: "Pension privative chez moi, un seul chien à la fois",
@@ -121,7 +121,7 @@ export const hebergementChienCard: PriceCard = {
 
 export const hebergementChatCard: PriceCard = {
   slug: "hebergement-chat",
-  title: "Hébergement de chat",
+  title: "Pension privative — chat",
   price: "18€",
   unit: "/24h",
   description: "Pension privative chez moi, un seul chat à la fois",

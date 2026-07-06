@@ -1,13 +1,13 @@
 import type { ServicePageData } from "./types";
 
 export const hebergementChatVannes: ServicePageData = {
-  slug: "hebergement-chat-vannes",
+  slug: "pension-chat-vannes",
   metaTitle:
-    "Hébergement de chat à Vannes — pension privative | Co'équi'pattes",
+    "Pension privative pour chat à Vannes | Co'équi'pattes",
   metaDescription:
     "Hébergement de chat à Vannes : pension privative chez moi, un seul chat à la fois, sans cage ni limite de durée. Dès 18€/24h. Rencontre préalable.",
   hero: {
-    h1: "Hébergement de chat à Vannes",
+    h1: "Pension privative pour chat à Vannes",
     baseline:
       "Une pension privative où votre chat est le seul accueilli, sans cage ni durée limitée, pour un séjour aussi serein que chez vous.",
     // DRAFT - photo dédiée hébergement chat à fournir par Manon.
@@ -98,7 +98,7 @@ export const hebergementChatVannes: ServicePageData = {
   ],
   testimonialKeywords: ["hébergement", "pension", "chat"],
   serviceSchema: {
-    name: "Hébergement de chat à Vannes",
+    name: "Pension privative pour chat à Vannes",
     serviceType: "Cat boarding",
     description:
       "Hébergement de chat à Vannes : pension privative à domicile, un seul chat à la fois, sans cage ni limite de durée.",
