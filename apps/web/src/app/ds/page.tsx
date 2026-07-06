@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@coequipattes/ui/components/button";
 import { MediaFrame } from "@coequipattes/ui/components/media-frame";
@@ -92,6 +93,9 @@ function Row({ title, children }: { title: string; children: React.ReactNode }) 
 }
 
 export default function DesignSystemPage() {
+  // Showcase interne du design system : accessible en dev, jamais en prod.
+  if (process.env.NODE_ENV === "production") notFound();
+
   return (
     <main className="min-h-screen bg-background px-8 py-14 text-foreground">
       <div className="mx-auto max-w-4xl">
