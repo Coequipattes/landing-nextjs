@@ -1,28 +1,96 @@
 import { env } from "@/lib/env";
+import type { Review } from "@/lib/google-reviews";
 
-export function JsonLd() {
+// Profils externes de la même entité (signal d'entité fort pour le SEO/AEO).
+// Ajouter ici la fiche Google Business Profile, l'Instagram, le Facebook dès
+// qu'ils existent — les moteurs de réponse (ChatGPT, Perplexity, Gemini)
+// s'appuient sur ces liens pour reconnaître et citer l'entreprise.
+const SAME_AS = [
+  "https://blooming-pets.com/pet-sitter-vannes-56000-25030-manon/",
+  // "https://www.google.com/maps/place/?q=place_id:XXXX",  // fiche GBP
+  // "https://www.instagram.com/co.equi.pattes/",
+  // "https://www.facebook.com/co.equi.pattes/",
+];
+
+export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
   const siteUrl = env.siteUrl;
+  const businessId = `${siteUrl}/#business`;
+
+  const visibleReviews = reviews.filter((r) => r.visible);
+  const reviewCount = visibleReviews.length;
+  const ratingValue =
+    reviewCount > 0
+      ? (
+          visibleReviews.reduce((sum, r) => sum + r.rating, 0) / reviewCount
+        ).toFixed(1)
+      : "5.0";
+
+  // Quelques avis réels exposés en structured data (citables par les IA).
+  // Ils correspondent aux avis affichés sur le site (section témoignages).
+  const reviewNodes = visibleReviews.slice(0, 6).map((r) => ({
+    "@type": "Review",
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(r.rating),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    author: { "@type": "Person", name: r.authorName },
+    reviewBody: r.text,
+  }));
+
+  const aggregateRating =
+    reviewCount > 0
+      ? {
+          "@type": "AggregateRating",
+          ratingValue,
+          reviewCount,
+          bestRating: "5",
+          worstRating: "1",
+        }
+      : undefined;
 
   const data = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "@id": `${siteUrl}/#business`,
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": businessId,
         name: "Co'équi'pattes",
+        legalName: "Co'équi'pattes — Manon Millot",
+        slogan: "Rassurer, pas impressionner.",
         description:
-          "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés et garde d'animaux avec passion.",
+          "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés, garde de chien et de chat à domicile, promenades et pension privative.",
         url: siteUrl,
         telephone: "+33766744337",
         email: env.contactEmail,
-        image: `${siteUrl}/opengraph-image`,
+        image: [`${siteUrl}/opengraph-image`, `${siteUrl}/manon_chiens.webp`],
         logo: `${siteUrl}/logo_rose.png`,
         priceRange: "€",
+        currenciesAccepted: "EUR",
+        paymentAccepted: "Espèces, Virement, Chèque",
+        identifier: {
+          "@type": "PropertyValue",
+          propertyID: "SIREN",
+          value: "90417432300025",
+        },
+        sameAs: SAME_AS,
+        knowsAbout: [
+          "Garde de chien",
+          "Garde de chat",
+          "Pet-sitting à domicile",
+          "Promenade de chien",
+          "Pension privative pour animaux",
+          "Nouveaux animaux de compagnie (NAC)",
+          "Cours d'équitation",
+          "Travail de cheval",
+        ],
         address: {
           "@type": "PostalAddress",
           streetAddress: "4 rue Tamara de Lempicka",
           addressLocality: "Vannes",
           postalCode: "56000",
+          addressRegion: "Bretagne",
           addressCountry: "FR",
         },
         geo: {
@@ -38,6 +106,7 @@ export function JsonLd() {
           { "@type": "City", name: "Theix-Noyalo" },
           { "@type": "City", name: "Ploeren" },
           { "@type": "City", name: "Plescop" },
+          { "@type": "AdministrativeArea", name: "Morbihan" },
         ],
         serviceArea: {
           "@type": "GeoCircle",
@@ -67,19 +136,23 @@ export function JsonLd() {
         founder: {
           "@type": "Person",
           name: "Manon Millot",
+          jobTitle: "Monitrice d'équitation diplômée & pet-sitter",
+          description:
+            "Monitrice d'équitation diplômée d'État et pet-sitter professionnelle à Vannes, assurée et membre de France Petsitters.",
+          knowsAbout: [
+            "Équitation",
+            "Comportement équin",
+            "Garde d'animaux",
+            "Bien-être animal",
+          ],
         },
         hasCredential: {
           "@type": "EducationalOccupationalCredential",
           credentialCategory: "Certification",
           name: "France Petsitters",
         },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "5.0",
-          reviewCount: 24,
-          bestRating: "5",
-          worstRating: "1",
-        },
+        ...(aggregateRating ? { aggregateRating } : {}),
+        ...(reviewNodes.length > 0 ? { review: reviewNodes } : {}),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Services Co'équi'pattes",
@@ -93,7 +166,7 @@ export function JsonLd() {
                 name: "Séance d'essai équitation",
                 description:
                   "Première séance d'équitation d'une heure, tous niveaux, sans engagement, avec évaluation personnalisée",
-                provider: { "@id": `${siteUrl}/#business` },
+                provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },
             },
@@ -106,7 +179,7 @@ export function JsonLd() {
                 name: "Abonnement hebdomadaire équitation",
                 description:
                   "Cours particulier d'équitation 1 fois par semaine, suivi personnalisé, créneau fixe ou flexible",
-                provider: { "@id": `${siteUrl}/#business` },
+                provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },
             },
@@ -119,7 +192,7 @@ export function JsonLd() {
                 name: "Cours particulier d'équitation",
                 description:
                   "Cours individuel d'équitation à l'unité, 1 heure, tous niveaux, animé par une monitrice diplômée",
-                provider: { "@id": `${siteUrl}/#business` },
+                provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },
             },
@@ -132,7 +205,7 @@ export function JsonLd() {
                 name: "Cours collectif d'équitation",
                 description:
                   "Cours collectif d'équitation à partir de 3 cavaliers, ambiance conviviale",
-                provider: { "@id": `${siteUrl}/#business` },
+                provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },
             },
@@ -145,7 +218,7 @@ export function JsonLd() {
                 name: "Travail de cheval",
                 description:
                   "Travail de votre cheval pendant votre absence par une monitrice diplômée",
-                provider: { "@id": `${siteUrl}/#business` },
+                provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },
             },
@@ -162,7 +235,7 @@ export function JsonLd() {
                 name: "Visite à domicile",
                 description:
                   "Visite à domicile pour chats, NAC et tous animaux (30 min à 1 h)",
-                provider: { "@id": `${siteUrl}/#business` },
+                provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },
             },
@@ -179,7 +252,7 @@ export function JsonLd() {
                 name: "Promenade chien",
                 description:
                   "Balades adaptées au rythme de votre chien (30 min à 1 h)",
-                provider: { "@id": `${siteUrl}/#business` },
+                provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },
             },
@@ -192,7 +265,7 @@ export function JsonLd() {
         url: siteUrl,
         name: "Co'équi'pattes",
         inLanguage: "fr-FR",
-        publisher: { "@id": `${siteUrl}/#business` },
+        publisher: { "@id": businessId },
       },
       {
         "@type": "WebPage",
@@ -200,7 +273,7 @@ export function JsonLd() {
         url: siteUrl,
         name: "Pet Sitter à Vannes — Garde Chien, Chat & Animaux | Co'équi'pattes",
         isPartOf: { "@id": `${siteUrl}/#website` },
-        about: { "@id": `${siteUrl}/#business` },
+        about: { "@id": businessId },
         inLanguage: "fr-FR",
         description:
           "Garde de chien, chat et NAC à Vannes et alentours. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
@@ -211,6 +284,7 @@ export function JsonLd() {
   return (
     <script
       type="application/ld+json"
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD payload escaped with < — matches src/components/public/service-page/service-json-ld.tsx pattern.
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(data).replace(/</g, "\\u003c"),
       }}
