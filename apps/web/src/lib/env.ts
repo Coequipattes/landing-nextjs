@@ -1,5 +1,5 @@
 // Variables d'environnement publiques — safe côté client et serveur.
-// Les vars NEXT_PUBLIC_* sont inlinées statiquement par Next.js au build.
+// Les vars VITE_* sont inlinées statiquement par Vite au build (client + serveur).
 
 function required(name: string, value: string | undefined): string {
   if (!value) throw new Error(`Missing required environment variable: ${name}`);
@@ -7,13 +7,10 @@ function required(name: string, value: string | undefined): string {
 }
 
 export const env = {
-  siteUrl: required(
-    "NEXT_PUBLIC_SITE_URL",
-    process.env.NEXT_PUBLIC_SITE_URL,
-  ),
+  siteUrl: required("VITE_SITE_URL", import.meta.env.VITE_SITE_URL),
   contactEmail: required(
-    "NEXT_PUBLIC_CONTACT_EMAIL",
-    process.env.NEXT_PUBLIC_CONTACT_EMAIL,
+    "VITE_CONTACT_EMAIL",
+    import.meta.env.VITE_CONTACT_EMAIL,
   ),
 } as const;
 

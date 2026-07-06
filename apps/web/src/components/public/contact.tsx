@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { Button } from "@coequipattes/ui/components/button";
 import { InfoCard } from "@coequipattes/ui/components/info-card";
@@ -196,7 +194,9 @@ export function Contact() {
               disabled={status === "sending"}
               className="w-full"
             >
-              {status === "sending" ? "Envoi en cours..." : "Envoyer le message"}
+              {status === "sending"
+                ? "Envoi en cours..."
+                : "Envoyer le message"}
             </Button>
           </form>
         </div>

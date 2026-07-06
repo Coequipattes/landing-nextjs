@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const serviceLinks = [
   { slug: "visites-chien-vannes", label: "Visites à domicile (chien)" },
   { slug: "visites-chat-vannes", label: "Visites à domicile (chat)" },
@@ -25,12 +23,12 @@ export function Footer() {
           <ul className="flex justify-center gap-x-6 gap-y-2 flex-wrap">
             {serviceLinks.map((s) => (
               <li key={s.slug}>
-                <Link
+                <a
                   href={`/${s.slug}`}
                   className="text-muted-foreground text-sm hover:text-primary transition-colors"
                 >
                   {s.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

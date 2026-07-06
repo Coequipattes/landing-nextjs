@@ -1,7 +1,4 @@
-"use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Button } from "@coequipattes/ui/components/button";
 
@@ -21,7 +18,7 @@ function scrollToSection(hash: string) {
 }
 
 export function Nav() {
-  const pathname = usePathname();
+  const pathname = useLocation({ select: (l) => l.pathname });
   const isHome = pathname === "/";
   const hrefFor = (hash: string) => (isHome ? `#${hash}` : `/#${hash}`);
   const [scrolled, setScrolled] = useState(false);
@@ -50,7 +47,7 @@ export function Nav() {
     >
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         <Link
-          href="/"
+          to="/"
           className="font-display text-[1.4rem] font-bold text-primary tracking-[0.5px]"
         >
           Co'équi'pattes
@@ -71,18 +68,18 @@ export function Nav() {
                   {link.label}
                 </a>
               ) : (
-                <Link
+                <a
                   href={hrefFor(link.hash)}
                   className="text-foreground text-[0.88rem] font-medium tracking-[0.5px] uppercase relative hover:text-primary transition-colors duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full"
                 >
                   {link.label}
-                </Link>
+                </a>
               )}
             </li>
           ))}
           <li>
             <Button asChild size="sm">
-              <Link href={hrefFor("contact")}>Réserver</Link>
+              <a href={hrefFor("contact")}>Réserver</a>
             </Button>
           </li>
         </ul>
@@ -139,21 +136,21 @@ export function Nav() {
                   {link.label}
                 </a>
               ) : (
-                <Link
+                <a
                   href={hrefFor(link.hash)}
                   onClick={() => setMenuOpen(false)}
                   className="text-foreground text-[1.2rem] font-medium uppercase tracking-[0.5px] hover:text-primary transition-colors"
                 >
                   {link.label}
-                </Link>
+                </a>
               )}
             </li>
           ))}
           <li>
             <Button asChild size="lg">
-              <Link href={hrefFor("contact")} onClick={() => setMenuOpen(false)}>
+              <a href={hrefFor("contact")} onClick={() => setMenuOpen(false)}>
                 Réserver
-              </Link>
+              </a>
             </Button>
           </li>
         </ul>

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import {
   type IconId,
@@ -178,7 +176,10 @@ export function ServicesHub() {
                 active={isActive}
                 onClick={() => setActive(cat.id)}
               >
-                <ServiceIcon id={cat.iconId} className="w-4 h-4 stroke-current" />
+                <ServiceIcon
+                  id={cat.iconId}
+                  className="w-4 h-4 stroke-current"
+                />
                 {cat.label}
               </ToggleChip>
             );
@@ -202,7 +203,9 @@ export function ServicesHub() {
 
         {surDevisInActive && (
           <p className="mx-auto mt-8 max-w-[640px] text-center text-[0.85rem] leading-relaxed text-muted-foreground animate-[fadeIn_0.4s_var(--transition)]">
-            <span className="font-semibold text-primary">Demander le tarif ?</span>{" "}
+            <span className="font-semibold text-primary">
+              Demander le tarif ?
+            </span>{" "}
             Pour ces prestations, le prix dépend des besoins de l&apos;animal,
             du lieu et de la durée. Contactez-moi pour une estimation
             personnalisée.

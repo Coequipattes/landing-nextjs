@@ -1,8 +1,5 @@
-"use client";
-
-import { useState, useCallback } from "react";
-import Image from "next/image";
 import { ToggleChip } from "@coequipattes/ui/components/toggle-chip";
+import { useCallback, useState } from "react";
 
 type GalleryImage = {
   src: string;
@@ -43,13 +40,10 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
     setLimit(PAGE_SIZE);
   };
 
-  const openLightbox = useCallback(
-    (index: number) => {
-      setLightbox(index);
-      document.body.style.overflow = "hidden";
-    },
-    [],
-  );
+  const openLightbox = useCallback((index: number) => {
+    setLightbox(index);
+    document.body.style.overflow = "hidden";
+  }, []);
 
   const closeLightbox = useCallback(() => {
     setLightbox(null);
@@ -89,13 +83,13 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
             className="relative w-full mb-4 rounded-2xl overflow-hidden cursor-pointer group break-inside-avoid"
             onClick={() => openLightbox(images.indexOf(img))}
           >
-            <Image
+            <img
               src={img.src}
-              alt={img.title}
+              alt={`${img.title} — Co'équi'pattes, garde d'animaux et équitation à Vannes`}
               width={600}
               height={400}
+              loading="lazy"
               className="w-full h-auto transition-transform duration-400 group-hover:scale-105"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h4 className="text-white text-[1.1rem] mb-1">{img.title}</h4>
@@ -150,9 +144,9 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
               ‹
             </button>
 
-            <Image
+            <img
               src={images[lightbox].src}
-              alt={images[lightbox].title}
+              alt={`${images[lightbox].title} — Co'équi'pattes, garde d'animaux et équitation à Vannes`}
               width={1200}
               height={800}
               className="max-w-full max-h-[85vh] rounded-xl shadow-[0_20px_80px_rgba(0,0,0,0.5)] object-contain"

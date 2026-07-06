@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@coequipattes/ui/components/button";
 import { MediaFrame } from "@coequipattes/ui/components/media-frame";
 
@@ -25,13 +24,12 @@ export function Hero() {
                 focus="center 20%"
                 className="rounded-3xl"
               >
-                <Image
+                <img
                   src="/uploads/manon.jpg"
                   alt="Manon, fondatrice de Co'équi'pattes, monitrice d'équitation et pet sitter à Vannes"
-                  fill
-                  preload
+                  loading="eager"
                   fetchPriority="high"
-                  sizes="(max-width: 1024px) 90vw, 460px"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </MediaFrame>
             </div>

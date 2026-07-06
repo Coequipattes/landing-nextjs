@@ -1,5 +1,9 @@
 import { SignJWT, jwtVerify } from "jose";
-import { cookies } from "next/headers";
+import {
+  getCookie,
+  setCookie,
+  deleteCookie,
+} from "@tanstack/react-start/server";
 import { serverEnv } from "./env.server";
 
 const getSecret = () => new TextEncoder().encode(serverEnv.authSecret);
@@ -12,8 +16,7 @@ export async function createSession() {
     .setIssuedAt()
     .sign(getSecret());
 
-  const cookieStore = await cookies();
-  cookieStore.set(COOKIE_NAME, token, {
+  setCookie(COOKIE_NAME, token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
@@ -24,8 +27,7 @@ export async function createSession() {
 
 export async function verifySession(): Promise<boolean> {
   try {
-    const cookieStore = await cookies();
-    const token = cookieStore.get(COOKIE_NAME)?.value;
+    const token = getCookie(COOKIE_NAME);
     if (!token) return false;
     await jwtVerify(token, getSecret());
     return true;
@@ -35,8 +37,7 @@ export async function verifySession(): Promise<boolean> {
 }
 
 export async function destroySession() {
-  const cookieStore = await cookies();
-  cookieStore.delete(COOKIE_NAME);
+  deleteCookie(COOKIE_NAME);
 }
 
 export async function verifyPassword(password: string): Promise<boolean> {

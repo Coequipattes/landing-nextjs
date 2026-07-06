@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@coequipattes/ui/components/button";
 import { MediaFrame } from "@coequipattes/ui/components/media-frame";
 import type { ServicePageData } from "@/content/service-pages/types";
@@ -33,12 +32,11 @@ export function ServiceHero({ data }: { data: ServicePageData }) {
               {image}
             </div>
           ) : (
-            <Image
+            <img
               src={image}
               alt={imageAlt}
-              fill
-              priority
-              className="object-cover"
+              loading="eager"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           )}
         </MediaFrame>

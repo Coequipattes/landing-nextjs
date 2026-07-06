@@ -33,3 +33,24 @@ export async function loadBrandFonts() {
     { name: "Caveat", data: caveatBold, weight: 700 as const },
   ];
 }
+
+// Polices de la marque « clair chaleureux » (Fraunces display / Hanken Grotesk
+// sans / Caveat manuscrit), alignées sur styles.css. Utilisées par les OG images
+// du site (racine + pages service). Les cartes/posts parrainage gardent
+// loadBrandFonts (rendu Satori historique, hors périmètre).
+export async function loadClairFonts() {
+  const [fraunces, hankenSemibold, hankenMedium, caveatBold] =
+    await Promise.all([
+      loadFont("Fraunces", 700),
+      loadFont("Hanken Grotesk", 600),
+      loadFont("Hanken Grotesk", 500),
+      loadFont("Caveat", 700),
+    ]);
+
+  return [
+    { name: "Fraunces", data: fraunces, weight: 700 as const },
+    { name: "Hanken Grotesk", data: hankenSemibold, weight: 600 as const },
+    { name: "Hanken Grotesk", data: hankenMedium, weight: 500 as const },
+    { name: "Caveat", data: caveatBold, weight: 700 as const },
+  ];
+}
