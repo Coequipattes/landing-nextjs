@@ -146,8 +146,7 @@ export const servicesHub: ServiceHubCard[] = [
     slug: "cheval-concours",
     category: "cheval",
     title: "Accompagnement concours",
-    teaser:
-      "Présence et accompagnement le jour J, selon le lieu et la durée.",
+    teaser: "Présence et accompagnement le jour J, selon le lieu et la durée.",
     href: "#contact",
     iconId: "trophy",
   },
@@ -155,8 +154,7 @@ export const servicesHub: ServiceHubCard[] = [
     slug: "cheval-galop",
     category: "cheval",
     title: "Passage de galop",
-    teaser:
-      "Préparation aux galops fédéraux, selon votre niveau et le rythme.",
+    teaser: "Préparation aux galops fédéraux, selon votre niveau et le rythme.",
     href: "#contact",
     iconId: "book",
   },

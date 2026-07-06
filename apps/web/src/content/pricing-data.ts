@@ -168,7 +168,5 @@ export function getPriceCardBySlug(slug: string): PriceCard | undefined {
     hebergementChienCard,
     hebergementChatCard,
     gardeADomicileCard,
-  ].find(
-    (c) => c.slug === slug,
-  );
+  ].find((c) => c.slug === slug);
 }

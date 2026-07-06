@@ -90,7 +90,13 @@ export const equitationVannes: ServicePageData = {
       a: "Je suis monitrice diplômée, et tous mes encadrements sont effectués dans le cadre légal de l'enseignement équestre.",
     },
   ],
-  testimonialKeywords: ["équitation", "cheval", "monitrice", "cours", "cavalier"],
+  testimonialKeywords: [
+    "équitation",
+    "cheval",
+    "monitrice",
+    "cours",
+    "cavalier",
+  ],
   serviceSchema: {
     name: "Cours d'équitation à Vannes",
     serviceType: "Horseback riding lesson",

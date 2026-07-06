@@ -13,10 +13,7 @@ export function ServicePricing({ data }: { data: ServicePageData }) {
   );
 
   return (
-    <section
-      id="tarifs"
-      className="py-16 md:py-25 px-6 bg-secondary"
-    >
+    <section id="tarifs" className="py-16 md:py-25 px-6 bg-secondary">
       <div className="max-w-[1200px] mx-auto">
         <SectionHeader
           label="Tarifs"

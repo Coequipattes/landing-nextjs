@@ -38,7 +38,9 @@ function PriceCard({
         </span>
       )}
       <h3 className="font-display text-xl text-foreground">{title}</h3>
-      <p className="font-display text-5xl font-semibold text-primary">{price}</p>
+      <p className="font-display text-5xl font-semibold text-primary">
+        {price}
+      </p>
       {subtitle && <p className="text-sm text-muted-foreground">{subtitle}</p>}
       <ul className="my-2 w-full">
         {features.map((f, i) => (

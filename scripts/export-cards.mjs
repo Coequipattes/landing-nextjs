@@ -24,7 +24,12 @@ const runFile = promisify(execFile);
 const BASE_URL = process.env.PRINT_BASE_URL ?? "http://localhost:3000";
 const OUT_DIR = process.env.PRINT_OUT_DIR ?? "print";
 const DPI = 600;
-const ALL_ROUTES = ["carte-recto", "carte-verso-v1", "carte-verso-v2", "carte-logo"];
+const ALL_ROUTES = [
+  "carte-recto",
+  "carte-verso-v1",
+  "carte-verso-v2",
+  "carte-logo",
+];
 
 const args = process.argv.slice(2);
 const wantPdf = args.includes("--pdf") || args.includes("--cmyk");
@@ -32,7 +37,8 @@ const wantCmyk = args.includes("--cmyk");
 const iccIdx = args.indexOf("--icc");
 const iccPath = iccIdx >= 0 ? args[iccIdx + 1] : null;
 const onlyIdx = args.indexOf("--only");
-const onlyList = onlyIdx >= 0 ? args[onlyIdx + 1]?.split(",").map((s) => s.trim()) : null;
+const onlyList =
+  onlyIdx >= 0 ? args[onlyIdx + 1]?.split(",").map((s) => s.trim()) : null;
 const wantClean = args.includes("--clean");
 
 const ROUTES = onlyList ?? ALL_ROUTES;
@@ -48,8 +54,12 @@ async function checkServer() {
     const res = await fetch(BASE_URL, { method: "HEAD" });
     if (res.status >= 500) throw new Error(`status ${res.status}`);
   } catch (err) {
-    console.error(`× Impossible de joindre ${BASE_URL} (${err.message ?? err})`);
-    console.error("  Lance le dev server (npm run dev) ou définis PRINT_BASE_URL.");
+    console.error(
+      `× Impossible de joindre ${BASE_URL} (${err.message ?? err})`,
+    );
+    console.error(
+      "  Lance le dev server (npm run dev) ou définis PRINT_BASE_URL.",
+    );
     process.exit(1);
   }
 }
@@ -76,8 +86,10 @@ async function processRoute(route) {
   // Embarque la métadonnée DPI (600) sans rééchantillonner.
   await runFile("magick", [
     pngPath,
-    "-units", "PixelsPerInch",
-    "-density", String(DPI),
+    "-units",
+    "PixelsPerInch",
+    "-density",
+    String(DPI),
     pngPath,
   ]);
   console.log(`  ✓ ${pngPath}  (600 DPI)`);
@@ -86,8 +98,10 @@ async function processRoute(route) {
     const pdfPath = `${OUT_DIR}/${route}.pdf`;
     const magickArgs = [
       pngPath,
-      "-units", "PixelsPerInch",
-      "-density", String(DPI),
+      "-units",
+      "PixelsPerInch",
+      "-density",
+      String(DPI),
     ];
     if (wantCmyk) {
       if (iccPath) {
@@ -101,7 +115,11 @@ async function processRoute(route) {
     }
     magickArgs.push(pdfPath);
     await runFile("magick", magickArgs);
-    const label = wantCmyk ? (iccPath ? `CMJN, profil ${iccPath}` : "CMJN naïf") : "RGB";
+    const label = wantCmyk
+      ? iccPath
+        ? `CMJN, profil ${iccPath}`
+        : "CMJN naïf"
+      : "RGB";
     console.log(`  ✓ ${pdfPath}  (${label})`);
   }
 }
@@ -115,7 +133,9 @@ async function main() {
     const entries = await readdir(OUT_DIR);
     const removable = entries.filter((f) => /\.(png|pdf)$/i.test(f));
     await Promise.all(removable.map((f) => unlink(`${OUT_DIR}/${f}`)));
-    console.log(`→ ${OUT_DIR}/ nettoyé (${removable.length} fichier(s) supprimé(s))`);
+    console.log(
+      `→ ${OUT_DIR}/ nettoyé (${removable.length} fichier(s) supprimé(s))`,
+    );
   }
 
   console.log(`→ ${BASE_URL} ⇒ ${OUT_DIR}/`);

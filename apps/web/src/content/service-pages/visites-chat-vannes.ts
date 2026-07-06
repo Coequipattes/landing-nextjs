@@ -62,7 +62,11 @@ export const visitesChatVannes: ServicePageData = {
   pricing: {
     highlight:
       "Une formule unique adaptée au chat : visite à domicile, durée modulable selon vos besoins.",
-    cardSlugs: ["visite-domicile-30", "visite-domicile-45", "visite-domicile-60"],
+    cardSlugs: [
+      "visite-domicile-30",
+      "visite-domicile-45",
+      "visite-domicile-60",
+    ],
   },
   area: {
     city: "Vannes",

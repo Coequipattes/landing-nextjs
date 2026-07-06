@@ -52,7 +52,11 @@ export const visitesChienVannes: ServicePageData = {
   pricing: {
     highlight:
       "Une formule à domicile, à la durée modulable selon l'autonomie de votre chien.",
-    cardSlugs: ["visite-domicile-30", "visite-domicile-45", "visite-domicile-60"],
+    cardSlugs: [
+      "visite-domicile-30",
+      "visite-domicile-45",
+      "visite-domicile-60",
+    ],
   },
   area: {
     city: "Vannes",

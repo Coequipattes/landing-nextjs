@@ -8,8 +8,7 @@ import { SectionHeader } from "./section-header";
 const steps: { title: string; description: string }[] = [
   {
     title: "Prise de contact",
-    description:
-      "On échange sur votre besoin, votre animal et ses habitudes.",
+    description: "On échange sur votre besoin, votre animal et ses habitudes.",
   },
   {
     title: "Devis",
@@ -74,8 +73,8 @@ export function ProcessTimeline() {
               Un contrat détaillé pour chaque prestation
             </h3>
             <p className="text-muted-foreground leading-[1.7]">
-              Avant chaque garde, un contrat électronique est établi et signé
-              en ligne. Il reprend toutes les informations sur votre animal
+              Avant chaque garde, un contrat électronique est établi et signé en
+              ligne. Il reprend toutes les informations sur votre animal
               (habitudes, alimentation, soins, contacts vétérinaire et
               d'urgence) et les modalités de la prestation. Vous savez
               précisément ce qui est prévu, et votre animal est pris en charge

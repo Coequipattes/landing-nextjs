@@ -2,8 +2,7 @@ import type { ServicePageData } from "./types";
 
 export const hebergementChatVannes: ServicePageData = {
   slug: "pension-chat-vannes",
-  metaTitle:
-    "Pension privative pour chat à Vannes | Co'équi'pattes",
+  metaTitle: "Pension privative pour chat à Vannes | Co'équi'pattes",
   metaDescription:
     "Hébergement de chat à Vannes : pension privative chez moi, un seul chat à la fois, sans cage ni limite de durée. Dès 18€/24h. Rencontre préalable.",
   hero: {
