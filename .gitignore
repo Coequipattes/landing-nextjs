@@ -21,6 +21,11 @@ out/
 /build
 dist/
 
+# TanStack Start / Nitro build output
+.output/
+.nitro/
+.tanstack/
+
 # misc
 .DS_Store
 *.pem
