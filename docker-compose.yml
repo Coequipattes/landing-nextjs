@@ -21,7 +21,7 @@ services:
         VITE_SITE_URL: ${VITE_SITE_URL}
         VITE_CONTACT_EMAIL: ${VITE_CONTACT_EMAIL}
     ports:
-      - '127.0.0.1:3009:3000'
+      - '127.0.0.1:3011:3000'
     volumes:
       - /home/benjamin/volumes/site-coequipattes/data:/app/src/data
       - /home/benjamin/volumes/site-coequipattes/gallery:/app/public/uploads/gallery

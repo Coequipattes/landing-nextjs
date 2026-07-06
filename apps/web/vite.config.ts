@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { devtools } from "@tanstack/devtools-vite";
 
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import { nitro } from "nitro/vite";
+import { nitroV2Plugin } from "@tanstack/nitro-v2-vite-plugin";
 
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -12,7 +12,13 @@ import tailwindcss from "@tailwindcss/vite";
 // @tanstack/start-client-core#start-core/deployment.
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
-  plugins: [devtools(), tailwindcss(), tanstackStart(), nitro(), viteReact()],
+  plugins: [
+    devtools(),
+    tailwindcss(),
+    tanstackStart(),
+    nitroV2Plugin(),
+    viteReact(),
+  ],
 });
 
 export default config;
