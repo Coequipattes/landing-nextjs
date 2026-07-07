@@ -79,6 +79,15 @@ function RootDocument({ children }: { children: ReactNode }) {
     <html lang="fr">
       <head>
         <HeadContent />
+        {/* Umami analytics — self-hosted, chargé en production uniquement
+            pour ne pas polluer les stats avec le trafic de dev. */}
+        {import.meta.env.PROD ? (
+          <script
+            defer
+            src="https://umami.benjamin-niddam.dev/script.js"
+            data-website-id="091dda4e-f90c-4f0c-bf14-0f4ffd529974"
+          />
+        ) : null}
       </head>
       <body>
         {children}
