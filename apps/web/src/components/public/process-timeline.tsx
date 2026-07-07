@@ -54,7 +54,7 @@ export function ProcessTimeline() {
         />
 
         <Card className="flex-row items-start gap-5 bg-blush/50 border-primary/20 p-6 md:p-8 mb-12 md:mb-16 max-w-[820px] mx-auto">
-          <IconMedallion aria-hidden>
+          <IconMedallion aria-hidden className="hidden md:flex">
             <svg
               viewBox="0 0 24 24"
               fill="none"

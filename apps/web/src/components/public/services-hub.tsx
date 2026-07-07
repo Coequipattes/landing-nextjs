@@ -155,7 +155,7 @@ export function ServicesHub() {
               <span className="text-primary">vous aider</span>
             </>
           }
-          subtitle="Chien, chat ou cheval — choisissez votre univers, je m'occupe du reste avec la même attention, à Vannes et alentours."
+          subtitle="Chien, chat ou cheval : choisissez votre univers, je m'occupe du reste avec la même attention, à Vannes et alentours."
         />
 
         {/* Filtre par animal — un visiteur ne voit que l'univers qui le

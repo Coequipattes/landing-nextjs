@@ -13,7 +13,7 @@ export function Footer() {
           Co'équi'pattes
         </div>
         <p className="text-muted-foreground text-sm mb-10">
-          Monitrice d'équitation & Pet-sitter — Vannes (56)
+          Monitrice d'équitation & Pet-sitter · Vannes (56)
         </p>
 
         <div className="mb-10">
@@ -40,7 +40,7 @@ export function Footer() {
           </div>
           <p className="text-muted-foreground text-sm max-w-[640px] mx-auto leading-relaxed">
             Vannes et alentours : Séné, Saint-Avé, Arradon, Ploeren,
-            Theix-Noyalo, Plescop — et communes voisines dans un rayon de 10 km.
+            Theix-Noyalo, Plescop et communes voisines dans un rayon de 10 km.
           </p>
         </div>
 
