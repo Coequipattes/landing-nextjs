@@ -1,8 +1,23 @@
+import { Facebook, Instagram } from "lucide-react";
+
 const serviceLinks = [
   { slug: "visites-chien-vannes", label: "Visites à domicile (chien)" },
   { slug: "visites-chat-vannes", label: "Visites à domicile (chat)" },
   { slug: "promenade-chien-vannes", label: "Promenades de chien" },
   { slug: "equitation-vannes", label: "Cours d'équitation" },
+];
+
+const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/coequipattes/",
+    Icon: Instagram,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/16y4rKuQPP/",
+    Icon: Facebook,
+  },
 ];
 
 export function Footer() {
@@ -12,9 +27,24 @@ export function Footer() {
         <div className="font-display text-2xl font-bold text-primary mb-3">
           Co'équi'pattes
         </div>
-        <p className="text-muted-foreground text-sm mb-10">
+        <p className="text-muted-foreground text-sm mb-6">
           Monitrice d'équitation & Pet-sitter · Vannes (56)
         </p>
+
+        <div className="mb-10 flex justify-center gap-4">
+          {socialLinks.map(({ label, href, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer me"
+              aria-label={label}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 text-primary transition-colors hover:bg-primary/10"
+            >
+              <Icon className="h-5 w-5" aria-hidden="true" />
+            </a>
+          ))}
+        </div>
 
         <div className="mb-10">
           <div className="text-[0.75rem] uppercase tracking-[3px] text-primary font-semibold mb-4">

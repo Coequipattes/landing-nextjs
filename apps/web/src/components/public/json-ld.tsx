@@ -7,9 +7,9 @@ import type { Review } from "@/lib/google-reviews";
 // s'appuient sur ces liens pour reconnaître et citer l'entreprise.
 const SAME_AS = [
   "https://blooming-pets.com/pet-sitter-vannes-56000-25030-manon/",
+  "https://www.instagram.com/coequipattes/",
+  "https://www.facebook.com/share/16y4rKuQPP/",
   // "https://www.google.com/maps/place/?q=place_id:XXXX",  // fiche GBP
-  // "https://www.instagram.com/co.equi.pattes/",
-  // "https://www.facebook.com/co.equi.pattes/",
 ];
 
 export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
