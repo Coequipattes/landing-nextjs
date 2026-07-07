@@ -8,7 +8,7 @@ import type { ServicePageData } from "./types";
 export const gardeADomicileVannes: ServicePageData = {
   slug: "garde-a-domicile-vannes",
   metaTitle:
-    "Garde à domicile à Vannes — pet sitter à demeure | Co'équi'pattes",
+    "Garde à domicile à Vannes · pet sitter à demeure | Co'équi'pattes",
   metaDescription:
     "Garde à domicile à Vannes et alentours : je m'installe chez vous pour veiller sur votre animal pendant votre absence. Tarif sur devis, pré-visite gratuite.",
   hero: {
@@ -44,7 +44,7 @@ export const gardeADomicileVannes: ServicePageData = {
     {
       title: "Maison occupée et surveillée",
       description:
-        "Pendant votre absence, votre logement reste habité — courrier, plantes, volets — et ma présence dissuade les intrusions.",
+        "Pendant votre absence, votre logement reste habité (courrier, plantes, volets) et ma présence dissuade les intrusions.",
     },
     {
       title: "Durée sur-mesure",
@@ -59,7 +59,7 @@ export const gardeADomicileVannes: ServicePageData = {
   ],
   pricing: {
     highlight:
-      "Une présence à demeure chez vous — tarif sur devis, selon la durée, vos besoins et le nombre d'animaux.",
+      "Une présence à demeure chez vous : tarif sur devis, selon la durée, vos besoins et le nombre d'animaux.",
     cardSlugs: ["garde-domicile"],
   },
   area: {

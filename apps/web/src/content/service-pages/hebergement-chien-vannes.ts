@@ -8,16 +8,16 @@ export const hebergementChienVannes: ServicePageData = {
   hero: {
     h1: "Pension privative pour chien à Vannes",
     baseline:
-      "Une pension privative où votre chien est le seul accueilli — jamais mélangé à des animaux qu'il ne connaît pas, pour des séjours courts en toute sérénité.",
+      "Une pension privative où votre chien est le seul accueilli, jamais mélangé à des animaux qu'il ne connaît pas, pour des séjours courts en toute sérénité.",
     // DRAFT - photo dédiée hébergement à fournir par Manon.
     image: "/manon_chiens.webp",
     imageAlt: "Manon accueillant un chien en hébergement privatif à Vannes",
   },
   intro: {
     paragraphs: [
-      "Confier son chien, même pour quelques heures ou une nuit, n'est jamais anodin. Certains chiens ont simplement besoin d'un cadre plus calme et plus proche de leur quotidien. C'est pour répondre à ce besoin que je propose un hébergement privatif, chez moi, réservé à un seul chien — ou à une fratrie de deux chiens du même foyer — à la fois.",
+      "Confier son chien, même pour quelques heures ou une nuit, n'est jamais anodin. Certains chiens ont simplement besoin d'un cadre plus calme et plus proche de leur quotidien. C'est pour répondre à ce besoin que je propose un hébergement privatif, chez moi, réservé à un seul chien (ou à une fratrie de deux chiens du même foyer) à la fois.",
       "Concrètement, pendant toute la durée du séjour, aucun autre animal n'est accueilli chez moi en parallèle. Votre chien évolue dans mon logement comme il évoluerait dans le vôtre, avec accès à toutes les pièces, et pas seulement à un coin ou une cage qui lui serait réservé. Je gère moi-même ses sorties et ses soins, avec la même attention que s'il s'agissait de mon propre chien.",
-      "Cette formule est pensée pour les gardes de courte durée : de quelques heures à deux jours maximum. Un rendez-vous professionnel qui s'éternise, une urgence, une journée où vous ne pouvez vraiment pas l'emmener avec vous — votre chien passe ce moment dans un vrai foyer, avec quelqu'un de disponible pour lui seul.",
+      "Cette formule est pensée pour les gardes de courte durée : de quelques heures à deux jours maximum. Un rendez-vous professionnel qui s'éternise, une urgence, une journée où vous ne pouvez vraiment pas l'emmener avec vous, votre chien passe ce moment dans un vrai foyer, avec quelqu'un de disponible pour lui seul.",
       "Je vous demande simplement de fournir tout ce dont il a l'habitude : sa nourriture, ses jouets, son panier. Ce sont ses repères et ses odeurs familières qui font toute la différence pour qu'il se sente à l'aise, même en dehors de chez lui. Comme pour mes autres prestations, tout commence par une rencontre : je fais connaissance avec votre chien, on discute de ses habitudes, et on définit ensemble les modalités du séjour.",
     ],
   },
@@ -26,7 +26,7 @@ export const hebergementChienVannes: ServicePageData = {
     {
       title: "Pension privative",
       description:
-        "Votre chien est le seul accueilli — ou une fratrie de deux chiens du même foyer. Jamais mêlé à des animaux qu'il ne connaît pas.",
+        "Votre chien est le seul accueilli, ou une fratrie de deux chiens du même foyer. Jamais mêlé à des animaux qu'il ne connaît pas.",
     },
     {
       title: "Chez moi, jamais en cage",
@@ -75,7 +75,7 @@ export const hebergementChienVannes: ServicePageData = {
   faq: [
     {
       q: "Combien de chiens accueillez-vous à la fois ?",
-      a: "Un seul chien à la fois — ou une fratrie de deux chiens du même foyer. Pendant toute la durée du séjour, aucun autre animal n'est accueilli chez moi en parallèle.",
+      a: "Un seul chien à la fois, ou une fratrie de deux chiens du même foyer. Pendant toute la durée du séjour, aucun autre animal n'est accueilli chez moi en parallèle.",
     },
     {
       q: "Quelle est la durée maximale d'un séjour ?",

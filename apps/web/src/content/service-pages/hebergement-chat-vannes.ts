@@ -36,7 +36,7 @@ export const hebergementChatVannes: ServicePageData = {
     {
       title: "Sans limite de durée",
       description:
-        "De quelques jours à une absence prolongée — vacances ou déplacement professionnel : cette formule n'impose aucune durée maximale.",
+        "De quelques jours à une absence prolongée (vacances ou déplacement professionnel) : cette formule n'impose aucune durée maximale.",
     },
     {
       title: "Son quotidien préservé",

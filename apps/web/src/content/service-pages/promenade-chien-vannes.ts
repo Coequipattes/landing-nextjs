@@ -5,13 +5,13 @@ import type { ServicePageData } from "./types";
 export const promenadeChienVannes: ServicePageData = {
   slug: "promenade-chien-vannes",
   metaTitle:
-    "Promenades de chien à Vannes — Balades quotidiennes | Co'équi'pattes",
+    "Promenades de chien à Vannes · Balades quotidiennes | Co'équi'pattes",
   metaDescription:
     "Promenades de chien à Vannes : balades 30 à 60 min adaptées au rythme de votre chien. Pour actifs et propriétaires âgés, ponctuel ou régulier.",
   hero: {
     h1: "Promenades de chien à Vannes",
     baseline:
-      "Des balades régulières adaptées à votre chien, quand vous n'avez pas le temps ou plus l'énergie de sortir — pour qu'il garde sa dépense quotidienne.",
+      "Des balades régulières adaptées à votre chien, quand vous n'avez pas le temps ou plus l'énergie de sortir, pour qu'il garde sa dépense quotidienne.",
     image: "/manon_chiens.webp",
     imageAlt: "Manon, promeneuse de chien, lors d'une balade à Vannes",
   },
@@ -26,7 +26,7 @@ export const promenadeChienVannes: ServicePageData = {
     {
       title: "Balades 30 / 45 / 60 min",
       description:
-        "Choisissez la durée selon l'énergie de votre chien et votre budget — pas de formule rigide imposée.",
+        "Choisissez la durée selon l'énergie de votre chien et votre budget, pas de formule rigide imposée.",
     },
     {
       title: "Sortie sécurisée et attentive",
@@ -56,7 +56,7 @@ export const promenadeChienVannes: ServicePageData = {
   ],
   pricing: {
     highlight:
-      "À l'unité ou en sorties régulières — je m'adapte à votre rythme.",
+      "À l'unité ou en sorties régulières, je m'adapte à votre rythme.",
     cardSlugs: ["promenade-30", "promenade-45", "promenade-60"],
   },
   area: {

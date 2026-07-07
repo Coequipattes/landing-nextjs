@@ -4,7 +4,7 @@ import type { ServicePageData } from "./types";
 // (intro, bénéfices, FAQ, CTA) doit être relu avant publication.
 export const visitesChatVannes: ServicePageData = {
   slug: "visites-chat-vannes",
-  metaTitle: "Garde de chat à Vannes — Visites à domicile | Co'équi'pattes",
+  metaTitle: "Garde de chat à Vannes · Visites à domicile | Co'équi'pattes",
   metaDescription:
     "Garde de chat à Vannes : votre chat reste chez lui. Visites à domicile, alimentation, jeux, suivi photo. NAC acceptés. Pré-visite gratuite.",
   hero: {
@@ -18,7 +18,7 @@ export const visitesChatVannes: ServicePageData = {
   intro: {
     paragraphs: [
       "Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse. C'est la raison pour laquelle je me déplace chez vous pour des visites de 30 min à 1 h, une ou plusieurs fois par jour : votre animal reste dans son environnement, avec ses odeurs, son panier, son jardin et ses horaires habituels.",
-      "Mes visites s'organisent autour des vrais besoins du chat : alimentation à heures régulières, entretien complet de la litière, eau fraîche, contrôle visuel de son état, et surtout du temps de présence — jeu, câlins, brossage selon ses envies. Je laisse aussi quelques signes de vie discrets (volets ouverts, courrier rentré) pour maintenir l'illusion d'une maison habitée.",
+      "Mes visites s'organisent autour des vrais besoins du chat : alimentation à heures régulières, entretien complet de la litière, eau fraîche, contrôle visuel de son état, et surtout du temps de présence : jeu, câlins, brossage selon ses envies. Je laisse aussi quelques signes de vie discrets (volets ouverts, courrier rentré) pour maintenir l'illusion d'une maison habitée.",
       "Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chat et moi-même faisons connaissance dans un cadre rassurant, où je note les consignes (alimentation, traitements, habitudes...) et où nous calons ensemble le rythme des visites.",
     ],
   },
@@ -26,7 +26,7 @@ export const visitesChatVannes: ServicePageData = {
     {
       title: "Sur son territoire",
       description:
-        "Votre chat reste chez lui, avec ses repères et ses habitudes — aucun changement d'environnement.",
+        "Votre chat reste chez lui, avec ses repères et ses habitudes, aucun changement d'environnement.",
     },
     {
       title: "Respect du territoire",
@@ -51,7 +51,7 @@ export const visitesChatVannes: ServicePageData = {
     {
       title: "Suivi photo quotidien",
       description:
-        "Quelques photos et un message court à chaque visite — vous gardez le lien à distance.",
+        "Quelques photos et un message court à chaque visite, vous gardez le lien à distance.",
     },
     {
       title: "Gestion clés sécurisée",

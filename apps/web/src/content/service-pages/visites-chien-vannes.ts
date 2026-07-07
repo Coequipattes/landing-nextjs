@@ -4,7 +4,7 @@ import type { ServicePageData } from "./types";
 // (intro, bénéfices, FAQ, CTA) doit être relu avant publication.
 export const visitesChienVannes: ServicePageData = {
   slug: "visites-chien-vannes",
-  metaTitle: "Garde de chien à Vannes — Visites à domicile | Co'équi'pattes",
+  metaTitle: "Garde de chien à Vannes · Visites à domicile | Co'équi'pattes",
   metaDescription:
     "Garde de chien à Vannes pendant vos absences. Visites à domicile, promenades, suivi photo quotidien. Pré-visite gratuite.",
   hero: {
@@ -18,7 +18,7 @@ export const visitesChienVannes: ServicePageData = {
   intro: {
     paragraphs: [
       "Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse. C'est la raison pour laquelle je me déplace chez vous pour des visites de 30 min à 1 h, une ou plusieurs fois par jour : votre animal reste dans son environnement, avec ses odeurs, son panier, son jardin et ses horaires habituels.",
-      "Le nombre de visites se décide avec vous, selon l'âge et les besoins de votre chien — jusqu'à 5 passages par jour. Chaque passage comprend la sortie, le repas, un temps de jeu ou de câlin, et la vérification de l'état général. Pour les absences longues, je peux aussi m'occuper du courrier, arroser les plantes ou ouvrir les volets — autant de petits gestes qui maintiennent la maison vivante et dissuadent les intrusions.",
+      "Le nombre de visites se décide avec vous, selon l'âge et les besoins de votre chien, jusqu'à 5 passages par jour. Chaque passage comprend la sortie, le repas, un temps de jeu ou de câlin, et la vérification de l'état général. Pour les absences longues, je peux aussi m'occuper du courrier, arroser les plantes ou ouvrir les volets, autant de petits gestes qui maintiennent la maison vivante et dissuadent les intrusions.",
       "Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chien et moi-même faisons connaissance dans un cadre rassurant, où je note les consignes (alimentation, traitements, habitudes...) et où nous calons ensemble le rythme des visites.",
     ],
   },
@@ -36,7 +36,7 @@ export const visitesChienVannes: ServicePageData = {
     {
       title: "Suivi photo après chaque passage",
       description:
-        "Vous recevez photos et compte-rendu court à chaque visite — vous gardez le lien et la sérénité.",
+        "Vous recevez photos et compte-rendu court à chaque visite, vous gardez le lien et la sérénité.",
     },
     {
       title: "Gestion clés sécurisée",
@@ -83,7 +83,7 @@ export const visitesChienVannes: ServicePageData = {
     },
     {
       q: "Acceptez-vous les chiens réactifs ou anxieux ?",
-      a: "J'accepte les chiens anxieux sans souci. Pour les chiens réactifs, cela dépend du gabarit du chien — on en parle ensemble lors de la pré-visite.",
+      a: "J'accepte les chiens anxieux sans souci. Pour les chiens réactifs, cela dépend du gabarit du chien, on en parle ensemble lors de la pré-visite.",
     },
     {
       q: "Que se passe-t-il en cas d'urgence vétérinaire ?",

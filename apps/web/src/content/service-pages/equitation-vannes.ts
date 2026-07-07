@@ -3,20 +3,20 @@ import type { ServicePageData } from "./types";
 export const equitationVannes: ServicePageData = {
   slug: "equitation-vannes",
   metaTitle:
-    "Cours d'équitation à Vannes — Monitrice diplômée | Co'équi'pattes",
+    "Cours d'équitation à Vannes · Monitrice diplômée | Co'équi'pattes",
   metaDescription:
     "Cours d'équitation personnalisés à Vannes : particulier, collectif, travail de cheval. Monitrice diplômée, pédagogie respectueuse.",
   hero: {
     h1: "Cours d'équitation à Vannes",
     baseline:
-      "Cours particuliers ou collectifs, travail du cheval propriétaire — une pédagogie individualisée et respectueuse du couple cheval-cavalier. Uniquement pour les cavaliers propriétaires ou demi-pensionnaires : je ne fournis pas de cavalerie.",
+      "Cours particuliers ou collectifs, travail du cheval propriétaire : une pédagogie individualisée et respectueuse du couple cheval-cavalier. Uniquement pour les cavaliers propriétaires ou demi-pensionnaires : je ne fournis pas de cavalerie.",
     // DRAFT - photo dédiée équitation à fournir par Manon (/uploads/equitation-vannes.jpg).
     image: "/uploads/manon.jpg",
     imageAlt: "Manon, monitrice d'équitation diplômée, avec un cheval",
   },
   intro: {
     paragraphs: [
-      "L'équitation est ma première passion. Au-delà du sport, c'est un dialogue avec un être vivant — et c'est ce dialogue que j'enseigne. Monitrice diplômée, je propose des cours adaptés à chaque cavalier, du débutant complet qui n'a jamais touché un cheval au cavalier confirmé qui veut perfectionner une discipline. Mon approche met le bien-être du cheval au cœur de l'apprentissage : un cavalier respectueux fait un meilleur sportif.",
+      "L'équitation est ma première passion. Au-delà du sport, c'est un dialogue avec un être vivant, et c'est ce dialogue que j'enseigne. Monitrice diplômée, je propose des cours adaptés à chaque cavalier, du débutant complet qui n'a jamais touché un cheval au cavalier confirmé qui veut perfectionner une discipline. Mon approche met le bien-être du cheval au cœur de l'apprentissage : un cavalier respectueux fait un meilleur sportif.",
       "Pédagogie individualisée : chaque cavalier a son rythme, ses appréhensions, ses objectifs. Que vous souhaitiez reprendre après une longue pause, vous remettre en confiance après une chute, préparer un examen ou simplement passer un moment de qualité avec un cheval, on construit ensemble un plan progressif. Les séances peuvent se faire en particulier (attention totale, progression rapide) ou en collectif à partir de 3 cavaliers.",
       "Au-delà des cours, je propose aussi le travail de cheval propriétaire : si vous avez votre propre monture et que vous manquez de temps pour la travailler, je peux la sortir, la détendre, la remettre dans le bon mouvement. C'est précieux pour entretenir le niveau du cheval sans qu'il prenne de mauvaises habitudes pendant vos absences.",
     ],
@@ -25,7 +25,7 @@ export const equitationVannes: ServicePageData = {
     {
       title: "Monitrice diplômée",
       description:
-        "Formation reconnue et expérience pédagogique solide — encadrement professionnel.",
+        "Formation reconnue et expérience pédagogique solide : encadrement professionnel.",
     },
     {
       title: "Cours particulier ou collectif",
@@ -40,7 +40,7 @@ export const equitationVannes: ServicePageData = {
     {
       title: "Pédagogie individualisée",
       description:
-        "Le rythme s'adapte au cavalier, pas l'inverse — débutant en confiance, confirmé en perfectionnement.",
+        "Le rythme s'adapte au cavalier, pas l'inverse : débutant en confiance, confirmé en perfectionnement.",
     },
     {
       title: "Tous niveaux : débutant à confirmé",
@@ -50,7 +50,7 @@ export const equitationVannes: ServicePageData = {
     {
       title: "Respect du couple cheval-cavalier",
       description:
-        "Le bien-être du cheval est au cœur de l'enseignement — un cavalier respectueux progresse mieux et plus durablement.",
+        "Le bien-être du cheval est au cœur de l'enseignement : un cavalier respectueux progresse mieux et plus durablement.",
     },
   ],
   pricing: {
