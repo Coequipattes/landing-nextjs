@@ -1,5 +1,5 @@
 import { ToggleChip } from "@coequipattes/ui/components/toggle-chip";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type GalleryImage = {
   src: string;
@@ -22,12 +22,21 @@ const categoryNames: Record<string, string> = {
   nac: "NAC",
 };
 
-const PAGE_SIZE = 12;
+const PAGE_SIZE = 6;
 
 export function Gallery({ images }: { images: GalleryImage[] }) {
   const [filter, setFilter] = useState("all");
+  // Sur mobile (1 colonne) on limite fort le premier rendu pour éviter un
+  // scroll interminable ; sur desktop (3 colonnes) on peut en montrer plus.
+  const [initialLimit, setInitialLimit] = useState(PAGE_SIZE);
   const [limit, setLimit] = useState(PAGE_SIZE);
   const [lightbox, setLightbox] = useState<number | null>(null);
+
+  useEffect(() => {
+    const n = window.innerWidth >= 1024 ? 9 : PAGE_SIZE;
+    setInitialLimit(n);
+    setLimit(n);
+  }, []);
 
   const filtered =
     filter === "all" ? images : images.filter((i) => i.category === filter);
@@ -37,7 +46,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
   const handleFilter = (key: string) => {
     setFilter(key);
-    setLimit(PAGE_SIZE);
+    setLimit(initialLimit);
   };
 
   const openLightbox = useCallback((index: number) => {
@@ -116,7 +125,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
       {/* Lightbox */}
       {lightbox !== null && (
         <div
-          className="fixed inset-0 bg-black/95 z-[2000] flex items-center justify-center p-10 backdrop-blur-[10px]"
+          className="fixed inset-0 bg-black/95 z-[2000] flex items-center justify-center p-4 sm:p-10 backdrop-blur-[10px]"
           onClick={closeLightbox}
           onKeyDown={(e) => {
             if (e.key === "Escape") closeLightbox();
@@ -138,7 +147,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
             <button
               type="button"
-              className="absolute top-1/2 -translate-y-1/2 -left-[70px] w-[50px] h-[50px] bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
+              className="absolute top-1/2 -translate-y-1/2 left-2 sm:-left-[70px] w-[50px] h-[50px] bg-primary/60 sm:bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
               onClick={() => navigate(-1)}
             >
               ‹
@@ -154,7 +163,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
             <button
               type="button"
-              className="absolute top-1/2 -translate-y-1/2 -right-[70px] w-[50px] h-[50px] bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
+              className="absolute top-1/2 -translate-y-1/2 right-2 sm:-right-[70px] w-[50px] h-[50px] bg-primary/60 sm:bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
               onClick={() => navigate(1)}
             >
               ›
