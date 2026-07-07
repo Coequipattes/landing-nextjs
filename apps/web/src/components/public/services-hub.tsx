@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   type IconId,
   type ServiceCategory,
@@ -6,13 +5,16 @@ import {
   servicesHub,
 } from "@/content/services-hub";
 import { ServiceCard } from "@coequipattes/ui/components/service-card";
-import { ToggleChip } from "@coequipattes/ui/components/toggle-chip";
 import { SectionHeader } from "./section-header";
 
-const CATEGORIES: { id: ServiceCategory; label: string; iconId: IconId }[] = [
-  { id: "chien", label: "Chien", iconId: "dog" },
-  { id: "chat", label: "Chat", iconId: "cat" },
-  { id: "cheval", label: "Cheval", iconId: "horse" },
+const CATEGORIES: {
+  id: ServiceCategory;
+  heading: string;
+  iconId: IconId;
+}[] = [
+  { id: "chien", heading: "Pour votre chien", iconId: "dog" },
+  { id: "chat", heading: "Pour votre chat", iconId: "cat" },
+  { id: "cheval", heading: "Pour votre cheval", iconId: "horse" },
 ];
 
 // Icônes SVG inline (stroke-based, cohérence pink, pas d'emoji).
@@ -105,7 +107,7 @@ function ServiceIcon({ id, className }: { id: IconId; className?: string }) {
   }
 }
 
-function HubCard({ card, hidden }: { card: ServiceHubCard; hidden: boolean }) {
+function HubCard({ card }: { card: ServiceHubCard }) {
   const priced = Boolean(card.price);
   const hasPage = card.href.startsWith("/");
   // Page dédiée -> "Découvrir" ; prix mais pas de page -> "Réserver" (vers
@@ -119,27 +121,20 @@ function HubCard({ card, hidden }: { card: ServiceHubCard; hidden: boolean }) {
       price={card.price}
       href={card.href}
       cta={cta}
-      className={`w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] ${
-        hidden ? "hidden" : ""
-      }`}
+      className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
     />
   );
 }
 
 export function ServicesHub() {
-  const [active, setActive] = useState<ServiceCategory>("chien");
-  // Note "sur devis" : visible seulement si la catégorie active contient une
-  // prestation sans tarif fixe (pas de prix + pas de page dédiée).
-  const surDevisInActive = servicesHub.some(
-    (card) =>
-      card.category === active && !card.price && !card.href.startsWith("/"),
+  // Note "sur devis" : visible s'il existe au moins une prestation sans tarif
+  // fixe (pas de prix + pas de page dédiée).
+  const surDevis = servicesHub.some(
+    (card) => !card.price && !card.href.startsWith("/"),
   );
 
   return (
-    <section
-      id="services"
-      className="relative bg-background px-6 py-16 md:py-24"
-    >
+    <section id="services" className="relative bg-background px-6 py-16 md:py-24">
       {/* Halo de fond très léger pour donner de la profondeur */}
       <div
         aria-hidden="true"
@@ -155,60 +150,52 @@ export function ServicesHub() {
               <span className="text-primary">vous aider</span>
             </>
           }
-          subtitle="Chien, chat ou cheval : choisissez votre univers, je m'occupe du reste avec la même attention, à Vannes et alentours."
+          subtitle="Chien, chat ou cheval : je m'occupe des trois, avec la même attention, à Vannes et alentours."
         />
 
-        {/* Filtre par animal — un visiteur ne voit que l'univers qui le
-            concerne. Les cartes des trois univers restent dans le DOM
-            (masquées via `hidden`) pour garder les liens internes crawlables. */}
-        <div
-          role="tablist"
-          aria-label="Filtrer les services par animal"
-          className="mb-10 flex flex-wrap justify-center gap-3 md:mb-12"
-        >
+        {/* Les trois univers sont affichés côte à côte (plus de filtre par
+            défaut sur un seul animal) : le visiteur voit d'emblée que je
+            propose des prestations pour chiens, chats ET chevaux. */}
+        <div className="space-y-14 md:space-y-20">
           {CATEGORIES.map((cat) => {
-            const isActive = active === cat.id;
+            const cards = servicesHub.filter((c) => c.category === cat.id);
+            if (cards.length === 0) return null;
             return (
-              <ToggleChip
-                key={cat.id}
-                role="tab"
-                aria-selected={isActive}
-                active={isActive}
-                onClick={() => setActive(cat.id)}
-              >
-                <ServiceIcon
-                  id={cat.iconId}
-                  className="w-4 h-4 stroke-current"
-                />
-                {cat.label}
-              </ToggleChip>
+              <div key={cat.id}>
+                <div className="mb-8 flex items-center justify-center gap-4 md:mb-10">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blush">
+                    <ServiceIcon
+                      id={cat.iconId}
+                      className="h-7 w-7 stroke-primary"
+                    />
+                  </span>
+                  <div className="text-left">
+                    <h3 className="font-display text-2xl leading-tight text-foreground md:text-3xl">
+                      {cat.heading}
+                    </h3>
+                    <p className="text-[0.8rem] font-semibold uppercase tracking-[2px] text-primary">
+                      {cards.length} prestation{cards.length > 1 ? "s" : ""}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap content-start justify-center gap-6">
+                  {cards.map((card) => (
+                    <HubCard key={card.slug} card={card} />
+                  ))}
+                </div>
+              </div>
             );
           })}
         </div>
 
-        {/* key={active} : remonte la grille pour rejouer le fade à chaque
-            bascule, sans retirer les cartes masquées du rendu. */}
-        <div
-          key={active}
-          className="flex flex-wrap content-start justify-center gap-6 lg:min-h-[27rem] animate-[fadeIn_0.4s_var(--transition)]"
-        >
-          {servicesHub.map((card) => (
-            <HubCard
-              key={card.slug}
-              card={card}
-              hidden={card.category !== active}
-            />
-          ))}
-        </div>
-
-        {surDevisInActive && (
-          <p className="mx-auto mt-8 max-w-[640px] text-center text-[0.85rem] leading-relaxed text-muted-foreground animate-[fadeIn_0.4s_var(--transition)]">
+        {surDevis && (
+          <p className="mx-auto mt-12 max-w-[640px] text-center text-[0.85rem] leading-relaxed text-muted-foreground">
             <span className="font-semibold text-primary">
               Demander le tarif ?
             </span>{" "}
-            Pour ces prestations, le prix dépend des besoins de l&apos;animal,
-            du lieu et de la durée. Contactez-moi pour une estimation
-            personnalisée.
+            Pour certaines prestations, le prix dépend des besoins de
+            l&apos;animal, du lieu et de la durée. Contactez-moi pour une
+            estimation personnalisée.
           </p>
         )}
       </div>
