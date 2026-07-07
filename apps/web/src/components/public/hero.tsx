@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
+import { ArrowDown } from "lucide-react";
 import { Button } from "@coequipattes/ui/components/button";
 import { MediaFrame } from "@coequipattes/ui/components/media-frame";
 
 const ScrollArrow = () => (
   <div className="flex items-center justify-center w-10 h-10 rounded-full border border-primary/30 bg-background/60 backdrop-blur-sm">
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+    <ArrowDown
       className="w-5 h-5 text-primary/70"
-    >
-      <path d="M12 5v14M5 12l7 7 7-7" />
-    </svg>
+      strokeWidth={1.8}
+      aria-hidden="true"
+    />
   </div>
 );
 

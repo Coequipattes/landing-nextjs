@@ -1,3 +1,4 @@
+import { FileCheck } from "lucide-react";
 import { Card } from "@coequipattes/ui/components/card";
 import { IconMedallion } from "@coequipattes/ui/components/icon-medallion";
 import { SectionHeader } from "./section-header";
@@ -55,18 +56,7 @@ export function ProcessTimeline() {
 
         <Card className="flex-row items-start gap-5 bg-blush/50 border-primary/20 p-6 md:p-8 mb-12 md:mb-16 max-w-[820px] mx-auto">
           <IconMedallion aria-hidden className="hidden md:flex">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-              <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z" />
-              <path d="M9 13l2 2 4-4" />
-            </svg>
+            <FileCheck strokeWidth={1.8} aria-hidden="true" />
           </IconMedallion>
           <div>
             <h3 className="text-xl font-semibold text-foreground mb-2">

@@ -1,4 +1,5 @@
 import { ToggleChip } from "@coequipattes/ui/components/toggle-chip";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 type GalleryImage = {
@@ -142,7 +143,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
               className="absolute -top-12 right-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center cursor-pointer hover:bg-primary/80 transition-colors duration-200 text-primary-foreground font-bold"
               onClick={closeLightbox}
             >
-              ✕
+              <X className="h-5 w-5" aria-hidden="true" />
             </button>
 
             <button
@@ -150,7 +151,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
               className="absolute top-1/2 -translate-y-1/2 left-2 sm:-left-[70px] w-[50px] h-[50px] bg-primary/60 sm:bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
               onClick={() => navigate(-1)}
             >
-              ‹
+              <ChevronLeft className="h-6 w-6" aria-hidden="true" />
             </button>
 
             <img
@@ -166,7 +167,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
               className="absolute top-1/2 -translate-y-1/2 right-2 sm:-right-[70px] w-[50px] h-[50px] bg-primary/60 sm:bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
               onClick={() => navigate(1)}
             >
-              ›
+              <ChevronRight className="h-6 w-6" aria-hidden="true" />
             </button>
 
             <div className="absolute -bottom-15 left-0 right-0 text-center">

@@ -1,4 +1,19 @@
 import {
+  BadgeCheck,
+  BedDouble,
+  Brush,
+  Cat,
+  Dog,
+  DoorOpen,
+  Dumbbell,
+  Footprints,
+  GraduationCap,
+  House,
+  type LucideIcon,
+  Medal,
+  Wheat,
+} from "lucide-react";
+import {
   type IconId,
   type ServiceCategory,
   type ServiceHubCard,
@@ -17,94 +32,30 @@ const CATEGORIES: {
   { id: "cheval", heading: "Pour votre cheval", iconId: "horse" },
 ];
 
-// Icônes SVG inline (stroke-based, cohérence pink, pas d'emoji).
-// La couleur/taille est pilotée par `className` (stroke-pink dans les cartes,
-// stroke-current dans les pills pour suivre le texte).
+// Icônes : lucide-react pour tous les glyphes. lucide n'a pas d'icône
+// équestre, donc l'univers cheval utilise `Wheat` (foin/écurie), thématique
+// et cohérent avec le trait fin du reste. La couleur suit `currentColor`
+// (donc `text-*`) et la taille vient de `className` ou du conteneur
+// (IconMedallion force `size-5`).
+const LUCIDE_BY_ID: Partial<Record<IconId, LucideIcon>> = {
+  dog: Dog,
+  cat: Cat,
+  horse: Wheat,
+  walk: Footprints,
+  visit: DoorOpen,
+  livein: BedDouble,
+  boarding: House,
+  lesson: GraduationCap,
+  training: Dumbbell,
+  care: Brush,
+  competition: Medal,
+  galop: BadgeCheck,
+};
+
 function ServiceIcon({ id, className }: { id: IconId; className?: string }) {
-  const cls = className ?? "w-6 h-6 stroke-primary";
-  const common = {
-    viewBox: "0 0 24 24",
-    fill: "none",
-    strokeWidth: "1.6",
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    className: cls,
-    "aria-hidden": true,
-  };
-  switch (id) {
-    case "paw-heart":
-      return (
-        <svg {...common}>
-          <path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z" />
-          <circle cx="6" cy="5" r="1.4" />
-          <circle cx="10" cy="3.4" r="1.4" />
-          <circle cx="14" cy="3.4" r="1.4" />
-          <circle cx="18" cy="5" r="1.4" />
-        </svg>
-      );
-    case "dog":
-      return (
-        <svg {...common}>
-          <path d="M10 5 7 3v4l-2 1v5l2 2v5h3v-3h4v3h3v-5l2-2v-4l-2-1V3l-3 2" />
-          <path d="M11 12h.01M13 12h.01" />
-        </svg>
-      );
-    case "cat":
-      return (
-        <svg {...common}>
-          <path d="M5 4v5a7 7 0 0 0 14 0V4l-3 3h-1.5M19 4l-3 3M8 9h.01M16 9h.01M9 13c.7 1 2 1.5 3 1.5s2.3-.5 3-1.5" />
-          <path d="M12 14.5v3" />
-          <path d="M7 21c1-1.5 3-2.5 5-2.5s4 1 5 2.5" />
-        </svg>
-      );
-    case "leash":
-      return (
-        <svg {...common}>
-          <circle cx="6" cy="5" r="2" />
-          <path d="M8 5h2a3 3 0 0 1 3 3v4" />
-          <path d="M13 12c-1 3 1 5 3 5h2a2 2 0 0 1 2 2v2" />
-          <path d="M15 19h-3a1.5 1.5 0 0 1 0-3h1" />
-        </svg>
-      );
-    case "horse":
-      return (
-        <svg {...common}>
-          <path d="M4 21v-4c0-3 2-6 5-6h2l2-3h2l1 2 3 1v3l-2 1v6" />
-          <path d="M9 21v-3" />
-          <path d="M17 8.5h.01" />
-          <path d="M14 6l1-3" />
-        </svg>
-      );
-    case "home":
-      return (
-        <svg {...common}>
-          <path d="M4 11.5 12 5l8 6.5" />
-          <path d="M6 10.5V19h12v-8.5" />
-          <path d="M10 19v-4.5h4V19" />
-        </svg>
-      );
-    case "book":
-      return (
-        <svg {...common}>
-          <path d="M12 6.5C10.3 5.4 7.7 5 5 5v12c2.7 0 5.3.4 7 1.5 1.7-1.1 4.3-1.5 7-1.5V5c-2.7 0-5.3.4-7 1.5Z" />
-          <path d="M12 6.5v12" />
-        </svg>
-      );
-    case "heart":
-      return (
-        <svg {...common}>
-          <path d="M12 20s-7-4.4-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.6 12 20 12 20Z" />
-        </svg>
-      );
-    case "trophy":
-      return (
-        <svg {...common}>
-          <path d="M8 4h8v4.5a4 4 0 0 1-8 0Z" />
-          <path d="M8 5.5H5V7a3 3 0 0 0 3 3M16 5.5h3V7a3 3 0 0 1-3 3" />
-          <path d="M12 12.5V16M9.5 20h5M10.5 20l.4-4h2.2l.4 4" />
-        </svg>
-      );
-  }
+  const Icon = LUCIDE_BY_ID[id];
+  if (!Icon) return null;
+  return <Icon className={className} strokeWidth={1.6} aria-hidden="true" />;
 }
 
 function HubCard({ card }: { card: ServiceHubCard }) {
@@ -115,7 +66,7 @@ function HubCard({ card }: { card: ServiceHubCard }) {
   const cta = hasPage ? "Découvrir" : priced ? "Réserver" : "Demander le tarif";
   return (
     <ServiceCard
-      icon={<ServiceIcon id={card.iconId} className="stroke-current" />}
+      icon={<ServiceIcon id={card.iconId} className="text-primary" />}
       title={card.title}
       teaser={card.teaser}
       price={card.price}
@@ -166,7 +117,7 @@ export function ServicesHub() {
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blush">
                     <ServiceIcon
                       id={cat.iconId}
-                      className="h-7 w-7 stroke-primary"
+                      className="h-7 w-7 text-primary"
                     />
                   </span>
                   <div className="text-left">

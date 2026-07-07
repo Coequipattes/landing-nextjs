@@ -8,16 +8,21 @@
 // PROVISOIRES, à faire valider par Manon (hébergement, visites/soins/
 // concours/galop cheval).
 
+// Icônes sémantiques par type de prestation (mappées vers lucide-react dans
+// services-hub.tsx). "dog"/"cat"/"horse" ne servent qu'aux en-têtes d'univers.
 export type IconId =
-  | "paw-heart"
   | "dog"
   | "cat"
-  | "leash"
   | "horse"
-  | "home"
-  | "book"
-  | "heart"
-  | "trophy";
+  | "walk"
+  | "visit"
+  | "livein"
+  | "boarding"
+  | "lesson"
+  | "training"
+  | "care"
+  | "competition"
+  | "galop";
 
 export type ServiceCategory = "chien" | "chat" | "cheval";
 
@@ -40,7 +45,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser:
       "Sorties 30 à 60 min, en laisse, adaptées à l'énergie de votre chien.",
     href: "/promenade-chien-vannes",
-    iconId: "leash",
+    iconId: "walk",
     price: "dès 12€",
   },
   {
@@ -50,7 +55,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser:
       "Je passe chez vous de 30 min à 1 h : repas, jeux, câlins et présence.",
     href: "/visites-chien-vannes",
-    iconId: "paw-heart",
+    iconId: "visit",
     price: "dès 10,20€",
   },
   {
@@ -59,7 +64,7 @@ export const servicesHub: ServiceHubCard[] = [
     title: "Garde à domicile",
     teaser: "Je vis chez vous, jour et nuit, toute la durée souhaitée.",
     href: "/garde-a-domicile-vannes",
-    iconId: "dog",
+    iconId: "livein",
   },
   {
     slug: "chien-hebergement",
@@ -68,7 +73,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser:
       "Courte durée (quelques heures à 2 jours) : votre chien vit chez moi comme s'il était le mien, sans être mêlé à d'autres animaux. 2 chiens possibles s'ils ont le même maître.",
     href: "/pension-chien-vannes",
-    iconId: "home",
+    iconId: "boarding",
     price: "dès 30€/24h",
   },
 
@@ -80,7 +85,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser:
       "Je passe chez vous de 30 min à 1 h : repas, litière, jeux et présence.",
     href: "/visites-chat-vannes",
-    iconId: "cat",
+    iconId: "visit",
     price: "dès 10,20€",
   },
   {
@@ -89,7 +94,7 @@ export const servicesHub: ServiceHubCard[] = [
     title: "Garde à domicile",
     teaser: "Je vis chez vous, jour et nuit, toute la durée souhaitée.",
     href: "/garde-a-domicile-vannes",
-    iconId: "paw-heart",
+    iconId: "livein",
   },
   {
     slug: "chat-hebergement",
@@ -98,7 +103,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser:
       "Sans limite de durée : j'accueille votre chat chez moi, un seul à la fois, sans cage. Il vit avec moi comme s'il était le mien.",
     href: "/pension-chat-vannes",
-    iconId: "home",
+    iconId: "boarding",
     price: "dès 18€/24h",
   },
 
@@ -110,7 +115,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser:
       "Cours particuliers ou collectifs, tous niveaux, pédagogie respectueuse.",
     href: "/equitation-vannes",
-    iconId: "book",
+    iconId: "lesson",
     price: "dès 25€",
   },
   {
@@ -120,7 +125,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser:
       "Je travaille votre cheval à pied ou monté, en respectant son rythme.",
     href: "/equitation-vannes",
-    iconId: "horse",
+    iconId: "training",
     price: "dès 35€",
   },
   {
@@ -130,7 +135,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser:
       "Passage pour nourrir et vérifier votre cheval pendant votre absence.",
     href: "#contact",
-    iconId: "horse",
+    iconId: "visit",
     price: "20€/visite",
   },
   {
@@ -140,7 +145,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser:
       "Pansage, soins et attention au quotidien, selon les besoins du cheval.",
     href: "#contact",
-    iconId: "heart",
+    iconId: "care",
   },
   {
     slug: "cheval-concours",
@@ -148,7 +153,7 @@ export const servicesHub: ServiceHubCard[] = [
     title: "Accompagnement concours",
     teaser: "Présence et accompagnement le jour J, selon le lieu et la durée.",
     href: "#contact",
-    iconId: "trophy",
+    iconId: "competition",
   },
   {
     slug: "cheval-galop",
@@ -156,6 +161,6 @@ export const servicesHub: ServiceHubCard[] = [
     title: "Passage de galop",
     teaser: "Préparation aux galops fédéraux, selon votre niveau et le rythme.",
     href: "#contact",
-    iconId: "book",
+    iconId: "galop",
   },
 ];
