@@ -35,6 +35,7 @@ function Home() {
     <>
       <Hero />
       <ServicesHub />
+      <Testimonials reviews={reviews} />
       <ProcessTimeline />
       <section id="galerie" className="py-16 md:py-25 px-6">
         <div className="max-w-[1200px] mx-auto">
@@ -42,7 +43,6 @@ function Home() {
           <Gallery images={gallery} />
         </div>
       </section>
-      <Testimonials reviews={reviews} />
       <HomeFaq />
       <Contact />
     </>
