@@ -36,22 +36,12 @@ export const promenadeChienVannes: ServicePageData = {
     {
       title: "Rythme adapté à votre chien",
       description:
-        "Cadence, distance, pauses olfactives : tout est calé sur l'âge, la condition physique et le tempérament de votre compagnon.",
+        "Cadence, distance, pauses olfactives : tout est calé sur l'âge, la condition physique et le tempérament de votre compagnon, mais aussi sur la météo. Par forte pluie ou par canicule, j'adapte la durée et l'intensité de la sortie.",
     },
     {
       title: "Au départ de chez vous",
       description:
         "Je viens chercher votre chien à domicile. Les sorties courtes se font autour de chez vous ; pour les balades de 45 min et 1 h, je peux l'emmener dans des lieux plus adaptés aux chiens, avec baignade possible pour ceux qui aiment l'eau.",
-    },
-    {
-      title: "Idéal pour actifs et télétravailleurs",
-      description:
-        "Une coupure de milieu de journée pour votre chien, sans que vous ayez à interrompre votre journée pro.",
-    },
-    {
-      title: "Régulier ou ponctuel",
-      description:
-        "Je m'adapte à vos besoins, au quotidien comme à l'occasion. Un tarif dégressif n'intervient que pour un gros volume, par exemple une sortie chaque jour.",
     },
   ],
   pricing: {
