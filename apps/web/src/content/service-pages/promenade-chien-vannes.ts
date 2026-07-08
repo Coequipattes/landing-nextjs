@@ -49,18 +49,6 @@ export const promenadeChienVannes: ServicePageData = {
       "À l'unité ou en sorties régulières, je m'adapte à votre rythme.",
     cardSlugs: ["promenade-30", "promenade-45", "promenade-60"],
   },
-  area: {
-    city: "Vannes",
-    neighborhoods: [
-      "Vannes",
-      "Arradon",
-      "Plescop",
-      "Séné",
-      "Saint-Avé",
-      "Ploeren",
-    ],
-    radiusKm: 10,
-  },
   faq: [
     {
       q: "Vous promenez plusieurs chiens en même temps ?",

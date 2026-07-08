@@ -1,10 +1,13 @@
 import { Badge } from "@coequipattes/ui/components/badge";
 import { Card } from "@coequipattes/ui/components/card";
+import { COVERAGE } from "@/content/coverage";
 import type { ServicePageData } from "@/content/service-pages/types";
 import { SectionHeader } from "../section-header";
 
 export function ServiceArea({ data }: { data: ServicePageData }) {
-  const { city, neighborhoods, radiusKm } = data.area;
+  const city = data.area?.city ?? COVERAGE.city;
+  const neighborhoods = data.area?.neighborhoods ?? COVERAGE.communes;
+  const radiusKm = data.area?.radiusKm ?? COVERAGE.radiusKm;
 
   return (
     <section className="py-16 md:py-20 px-6">
@@ -29,8 +32,8 @@ export function ServiceArea({ data }: { data: ServicePageData }) {
           <p className="text-muted-foreground text-[0.9rem] mt-6 italic">
             C'est la distance réelle depuis mon point de départ qui compte :
             jusqu'à {radiusKm} km, aucun frais ; au-delà (par exemple à
-            l'extrémité d'une commune éloignée), des frais kilométriques de
-            0,25 €/km s'appliquent.
+            l'extrémité d'une commune éloignée), des frais kilométriques de{" "}
+            {COVERAGE.ratePerKm} s'appliquent.
           </p>
         </Card>
       </div>

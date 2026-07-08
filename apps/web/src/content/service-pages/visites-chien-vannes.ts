@@ -58,18 +58,6 @@ export const visitesChienVannes: ServicePageData = {
       "visite-domicile-60",
     ],
   },
-  area: {
-    city: "Vannes",
-    neighborhoods: [
-      "Vannes",
-      "Arradon",
-      "Plescop",
-      "Séné",
-      "Saint-Avé",
-      "Ploeren",
-    ],
-    radiusKm: 10,
-  },
   faq: [
     {
       q: "Combien de visites par jour proposez-vous ?",

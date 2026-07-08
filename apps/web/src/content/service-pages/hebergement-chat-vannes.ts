@@ -59,18 +59,6 @@ export const hebergementChatVannes: ServicePageData = {
       "Un hébergement privatif chez moi, sans limite de durée, à partir de 18€ / 24 h.",
     cardSlugs: ["hebergement-chat"],
   },
-  area: {
-    city: "Vannes",
-    neighborhoods: [
-      "Vannes",
-      "Arradon",
-      "Plescop",
-      "Séné",
-      "Saint-Avé",
-      "Ploeren",
-    ],
-    radiusKm: 10,
-  },
   faq: [
     {
       q: "Combien de chats accueillez-vous à la fois ?",

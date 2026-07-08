@@ -6,7 +6,9 @@ export type ServicePageData = {
   intro: { paragraphs: string[] };
   benefits: { title: string; description: string }[];
   pricing: { highlight: string; cardSlugs: string[] };
-  area: { city: string; neighborhoods: string[]; radiusKm: number };
+  // Optionnel : par défaut, la zone provient de `content/coverage.ts`.
+  // Une page peut surcharger une partie (ex. équitation).
+  area?: { city?: string; neighborhoods?: string[]; radiusKm?: number };
   faq: { q: string; a: string }[];
   testimonialKeywords: string[];
   serviceSchema: { name: string; serviceType: string; description: string };

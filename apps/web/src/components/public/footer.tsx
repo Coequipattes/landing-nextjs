@@ -1,4 +1,5 @@
 import { Facebook, Instagram } from "lucide-react";
+import { COVERAGE } from "@/content/coverage";
 
 const serviceLinks = [
   { slug: "visites-chien-vannes", label: "Visites à domicile (chien)" },
@@ -69,8 +70,9 @@ export function Footer() {
             Zones d&apos;intervention
           </div>
           <p className="text-muted-foreground text-sm max-w-[640px] mx-auto leading-relaxed">
-            Vannes et alentours : Séné, Saint-Avé, Arradon, Ploeren,
-            Theix-Noyalo, Plescop et communes voisines dans un rayon de 10 km.
+            {COVERAGE.city} et alentours :{" "}
+            {COVERAGE.communes.filter((c) => c !== COVERAGE.city).join(", ")} et
+            communes voisines dans un rayon de {COVERAGE.radiusKm} km.
           </p>
         </div>
 

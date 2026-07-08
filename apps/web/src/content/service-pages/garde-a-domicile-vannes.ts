@@ -62,18 +62,6 @@ export const gardeADomicileVannes: ServicePageData = {
       "Une présence à demeure chez vous : tarif sur devis, selon la durée, vos besoins et le nombre d'animaux.",
     cardSlugs: ["garde-domicile"],
   },
-  area: {
-    city: "Vannes",
-    neighborhoods: [
-      "Vannes",
-      "Arradon",
-      "Plescop",
-      "Séné",
-      "Saint-Avé",
-      "Ploeren",
-    ],
-    radiusKm: 10,
-  },
   faq: [
     {
       q: "Êtes-vous présente en permanence ?",

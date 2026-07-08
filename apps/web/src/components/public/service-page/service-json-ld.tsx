@@ -1,3 +1,4 @@
+import { COVERAGE } from "@/content/coverage";
 import type { ServicePageData } from "@/content/service-pages/types";
 import { env } from "@/lib/env";
 
@@ -14,7 +15,7 @@ export function ServiceJsonLd({ data }: { data: ServicePageData }) {
       serviceType: data.serviceSchema.serviceType,
       description: data.serviceSchema.description,
       provider: { "@id": businessId },
-      areaServed: { "@type": "City", name: data.area.city },
+      areaServed: { "@type": "City", name: data.area?.city ?? COVERAGE.city },
       url: pageUrl,
     },
     {

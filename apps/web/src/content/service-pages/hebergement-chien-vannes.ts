@@ -58,18 +58,6 @@ export const hebergementChienVannes: ServicePageData = {
     highlight: "Un hébergement privatif chez moi, à partir de 30€ / 24 h.",
     cardSlugs: ["hebergement-chien"],
   },
-  area: {
-    city: "Vannes",
-    neighborhoods: [
-      "Vannes",
-      "Arradon",
-      "Plescop",
-      "Séné",
-      "Saint-Avé",
-      "Ploeren",
-    ],
-    radiusKm: 10,
-  },
   faq: [
     {
       q: "Combien de chiens accueillez-vous à la fois ?",
