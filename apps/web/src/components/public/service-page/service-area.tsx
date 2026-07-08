@@ -15,7 +15,7 @@ export function ServiceArea({ data }: { data: ServicePageData }) {
         />
         <Card className="p-6 md:p-10">
           <p className="text-muted-foreground leading-[1.7] mb-5">
-            Quartiers et communes habituellement desservis :
+            Communes desservies (à titre indicatif) :
           </p>
           <ul className="flex flex-wrap gap-3">
             {neighborhoods.map((n) => (
@@ -27,7 +27,10 @@ export function ServiceArea({ data }: { data: ServicePageData }) {
             ))}
           </ul>
           <p className="text-muted-foreground text-[0.9rem] mt-6 italic">
-            Au-delà de {radiusKm} km : frais kilométriques de 0,25€/km.
+            C'est la distance réelle depuis mon point de départ qui compte :
+            jusqu'à {radiusKm} km, aucun frais ; au-delà (par exemple à
+            l'extrémité d'une commune éloignée), des frais kilométriques de
+            0,25 €/km s'appliquent.
           </p>
         </Card>
       </div>

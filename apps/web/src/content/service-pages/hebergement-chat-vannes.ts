@@ -62,13 +62,11 @@ export const hebergementChatVannes: ServicePageData = {
   area: {
     city: "Vannes",
     neighborhoods: [
-      "Vannes centre",
-      "Conleau",
-      "Séné",
-      "Theix-Noyalo",
+      "Vannes",
       "Arradon",
-      "Saint-Avé",
       "Plescop",
+      "Séné",
+      "Saint-Avé",
       "Ploeren",
     ],
     radiusKm: 10,
