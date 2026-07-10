@@ -66,7 +66,6 @@ export const equitationVannes: ServicePageData = {
       "Vannes",
       "Alentours de Vannes",
     ],
-    radiusKm: 15,
   },
   faq: [
     {
