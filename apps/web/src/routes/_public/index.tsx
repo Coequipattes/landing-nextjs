@@ -3,7 +3,6 @@ import { createServerFn } from "@tanstack/react-start";
 import { Contact } from "@/components/public/contact";
 import { Gallery } from "@/components/public/gallery";
 import { Hero } from "@/components/public/hero";
-import { HomeFaq } from "@/components/public/home-faq";
 import { ProcessTimeline } from "@/components/public/process-timeline";
 import { SectionHeader } from "@/components/public/section-header";
 import { ServicesHub } from "@/components/public/services-hub";
@@ -43,7 +42,6 @@ function Home() {
           <Gallery images={gallery} />
         </div>
       </section>
-      <HomeFaq />
       <Contact />
     </>
   );
