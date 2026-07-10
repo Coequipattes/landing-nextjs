@@ -62,3 +62,8 @@ next-env.d.ts
 
 # Claude Code session artifacts (auto-linked skills, local settings)
 .claude/
+
+# design-sync (staged converter scripts + deps, build output, fork symlink)
+/.ds-sync/
+/ds-bundle/
+.design-sync/node_modules
