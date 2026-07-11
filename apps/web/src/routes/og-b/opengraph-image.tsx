@@ -33,7 +33,7 @@ export const Route = createFileRoute("/og-b/opengraph-image")({
         );
 
         const logoData = readFileSync(
-          join(process.cwd(), "public/logo_rose.png"),
+          join(process.cwd(), "public/logo/logo_rose.png"),
         );
         const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 

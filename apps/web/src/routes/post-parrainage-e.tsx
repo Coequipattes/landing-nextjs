@@ -21,7 +21,7 @@ export const Route = createFileRoute("/post-parrainage-e")({
       GET: async () => {
         const fonts = await loadBrandFonts();
         const logoData = readFileSync(
-          join(process.cwd(), "public/logo_rose.png"),
+          join(process.cwd(), "public/logo/logo_rose.png"),
         );
         const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 

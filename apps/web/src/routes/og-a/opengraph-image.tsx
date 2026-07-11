@@ -33,7 +33,7 @@ export const Route = createFileRoute("/og-a/opengraph-image")({
         );
 
         const logoData = readFileSync(
-          join(process.cwd(), "public/logo_blanc.png"),
+          join(process.cwd(), "public/logo/logo_blanc.png"),
         );
         const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 

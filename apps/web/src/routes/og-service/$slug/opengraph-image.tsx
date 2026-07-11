@@ -21,7 +21,7 @@ export const Route = createFileRoute("/og-service/$slug/opengraph-image")({
         const fonts = await loadClairFonts();
 
         const logoData = readFileSync(
-          join(process.cwd(), "public/logo_noir.png"),
+          join(process.cwd(), "public/logo/logo_noir.png"),
         );
         const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 

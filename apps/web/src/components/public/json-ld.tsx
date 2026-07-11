@@ -64,8 +64,11 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
         url: siteUrl,
         telephone: "+33766744337",
         email: env.contactEmail,
-        image: [`${siteUrl}/opengraph-image`, `${siteUrl}/manon_chiens.webp`],
-        logo: `${siteUrl}/logo_rose.png`,
+        image: [
+          `${siteUrl}/opengraph-image`,
+          `${siteUrl}/assets/garde_chien_domicile_2.webp`,
+        ],
+        logo: `${siteUrl}/logo/logo_rose.png`,
         priceRange: "€",
         currenciesAccepted: "EUR",
         paymentAccepted: "Espèces, Virement, Chèque",

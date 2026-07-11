@@ -33,7 +33,7 @@ export const Route = createFileRoute("/carte-verso-v1")({
         ]);
 
         const logoData = readFileSync(
-          join(process.cwd(), "public/logo_rose_cropped.png"),
+          join(process.cwd(), "public/logo/logo_rose_cropped.png"),
         );
         const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 
