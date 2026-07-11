@@ -15,7 +15,7 @@ export const gardeADomicileVannes: ServicePageData = {
     h1: "Garde à domicile à Vannes",
     baseline:
       "Je m'installe chez vous pendant votre absence : votre animal garde ses repères et une présence à demeure, sans changer d'environnement.",
-    image: "/manon_chiens.webp",
+    image: "/assets/garde_chien_domicile_2.webp",
     imageAlt: "Manon en garde à domicile auprès d'un animal à Vannes",
   },
   intro: {

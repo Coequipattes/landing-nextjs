@@ -9,8 +9,7 @@ export const hebergementChatVannes: ServicePageData = {
     h1: "Pension privative pour chat à Vannes",
     baseline:
       "Une pension privative où votre chat est le seul accueilli, sans cage ni durée limitée, pour un séjour aussi serein que chez vous.",
-    // DRAFT - photo dédiée hébergement chat à fournir par Manon.
-    image: "/garde_chat.webp",
+    image: "/assets/pension_chat.webp",
     imageAlt: "Manon accueillant un chat en hébergement privatif à Vannes",
   },
   intro: {

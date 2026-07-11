@@ -9,8 +9,7 @@ export const hebergementChienVannes: ServicePageData = {
     h1: "Pension privative pour chien à Vannes",
     baseline:
       "Une pension privative où votre chien est le seul accueilli, jamais mélangé à des animaux qu'il ne connaît pas, pour des séjours courts en toute sérénité.",
-    // DRAFT - photo dédiée hébergement à fournir par Manon.
-    image: "/manon_chiens.webp",
+    image: "/assets/pension_chien.webp",
     imageAlt: "Manon accueillant un chien en hébergement privatif à Vannes",
   },
   intro: {

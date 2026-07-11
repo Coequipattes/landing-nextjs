@@ -11,9 +11,10 @@ export const visitesChienVannes: ServicePageData = {
     h1: "Visites à domicile pour chien à Vannes",
     baseline:
       "Des visites de 30 min à 1 h chez vous pendant vos absences : votre chien reste dans son environnement, avec ses repères et un suivi à chaque passage.",
-    image: "/garde_chien.webp",
+    image: "/assets/visite_chien_domicile.webp",
     imageAlt:
       "Manon prenant soin d'un chien lors d'une visite à domicile à Vannes",
+    imageFocus: "center 35%",
   },
   intro: {
     paragraphs: [

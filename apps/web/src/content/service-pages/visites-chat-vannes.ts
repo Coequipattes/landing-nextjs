@@ -11,7 +11,7 @@ export const visitesChatVannes: ServicePageData = {
     h1: "Visites à domicile pour chat à Vannes",
     baseline:
       "Des visites de 30 min à 1 h chez vous pendant vos absences : votre chat reste sur son territoire, avec ses repères et ses habitudes.",
-    image: "/garde_chat.webp",
+    image: "/assets/visite_chat_domicile.webp",
     imageAlt:
       "Manon prenant soin d'un chat lors d'une visite à domicile à Vannes",
   },

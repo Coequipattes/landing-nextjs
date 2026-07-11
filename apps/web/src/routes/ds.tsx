@@ -348,24 +348,24 @@ function DesignSystemPage() {
         <Row title="MediaFrame — image cadrée (l'app y met son next/image)">
           <MediaFrame ratio="4/5" className="w-48">
             <img
-              src="/manon_chiens.webp"
-              alt="Manon en balade"
+              src="/assets/garde_chien_domicile.webp"
+              alt="Garde de chien à domicile"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover"
             />
           </MediaFrame>
           <MediaFrame focus="50% 25%" className="h-40 w-64">
             <img
-              src="/garde_chien.webp"
-              alt="Garde de chien"
+              src="/assets/garde_chat_domicile.webp"
+              alt="Garde de chat à domicile"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover"
             />
           </MediaFrame>
           <MediaFrame ratio="4/5" framed className="w-48">
             <img
-              src="/manon_chat.webp"
-              alt="Manon avec un chat"
+              src="/assets/visite_chat_domicile_2.webp"
+              alt="Visite à domicile pour chat"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover"
             />
