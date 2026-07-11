@@ -26,6 +26,11 @@ const steps: { title: string; description: string }[] = [
       "Un contrat détaillé est établi et signé en ligne, avec toutes les informations utiles.",
   },
   {
+    title: "Acompte",
+    description:
+      "Un acompte de 30 % est demandé pour les réservations à partir de 50 €.",
+  },
+  {
     title: "Prestation",
     description: "Je m'occupe de votre animal exactement comme convenu.",
   },
