@@ -3,7 +3,7 @@ import { MediaFrame } from "@coequipattes/ui/components/media-frame";
 import type { ServicePageData } from "@/content/service-pages/types";
 
 export function ServiceHero({ data }: { data: ServicePageData }) {
-  const { h1, baseline, image, imageAlt } = data.hero;
+  const { h1, baseline, image, imageAlt, imageFocus } = data.hero;
   const isPlaceholder = image.startsWith("TODO");
 
   return (
@@ -26,7 +26,7 @@ export function ServiceHero({ data }: { data: ServicePageData }) {
             </Button>
           </div>
         </div>
-        <MediaFrame className="h-[320px] md:h-[440px]">
+        <MediaFrame className="h-[320px] md:h-[440px]" focus={imageFocus}>
           {isPlaceholder ? (
             <div className="absolute inset-0 flex items-center justify-center text-primary text-sm p-6 text-center">
               {image}

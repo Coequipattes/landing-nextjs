@@ -2,7 +2,14 @@ export type ServicePageData = {
   slug: string;
   metaTitle: string;
   metaDescription: string;
-  hero: { h1: string; baseline: string; image: string; imageAlt: string };
+  hero: {
+    h1: string;
+    baseline: string;
+    image: string;
+    imageAlt: string;
+    // Optionnel : object-position CSS pour recadrer le sujet (ex. "center 70%").
+    imageFocus?: string;
+  };
   intro: { paragraphs: string[] };
   benefits: { title: string; description: string }[];
   pricing: { highlight: string; cardSlugs: string[] };
