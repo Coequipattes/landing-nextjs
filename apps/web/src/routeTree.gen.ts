@@ -11,28 +11,17 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as PostParrainageERouteImport } from './routes/post-parrainage-e'
 import { Route as PostParrainageDRouteImport } from './routes/post-parrainage-d'
-import { Route as PostParrainageCRouteImport } from './routes/post-parrainage-c'
-import { Route as PostParrainageBRouteImport } from './routes/post-parrainage-b'
-import { Route as PostParrainageRouteImport } from './routes/post-parrainage'
 import { Route as OpengraphImageRouteImport } from './routes/opengraph-image'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as GardeChienVannesRouteImport } from './routes/garde-chien-vannes'
 import { Route as GardeChatVannesRouteImport } from './routes/garde-chat-vannes'
 import { Route as DsRouteImport } from './routes/ds'
 import { Route as CarteVersoV2RouteImport } from './routes/carte-verso-v2'
-import { Route as CarteVersoV1RouteImport } from './routes/carte-verso-v1'
-import { Route as CarteRectoRouteImport } from './routes/carte-recto'
-import { Route as CarteLogoRouteImport } from './routes/carte-logo'
 import { Route as PublicRouteImport } from './routes/_public'
 import { Route as AdminRouteRouteImport } from './routes/admin/route'
 import { Route as PublicIndexRouteImport } from './routes/_public/index'
 import { Route as UploadsSplatRouteImport } from './routes/uploads/$'
-import { Route as OgDOpengraphImageRouteImport } from './routes/og-d/opengraph-image'
-import { Route as OgCOpengraphImageRouteImport } from './routes/og-c/opengraph-image'
-import { Route as OgBOpengraphImageRouteImport } from './routes/og-b/opengraph-image'
-import { Route as OgAOpengraphImageRouteImport } from './routes/og-a/opengraph-image'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as PublicVisitesChienVannesRouteImport } from './routes/_public/visites-chien-vannes'
@@ -61,29 +50,9 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PostParrainageERoute = PostParrainageERouteImport.update({
-  id: '/post-parrainage-e',
-  path: '/post-parrainage-e',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PostParrainageDRoute = PostParrainageDRouteImport.update({
   id: '/post-parrainage-d',
   path: '/post-parrainage-d',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PostParrainageCRoute = PostParrainageCRouteImport.update({
-  id: '/post-parrainage-c',
-  path: '/post-parrainage-c',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PostParrainageBRoute = PostParrainageBRouteImport.update({
-  id: '/post-parrainage-b',
-  path: '/post-parrainage-b',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PostParrainageRoute = PostParrainageRouteImport.update({
-  id: '/post-parrainage',
-  path: '/post-parrainage',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OpengraphImageRoute = OpengraphImageRouteImport.update({
@@ -116,21 +85,6 @@ const CarteVersoV2Route = CarteVersoV2RouteImport.update({
   path: '/carte-verso-v2',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CarteVersoV1Route = CarteVersoV1RouteImport.update({
-  id: '/carte-verso-v1',
-  path: '/carte-verso-v1',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CarteRectoRoute = CarteRectoRouteImport.update({
-  id: '/carte-recto',
-  path: '/carte-recto',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CarteLogoRoute = CarteLogoRouteImport.update({
-  id: '/carte-logo',
-  path: '/carte-logo',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PublicRoute = PublicRouteImport.update({
   id: '/_public',
   getParentRoute: () => rootRouteImport,
@@ -148,26 +102,6 @@ const PublicIndexRoute = PublicIndexRouteImport.update({
 const UploadsSplatRoute = UploadsSplatRouteImport.update({
   id: '/uploads/$',
   path: '/uploads/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OgDOpengraphImageRoute = OgDOpengraphImageRouteImport.update({
-  id: '/og-d/opengraph-image',
-  path: '/og-d/opengraph-image',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OgCOpengraphImageRoute = OgCOpengraphImageRouteImport.update({
-  id: '/og-c/opengraph-image',
-  path: '/og-c/opengraph-image',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OgBOpengraphImageRoute = OgBOpengraphImageRouteImport.update({
-  id: '/og-b/opengraph-image',
-  path: '/og-b/opengraph-image',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OgAOpengraphImageRoute = OgAOpengraphImageRouteImport.update({
-  id: '/og-a/opengraph-image',
-  path: '/og-a/opengraph-image',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiContactRoute = ApiContactRouteImport.update({
@@ -265,20 +199,13 @@ const AdminDashboardGalerieRoute = AdminDashboardGalerieRouteImport.update({
 export interface FileRoutesByFullPath {
   '/admin': typeof AdminRouteRouteWithChildren
   '/': typeof PublicIndexRoute
-  '/carte-logo': typeof CarteLogoRoute
-  '/carte-recto': typeof CarteRectoRoute
-  '/carte-verso-v1': typeof CarteVersoV1Route
   '/carte-verso-v2': typeof CarteVersoV2Route
   '/ds': typeof DsRoute
   '/garde-chat-vannes': typeof GardeChatVannesRoute
   '/garde-chien-vannes': typeof GardeChienVannesRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/opengraph-image': typeof OpengraphImageRoute
-  '/post-parrainage': typeof PostParrainageRoute
-  '/post-parrainage-b': typeof PostParrainageBRoute
-  '/post-parrainage-c': typeof PostParrainageCRoute
   '/post-parrainage-d': typeof PostParrainageDRoute
-  '/post-parrainage-e': typeof PostParrainageERoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/dashboard': typeof AdminDashboardRouteRouteWithChildren
@@ -291,10 +218,6 @@ export interface FileRoutesByFullPath {
   '/visites-chien-vannes': typeof PublicVisitesChienVannesRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/contact': typeof ApiContactRoute
-  '/og-a/opengraph-image': typeof OgAOpengraphImageRoute
-  '/og-b/opengraph-image': typeof OgBOpengraphImageRoute
-  '/og-c/opengraph-image': typeof OgCOpengraphImageRoute
-  '/og-d/opengraph-image': typeof OgDOpengraphImageRoute
   '/uploads/$': typeof UploadsSplatRoute
   '/admin/dashboard/galerie': typeof AdminDashboardGalerieRoute
   '/admin/dashboard/temoignages': typeof AdminDashboardTemoignagesRoute
@@ -306,20 +229,13 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/admin': typeof AdminRouteRouteWithChildren
-  '/carte-logo': typeof CarteLogoRoute
-  '/carte-recto': typeof CarteRectoRoute
-  '/carte-verso-v1': typeof CarteVersoV1Route
   '/carte-verso-v2': typeof CarteVersoV2Route
   '/ds': typeof DsRoute
   '/garde-chat-vannes': typeof GardeChatVannesRoute
   '/garde-chien-vannes': typeof GardeChienVannesRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/opengraph-image': typeof OpengraphImageRoute
-  '/post-parrainage': typeof PostParrainageRoute
-  '/post-parrainage-b': typeof PostParrainageBRoute
-  '/post-parrainage-c': typeof PostParrainageCRoute
   '/post-parrainage-d': typeof PostParrainageDRoute
-  '/post-parrainage-e': typeof PostParrainageERoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/equitation-vannes': typeof PublicEquitationVannesRoute
@@ -331,10 +247,6 @@ export interface FileRoutesByTo {
   '/visites-chien-vannes': typeof PublicVisitesChienVannesRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/contact': typeof ApiContactRoute
-  '/og-a/opengraph-image': typeof OgAOpengraphImageRoute
-  '/og-b/opengraph-image': typeof OgBOpengraphImageRoute
-  '/og-c/opengraph-image': typeof OgCOpengraphImageRoute
-  '/og-d/opengraph-image': typeof OgDOpengraphImageRoute
   '/uploads/$': typeof UploadsSplatRoute
   '/': typeof PublicIndexRoute
   '/admin/dashboard/galerie': typeof AdminDashboardGalerieRoute
@@ -349,20 +261,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/admin': typeof AdminRouteRouteWithChildren
   '/_public': typeof PublicRouteWithChildren
-  '/carte-logo': typeof CarteLogoRoute
-  '/carte-recto': typeof CarteRectoRoute
-  '/carte-verso-v1': typeof CarteVersoV1Route
   '/carte-verso-v2': typeof CarteVersoV2Route
   '/ds': typeof DsRoute
   '/garde-chat-vannes': typeof GardeChatVannesRoute
   '/garde-chien-vannes': typeof GardeChienVannesRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/opengraph-image': typeof OpengraphImageRoute
-  '/post-parrainage': typeof PostParrainageRoute
-  '/post-parrainage-b': typeof PostParrainageBRoute
-  '/post-parrainage-c': typeof PostParrainageCRoute
   '/post-parrainage-d': typeof PostParrainageDRoute
-  '/post-parrainage-e': typeof PostParrainageERoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/dashboard': typeof AdminDashboardRouteRouteWithChildren
@@ -375,10 +280,6 @@ export interface FileRoutesById {
   '/_public/visites-chien-vannes': typeof PublicVisitesChienVannesRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/contact': typeof ApiContactRoute
-  '/og-a/opengraph-image': typeof OgAOpengraphImageRoute
-  '/og-b/opengraph-image': typeof OgBOpengraphImageRoute
-  '/og-c/opengraph-image': typeof OgCOpengraphImageRoute
-  '/og-d/opengraph-image': typeof OgDOpengraphImageRoute
   '/uploads/$': typeof UploadsSplatRoute
   '/_public/': typeof PublicIndexRoute
   '/admin/dashboard/galerie': typeof AdminDashboardGalerieRoute
@@ -394,20 +295,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/admin'
     | '/'
-    | '/carte-logo'
-    | '/carte-recto'
-    | '/carte-verso-v1'
     | '/carte-verso-v2'
     | '/ds'
     | '/garde-chat-vannes'
     | '/garde-chien-vannes'
     | '/llms.txt'
     | '/opengraph-image'
-    | '/post-parrainage'
-    | '/post-parrainage-b'
-    | '/post-parrainage-c'
     | '/post-parrainage-d'
-    | '/post-parrainage-e'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/admin/dashboard'
@@ -420,10 +314,6 @@ export interface FileRouteTypes {
     | '/visites-chien-vannes'
     | '/admin/login'
     | '/api/contact'
-    | '/og-a/opengraph-image'
-    | '/og-b/opengraph-image'
-    | '/og-c/opengraph-image'
-    | '/og-d/opengraph-image'
     | '/uploads/$'
     | '/admin/dashboard/galerie'
     | '/admin/dashboard/temoignages'
@@ -435,20 +325,13 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/admin'
-    | '/carte-logo'
-    | '/carte-recto'
-    | '/carte-verso-v1'
     | '/carte-verso-v2'
     | '/ds'
     | '/garde-chat-vannes'
     | '/garde-chien-vannes'
     | '/llms.txt'
     | '/opengraph-image'
-    | '/post-parrainage'
-    | '/post-parrainage-b'
-    | '/post-parrainage-c'
     | '/post-parrainage-d'
-    | '/post-parrainage-e'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/equitation-vannes'
@@ -460,10 +343,6 @@ export interface FileRouteTypes {
     | '/visites-chien-vannes'
     | '/admin/login'
     | '/api/contact'
-    | '/og-a/opengraph-image'
-    | '/og-b/opengraph-image'
-    | '/og-c/opengraph-image'
-    | '/og-d/opengraph-image'
     | '/uploads/$'
     | '/'
     | '/admin/dashboard/galerie'
@@ -477,20 +356,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/admin'
     | '/_public'
-    | '/carte-logo'
-    | '/carte-recto'
-    | '/carte-verso-v1'
     | '/carte-verso-v2'
     | '/ds'
     | '/garde-chat-vannes'
     | '/garde-chien-vannes'
     | '/llms.txt'
     | '/opengraph-image'
-    | '/post-parrainage'
-    | '/post-parrainage-b'
-    | '/post-parrainage-c'
     | '/post-parrainage-d'
-    | '/post-parrainage-e'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/admin/dashboard'
@@ -503,10 +375,6 @@ export interface FileRouteTypes {
     | '/_public/visites-chien-vannes'
     | '/admin/login'
     | '/api/contact'
-    | '/og-a/opengraph-image'
-    | '/og-b/opengraph-image'
-    | '/og-c/opengraph-image'
-    | '/og-d/opengraph-image'
     | '/uploads/$'
     | '/_public/'
     | '/admin/dashboard/galerie'
@@ -521,27 +389,16 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   AdminRouteRoute: typeof AdminRouteRouteWithChildren
   PublicRoute: typeof PublicRouteWithChildren
-  CarteLogoRoute: typeof CarteLogoRoute
-  CarteRectoRoute: typeof CarteRectoRoute
-  CarteVersoV1Route: typeof CarteVersoV1Route
   CarteVersoV2Route: typeof CarteVersoV2Route
   DsRoute: typeof DsRoute
   GardeChatVannesRoute: typeof GardeChatVannesRoute
   GardeChienVannesRoute: typeof GardeChienVannesRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   OpengraphImageRoute: typeof OpengraphImageRoute
-  PostParrainageRoute: typeof PostParrainageRoute
-  PostParrainageBRoute: typeof PostParrainageBRoute
-  PostParrainageCRoute: typeof PostParrainageCRoute
   PostParrainageDRoute: typeof PostParrainageDRoute
-  PostParrainageERoute: typeof PostParrainageERoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ApiContactRoute: typeof ApiContactRoute
-  OgAOpengraphImageRoute: typeof OgAOpengraphImageRoute
-  OgBOpengraphImageRoute: typeof OgBOpengraphImageRoute
-  OgCOpengraphImageRoute: typeof OgCOpengraphImageRoute
-  OgDOpengraphImageRoute: typeof OgDOpengraphImageRoute
   UploadsSplatRoute: typeof UploadsSplatRoute
   ApiAdminAuthRoute: typeof ApiAdminAuthRoute
   ApiAdminGalerieRoute: typeof ApiAdminGalerieRoute
@@ -565,39 +422,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/post-parrainage-e': {
-      id: '/post-parrainage-e'
-      path: '/post-parrainage-e'
-      fullPath: '/post-parrainage-e'
-      preLoaderRoute: typeof PostParrainageERouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/post-parrainage-d': {
       id: '/post-parrainage-d'
       path: '/post-parrainage-d'
       fullPath: '/post-parrainage-d'
       preLoaderRoute: typeof PostParrainageDRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/post-parrainage-c': {
-      id: '/post-parrainage-c'
-      path: '/post-parrainage-c'
-      fullPath: '/post-parrainage-c'
-      preLoaderRoute: typeof PostParrainageCRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/post-parrainage-b': {
-      id: '/post-parrainage-b'
-      path: '/post-parrainage-b'
-      fullPath: '/post-parrainage-b'
-      preLoaderRoute: typeof PostParrainageBRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/post-parrainage': {
-      id: '/post-parrainage'
-      path: '/post-parrainage'
-      fullPath: '/post-parrainage'
-      preLoaderRoute: typeof PostParrainageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/opengraph-image': {
@@ -642,27 +471,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CarteVersoV2RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/carte-verso-v1': {
-      id: '/carte-verso-v1'
-      path: '/carte-verso-v1'
-      fullPath: '/carte-verso-v1'
-      preLoaderRoute: typeof CarteVersoV1RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/carte-recto': {
-      id: '/carte-recto'
-      path: '/carte-recto'
-      fullPath: '/carte-recto'
-      preLoaderRoute: typeof CarteRectoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/carte-logo': {
-      id: '/carte-logo'
-      path: '/carte-logo'
-      fullPath: '/carte-logo'
-      preLoaderRoute: typeof CarteLogoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/_public': {
       id: '/_public'
       path: ''
@@ -689,34 +497,6 @@ declare module '@tanstack/react-router' {
       path: '/uploads/$'
       fullPath: '/uploads/$'
       preLoaderRoute: typeof UploadsSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/og-d/opengraph-image': {
-      id: '/og-d/opengraph-image'
-      path: '/og-d/opengraph-image'
-      fullPath: '/og-d/opengraph-image'
-      preLoaderRoute: typeof OgDOpengraphImageRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/og-c/opengraph-image': {
-      id: '/og-c/opengraph-image'
-      path: '/og-c/opengraph-image'
-      fullPath: '/og-c/opengraph-image'
-      preLoaderRoute: typeof OgCOpengraphImageRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/og-b/opengraph-image': {
-      id: '/og-b/opengraph-image'
-      path: '/og-b/opengraph-image'
-      fullPath: '/og-b/opengraph-image'
-      preLoaderRoute: typeof OgBOpengraphImageRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/og-a/opengraph-image': {
-      id: '/og-a/opengraph-image'
-      path: '/og-a/opengraph-image'
-      fullPath: '/og-a/opengraph-image'
-      preLoaderRoute: typeof OgAOpengraphImageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/contact': {
@@ -898,27 +678,16 @@ const PublicRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   AdminRouteRoute: AdminRouteRouteWithChildren,
   PublicRoute: PublicRouteWithChildren,
-  CarteLogoRoute: CarteLogoRoute,
-  CarteRectoRoute: CarteRectoRoute,
-  CarteVersoV1Route: CarteVersoV1Route,
   CarteVersoV2Route: CarteVersoV2Route,
   DsRoute: DsRoute,
   GardeChatVannesRoute: GardeChatVannesRoute,
   GardeChienVannesRoute: GardeChienVannesRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   OpengraphImageRoute: OpengraphImageRoute,
-  PostParrainageRoute: PostParrainageRoute,
-  PostParrainageBRoute: PostParrainageBRoute,
-  PostParrainageCRoute: PostParrainageCRoute,
   PostParrainageDRoute: PostParrainageDRoute,
-  PostParrainageERoute: PostParrainageERoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ApiContactRoute: ApiContactRoute,
-  OgAOpengraphImageRoute: OgAOpengraphImageRoute,
-  OgBOpengraphImageRoute: OgBOpengraphImageRoute,
-  OgCOpengraphImageRoute: OgCOpengraphImageRoute,
-  OgDOpengraphImageRoute: OgDOpengraphImageRoute,
   UploadsSplatRoute: UploadsSplatRoute,
   ApiAdminAuthRoute: ApiAdminAuthRoute,
   ApiAdminGalerieRoute: ApiAdminGalerieRoute,
