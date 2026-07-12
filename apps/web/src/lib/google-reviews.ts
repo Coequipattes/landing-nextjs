@@ -13,8 +13,16 @@ export type Review = {
 const DATA_PATH = path.join(process.cwd(), "src/data/reviews.json");
 
 export async function getReviews(): Promise<Review[]> {
-  const raw = await readFile(DATA_PATH, "utf-8");
-  return JSON.parse(raw);
+  try {
+    const raw = await readFile(DATA_PATH, "utf-8");
+    return JSON.parse(raw);
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === "ENOENT") {
+      console.warn(`reviews.json introuvable à ${DATA_PATH}, retour []`);
+      return [];
+    }
+    throw err;
+  }
 }
 
 export async function saveReviews(reviews: Review[]) {

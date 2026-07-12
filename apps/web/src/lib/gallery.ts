@@ -11,8 +11,16 @@ const DATA_PATH = path.join(process.cwd(), "src/data/gallery.json");
 const UPLOAD_DIR = path.join(process.cwd(), "public/uploads/gallery");
 
 export async function getGalleryItems(): Promise<GalleryItem[]> {
-  const raw = await readFile(DATA_PATH, "utf-8");
-  return JSON.parse(raw);
+  try {
+    const raw = await readFile(DATA_PATH, "utf-8");
+    return JSON.parse(raw);
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === "ENOENT") {
+      console.warn(`gallery.json introuvable à ${DATA_PATH}, retour []`);
+      return [];
+    }
+    throw err;
+  }
 }
 
 export async function saveGalleryItems(items: GalleryItem[]) {
