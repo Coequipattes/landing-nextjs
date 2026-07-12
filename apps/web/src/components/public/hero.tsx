@@ -40,7 +40,7 @@ export function Hero() {
 
           {/* Colonne image — mobile : premier écran plein avec image + h1 */}
           <div className="lg:col-span-5 lg:order-2 animate-[fadeInUp_0.9s_var(--transition)]">
-            <div className="relative min-h-[100dvh] flex flex-col items-center justify-center gap-6 pt-[100px] pb-24 lg:min-h-0 lg:block lg:pt-0 lg:pb-0 lg:gap-0">
+            <div className="relative min-h-[100svh] flex flex-col items-center justify-center gap-6 pt-[100px] pb-24 lg:min-h-0 lg:block lg:pt-0 lg:pb-0 lg:gap-0">
 
               {/* Scroll indicator — mobile uniquement */}
               <div
