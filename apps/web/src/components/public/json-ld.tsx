@@ -10,7 +10,7 @@ const SAME_AS = [
   "https://blooming-pets.com/pet-sitter-vannes-56000-25030-manon/",
   "https://www.instagram.com/coequipattes/",
   "https://www.facebook.com/share/16y4rKuQPP/",
-  // "https://www.google.com/maps/place/?q=place_id:XXXX",  // fiche GBP
+  "https://www.google.com/maps/place/Co'équi'pattes+-+Manon+Millot/@47.6511945,-2.7907428,17z/data=!3m1!4b1!4m6!3m5!1s0x8d379f2d05cd371b:0x9fff2b61ca363c6e!8m2!3d47.6511909!4d-2.7881625!16s%2Fg%2F11ml9ymg3j",
 ];
 
 export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
