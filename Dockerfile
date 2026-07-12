@@ -36,6 +36,12 @@ RUN addgroup --system --gid 1001 nodejs && \
 # Serveur Nitro autonome (inclut .output/public avec les assets de build).
 COPY --from=builder --chown=site:nodejs /app/apps/web/.output ./.output
 
+# Assets sources bruts (logos, photos). Nécessaires en plus de .output/public
+# car certaines routes (@vercel/og) les lisent directement via
+# readFileSync(join(process.cwd(), "public/...")) plutôt que via le serveur
+# statique Nitro.
+COPY --from=builder --chown=site:nodejs /app/apps/web/public ./public
+
 # Données initiales (écrasées par le volume si monté). Le code lit/écrit
 # src/data/*.json et public/uploads/** via process.cwd() → WORKDIR /app.
 COPY --from=builder --chown=site:nodejs /app/apps/web/src/data ./src/data
