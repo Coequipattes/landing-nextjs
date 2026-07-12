@@ -30,7 +30,10 @@ RUN pnpm build
 FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV=production
-RUN addgroup --system --gid 1001 nodejs && \
+# su-exec : passer de root (nécessaire à l'entrypoint pour chown les volumes)
+# à l'utilisateur non-privilégié "site" avant de lancer le process réel.
+RUN apk add --no-cache su-exec && \
+    addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 site
 
 # Serveur Nitro autonome (inclut .output/public avec les assets de build).
@@ -46,12 +49,22 @@ COPY --from=builder --chown=site:nodejs /app/apps/web/public ./public
 # src/data/*.json et public/uploads/** via process.cwd() → WORKDIR /app.
 COPY --from=builder --chown=site:nodejs /app/apps/web/src/data ./src/data
 
-RUN mkdir -p public/uploads/gallery && \
-    chown -R site:nodejs src/data public/uploads
+# Copie "seed" à un chemin distinct, jamais recouvert par un bind mount —
+# c'est depuis là que docker-entrypoint.sh réamorce un volume vide au
+# premier démarrage (voir commentaire du script).
+COPY --from=builder --chown=site:nodejs /app/apps/web/src/data ./.seed/data
+COPY --from=builder --chown=site:nodejs /app/apps/web/public/uploads/gallery ./.seed/gallery
 
-USER site
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN mkdir -p public/uploads/gallery && \
+    chown -R site:nodejs src/data public/uploads .seed && \
+    chmod +x /usr/local/bin/docker-entrypoint.sh
+
 EXPOSE 3000
 ENV PORT=3000
 ENV HOST=0.0.0.0
 
+# Reste root au démarrage : docker-entrypoint.sh sème les volumes vides puis
+# passe la main à l'utilisateur "site" via su-exec (voir docker-entrypoint.sh).
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["node", ".output/server/index.mjs"]
