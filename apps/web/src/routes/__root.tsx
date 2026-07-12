@@ -10,7 +10,7 @@ const SITE_NAME = "Co'équi'pattes";
 const DEFAULT_TITLE =
   "Pet Sitter à Vannes — Garde Chien, Chat & Animaux | Co'équi'pattes";
 const DEFAULT_DESCRIPTION =
-  "Garde de chien, chat et NAC à Vannes et alentours. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.";
+  "Garde de chien et de chat à Vannes et dans le Morbihan. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.";
 const KEYWORDS = [
   "monitrice équitation Vannes",
   "cours équitation Vannes",

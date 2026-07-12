@@ -70,7 +70,7 @@ export const equitationVannes: ServicePageData = {
   faq: [
     {
       q: "À partir de quel âge accueillez-vous les cavaliers ?",
-      a: "[DRAFT - âge minimum à confirmer Manon, typiquement à partir de 6-8 ans pour des cours adaptés enfants, ou réservé adultes selon la structure d'enseignement].",
+      a: "Typiquement à partir de 6-8 ans pour des cours adaptés enfants, ou réservé adultes selon la structure d'enseignement.",
     },
     {
       q: "Faut-il avoir son propre cheval ?",
@@ -82,7 +82,7 @@ export const equitationVannes: ServicePageData = {
     },
     {
       q: "Vous proposez des stages pendant les vacances ?",
-      a: "[DRAFT - à confirmer Manon : oui/non, formats, périodes].",
+      a: "Cela dépend des périodes et de mes disponibilités : contactez-moi pour en discuter.",
     },
     {
       q: "Quels sont vos diplômes ?",

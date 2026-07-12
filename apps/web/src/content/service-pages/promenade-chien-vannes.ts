@@ -5,9 +5,9 @@ import type { ServicePageData } from "./types";
 export const promenadeChienVannes: ServicePageData = {
   slug: "promenade-chien-vannes",
   metaTitle:
-    "Promenades de chien à Vannes · Balades quotidiennes | Co'équi'pattes",
+    "Promeneuse de chien à Vannes · Balades quotidiennes | Co'équi'pattes",
   metaDescription:
-    "Promenades de chien à Vannes : balades 30 à 60 min adaptées au rythme de votre chien. Pour actifs et propriétaires âgés, ponctuel ou régulier.",
+    "Promeneuse de chien à Vannes : balades 30 à 60 min adaptées au rythme de votre chien. Pour actifs et propriétaires âgés, ponctuel ou régulier.",
   hero: {
     h1: "Promenades de chien à Vannes",
     baseline:
