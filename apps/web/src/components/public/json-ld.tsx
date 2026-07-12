@@ -1,3 +1,4 @@
+import { COVERAGE } from "@/content/coverage";
 import { env } from "@/lib/env";
 import type { Review } from "@/lib/google-reviews";
 
@@ -84,7 +85,6 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
           "Pet-sitting à domicile",
           "Promenade de chien",
           "Pension privative pour animaux",
-          "Nouveaux animaux de compagnie (NAC)",
           "Cours d'équitation",
           "Travail de cheval",
         ],
@@ -102,13 +102,10 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
           longitude: -2.7603,
         },
         areaServed: [
-          { "@type": "City", name: "Vannes" },
-          { "@type": "City", name: "Séné" },
-          { "@type": "City", name: "Arradon" },
-          { "@type": "City", name: "Saint-Avé" },
-          { "@type": "City", name: "Theix-Noyalo" },
-          { "@type": "City", name: "Ploeren" },
-          { "@type": "City", name: "Plescop" },
+          ...COVERAGE.communes.map((name) => ({
+            "@type": "City",
+            name,
+          })),
           { "@type": "AdministrativeArea", name: "Morbihan" },
         ],
         serviceArea: {
@@ -237,7 +234,7 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
                 "@type": "Service",
                 name: "Visite à domicile",
                 description:
-                  "Visite à domicile pour chats, NAC et tous animaux (30 min à 1 h)",
+                  "Visite à domicile pour chats et tous animaux (30 min à 1 h)",
                 provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },
@@ -247,7 +244,7 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
               priceSpecification: {
                 "@type": "PriceSpecification",
                 minPrice: "12",
-                maxPrice: "22",
+                maxPrice: "21",
                 priceCurrency: "EUR",
               },
               itemOffered: {
@@ -279,7 +276,7 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
         about: { "@id": businessId },
         inLanguage: "fr-FR",
         description:
-          "Garde de chien, chat et NAC à Vannes et alentours. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
+          "Garde de chien et de chat à Vannes et dans le Morbihan. Pet-sitter à domicile, visites, promenades. Monitrice d'équitation diplômée. Avis 5★ Google.",
       },
     ],
   };

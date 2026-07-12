@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { COVERAGE } from "@/content/coverage";
 import { servicePages } from "@/content/service-pages";
 import { env } from "@/lib/env";
 
@@ -18,14 +19,18 @@ export const Route = createFileRoute("/llms.txt")({
           )
           .join("\n");
 
+        const otherCommunes = COVERAGE.communes.filter(
+          (c) => c !== COVERAGE.city,
+        );
+
         const text = `# Co'équi'pattes
 
 > Garde d'animaux et cours d'équitation à Vannes (Morbihan, Bretagne). Manon Millot, monitrice d'équitation diplômée d'État et pet-sitter professionnelle assurée, membre de France Petsitters.
 
 ## À propos
 - **Nom** : Co'équi'pattes (Manon Millot)
-- **Activité** : pet-sitting (garde de chien, chat et NAC), promenades, pension privative, garde à domicile, cours d'équitation
-- **Zone d'intervention** : Vannes et ~10 km alentour — Séné, Arradon, Saint-Avé, Theix-Noyalo, Ploeren, Plescop
+- **Activité** : pet-sitting (garde de chien et de chat), promenades, pension privative, garde à domicile, cours d'équitation
+- **Zone d'intervention** : ${COVERAGE.city} et ~${COVERAGE.radiusKm} km alentour — ${otherCommunes.join(", ")}
 - **Adresse** : 4 rue Tamara de Lempicka, 56000 Vannes, France
 - **Téléphone** : +33 7 66 74 43 37
 - **E-mail** : ${env.contactEmail}
