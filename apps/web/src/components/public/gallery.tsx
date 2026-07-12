@@ -13,14 +13,12 @@ const categories = [
   { key: "equitation", label: "Équitation" },
   { key: "chiens", label: "Chiens" },
   { key: "chats", label: "Chats" },
-  { key: "nac", label: "NAC" },
 ];
 
 const categoryNames: Record<string, string> = {
   equitation: "Équitation",
   chiens: "Chiens",
   chats: "Chats",
-  nac: "NAC",
 };
 
 const PAGE_SIZE = 6;
@@ -140,6 +138,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
           >
             <button
               type="button"
+              aria-label="Fermer"
               className="absolute -top-12 right-0 w-10 h-10 bg-primary rounded-full flex items-center justify-center cursor-pointer hover:bg-primary/80 transition-colors duration-200 text-primary-foreground font-bold"
               onClick={closeLightbox}
             >
@@ -148,6 +147,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
             <button
               type="button"
+              aria-label="Photo précédente"
               className="absolute top-1/2 -translate-y-1/2 left-2 sm:-left-[70px] w-[50px] h-[50px] bg-primary/60 sm:bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
               onClick={() => navigate(-1)}
             >
@@ -164,6 +164,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
             <button
               type="button"
+              aria-label="Photo suivante"
               className="absolute top-1/2 -translate-y-1/2 right-2 sm:-right-[70px] w-[50px] h-[50px] bg-primary/60 sm:bg-primary/30 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-200 backdrop-blur-[10px] text-primary-foreground"
               onClick={() => navigate(1)}
             >

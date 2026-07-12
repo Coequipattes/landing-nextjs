@@ -108,10 +108,14 @@ export function Contact() {
             )}
 
             <div>
-              <label className="block text-foreground text-sm font-medium mb-2">
+              <label
+                htmlFor="contact-name"
+                className="block text-foreground text-sm font-medium mb-2"
+              >
                 Nom complet <span className="text-primary">*</span>
               </label>
               <Input
+                id="contact-name"
                 type="text"
                 name="name"
                 required
@@ -120,10 +124,14 @@ export function Contact() {
             </div>
 
             <div>
-              <label className="block text-foreground text-sm font-medium mb-2">
+              <label
+                htmlFor="contact-email"
+                className="block text-foreground text-sm font-medium mb-2"
+              >
                 Email <span className="text-primary">*</span>
               </label>
               <Input
+                id="contact-email"
                 type="email"
                 name="email"
                 required
@@ -132,11 +140,14 @@ export function Contact() {
             </div>
 
             <div>
-              <label className="block text-foreground text-sm font-medium mb-2">
+              <label
+                htmlFor="contact-subject"
+                className="block text-foreground text-sm font-medium mb-2"
+              >
                 Sujet
               </label>
               <Select name="subject" defaultValue={subjectOptions[0]}>
-                <SelectTrigger className="h-11 w-full">
+                <SelectTrigger id="contact-subject" className="h-11 w-full">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -150,10 +161,14 @@ export function Contact() {
             </div>
 
             <div>
-              <label className="block text-foreground text-sm font-medium mb-2">
+              <label
+                htmlFor="contact-message"
+                className="block text-foreground text-sm font-medium mb-2"
+              >
                 Message <span className="text-primary">*</span>
               </label>
               <Textarea
+                id="contact-message"
                 name="message"
                 required
                 rows={5}

@@ -11,7 +11,7 @@ type GalleryItem = {
   category: string;
 };
 
-const categories = ["equitation", "chiens", "chats", "nac"];
+const categories = ["equitation", "chiens", "chats"];
 
 function GaleriePage() {
   const [items, setItems] = useState<GalleryItem[]>([]);
