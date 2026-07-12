@@ -137,11 +137,11 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
-              <Button asChild size="lg">
+            <div className="flex flex-wrap gap-2 md:gap-4 justify-center lg:justify-start">
+              <Button asChild size="lg" className="px-4 sm:px-9">
                 <a href="#services">Voir mes services</a>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="px-4 sm:px-9">
                 <a href="#contact">Prendre contact</a>
               </Button>
             </div>
