@@ -60,6 +60,8 @@ export function Hero() {
                   <img
                     src="/uploads/manon.jpg"
                     alt="Manon, fondatrice de Co'équi'pattes, monitrice d'équitation et pet sitter à Vannes"
+                    width={1000}
+                    height={1501}
                     loading="eager"
                     fetchPriority="high"
                     className="absolute inset-0 h-full w-full object-cover"
@@ -91,7 +93,7 @@ export function Hero() {
               <p className="font-accent text-primary text-3xl mb-3 lg:mb-5">
                 Bonjour, je suis
               </p>
-              <h1 className="font-display leading-[1.05] mb-6 lg:mb-8">
+              <p className="font-display leading-[1.05] mb-6 lg:mb-8">
                 <span className="block text-primary text-7xl lg:text-[5.5rem]">
                   Manon
                 </span>
@@ -99,7 +101,7 @@ export function Hero() {
                   Votre partenaire équestre et animalier
                   <br /> dans la région Vannetaise
                 </span>
-              </h1>
+              </p>
             </div>
 
             <div className="max-w-[600px] mx-auto lg:mx-0 mb-8 md:mb-10 lg:mb-12">
