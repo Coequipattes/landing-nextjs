@@ -30,51 +30,40 @@ Event `scroll_depth` déclenché une fois par palier (`25/50/75/90/100`), par pa
 
 Umami capture nativement `utm_source` / `utm_medium` / `utm_campaign` (rapport "UTM" dans Sources). Convention : `utm_source` = plateforme, `utm_medium` = type de placement, `utm_campaign` = emplacement précis.
 
-Une URL avec `?utm_source=...` colle mal sur un profil (ça fait "louche"/spam pour Manon et pour un visiteur qui la verrait affichée). Solution : des **liens courts internes** — des routes du site qui redirigent (302) vers l'URL taguée, définies dans `apps/web/src/routes/{instagram,facebook,google,qr,mail}.tsx`. Rien à installer, rien à coller de compliqué.
+Une URL avec `?utm_source=...` colle mal sur un profil (ça fait "louche"/spam pour Manon et pour un visiteur qui la verrait affichée). Solution : **une seule route de tracking 100% libre**, `apps/web/src/routes/s.$slug.tsx`.
 
-| Canal | Où coller le lien | Lien à coller | Redirige vers |
-|---|---|---|---|
-| Instagram bio | Profil → Site web | `coequipattes.fr/instagram` | `utm_source=instagram&utm_medium=bio&utm_campaign=lien_bio` |
-| Facebook page | Infos de la page → Site web | `coequipattes.fr/facebook` | `utm_source=facebook&utm_medium=bio&utm_campaign=lien_page` |
-| Google Business Profile | Fiche → Site web | `coequipattes.fr/google` | `utm_source=google_business&utm_medium=referral&utm_campaign=fiche_gbp` |
-| QR code (carte/flyer) | URL encodée dans le QR | `coequipattes.fr/qr` | `utm_source=qrcode&utm_medium=print&utm_campaign=carte_visite` |
-| Signature email | Lien de signature | `coequipattes.fr/mail` | `utm_source=email&utm_medium=email&utm_campaign=signature` |
+Format : `coequipattes.fr/s/<slug>` — tout ce qui précède le **premier tiret** devient `utm_source`, le reste devient `utm_campaign`. Aucune table, aucune restriction, aucun code à toucher pour un nouveau canal ou une nouvelle campagne : n'importe quel slug fonctionne du premier coup.
 
-### Campagnes ponctuelles (story, post précis)
-
-Pour ne pas perdre le grain fin des UTM (un `utm_campaign` différent par story/post) sans devoir ajouter une route à chaque fois, une route dynamique unique couvre tous les cas ponctuels : `apps/web/src/routes/s.$source.$campaign.tsx`.
-
-Format : `coequipattes.fr/s/<source>/<nom-libre-de-la-campagne>` — `<nom-libre>` peut être n'importe quel texte (`soldes-ete`, `video-chiot-juillet`...), aucun redéploiement requis pour une nouvelle campagne.
-
-Sources disponibles (table dans le fichier de route) :
-- `insta-story` → `utm_source=instagram&utm_medium=story`
-- `insta-post` → `utm_source=instagram&utm_medium=post`
-- `fb-story` → `utm_source=facebook&utm_medium=story`
-- `fb-post` → `utm_source=facebook&utm_medium=post`
-
-Exemple : `coequipattes.fr/s/insta-story/soldes-ete` → `utm_source=instagram&utm_medium=story&utm_campaign=soldes-ete`. Une source absente de la table renvoie une 404 (garde-fou contre les fautes de frappe) — ajouter une nouvelle source = une ligne dans la table, pas une nouvelle route.
+| Slug collé | `utm_source` | `utm_campaign` |
+|---|---|---|
+| `insta-bio` | `insta` | `bio` |
+| `google-business` | `google` | `business` |
+| `qr` (pas de tiret) | `qr` | `qr` |
+| `insta-story-soldes-ete` | `insta` | `story-soldes-ete` |
 
 #### Exemples concrets
 
 | Situation | Lien à coller | UTM enregistrés |
 |---|---|---|
-| Story Instagram "place dispo cette semaine" pour une garde de chien | `coequipattes.fr/s/insta-story/dispo-cette-semaine` | `instagram / story / dispo-cette-semaine` |
-| Post Instagram avec une vidéo d'un cours d'équitation | `coequipattes.fr/s/insta-post/video-cours-equitation` | `instagram / post / video-cours-equitation` |
-| Story Facebook promo de Noël sur les pensions chat | `coequipattes.fr/s/fb-story/promo-noel-pension-chat` | `facebook / story / promo-noel-pension-chat` |
-| Post Facebook partageant un témoignage client | `coequipattes.fr/s/fb-post/temoignage-rex` | `facebook / post / temoignage-rex` |
-| Bio Instagram (lien permanent, jamais de campagne) | `coequipattes.fr/instagram` | `instagram / bio / lien_bio` |
-| Fiche Google Business Profile | `coequipattes.fr/google` | `google_business / referral / fiche_gbp` |
+| Bio Instagram (lien permanent) | `coequipattes.fr/s/insta-bio` | `insta / bio` |
+| Page Facebook (lien permanent) | `coequipattes.fr/s/fb-bio` | `fb / bio` |
+| Fiche Google Business Profile | `coequipattes.fr/s/google-business` | `google / business` |
+| QR code carte de visite | `coequipattes.fr/s/qr-carte` | `qr / carte` |
+| Signature email | `coequipattes.fr/s/mail-signature` | `mail / signature` |
+| Story Instagram "place dispo cette semaine" | `coequipattes.fr/s/insta-dispo-cette-semaine` | `insta / dispo-cette-semaine` |
+| Post Instagram vidéo cours d'équitation | `coequipattes.fr/s/insta-video-equitation` | `insta / video-equitation` |
+| Story Facebook promo de Noël pension chat | `coequipattes.fr/s/fb-promo-noel-chat` | `fb / promo-noel-chat` |
 
 Dans le rapport UTM d'Umami, ça donne des lignes distinctes et comparables :
 
-| Source | Medium | Campaign | Visiteurs |
-|---|---|---|---|
-| instagram | bio | lien_bio | 45 |
-| instagram | story | dispo-cette-semaine | 12 |
-| instagram | post | video-cours-equitation | 8 |
-| facebook | story | promo-noel-pension-chat | 6 |
-| google_business | referral | fiche_gbp | 11 |
+| Source | Campaign | Visiteurs |
+|---|---|---|
+| insta | bio | 45 |
+| insta | dispo-cette-semaine | 12 |
+| insta | video-equitation | 8 |
+| fb | promo-noel-chat | 6 |
+| google | business | 11 |
 
-→ on voit directement que la story de mardi a ramené 12 visiteurs et le post vidéo équitation seulement 8, sans jamais coller une URL avec `?utm_source=...`.
+→ on voit directement que la story de mardi a ramené 12 visiteurs et le post vidéo équitation seulement 8, sans jamais coller une URL avec `?utm_source=...` — et n'importe quel nouveau slug fonctionne sans redéploiement.
 
 **Limite** : ne fonctionne que pour les liens tagués. Un partage/republication sans UTM retombe en "Direct" — aucune solution pour ce cas.
