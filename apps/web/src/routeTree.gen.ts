@@ -11,11 +11,16 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as QrRouteImport } from './routes/qr'
 import { Route as PostParrainageDRouteImport } from './routes/post-parrainage-d'
 import { Route as OpengraphImageRouteImport } from './routes/opengraph-image'
+import { Route as MailRouteImport } from './routes/mail'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as InstagramRouteImport } from './routes/instagram'
+import { Route as GoogleRouteImport } from './routes/google'
 import { Route as GardeChienVannesRouteImport } from './routes/garde-chien-vannes'
 import { Route as GardeChatVannesRouteImport } from './routes/garde-chat-vannes'
+import { Route as FacebookRouteImport } from './routes/facebook'
 import { Route as DsRouteImport } from './routes/ds'
 import { Route as CarteVersoV2RouteImport } from './routes/carte-verso-v2'
 import { Route as PublicRouteImport } from './routes/_public'
@@ -33,6 +38,7 @@ import { Route as PublicGardeADomicileVannesRouteImport } from './routes/_public
 import { Route as PublicEquitationVannesRouteImport } from './routes/_public/equitation-vannes'
 import { Route as AdminDashboardRouteRouteImport } from './routes/admin/dashboard/route'
 import { Route as AdminDashboardIndexRouteImport } from './routes/admin/dashboard/index'
+import { Route as SSourceCampaignRouteImport } from './routes/s.$source.$campaign'
 import { Route as OgServiceSlugOpengraphImageRouteImport } from './routes/og-service/$slug/opengraph-image'
 import { Route as ApiAdminReviewsRouteImport } from './routes/api/admin/reviews'
 import { Route as ApiAdminGalerieRouteImport } from './routes/api/admin/galerie'
@@ -50,6 +56,11 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QrRoute = QrRouteImport.update({
+  id: '/qr',
+  path: '/qr',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PostParrainageDRoute = PostParrainageDRouteImport.update({
   id: '/post-parrainage-d',
   path: '/post-parrainage-d',
@@ -60,9 +71,24 @@ const OpengraphImageRoute = OpengraphImageRouteImport.update({
   path: '/opengraph-image',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MailRoute = MailRouteImport.update({
+  id: '/mail',
+  path: '/mail',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   id: '/llms.txt',
   path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstagramRoute = InstagramRouteImport.update({
+  id: '/instagram',
+  path: '/instagram',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoogleRoute = GoogleRouteImport.update({
+  id: '/google',
+  path: '/google',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GardeChienVannesRoute = GardeChienVannesRouteImport.update({
@@ -73,6 +99,11 @@ const GardeChienVannesRoute = GardeChienVannesRouteImport.update({
 const GardeChatVannesRoute = GardeChatVannesRouteImport.update({
   id: '/garde-chat-vannes',
   path: '/garde-chat-vannes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacebookRoute = FacebookRouteImport.update({
+  id: '/facebook',
+  path: '/facebook',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DsRoute = DsRouteImport.update({
@@ -163,6 +194,11 @@ const AdminDashboardIndexRoute = AdminDashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AdminDashboardRouteRoute,
 } as any)
+const SSourceCampaignRoute = SSourceCampaignRouteImport.update({
+  id: '/s/$source/$campaign',
+  path: '/s/$source/$campaign',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OgServiceSlugOpengraphImageRoute =
   OgServiceSlugOpengraphImageRouteImport.update({
     id: '/og-service/$slug/opengraph-image',
@@ -201,11 +237,16 @@ export interface FileRoutesByFullPath {
   '/': typeof PublicIndexRoute
   '/carte-verso-v2': typeof CarteVersoV2Route
   '/ds': typeof DsRoute
+  '/facebook': typeof FacebookRoute
   '/garde-chat-vannes': typeof GardeChatVannesRoute
   '/garde-chien-vannes': typeof GardeChienVannesRoute
+  '/google': typeof GoogleRoute
+  '/instagram': typeof InstagramRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/mail': typeof MailRoute
   '/opengraph-image': typeof OpengraphImageRoute
   '/post-parrainage-d': typeof PostParrainageDRoute
+  '/qr': typeof QrRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/dashboard': typeof AdminDashboardRouteRouteWithChildren
@@ -225,17 +266,23 @@ export interface FileRoutesByFullPath {
   '/api/admin/galerie': typeof ApiAdminGalerieRoute
   '/api/admin/reviews': typeof ApiAdminReviewsRoute
   '/og-service/$slug/opengraph-image': typeof OgServiceSlugOpengraphImageRoute
+  '/s/$source/$campaign': typeof SSourceCampaignRoute
   '/admin/dashboard/': typeof AdminDashboardIndexRoute
 }
 export interface FileRoutesByTo {
   '/admin': typeof AdminRouteRouteWithChildren
   '/carte-verso-v2': typeof CarteVersoV2Route
   '/ds': typeof DsRoute
+  '/facebook': typeof FacebookRoute
   '/garde-chat-vannes': typeof GardeChatVannesRoute
   '/garde-chien-vannes': typeof GardeChienVannesRoute
+  '/google': typeof GoogleRoute
+  '/instagram': typeof InstagramRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/mail': typeof MailRoute
   '/opengraph-image': typeof OpengraphImageRoute
   '/post-parrainage-d': typeof PostParrainageDRoute
+  '/qr': typeof QrRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/equitation-vannes': typeof PublicEquitationVannesRoute
@@ -255,6 +302,7 @@ export interface FileRoutesByTo {
   '/api/admin/galerie': typeof ApiAdminGalerieRoute
   '/api/admin/reviews': typeof ApiAdminReviewsRoute
   '/og-service/$slug/opengraph-image': typeof OgServiceSlugOpengraphImageRoute
+  '/s/$source/$campaign': typeof SSourceCampaignRoute
   '/admin/dashboard': typeof AdminDashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -263,11 +311,16 @@ export interface FileRoutesById {
   '/_public': typeof PublicRouteWithChildren
   '/carte-verso-v2': typeof CarteVersoV2Route
   '/ds': typeof DsRoute
+  '/facebook': typeof FacebookRoute
   '/garde-chat-vannes': typeof GardeChatVannesRoute
   '/garde-chien-vannes': typeof GardeChienVannesRoute
+  '/google': typeof GoogleRoute
+  '/instagram': typeof InstagramRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/mail': typeof MailRoute
   '/opengraph-image': typeof OpengraphImageRoute
   '/post-parrainage-d': typeof PostParrainageDRoute
+  '/qr': typeof QrRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/dashboard': typeof AdminDashboardRouteRouteWithChildren
@@ -288,6 +341,7 @@ export interface FileRoutesById {
   '/api/admin/galerie': typeof ApiAdminGalerieRoute
   '/api/admin/reviews': typeof ApiAdminReviewsRoute
   '/og-service/$slug/opengraph-image': typeof OgServiceSlugOpengraphImageRoute
+  '/s/$source/$campaign': typeof SSourceCampaignRoute
   '/admin/dashboard/': typeof AdminDashboardIndexRoute
 }
 export interface FileRouteTypes {
@@ -297,11 +351,16 @@ export interface FileRouteTypes {
     | '/'
     | '/carte-verso-v2'
     | '/ds'
+    | '/facebook'
     | '/garde-chat-vannes'
     | '/garde-chien-vannes'
+    | '/google'
+    | '/instagram'
     | '/llms.txt'
+    | '/mail'
     | '/opengraph-image'
     | '/post-parrainage-d'
+    | '/qr'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/admin/dashboard'
@@ -321,17 +380,23 @@ export interface FileRouteTypes {
     | '/api/admin/galerie'
     | '/api/admin/reviews'
     | '/og-service/$slug/opengraph-image'
+    | '/s/$source/$campaign'
     | '/admin/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/admin'
     | '/carte-verso-v2'
     | '/ds'
+    | '/facebook'
     | '/garde-chat-vannes'
     | '/garde-chien-vannes'
+    | '/google'
+    | '/instagram'
     | '/llms.txt'
+    | '/mail'
     | '/opengraph-image'
     | '/post-parrainage-d'
+    | '/qr'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/equitation-vannes'
@@ -351,6 +416,7 @@ export interface FileRouteTypes {
     | '/api/admin/galerie'
     | '/api/admin/reviews'
     | '/og-service/$slug/opengraph-image'
+    | '/s/$source/$campaign'
     | '/admin/dashboard'
   id:
     | '__root__'
@@ -358,11 +424,16 @@ export interface FileRouteTypes {
     | '/_public'
     | '/carte-verso-v2'
     | '/ds'
+    | '/facebook'
     | '/garde-chat-vannes'
     | '/garde-chien-vannes'
+    | '/google'
+    | '/instagram'
     | '/llms.txt'
+    | '/mail'
     | '/opengraph-image'
     | '/post-parrainage-d'
+    | '/qr'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/admin/dashboard'
@@ -383,6 +454,7 @@ export interface FileRouteTypes {
     | '/api/admin/galerie'
     | '/api/admin/reviews'
     | '/og-service/$slug/opengraph-image'
+    | '/s/$source/$campaign'
     | '/admin/dashboard/'
   fileRoutesById: FileRoutesById
 }
@@ -391,11 +463,16 @@ export interface RootRouteChildren {
   PublicRoute: typeof PublicRouteWithChildren
   CarteVersoV2Route: typeof CarteVersoV2Route
   DsRoute: typeof DsRoute
+  FacebookRoute: typeof FacebookRoute
   GardeChatVannesRoute: typeof GardeChatVannesRoute
   GardeChienVannesRoute: typeof GardeChienVannesRoute
+  GoogleRoute: typeof GoogleRoute
+  InstagramRoute: typeof InstagramRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  MailRoute: typeof MailRoute
   OpengraphImageRoute: typeof OpengraphImageRoute
   PostParrainageDRoute: typeof PostParrainageDRoute
+  QrRoute: typeof QrRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ApiContactRoute: typeof ApiContactRoute
@@ -404,6 +481,7 @@ export interface RootRouteChildren {
   ApiAdminGalerieRoute: typeof ApiAdminGalerieRoute
   ApiAdminReviewsRoute: typeof ApiAdminReviewsRoute
   OgServiceSlugOpengraphImageRoute: typeof OgServiceSlugOpengraphImageRoute
+  SSourceCampaignRoute: typeof SSourceCampaignRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -422,6 +500,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/qr': {
+      id: '/qr'
+      path: '/qr'
+      fullPath: '/qr'
+      preLoaderRoute: typeof QrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/post-parrainage-d': {
       id: '/post-parrainage-d'
       path: '/post-parrainage-d'
@@ -436,11 +521,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OpengraphImageRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mail': {
+      id: '/mail'
+      path: '/mail'
+      fullPath: '/mail'
+      preLoaderRoute: typeof MailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/llms.txt': {
       id: '/llms.txt'
       path: '/llms.txt'
       fullPath: '/llms.txt'
       preLoaderRoute: typeof LlmsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/instagram': {
+      id: '/instagram'
+      path: '/instagram'
+      fullPath: '/instagram'
+      preLoaderRoute: typeof InstagramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/google': {
+      id: '/google'
+      path: '/google'
+      fullPath: '/google'
+      preLoaderRoute: typeof GoogleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/garde-chien-vannes': {
@@ -455,6 +561,13 @@ declare module '@tanstack/react-router' {
       path: '/garde-chat-vannes'
       fullPath: '/garde-chat-vannes'
       preLoaderRoute: typeof GardeChatVannesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/facebook': {
+      id: '/facebook'
+      path: '/facebook'
+      fullPath: '/facebook'
+      preLoaderRoute: typeof FacebookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ds': {
@@ -576,6 +689,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardIndexRouteImport
       parentRoute: typeof AdminDashboardRouteRoute
     }
+    '/s/$source/$campaign': {
+      id: '/s/$source/$campaign'
+      path: '/s/$source/$campaign'
+      fullPath: '/s/$source/$campaign'
+      preLoaderRoute: typeof SSourceCampaignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/og-service/$slug/opengraph-image': {
       id: '/og-service/$slug/opengraph-image'
       path: '/og-service/$slug/opengraph-image'
@@ -680,11 +800,16 @@ const rootRouteChildren: RootRouteChildren = {
   PublicRoute: PublicRouteWithChildren,
   CarteVersoV2Route: CarteVersoV2Route,
   DsRoute: DsRoute,
+  FacebookRoute: FacebookRoute,
   GardeChatVannesRoute: GardeChatVannesRoute,
   GardeChienVannesRoute: GardeChienVannesRoute,
+  GoogleRoute: GoogleRoute,
+  InstagramRoute: InstagramRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  MailRoute: MailRoute,
   OpengraphImageRoute: OpengraphImageRoute,
   PostParrainageDRoute: PostParrainageDRoute,
+  QrRoute: QrRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ApiContactRoute: ApiContactRoute,
@@ -693,6 +818,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAdminGalerieRoute: ApiAdminGalerieRoute,
   ApiAdminReviewsRoute: ApiAdminReviewsRoute,
   OgServiceSlugOpengraphImageRoute: OgServiceSlugOpengraphImageRoute,
+  SSourceCampaignRoute: SSourceCampaignRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
