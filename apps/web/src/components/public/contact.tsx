@@ -13,6 +13,7 @@ import {
 import { Textarea } from "@coequipattes/ui/components/textarea";
 import { SectionHeader } from "./section-header";
 import { env } from "@/lib/env";
+import { track } from "@/lib/analytics";
 
 const subjectOptions = [
   "Cours d'équitation",
@@ -47,6 +48,10 @@ export function Contact() {
 
       if (res.ok) {
         setStatus("success");
+        track("contact_form_submit", {
+          result: "success",
+          subject: data.get("subject"),
+        });
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);
       } else {
@@ -54,6 +59,7 @@ export function Contact() {
       }
     } catch {
       setStatus("error");
+      track("contact_form_submit", { result: "error" });
       setTimeout(() => setStatus("idle"), 5000);
     }
   }

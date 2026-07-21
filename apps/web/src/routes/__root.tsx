@@ -1,8 +1,9 @@
-import type { ReactNode } from "react";
+import { type ReactNode, useEffect } from "react";
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { env } from "@/lib/env";
+import { initAnalyticsTracking } from "@/lib/analytics";
 
 import appCss from "../styles.css?url";
 
@@ -75,6 +76,10 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    if (import.meta.env.PROD) initAnalyticsTracking();
+  }, []);
+
   return (
     <html lang="fr">
       <head>
