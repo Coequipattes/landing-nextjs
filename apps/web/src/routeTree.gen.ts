@@ -22,7 +22,6 @@ import { Route as PublicRouteImport } from './routes/_public'
 import { Route as AdminRouteRouteImport } from './routes/admin/route'
 import { Route as PublicIndexRouteImport } from './routes/_public/index'
 import { Route as UploadsSplatRouteImport } from './routes/uploads/$'
-import { Route as SSlugRouteImport } from './routes/s.$slug'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as PublicVisitesChienVannesRouteImport } from './routes/_public/visites-chien-vannes'
@@ -34,6 +33,7 @@ import { Route as PublicGardeADomicileVannesRouteImport } from './routes/_public
 import { Route as PublicEquitationVannesRouteImport } from './routes/_public/equitation-vannes'
 import { Route as AdminDashboardRouteRouteImport } from './routes/admin/dashboard/route'
 import { Route as AdminDashboardIndexRouteImport } from './routes/admin/dashboard/index'
+import { Route as SChannelChar123CampaignChar125RouteImport } from './routes/s.$channel.{-$campaign}'
 import { Route as OgServiceSlugOpengraphImageRouteImport } from './routes/og-service/$slug/opengraph-image'
 import { Route as ApiAdminReviewsRouteImport } from './routes/api/admin/reviews'
 import { Route as ApiAdminGalerieRouteImport } from './routes/api/admin/galerie'
@@ -105,11 +105,6 @@ const UploadsSplatRoute = UploadsSplatRouteImport.update({
   path: '/uploads/$',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SSlugRoute = SSlugRouteImport.update({
-  id: '/s/$slug',
-  path: '/s/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiContactRoute = ApiContactRouteImport.update({
   id: '/api/contact',
   path: '/api/contact',
@@ -169,6 +164,12 @@ const AdminDashboardIndexRoute = AdminDashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AdminDashboardRouteRoute,
 } as any)
+const SChannelChar123CampaignChar125Route =
+  SChannelChar123CampaignChar125RouteImport.update({
+    id: '/s/$channel/{-$campaign}',
+    path: '/s/$channel/{-$campaign}',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const OgServiceSlugOpengraphImageRoute =
   OgServiceSlugOpengraphImageRouteImport.update({
     id: '/og-service/$slug/opengraph-image',
@@ -224,7 +225,6 @@ export interface FileRoutesByFullPath {
   '/visites-chien-vannes': typeof PublicVisitesChienVannesRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/contact': typeof ApiContactRoute
-  '/s/$slug': typeof SSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
   '/admin/dashboard/galerie': typeof AdminDashboardGalerieRoute
   '/admin/dashboard/temoignages': typeof AdminDashboardTemoignagesRoute
@@ -232,6 +232,7 @@ export interface FileRoutesByFullPath {
   '/api/admin/galerie': typeof ApiAdminGalerieRoute
   '/api/admin/reviews': typeof ApiAdminReviewsRoute
   '/og-service/$slug/opengraph-image': typeof OgServiceSlugOpengraphImageRoute
+  '/s/$channel/{-$campaign}': typeof SChannelChar123CampaignChar125Route
   '/admin/dashboard/': typeof AdminDashboardIndexRoute
 }
 export interface FileRoutesByTo {
@@ -254,7 +255,6 @@ export interface FileRoutesByTo {
   '/visites-chien-vannes': typeof PublicVisitesChienVannesRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/contact': typeof ApiContactRoute
-  '/s/$slug': typeof SSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
   '/': typeof PublicIndexRoute
   '/admin/dashboard/galerie': typeof AdminDashboardGalerieRoute
@@ -263,6 +263,7 @@ export interface FileRoutesByTo {
   '/api/admin/galerie': typeof ApiAdminGalerieRoute
   '/api/admin/reviews': typeof ApiAdminReviewsRoute
   '/og-service/$slug/opengraph-image': typeof OgServiceSlugOpengraphImageRoute
+  '/s/$channel/{-$campaign}': typeof SChannelChar123CampaignChar125Route
   '/admin/dashboard': typeof AdminDashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -288,7 +289,6 @@ export interface FileRoutesById {
   '/_public/visites-chien-vannes': typeof PublicVisitesChienVannesRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/contact': typeof ApiContactRoute
-  '/s/$slug': typeof SSlugRoute
   '/uploads/$': typeof UploadsSplatRoute
   '/_public/': typeof PublicIndexRoute
   '/admin/dashboard/galerie': typeof AdminDashboardGalerieRoute
@@ -297,6 +297,7 @@ export interface FileRoutesById {
   '/api/admin/galerie': typeof ApiAdminGalerieRoute
   '/api/admin/reviews': typeof ApiAdminReviewsRoute
   '/og-service/$slug/opengraph-image': typeof OgServiceSlugOpengraphImageRoute
+  '/s/$channel/{-$campaign}': typeof SChannelChar123CampaignChar125Route
   '/admin/dashboard/': typeof AdminDashboardIndexRoute
 }
 export interface FileRouteTypes {
@@ -323,7 +324,6 @@ export interface FileRouteTypes {
     | '/visites-chien-vannes'
     | '/admin/login'
     | '/api/contact'
-    | '/s/$slug'
     | '/uploads/$'
     | '/admin/dashboard/galerie'
     | '/admin/dashboard/temoignages'
@@ -331,6 +331,7 @@ export interface FileRouteTypes {
     | '/api/admin/galerie'
     | '/api/admin/reviews'
     | '/og-service/$slug/opengraph-image'
+    | '/s/$channel/{-$campaign}'
     | '/admin/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -353,7 +354,6 @@ export interface FileRouteTypes {
     | '/visites-chien-vannes'
     | '/admin/login'
     | '/api/contact'
-    | '/s/$slug'
     | '/uploads/$'
     | '/'
     | '/admin/dashboard/galerie'
@@ -362,6 +362,7 @@ export interface FileRouteTypes {
     | '/api/admin/galerie'
     | '/api/admin/reviews'
     | '/og-service/$slug/opengraph-image'
+    | '/s/$channel/{-$campaign}'
     | '/admin/dashboard'
   id:
     | '__root__'
@@ -386,7 +387,6 @@ export interface FileRouteTypes {
     | '/_public/visites-chien-vannes'
     | '/admin/login'
     | '/api/contact'
-    | '/s/$slug'
     | '/uploads/$'
     | '/_public/'
     | '/admin/dashboard/galerie'
@@ -395,6 +395,7 @@ export interface FileRouteTypes {
     | '/api/admin/galerie'
     | '/api/admin/reviews'
     | '/og-service/$slug/opengraph-image'
+    | '/s/$channel/{-$campaign}'
     | '/admin/dashboard/'
   fileRoutesById: FileRoutesById
 }
@@ -411,12 +412,12 @@ export interface RootRouteChildren {
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ApiContactRoute: typeof ApiContactRoute
-  SSlugRoute: typeof SSlugRoute
   UploadsSplatRoute: typeof UploadsSplatRoute
   ApiAdminAuthRoute: typeof ApiAdminAuthRoute
   ApiAdminGalerieRoute: typeof ApiAdminGalerieRoute
   ApiAdminReviewsRoute: typeof ApiAdminReviewsRoute
   OgServiceSlugOpengraphImageRoute: typeof OgServiceSlugOpengraphImageRoute
+  SChannelChar123CampaignChar125Route: typeof SChannelChar123CampaignChar125Route
 }
 
 declare module '@tanstack/react-router' {
@@ -512,13 +513,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UploadsSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/s/$slug': {
-      id: '/s/$slug'
-      path: '/s/$slug'
-      fullPath: '/s/$slug'
-      preLoaderRoute: typeof SSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/api/contact': {
       id: '/api/contact'
       path: '/api/contact'
@@ -595,6 +589,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/dashboard/'
       preLoaderRoute: typeof AdminDashboardIndexRouteImport
       parentRoute: typeof AdminDashboardRouteRoute
+    }
+    '/s/$channel/{-$campaign}': {
+      id: '/s/$channel/{-$campaign}'
+      path: '/s/$channel/{-$campaign}'
+      fullPath: '/s/$channel/{-$campaign}'
+      preLoaderRoute: typeof SChannelChar123CampaignChar125RouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/og-service/$slug/opengraph-image': {
       id: '/og-service/$slug/opengraph-image'
@@ -708,12 +709,12 @@ const rootRouteChildren: RootRouteChildren = {
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ApiContactRoute: ApiContactRoute,
-  SSlugRoute: SSlugRoute,
   UploadsSplatRoute: UploadsSplatRoute,
   ApiAdminAuthRoute: ApiAdminAuthRoute,
   ApiAdminGalerieRoute: ApiAdminGalerieRoute,
   ApiAdminReviewsRoute: ApiAdminReviewsRoute,
   OgServiceSlugOpengraphImageRoute: OgServiceSlugOpengraphImageRoute,
+  SChannelChar123CampaignChar125Route: SChannelChar123CampaignChar125Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

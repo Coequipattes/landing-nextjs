@@ -30,39 +30,44 @@ Event `scroll_depth` déclenché une fois par palier (`25/50/75/90/100`), par pa
 
 Umami capture nativement `utm_source` / `utm_medium` / `utm_campaign` (rapport "UTM" dans Sources). Convention : `utm_source` = plateforme, `utm_medium` = type de placement, `utm_campaign` = emplacement précis.
 
-Une URL avec `?utm_source=...` colle mal sur un profil (ça fait "louche"/spam pour Manon et pour un visiteur qui la verrait affichée). Solution : **une seule route de tracking 100% libre**, `apps/web/src/routes/s.$slug.tsx`.
+Une URL avec `?utm_source=...` colle mal sur un profil (ça fait "louche"/spam pour Manon et pour un visiteur qui la verrait affichée). Solution : **une seule route de tracking 100% libre**, `apps/web/src/routes/s.$channel.{-$campaign}.tsx`.
 
-Format : `coequipattes.fr/s/<slug>` — tout ce qui précède le **premier tiret** devient `utm_source`, le reste devient `utm_campaign`. Aucune table, aucune restriction, aucun code à toucher pour un nouveau canal ou une nouvelle campagne : n'importe quel slug fonctionne du premier coup.
+Format : `coequipattes.fr/s/<channel>/<campaign>` — le 2e segment est **optionnel**.
+- `<channel>` : tout ce qui précède le **premier tiret** devient `utm_source`, le reste devient `utm_medium`.
+- `<campaign>` (optionnel) : texte libre, devient `utm_campaign` tel quel. Absent → retombe sur le medium (ou le channel entier s'il n'y a pas de tiret).
 
-| Slug collé | `utm_source` | `utm_campaign` |
-|---|---|---|
-| `insta-bio` | `insta` | `bio` |
-| `google-business` | `google` | `business` |
-| `qr` (pas de tiret) | `qr` | `qr` |
-| `insta-story-soldes-ete` | `insta` | `story-soldes-ete` |
+Aucune table, aucune restriction : n'importe quel slug fonctionne du premier coup, sans code ni redéploiement. Le 2e segment n'est à ajouter que si tu veux vraiment distinguer une campagne précise du canal — la plupart du temps un seul slug suffit.
+
+| Lien collé | `utm_source` | `utm_medium` | `utm_campaign` |
+|---|---|---|---|
+| `s/insta-bio` | `insta` | `bio` | `bio` |
+| `s/google-business` | `google` | `business` | `business` |
+| `s/qr` (pas de tiret) | `qr` | — | `qr` |
+| `s/insta-story/soldes-ete` | `insta` | `story` | `soldes-ete` |
+| `s/qr/carte-visite` | `qr` | — | `carte-visite` |
 
 #### Exemples concrets
 
 | Situation | Lien à coller | UTM enregistrés |
 |---|---|---|
-| Bio Instagram (lien permanent) | `coequipattes.fr/s/insta-bio` | `insta / bio` |
-| Page Facebook (lien permanent) | `coequipattes.fr/s/fb-bio` | `fb / bio` |
-| Fiche Google Business Profile | `coequipattes.fr/s/google-business` | `google / business` |
-| QR code carte de visite | `coequipattes.fr/s/qr-carte` | `qr / carte` |
-| Signature email | `coequipattes.fr/s/mail-signature` | `mail / signature` |
-| Story Instagram "place dispo cette semaine" | `coequipattes.fr/s/insta-dispo-cette-semaine` | `insta / dispo-cette-semaine` |
-| Post Instagram vidéo cours d'équitation | `coequipattes.fr/s/insta-video-equitation` | `insta / video-equitation` |
-| Story Facebook promo de Noël pension chat | `coequipattes.fr/s/fb-promo-noel-chat` | `fb / promo-noel-chat` |
+| Bio Instagram (lien permanent) | `coequipattes.fr/s/insta-bio` | `insta / bio / bio` |
+| Page Facebook (lien permanent) | `coequipattes.fr/s/fb-bio` | `fb / bio / bio` |
+| Fiche Google Business Profile | `coequipattes.fr/s/google-business` | `google / business / business` |
+| QR code carte de visite | `coequipattes.fr/s/qr/carte-visite` | `qr / — / carte-visite` |
+| Signature email | `coequipattes.fr/s/mail-signature` | `mail / signature / signature` |
+| Story Instagram "place dispo cette semaine" | `coequipattes.fr/s/insta-story/dispo-cette-semaine` | `insta / story / dispo-cette-semaine` |
+| Post Instagram vidéo cours d'équitation | `coequipattes.fr/s/insta-post/video-equitation` | `insta / post / video-equitation` |
+| Story Facebook promo de Noël pension chat | `coequipattes.fr/s/fb-story/promo-noel-chat` | `fb / story / promo-noel-chat` |
 
 Dans le rapport UTM d'Umami, ça donne des lignes distinctes et comparables :
 
-| Source | Campaign | Visiteurs |
-|---|---|---|
-| insta | bio | 45 |
-| insta | dispo-cette-semaine | 12 |
-| insta | video-equitation | 8 |
-| fb | promo-noel-chat | 6 |
-| google | business | 11 |
+| Source | Medium | Campaign | Visiteurs |
+|---|---|---|---|
+| insta | bio | bio | 45 |
+| insta | story | dispo-cette-semaine | 12 |
+| insta | post | video-equitation | 8 |
+| fb | story | promo-noel-chat | 6 |
+| google | business | business | 11 |
 
 → on voit directement que la story de mardi a ramené 12 visiteurs et le post vidéo équitation seulement 8, sans jamais coller une URL avec `?utm_source=...` — et n'importe quel nouveau slug fonctionne sans redéploiement.
 
