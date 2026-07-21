@@ -1,3 +1,5 @@
+name: site-coequipattes
+
 services:
   cron:
     image: alpine:3.21
