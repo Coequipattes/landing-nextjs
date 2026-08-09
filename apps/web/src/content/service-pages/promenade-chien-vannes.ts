@@ -7,7 +7,7 @@ export const promenadeChienVannes: ServicePageData = {
   metaTitle:
     "Promeneuse de chien à Vannes · Balades quotidiennes | Co'équi'pattes",
   metaDescription:
-    "Promeneuse de chien à Vannes : balades 30 à 60 min adaptées au rythme de votre chien. Pour actifs et propriétaires âgés, ponctuel ou régulier.",
+    "Promeneuse de chien à Vannes : balades 15 à 60 min adaptées au rythme de votre chien. Pour actifs et propriétaires âgés, ponctuel ou régulier.",
   hero: {
     h1: "Promenades de chien à Vannes",
     baseline:
@@ -47,7 +47,13 @@ export const promenadeChienVannes: ServicePageData = {
   pricing: {
     highlight:
       "À l'unité ou en sorties régulières, je m'adapte à votre rythme.",
-    cardSlugs: ["promenade-30", "promenade-45", "promenade-60"],
+    cardSlugs: [
+      "promenade-15",
+      "promenade-20",
+      "promenade-30",
+      "promenade-45",
+      "promenade-60",
+    ],
   },
   faq: [
     {
@@ -76,7 +82,7 @@ export const promenadeChienVannes: ServicePageData = {
     name: "Promenades de chien à Vannes",
     serviceType: "Dog walking",
     description:
-      "Promenades de chien à Vannes et alentours : balades 30 à 60 min adaptées au rythme de votre chien, ponctuelles ou régulières, pré-visite gratuite.",
+      "Promenades de chien à Vannes et alentours : balades 15 à 60 min adaptées au rythme de votre chien, ponctuelles ou régulières, pré-visite gratuite.",
   },
   cta: {
     headline: "Votre chien sort tous les jours",

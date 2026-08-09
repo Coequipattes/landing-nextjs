@@ -4,7 +4,7 @@
 // champ `area` optionnel (ex. équitation, dont la zone diffère).
 export const COVERAGE = {
   city: "Vannes",
-  radiusKm: 10,
-  ratePerKm: "0,25 €/km",
+  radiusKm: 8,
+  ratePerKm: "0,35 €/km",
   communes: ["Vannes", "Arradon", "Plescop", "Séné", "Saint-Avé", "Ploeren"],
 };

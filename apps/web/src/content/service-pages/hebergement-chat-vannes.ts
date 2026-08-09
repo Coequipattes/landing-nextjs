@@ -4,7 +4,7 @@ export const hebergementChatVannes: ServicePageData = {
   slug: "pension-chat-vannes",
   metaTitle: "Pension privative pour chat à Vannes | Co'équi'pattes",
   metaDescription:
-    "Hébergement de chat à Vannes : pension privative chez moi, un seul chat à la fois, sans cage ni limite de durée. Dès 18€/24h. Rencontre préalable.",
+    "Hébergement de chat à Vannes : pension privative chez moi, un seul chat à la fois, sans cage ni limite de durée. Dès 20€/jour. Rencontre préalable.",
   hero: {
     h1: "Pension privative pour chat à Vannes",
     baseline:
@@ -55,7 +55,7 @@ export const hebergementChatVannes: ServicePageData = {
   ],
   pricing: {
     highlight:
-      "Un hébergement privatif chez moi, sans limite de durée, à partir de 18€ / 24 h.",
+      "Un hébergement privatif chez moi, sans limite de durée, à partir de 20€ / jour.",
     cardSlugs: ["hebergement-chat"],
   },
   faq: [

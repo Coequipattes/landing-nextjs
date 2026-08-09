@@ -222,15 +222,15 @@ function DesignSystemPage() {
             <ServiceCard
               icon={<Heart />}
               title="Balades"
-              teaser="Sorties 30 à 60 min, en laisse, adaptées à l'énergie de votre chien."
-              price="dès 12€"
+              teaser="Sorties 15 à 60 min, en laisse, adaptées à l'énergie de votre chien."
+              price="dès 10€"
               href="#"
             />
             <ServiceCard
               icon={<Heart />}
               title="Visites à domicile"
               teaser="Repas, jeux, câlins et présence — votre animal reste chez lui."
-              price="dès 10,20€"
+              price="dès 10€"
               href="#"
             />
           </div>
@@ -240,23 +240,26 @@ function DesignSystemPage() {
           <div className="grid w-full items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <PriceCard
               title="Promenade"
-              price="12-22€"
+              price="10-25€"
               subtitle="Balades adaptées au rythme de votre chien"
               features={[
-                "30 min : 12€ / 16€*",
-                "45 min : 15€ / 19€*",
-                "1 heure : 18€ / 22€*",
+                "15 min : 10€",
+                "20 min : 12€",
+                "30 min : 15€",
+                "45 min : 20€",
+                "1 heure : 25€",
               ]}
               href="#"
             />
             <PriceCard
               title="Visite à domicile"
-              price="10-20€"
+              price="10-22€"
               subtitle="Pour chats, NAC et tous animaux"
               features={[
-                "30 min : 10,20€ / 13,60€*",
-                "45 min : 13€ / 16€*",
-                "1 heure : 16€ / 20€*",
+                "15 min : 10€",
+                "30 min : 13,50€",
+                "45 min : 18€",
+                "1 heure : 22€",
               ]}
               href="#"
             />

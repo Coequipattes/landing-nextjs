@@ -1,7 +1,5 @@
 import type { ServicePageData } from "./types";
 
-// DRAFT - à valider Manon : contenu éditorial provisoire (intro, bénéfices,
-// FAQ, CTA) + tarif "sur devis" en attendant la grille de prix.
 // Service distinct des "visites à domicile" : ici Manon s'installe chez le
 // client (à demeure, elle dort sur place) pour toute la durée, en s'absentant
 // le temps de ses autres prestations.
@@ -10,7 +8,7 @@ export const gardeADomicileVannes: ServicePageData = {
   metaTitle:
     "Garde à domicile à Vannes · pet sitter à demeure | Co'équi'pattes",
   metaDescription:
-    "Garde à domicile à Vannes et alentours : je m'installe chez vous pour veiller sur votre animal pendant votre absence. Tarif sur devis, pré-visite gratuite.",
+    "Garde à domicile à Vannes et alentours : je m'installe chez vous pour veiller sur votre animal pendant votre absence. 30€/jour, pré-visite gratuite.",
   hero: {
     h1: "Garde à domicile à Vannes",
     baseline:
@@ -22,7 +20,7 @@ export const gardeADomicileVannes: ServicePageData = {
     paragraphs: [
       "Certains animaux supportent mal la solitude, surtout sur de longues absences : un chien anxieux, un chiot, un animal âgé ou sous traitement, ou simplement plusieurs animaux à gérer. Pour ces situations, la garde à domicile est la formule la plus rassurante : je m'installe chez vous pour toute la durée convenue, je dors sur place et reste présente la majeure partie du temps.",
       "Votre animal reste dans son environnement, avec ses odeurs, son rythme et ses habitudes. Je m'occupe de tout au quotidien : repas, sorties, jeux, soins simples. Je m'absente uniquement le temps de mes autres prestations (promenades, visites), puis je reviens à votre domicile, qui reste habité et surveillé pendant votre absence.",
-      "Ce service est proposé à partir de 3 nuits sur place pour 2 animaux ou moins ; à partir de 3 animaux, il n'y a pas de durée minimum. Tout commence par une pré-visite gratuite : je fais connaissance avec votre animal, je note ses consignes et je définis avec vous les modalités. Un contrat est établi avant chaque prestation. Le tarif est fixé sur devis : il dépend de la durée, de vos besoins et notamment du nombre d'animaux présents.",
+      "Ce service est proposé à partir de 3 nuits sur place pour 2 animaux ou moins ; à partir de 3 animaux, il n'y a pas de durée minimum. Tout commence par une pré-visite gratuite : je fais connaissance avec votre animal, je note ses consignes et je définis avec vous les modalités. Un contrat est établi avant chaque prestation. Le tarif est de 30€ par jour, quel que soit le nombre d'animaux présents.",
     ],
   },
   benefits: [
@@ -59,7 +57,7 @@ export const gardeADomicileVannes: ServicePageData = {
   ],
   pricing: {
     highlight:
-      "Une présence à demeure chez vous : tarif sur devis, selon la durée, vos besoins et le nombre d'animaux.",
+      "Une présence à demeure chez vous : 30€ par jour, quel que soit le nombre d'animaux.",
     cardSlugs: ["garde-domicile"],
   },
   faq: [
@@ -73,7 +71,7 @@ export const gardeADomicileVannes: ServicePageData = {
     },
     {
       q: "Combien ça coûte ?",
-      a: "Le tarif est établi sur devis : il dépend de la durée, de vos besoins et notamment du nombre d'animaux présents au domicile.",
+      a: "Le tarif est de 30€ par jour, quel que soit le nombre d'animaux présents au domicile.",
     },
     {
       q: "Et pour la maison ?",
@@ -93,7 +91,7 @@ export const gardeADomicileVannes: ServicePageData = {
     name: "Garde d'animaux à domicile à Vannes",
     serviceType: "Pet sitting",
     description:
-      "Garde à domicile à Vannes et alentours : pet sitter à demeure chez vous pendant votre absence, pour chien, chat et autres animaux. Sur devis, pré-visite gratuite.",
+      "Garde à domicile à Vannes et alentours : pet sitter à demeure chez vous pendant votre absence, pour chien, chat et autres animaux. 30€/jour, pré-visite gratuite.",
   },
   cta: {
     headline: "Partez l'esprit tranquille",

@@ -116,7 +116,7 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
             latitude: 47.6559,
             longitude: -2.7603,
           },
-          geoRadius: 10000,
+          geoRadius: 8000,
         },
         openingHoursSpecification: [
           {
@@ -227,15 +227,15 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
               "@type": "Offer",
               priceSpecification: {
                 "@type": "PriceSpecification",
-                minPrice: "10.20",
-                maxPrice: "20",
+                minPrice: "10",
+                maxPrice: "22",
                 priceCurrency: "EUR",
               },
               itemOffered: {
                 "@type": "Service",
                 name: "Visite à domicile",
                 description:
-                  "Visite à domicile pour chats et tous animaux (30 min à 1 h)",
+                  "Visite à domicile pour chats et tous animaux (15 min à 1 h)",
                 provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },
@@ -244,15 +244,15 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
               "@type": "Offer",
               priceSpecification: {
                 "@type": "PriceSpecification",
-                minPrice: "12",
-                maxPrice: "21",
+                minPrice: "10",
+                maxPrice: "25",
                 priceCurrency: "EUR",
               },
               itemOffered: {
                 "@type": "Service",
                 name: "Promenade chien",
                 description:
-                  "Balades adaptées au rythme de votre chien (30 min à 1 h)",
+                  "Balades adaptées au rythme de votre chien (15 min à 1 h)",
                 provider: { "@id": businessId },
                 areaServed: { "@type": "City", name: "Vannes" },
               },

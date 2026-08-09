@@ -60,48 +60,69 @@ export const equitationCards: PriceCard[] = [
 
 export const petsittingCards: PriceCard[] = [
   {
-    slug: "promenade-30",
-    title: "Promenade 30 min",
+    slug: "promenade-15",
+    title: "Promenade 15 min",
+    price: "10€",
+    description: "Petite sortie express",
+    features: [],
+  },
+  {
+    slug: "promenade-20",
+    title: "Promenade 20 min",
     price: "12€",
     description: "Sortie courte, autour de chez vous",
-    features: ["15€ en haute saison*"],
+    features: [],
+  },
+  {
+    slug: "promenade-30",
+    title: "Promenade 30 min",
+    price: "15€",
+    description: "Sortie standard, autour de chez vous",
+    features: [],
   },
   {
     slug: "promenade-45",
     title: "Promenade 45 min",
-    price: "15€",
+    price: "20€",
     description: "Sortie longue, hors quartier possible",
-    features: ["18€ en haute saison*"],
+    features: [],
     featured: true,
   },
   {
     slug: "promenade-60",
     title: "Promenade 1 h",
-    price: "18€",
+    price: "25€",
     description: "Grande balade, baignade possible",
-    features: ["21€ en haute saison*"],
+    features: [],
+  },
+  {
+    slug: "visite-domicile-15",
+    title: "Visite 15 min",
+    price: "10€",
+    description: "Pour chats et chiens, à leur domicile",
+    features: [],
   },
   {
     slug: "visite-domicile-30",
     title: "Visite 30 min",
-    price: "10,20€",
+    price: "13,50€",
     description: "Pour chats et chiens, à leur domicile",
-    features: ["13,60€ en haute saison*"],
+    features: [],
   },
   {
     slug: "visite-domicile-45",
     title: "Visite 45 min",
-    price: "13€",
+    price: "18€",
     description: "Pour chats et chiens, à leur domicile",
-    features: ["16€ en haute saison*"],
+    features: [],
     featured: true,
   },
   {
     slug: "visite-domicile-60",
     title: "Visite 1 h",
-    price: "16€",
+    price: "22€",
     description: "Pour chats et chiens, à leur domicile",
-    features: ["20€ en haute saison*"],
+    features: [],
   },
 ];
 
@@ -109,7 +130,7 @@ export const hebergementChienCard: PriceCard = {
   slug: "hebergement-chien",
   title: "Pension privative — chien",
   price: "30€",
-  unit: "/24h",
+  unit: "/jour",
   description: "Pension privative chez moi, un seul chien à la fois",
   features: [
     "Séjours courts : de quelques heures à 2 jours",
@@ -122,8 +143,8 @@ export const hebergementChienCard: PriceCard = {
 export const hebergementChatCard: PriceCard = {
   slug: "hebergement-chat",
   title: "Pension privative — chat",
-  price: "18€",
-  unit: "/24h",
+  price: "20€",
+  unit: "/jour",
   description: "Pension privative chez moi, un seul chat à la fois",
   features: [
     "Sans limite de durée : de quelques jours à une longue absence",
@@ -136,7 +157,8 @@ export const hebergementChatCard: PriceCard = {
 export const gardeADomicileCard: PriceCard = {
   slug: "garde-domicile",
   title: "Garde à domicile",
-  price: "Sur devis",
+  price: "30€",
+  unit: "/jour",
   description: "Je m'installe chez vous, à demeure",
   features: [
     "Présence à demeure, je dors sur place",

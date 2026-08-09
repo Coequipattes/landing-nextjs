@@ -10,7 +10,7 @@ export const visitesChienVannes: ServicePageData = {
   hero: {
     h1: "Visites à domicile pour chien à Vannes",
     baseline:
-      "Des visites de 30 min à 1 h chez vous pendant vos absences : votre chien reste dans son environnement, avec ses repères et un suivi à chaque passage.",
+      "Des visites de 15 min à 1 h chez vous pendant vos absences : votre chien reste dans son environnement, avec ses repères et un suivi à chaque passage.",
     image: "/assets/visite_chien_domicile.webp",
     imageAlt:
       "Manon prenant soin d'un chien lors d'une visite à domicile à Vannes",
@@ -18,7 +18,7 @@ export const visitesChienVannes: ServicePageData = {
   },
   intro: {
     paragraphs: [
-      "Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse. C'est la raison pour laquelle je me déplace chez vous pour des visites de 30 min à 1 h, une ou plusieurs fois par jour : votre animal reste dans son environnement, avec ses odeurs, son panier, son jardin et ses horaires habituels.",
+      "Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse. C'est la raison pour laquelle je me déplace chez vous pour des visites de 15 min à 1 h, une ou plusieurs fois par jour : votre animal reste dans son environnement, avec ses odeurs, son panier, son jardin et ses horaires habituels.",
       "Le nombre de visites se décide avec vous, selon l'âge et les besoins de votre chien, jusqu'à 5 passages par jour. Chaque passage comprend la sortie, le repas, un temps de jeu ou de câlin, et la vérification de l'état général. Pour les absences longues, je peux aussi m'occuper du courrier, arroser les plantes ou ouvrir les volets, autant de petits gestes qui maintiennent la maison vivante et dissuadent les intrusions.",
       "Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chien et moi-même faisons connaissance dans un cadre rassurant, où je note les consignes (alimentation, traitements, habitudes...) et où nous calons ensemble le rythme des visites.",
     ],
@@ -54,6 +54,7 @@ export const visitesChienVannes: ServicePageData = {
     highlight:
       "Une formule à domicile, à la durée modulable selon l'autonomie de votre chien.",
     cardSlugs: [
+      "visite-domicile-15",
       "visite-domicile-30",
       "visite-domicile-45",
       "visite-domicile-60",

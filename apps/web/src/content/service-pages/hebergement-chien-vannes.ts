@@ -4,7 +4,7 @@ export const hebergementChienVannes: ServicePageData = {
   slug: "pension-chien-vannes",
   metaTitle: "Pension privative pour chien à Vannes | Co'équi'pattes",
   metaDescription:
-    "Hébergement de chien à Vannes : pension privative chez moi, un seul chien à la fois, jamais en cage. Séjours courts, dès 30€/24h. Rencontre préalable.",
+    "Hébergement de chien à Vannes : pension privative chez moi, un seul chien à la fois, jamais en cage. Séjours courts, dès 30€/jour. Rencontre préalable.",
   hero: {
     h1: "Pension privative pour chien à Vannes",
     baseline:
@@ -54,7 +54,7 @@ export const hebergementChienVannes: ServicePageData = {
     },
   ],
   pricing: {
-    highlight: "Un hébergement privatif chez moi, à partir de 30€ / 24 h.",
+    highlight: "Un hébergement privatif chez moi, à partir de 30€ / jour.",
     cardSlugs: ["hebergement-chien"],
   },
   faq: [

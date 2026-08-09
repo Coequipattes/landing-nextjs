@@ -10,14 +10,14 @@ export const visitesChatVannes: ServicePageData = {
   hero: {
     h1: "Visites à domicile pour chat à Vannes",
     baseline:
-      "Des visites de 30 min à 1 h chez vous pendant vos absences : votre chat reste sur son territoire, avec ses repères et ses habitudes.",
+      "Des visites de 15 min à 1 h chez vous pendant vos absences : votre chat reste sur son territoire, avec ses repères et ses habitudes.",
     image: "/assets/visite_chat_domicile.webp",
     imageAlt:
       "Manon prenant soin d'un chat lors d'une visite à domicile à Vannes",
   },
   intro: {
     paragraphs: [
-      "Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse. C'est la raison pour laquelle je me déplace chez vous pour des visites de 30 min à 1 h, une ou plusieurs fois par jour : votre animal reste dans son environnement, avec ses odeurs, son panier, son jardin et ses horaires habituels.",
+      "Partir en vacances ou en déplacement professionnel ne devrait pas rimer avec angoisse. C'est la raison pour laquelle je me déplace chez vous pour des visites de 15 min à 1 h, une ou plusieurs fois par jour : votre animal reste dans son environnement, avec ses odeurs, son panier, son jardin et ses horaires habituels.",
       "Mes visites s'organisent autour des vrais besoins du chat : alimentation à heures régulières, entretien complet de la litière, eau fraîche, contrôle visuel de son état, et, s'il en a envie, un temps de présence : jeu, câlins ou brossage. Je laisse aussi quelques signes de vie discrets (volets ouverts, courrier rentré) pour maintenir l'illusion d'une maison habitée.",
       "Avant chaque mission, une pré-visite gratuite est obligatoire. C'est le moment où votre chat et moi-même faisons connaissance dans un cadre rassurant, où je note les consignes (alimentation, traitements, habitudes...) et où nous calons ensemble le rythme des visites.",
     ],
@@ -58,6 +58,7 @@ export const visitesChatVannes: ServicePageData = {
     highlight:
       "Une formule unique adaptée au chat : visite à domicile, durée modulable selon vos besoins.",
     cardSlugs: [
+      "visite-domicile-15",
       "visite-domicile-30",
       "visite-domicile-45",
       "visite-domicile-60",

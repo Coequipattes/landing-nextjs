@@ -43,20 +43,20 @@ export const servicesHub: ServiceHubCard[] = [
     category: "chien",
     title: "Balades",
     teaser:
-      "Sorties 30 à 60 min, en laisse, adaptées à l'énergie de votre chien.",
+      "Sorties 15 à 60 min, en laisse, adaptées à l'énergie de votre chien.",
     href: "/promenade-chien-vannes",
     iconId: "walk",
-    price: "dès 12€",
+    price: "dès 10€",
   },
   {
     slug: "chien-visites",
     category: "chien",
     title: "Visites à domicile",
     teaser:
-      "Je passe chez vous de 30 min à 1 h : repas, jeux, câlins et présence.",
+      "Je passe chez vous de 15 min à 1 h : repas, jeux, câlins et présence.",
     href: "/visites-chien-vannes",
     iconId: "visit",
-    price: "dès 10,20€",
+    price: "dès 10€",
   },
   {
     slug: "chien-garde",
@@ -65,6 +65,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser: "Je vis chez vous, jour et nuit, toute la durée souhaitée.",
     href: "/garde-a-domicile-vannes",
     iconId: "livein",
+    price: "30€/jour",
   },
   {
     slug: "chien-hebergement",
@@ -74,7 +75,7 @@ export const servicesHub: ServiceHubCard[] = [
       "Courte durée (quelques heures à 2 jours) : votre chien vit chez moi comme s'il était le mien, sans être mêlé à d'autres animaux. 2 chiens possibles s'ils ont le même maître.",
     href: "/pension-chien-vannes",
     iconId: "boarding",
-    price: "dès 30€/24h",
+    price: "dès 30€/jour",
   },
 
   // ——— Chat ———
@@ -83,10 +84,10 @@ export const servicesHub: ServiceHubCard[] = [
     category: "chat",
     title: "Visites à domicile",
     teaser:
-      "Je passe chez vous de 30 min à 1 h : repas, litière, jeux et présence.",
+      "Je passe chez vous de 15 min à 1 h : repas, litière, jeux et présence.",
     href: "/visites-chat-vannes",
     iconId: "visit",
-    price: "dès 10,20€",
+    price: "dès 10€",
   },
   {
     slug: "chat-garde",
@@ -95,6 +96,7 @@ export const servicesHub: ServiceHubCard[] = [
     teaser: "Je vis chez vous, jour et nuit, toute la durée souhaitée.",
     href: "/garde-a-domicile-vannes",
     iconId: "livein",
+    price: "30€/jour",
   },
   {
     slug: "chat-hebergement",
@@ -104,7 +106,7 @@ export const servicesHub: ServiceHubCard[] = [
       "Sans limite de durée : j'accueille votre chat chez moi, un seul à la fois, sans cage. Il vit avec moi comme s'il était le mien.",
     href: "/pension-chat-vannes",
     iconId: "boarding",
-    price: "dès 18€/24h",
+    price: "dès 20€/jour",
   },
 
   // ——— Cheval ———
