@@ -105,7 +105,7 @@ export const petsittingCards: PriceCard[] = [
   {
     slug: "visite-domicile-30",
     title: "Visite 30 min",
-    price: "13,50€",
+    price: "13,60€",
     description: "Pour chats et chiens, à leur domicile",
     features: [],
   },
@@ -120,7 +120,7 @@ export const petsittingCards: PriceCard[] = [
   {
     slug: "visite-domicile-60",
     title: "Visite 1 h",
-    price: "22€",
+    price: "23€",
     description: "Pour chats et chiens, à leur domicile",
     features: [],
   },
