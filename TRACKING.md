@@ -32,19 +32,23 @@ Umami capture nativement `utm_source` / `utm_medium` / `utm_campaign` (rapport "
 
 Une URL avec `?utm_source=...` colle mal sur un profil (ça fait "louche"/spam pour Manon et pour un visiteur qui la verrait affichée). Solution : **une seule route de tracking 100% libre**, `apps/web/src/routes/s.$channel.{-$campaign}.tsx`.
 
-Format : `coequipattes.fr/s/<channel>/<campaign>` — le 2e segment est **optionnel**.
-- `<channel>` : tout ce qui précède le **premier tiret** devient `utm_source`, le reste devient `utm_medium`.
-- `<campaign>` (optionnel) : texte libre, devient `utm_campaign` tel quel. Absent → retombe sur le medium (ou le channel entier s'il n'y a pas de tiret).
+Format : `coequipattes.fr/s/<channel>/<campaign>` — le 2e segment est **optionnel**. Aucune table, aucune restriction : n'importe quel slug fonctionne du premier coup, sans code ni redéploiement.
 
-Aucune table, aucune restriction : n'importe quel slug fonctionne du premier coup, sans code ni redéploiement. Le 2e segment n'est à ajouter que si tu veux vraiment distinguer une campagne précise du canal — la plupart du temps un seul slug suffit.
+**La règle en 2 lignes :**
+1. Le **1er bout** (`<channel>`) : s'il contient un tiret, c'est `source-medium` (`insta-bio` → source=insta, medium=bio). Sans tiret, c'est juste `source` (`qr`).
+2. Le **2e bout** (`<campaign>`), après un `/`, est optionnel : si présent, c'est lui le `campaign`. Absent → `campaign` recopie le `medium` (ou le `source` s'il n'y avait pas de medium).
 
-| Lien collé | `utm_source` | `utm_medium` | `utm_campaign` |
+En pratique : pour un lien **permanent** (bio, fiche Google...), un seul mot avec un tiret suffit (`insta-bio`). Pour une **campagne précise** (une story, un post), on ajoute `/<nom-libre>` (`insta-story/soldes-ete`).
+
+| Ce que tu colles | `utm_source` | `utm_medium` | `utm_campaign` |
 |---|---|---|---|
-| `s/insta-bio` | `insta` | `bio` | `bio` |
-| `s/google-business` | `google` | `business` | `business` |
-| `s/qr` (pas de tiret) | `qr` | — | `qr` |
-| `s/insta-story/soldes-ete` | `insta` | `story` | `soldes-ete` |
-| `s/qr/carte-visite` | `qr` | — | `carte-visite` |
+| `coequipattes.fr/s/qr` | `qr` | *(rien)* | `qr` |
+| `coequipattes.fr/s/insta-bio` | `insta` | `bio` | `bio` |
+| `coequipattes.fr/s/google-business` | `google` | `business` | `business` |
+| `coequipattes.fr/s/qr/carte-visite` | `qr` | *(rien)* | `carte-visite` |
+| `coequipattes.fr/s/insta-bio/permanent` | `insta` | `bio` | `permanent` |
+| `coequipattes.fr/s/insta-story/soldes-ete` | `insta` | `story` | `soldes-ete` |
+| `coequipattes.fr/s/fb-post/temoignage-rex` | `fb` | `post` | `temoignage-rex` |
 
 #### Exemples concrets
 
