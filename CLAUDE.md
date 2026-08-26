@@ -34,4 +34,4 @@
 - `DEPLOY_TODO.md` : notes historiques du passage en monorepo (chemins mis à jour ici).
 
 ## Ne pas toucher
-- Gradients des routes OG/print (`opengraph-image.tsx`, `carte-logo/route.tsx`, `post-parrainage*`) : rendu Satori intentionnel, pas du slop.
+- Gradients des routes OG/print (`opengraph-image.tsx`, `og-service/$slug/opengraph-image.tsx`, `post-parrainage-d.tsx`) : rendu Satori intentionnel, pas du slop.
