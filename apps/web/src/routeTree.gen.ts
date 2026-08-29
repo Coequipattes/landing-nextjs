@@ -18,6 +18,8 @@ import { Route as GardeChienVannesRouteImport } from './routes/garde-chien-vanne
 import { Route as GardeChatVannesRouteImport } from './routes/garde-chat-vannes'
 import { Route as DsRouteImport } from './routes/ds'
 import { Route as CarteVersoV2RouteImport } from './routes/carte-verso-v2'
+import { Route as CarteVersoV1RouteImport } from './routes/carte-verso-v1'
+import { Route as CarteLogoRouteImport } from './routes/carte-logo'
 import { Route as PublicRouteImport } from './routes/_public'
 import { Route as AdminRouteRouteImport } from './routes/admin/route'
 import { Route as PublicIndexRouteImport } from './routes/_public/index'
@@ -84,6 +86,16 @@ const DsRoute = DsRouteImport.update({
 const CarteVersoV2Route = CarteVersoV2RouteImport.update({
   id: '/carte-verso-v2',
   path: '/carte-verso-v2',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarteVersoV1Route = CarteVersoV1RouteImport.update({
+  id: '/carte-verso-v1',
+  path: '/carte-verso-v1',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarteLogoRoute = CarteLogoRouteImport.update({
+  id: '/carte-logo',
+  path: '/carte-logo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PublicRoute = PublicRouteImport.update({
@@ -206,6 +218,8 @@ const AdminDashboardGalerieRoute = AdminDashboardGalerieRouteImport.update({
 export interface FileRoutesByFullPath {
   '/admin': typeof AdminRouteRouteWithChildren
   '/': typeof PublicIndexRoute
+  '/carte-logo': typeof CarteLogoRoute
+  '/carte-verso-v1': typeof CarteVersoV1Route
   '/carte-verso-v2': typeof CarteVersoV2Route
   '/ds': typeof DsRoute
   '/garde-chat-vannes': typeof GardeChatVannesRoute
@@ -237,6 +251,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/admin': typeof AdminRouteRouteWithChildren
+  '/carte-logo': typeof CarteLogoRoute
+  '/carte-verso-v1': typeof CarteVersoV1Route
   '/carte-verso-v2': typeof CarteVersoV2Route
   '/ds': typeof DsRoute
   '/garde-chat-vannes': typeof GardeChatVannesRoute
@@ -270,6 +286,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/admin': typeof AdminRouteRouteWithChildren
   '/_public': typeof PublicRouteWithChildren
+  '/carte-logo': typeof CarteLogoRoute
+  '/carte-verso-v1': typeof CarteVersoV1Route
   '/carte-verso-v2': typeof CarteVersoV2Route
   '/ds': typeof DsRoute
   '/garde-chat-vannes': typeof GardeChatVannesRoute
@@ -305,6 +323,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/admin'
     | '/'
+    | '/carte-logo'
+    | '/carte-verso-v1'
     | '/carte-verso-v2'
     | '/ds'
     | '/garde-chat-vannes'
@@ -336,6 +356,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/admin'
+    | '/carte-logo'
+    | '/carte-verso-v1'
     | '/carte-verso-v2'
     | '/ds'
     | '/garde-chat-vannes'
@@ -368,6 +390,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/admin'
     | '/_public'
+    | '/carte-logo'
+    | '/carte-verso-v1'
     | '/carte-verso-v2'
     | '/ds'
     | '/garde-chat-vannes'
@@ -402,6 +426,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   AdminRouteRoute: typeof AdminRouteRouteWithChildren
   PublicRoute: typeof PublicRouteWithChildren
+  CarteLogoRoute: typeof CarteLogoRoute
+  CarteVersoV1Route: typeof CarteVersoV1Route
   CarteVersoV2Route: typeof CarteVersoV2Route
   DsRoute: typeof DsRoute
   GardeChatVannesRoute: typeof GardeChatVannesRoute
@@ -483,6 +509,20 @@ declare module '@tanstack/react-router' {
       path: '/carte-verso-v2'
       fullPath: '/carte-verso-v2'
       preLoaderRoute: typeof CarteVersoV2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carte-verso-v1': {
+      id: '/carte-verso-v1'
+      path: '/carte-verso-v1'
+      fullPath: '/carte-verso-v1'
+      preLoaderRoute: typeof CarteVersoV1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carte-logo': {
+      id: '/carte-logo'
+      path: '/carte-logo'
+      fullPath: '/carte-logo'
+      preLoaderRoute: typeof CarteLogoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_public': {
@@ -699,6 +739,8 @@ const PublicRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   AdminRouteRoute: AdminRouteRouteWithChildren,
   PublicRoute: PublicRouteWithChildren,
+  CarteLogoRoute: CarteLogoRoute,
+  CarteVersoV1Route: CarteVersoV1Route,
   CarteVersoV2Route: CarteVersoV2Route,
   DsRoute: DsRoute,
   GardeChatVannesRoute: GardeChatVannesRoute,

@@ -54,3 +54,18 @@ export async function loadClairFonts() {
     { name: "Caveat", data: caveatBold, weight: 700 as const },
   ];
 }
+
+// Polices de la carte de visite : DM Serif Text (titres) / Inter (petit texte).
+export async function loadCardFonts() {
+  const [dmSerifText, interRegular, interMedium] = await Promise.all([
+    loadFont("DM Serif Text", 400),
+    loadFont("Inter", 400),
+    loadFont("Inter", 600),
+  ]);
+
+  return [
+    { name: "DM Serif Text", data: dmSerifText, weight: 400 as const },
+    { name: "Inter", data: interRegular, weight: 400 as const },
+    { name: "Inter", data: interMedium, weight: 600 as const },
+  ];
+}
