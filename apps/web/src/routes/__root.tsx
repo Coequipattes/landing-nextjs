@@ -2,6 +2,8 @@ import { type ReactNode, useEffect } from "react";
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
+import { ArrowRight, PawPrint } from "lucide-react";
+import { Button } from "@coequipattes/ui/components/button";
 import { env } from "@/lib/env";
 import { initAnalyticsTracking } from "@/lib/analytics";
 
@@ -72,8 +74,64 @@ export const Route = createRootRoute({
       { rel: "icon", href: "/icon.svg", type: "image/svg+xml" },
     ],
   }),
+  notFoundComponent: NotFoundPage,
   shellComponent: RootDocument,
 });
+
+function NotFoundPage() {
+  return (
+    <main className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-background px-6 text-foreground">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_8%,var(--blush)_0%,transparent_58%),var(--background)]"
+      />
+
+      <header className="mx-auto flex w-full max-w-6xl items-center py-6">
+        <a
+          href="/"
+          className="font-display text-2xl font-semibold text-primary"
+          aria-label="Co'équi'pattes, accueil"
+        >
+          Co'équi'pattes
+        </a>
+      </header>
+
+      <section className="mx-auto flex w-full max-w-3xl flex-1 items-center justify-center py-12">
+        <div className="w-full rounded-[2rem] border border-primary/10 bg-card/80 px-7 py-12 text-center shadow-[0_24px_80px_rgba(95,57,50,0.07)] backdrop-blur-sm sm:px-14 sm:py-16">
+          <div className="mx-auto mb-7 flex h-20 w-20 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
+            <PawPrint className="h-9 w-9" strokeWidth={1.6} aria-hidden="true" />
+          </div>
+          <p className="font-accent text-2xl text-primary">Ah mince…</p>
+          <p className="mt-3 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground">
+            Erreur 404
+          </p>
+          <h1 className="mx-auto mt-5 max-w-2xl font-display text-4xl leading-tight sm:text-5xl">
+            Cette page semble introuvable.
+          </h1>
+          <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
+            Le lien a peut-être changé ou l'adresse comporte une erreur.
+            Retrouvez les services proposés par Manon pour vos animaux et vos
+            chevaux à Vannes.
+          </p>
+          <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button asChild size="lg" className="gap-2 px-6">
+              <a href="/#services">
+                Voir les services disponibles
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </Button>
+            <a
+              href="/"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Retour à l'accueil
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
 
 function RootDocument({ children }: { children: ReactNode }) {
   useEffect(() => {

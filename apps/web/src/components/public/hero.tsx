@@ -114,7 +114,7 @@ export function Hero() {
                   relais de confiance
                 </strong>
                 , que ce soit pour une visite à domicile, une balade, une garde
-                à domicile ou une pension privative. Leurs habitudes, leurs
+                à domicile ou une pension privative pour chat. Leurs habitudes,
                 petites manies, ce qui les rassure ou les anime : j&apos;y fais
                 autant attention que vous. Pas une gardienne de passage&nbsp;:{" "}
                 <strong className="text-primary font-semibold">

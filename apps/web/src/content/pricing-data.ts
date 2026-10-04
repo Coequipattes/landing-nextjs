@@ -126,20 +126,6 @@ export const petsittingCards: PriceCard[] = [
   },
 ];
 
-export const hebergementChienCard: PriceCard = {
-  slug: "hebergement-chien",
-  title: "Pension privative — chien",
-  price: "30€",
-  unit: "/jour",
-  description: "Pension privative chez moi, un seul chien à la fois",
-  features: [
-    "Séjours courts : de quelques heures à 2 jours",
-    "Un seul chien (ou 2 du même foyer) à la fois",
-    "Accès à tout le logement, jamais en cage",
-    "Vous fournissez nourriture, panier et jouets",
-  ],
-};
-
 export const hebergementChatCard: PriceCard = {
   slug: "hebergement-chat",
   title: "Pension privative — chat",
@@ -187,7 +173,6 @@ export function getPriceCardBySlug(slug: string): PriceCard | undefined {
   return [
     ...equitationCards,
     ...petsittingCards,
-    hebergementChienCard,
     hebergementChatCard,
     gardeADomicileCard,
   ].find((c) => c.slug === slug);

@@ -29,7 +29,6 @@ import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as PublicVisitesChienVannesRouteImport } from './routes/_public/visites-chien-vannes'
 import { Route as PublicVisitesChatVannesRouteImport } from './routes/_public/visites-chat-vannes'
 import { Route as PublicPromenadeChienVannesRouteImport } from './routes/_public/promenade-chien-vannes'
-import { Route as PublicPensionChienVannesRouteImport } from './routes/_public/pension-chien-vannes'
 import { Route as PublicPensionChatVannesRouteImport } from './routes/_public/pension-chat-vannes'
 import { Route as PublicGardeADomicileVannesRouteImport } from './routes/_public/garde-a-domicile-vannes'
 import { Route as PublicEquitationVannesRouteImport } from './routes/_public/equitation-vannes'
@@ -144,12 +143,6 @@ const PublicPromenadeChienVannesRoute =
     path: '/promenade-chien-vannes',
     getParentRoute: () => PublicRoute,
   } as any)
-const PublicPensionChienVannesRoute =
-  PublicPensionChienVannesRouteImport.update({
-    id: '/pension-chien-vannes',
-    path: '/pension-chien-vannes',
-    getParentRoute: () => PublicRoute,
-  } as any)
 const PublicPensionChatVannesRoute = PublicPensionChatVannesRouteImport.update({
   id: '/pension-chat-vannes',
   path: '/pension-chat-vannes',
@@ -233,7 +226,6 @@ export interface FileRoutesByFullPath {
   '/equitation-vannes': typeof PublicEquitationVannesRoute
   '/garde-a-domicile-vannes': typeof PublicGardeADomicileVannesRoute
   '/pension-chat-vannes': typeof PublicPensionChatVannesRoute
-  '/pension-chien-vannes': typeof PublicPensionChienVannesRoute
   '/promenade-chien-vannes': typeof PublicPromenadeChienVannesRoute
   '/visites-chat-vannes': typeof PublicVisitesChatVannesRoute
   '/visites-chien-vannes': typeof PublicVisitesChienVannesRoute
@@ -265,7 +257,6 @@ export interface FileRoutesByTo {
   '/equitation-vannes': typeof PublicEquitationVannesRoute
   '/garde-a-domicile-vannes': typeof PublicGardeADomicileVannesRoute
   '/pension-chat-vannes': typeof PublicPensionChatVannesRoute
-  '/pension-chien-vannes': typeof PublicPensionChienVannesRoute
   '/promenade-chien-vannes': typeof PublicPromenadeChienVannesRoute
   '/visites-chat-vannes': typeof PublicVisitesChatVannesRoute
   '/visites-chien-vannes': typeof PublicVisitesChienVannesRoute
@@ -301,7 +292,6 @@ export interface FileRoutesById {
   '/_public/equitation-vannes': typeof PublicEquitationVannesRoute
   '/_public/garde-a-domicile-vannes': typeof PublicGardeADomicileVannesRoute
   '/_public/pension-chat-vannes': typeof PublicPensionChatVannesRoute
-  '/_public/pension-chien-vannes': typeof PublicPensionChienVannesRoute
   '/_public/promenade-chien-vannes': typeof PublicPromenadeChienVannesRoute
   '/_public/visites-chat-vannes': typeof PublicVisitesChatVannesRoute
   '/_public/visites-chien-vannes': typeof PublicVisitesChienVannesRoute
@@ -338,7 +328,6 @@ export interface FileRouteTypes {
     | '/equitation-vannes'
     | '/garde-a-domicile-vannes'
     | '/pension-chat-vannes'
-    | '/pension-chien-vannes'
     | '/promenade-chien-vannes'
     | '/visites-chat-vannes'
     | '/visites-chien-vannes'
@@ -370,7 +359,6 @@ export interface FileRouteTypes {
     | '/equitation-vannes'
     | '/garde-a-domicile-vannes'
     | '/pension-chat-vannes'
-    | '/pension-chien-vannes'
     | '/promenade-chien-vannes'
     | '/visites-chat-vannes'
     | '/visites-chien-vannes'
@@ -405,7 +393,6 @@ export interface FileRouteTypes {
     | '/_public/equitation-vannes'
     | '/_public/garde-a-domicile-vannes'
     | '/_public/pension-chat-vannes'
-    | '/_public/pension-chien-vannes'
     | '/_public/promenade-chien-vannes'
     | '/_public/visites-chat-vannes'
     | '/_public/visites-chien-vannes'
@@ -588,13 +575,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicPromenadeChienVannesRouteImport
       parentRoute: typeof PublicRoute
     }
-    '/_public/pension-chien-vannes': {
-      id: '/_public/pension-chien-vannes'
-      path: '/pension-chien-vannes'
-      fullPath: '/pension-chien-vannes'
-      preLoaderRoute: typeof PublicPensionChienVannesRouteImport
-      parentRoute: typeof PublicRoute
-    }
     '/_public/pension-chat-vannes': {
       id: '/_public/pension-chat-vannes'
       path: '/pension-chat-vannes'
@@ -715,7 +695,6 @@ interface PublicRouteChildren {
   PublicEquitationVannesRoute: typeof PublicEquitationVannesRoute
   PublicGardeADomicileVannesRoute: typeof PublicGardeADomicileVannesRoute
   PublicPensionChatVannesRoute: typeof PublicPensionChatVannesRoute
-  PublicPensionChienVannesRoute: typeof PublicPensionChienVannesRoute
   PublicPromenadeChienVannesRoute: typeof PublicPromenadeChienVannesRoute
   PublicVisitesChatVannesRoute: typeof PublicVisitesChatVannesRoute
   PublicVisitesChienVannesRoute: typeof PublicVisitesChienVannesRoute
@@ -726,7 +705,6 @@ const PublicRouteChildren: PublicRouteChildren = {
   PublicEquitationVannesRoute: PublicEquitationVannesRoute,
   PublicGardeADomicileVannesRoute: PublicGardeADomicileVannesRoute,
   PublicPensionChatVannesRoute: PublicPensionChatVannesRoute,
-  PublicPensionChienVannesRoute: PublicPensionChienVannesRoute,
   PublicPromenadeChienVannesRoute: PublicPromenadeChienVannesRoute,
   PublicVisitesChatVannesRoute: PublicVisitesChatVannesRoute,
   PublicVisitesChienVannesRoute: PublicVisitesChienVannesRoute,

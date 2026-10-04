@@ -16,7 +16,7 @@ export const hebergementChatVannes: ServicePageData = {
     paragraphs: [
       "Un chat qui change d'environnement, c'est souvent plus stressant qu'on ne l'imagine. Un chat n'aime pas le changement, encore moins s'il doit partager l'espace avec d'autres animaux qu'il ne connaît pas. C'est pour lui offrir un séjour aussi proche que possible de son quotidien que je propose un hébergement privatif, chez moi, réservé à un seul chat à la fois.",
       "Concrètement, je n'accueille jamais plusieurs chats de foyers différents en même temps, et il n'y a pas de cage : votre chat vit entièrement avec moi, avec accès à toutes les pièces de mon logement, exactement comme il le ferait chez vous. Je gère moi-même son quotidien, ses repas et son bien-être, avec la même attention que s'il s'agissait de mon propre chat.",
-      "Contrairement à l'hébergement pour chien, cette formule n'a pas de limite de durée : elle convient aussi bien à une garde de quelques jours qu'à une absence prolongée, vacances ou déplacement professionnel.",
+      "Cette formule convient aussi bien à quelques jours qu'à une absence prolongée, des vacances ou un déplacement professionnel.",
       "Je vous demande simplement de fournir tout ce dont il a l'habitude : litière, bac, gamelles, nourriture, jouets. Ce sont ses repères et ses odeurs familières qui font toute la différence pour qu'il se sente à l'aise, même en dehors de chez lui. Comme pour mes autres prestations, tout commence par une rencontre : je fais connaissance avec votre chat, on discute de ses habitudes, et on définit ensemble les modalités du séjour.",
     ],
   },
@@ -65,7 +65,7 @@ export const hebergementChatVannes: ServicePageData = {
     },
     {
       q: "Y a-t-il une durée maximale de séjour ?",
-      a: "Non. Contrairement à l'hébergement pour chien, cette formule n'a pas de limite de durée : elle convient aussi bien à quelques jours qu'à une absence prolongée.",
+      a: "Votre chat peut séjourner quelques jours, comme lors d'une absence prolongée ou d'un déplacement professionnel.",
     },
     {
       q: "Mon chat sera-t-il en cage ?",

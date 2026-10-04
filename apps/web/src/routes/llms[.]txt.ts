@@ -29,7 +29,7 @@ export const Route = createFileRoute("/llms.txt")({
 
 ## À propos
 - **Nom** : Co'équi'pattes (Manon Millot)
-- **Activité** : pet-sitting (garde de chien et de chat), promenades, pension privative, garde à domicile, cours d'équitation
+- **Activité** : pet-sitting (garde de chien et de chat), promenades, pension privative pour chat, garde à domicile, cours d'équitation
 - **Zone d'intervention** : ${COVERAGE.city} et ~${COVERAGE.radiusKm} km alentour — ${otherCommunes.join(", ")}
 - **Adresse** : 4 rue Tamara de Lempicka, 56000 Vannes, France
 - **Téléphone** : +33 7 66 74 43 37

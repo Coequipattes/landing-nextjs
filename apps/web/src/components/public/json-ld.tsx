@@ -62,7 +62,7 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
         legalName: "Co'équi'pattes — Manon Millot",
         slogan: "Rassurer, pas impressionner.",
         description:
-          "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés, garde de chien et de chat à domicile, promenades et pension privative.",
+          "Monitrice d'équitation diplômée et pet-sitter professionnelle à Vannes. Cours d'équitation personnalisés, garde de chien et de chat à domicile, promenades et pension privative pour chat.",
         url: siteUrl,
         telephone: "+33766744337",
         email: env.contactEmail,
@@ -85,7 +85,7 @@ export function JsonLd({ reviews = [] }: { reviews?: Review[] }) {
           "Garde de chat",
           "Pet-sitting à domicile",
           "Promenade de chien",
-          "Pension privative pour animaux",
+          "Pension privative pour chat",
           "Cours d'équitation",
           "Travail de cheval",
         ],

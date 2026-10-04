@@ -67,17 +67,6 @@ export const servicesHub: ServiceHubCard[] = [
     iconId: "livein",
     price: "30€/jour",
   },
-  {
-    slug: "chien-hebergement",
-    category: "chien",
-    title: "Pension privative",
-    teaser:
-      "Courte durée (quelques heures à 2 jours) : votre chien vit chez moi comme s'il était le mien, sans être mêlé à d'autres animaux. 2 chiens possibles s'ils ont le même maître.",
-    href: "/pension-chien-vannes",
-    iconId: "boarding",
-    price: "dès 30€/jour",
-  },
-
   // ——— Chat ———
   {
     slug: "chat-visites",
