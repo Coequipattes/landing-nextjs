@@ -1,5 +1,5 @@
 FROM node:26.12.1-alpine AS base
-RUN corepack enable
+RUN npm install -g corepack && corepack enable
 
 # ---- deps : installe les dépendances du monorepo (workspace pnpm) ----
 FROM base AS deps
